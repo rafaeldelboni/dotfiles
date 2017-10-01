@@ -8,8 +8,7 @@ dotfiles
 ### Basics
 Install [Oh-My-ZSH](https://github.com/robbyrussell/oh-my-zsh)
 
-Install [vim](https://vim.sourceforge.io/download.php)
-Setup [vim-plug](https://github.com/junegunn/vim-plug)
+Install [vim](https://vim.sourceforge.io/download.php) and setup [vim-plug](https://github.com/junegunn/vim-plug)
 
 Install [tmux](https://github.com/tmux/tmux/wiki)
 
