@@ -1,5 +1,4 @@
 " set the runtime path to include vim-plug and initialize
-
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree'
@@ -20,9 +19,7 @@ call plug#end()
 
 filetype plugin indent on
 
-
 " Basic sets
-
 set number            " Show line numbers
 set ruler             " Show line and column number
 set encoding=utf-8    " Set default encoding to UTF-8
@@ -51,9 +48,7 @@ set listchars=tab:▶-,trail:•,extends:»,precedes:«,eol:¬
 
 au FocusGained,BufEnter * :checktime " Refresh changed content
 
-
 " NERDTree
-
 map <C-n> :NERDTreeToggle<CR> " Ctrl + N open/close
 map <leader>r :NERDTreeFind<cr> " Leader + r show file on tree
 autocmd StdinReadPre * let s:std_in=1
@@ -63,7 +58,6 @@ let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.git$[[dir]]']
 
 " Ack
-
 let g:ack_mappings = {
   \  'v':  '<C-W><CR><C-W>L<C-W>p<C-W>J<C-W>p',
   \ 'gv': '<C-W><CR><C-W>L<C-W>p<C-W>J' }
@@ -74,6 +68,9 @@ if executable('ag')
 endif
 
 " syntax/theme
+syntax sync minlines=100
+syntax sync maxlines=240
+set synmaxcol=800
 
 set t_Co=256
 set t_ut=
@@ -83,26 +80,18 @@ let g:airline_theme = 'codedark'
 hi NonText ctermfg=237 guifg=Grey23     " Invisible chars color
 hi SpecialKey ctermfg=237 guifg=Grey23  " Invisible chars color
 
-
 " FZF
-
 nnoremap <c-p> :Files<CR>
 
-
 " Fugitive
-
 nnoremap <leader>g :Git<Space>
 
 " Tmux
-
 let g:tmux_navigator_no_mappings = 1
 nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
 nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
 nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
 
-
 " php-cs-fixer
-
 let g:php_cs_fixer_cache = "~/.php_cs.cache" " options: --cache-file
-
