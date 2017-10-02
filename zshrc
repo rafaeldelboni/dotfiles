@@ -13,8 +13,12 @@ DEFAULT_USER="rafaeldelboni"
 
 eval "$(pyenv init -)"
 
+# Boot up nvm but defer nvm initialization until node or nvm commands
+# # are invoked. This will speed up shell boot up time.
 export NVM_DIR="$HOME/.nvm"
-  . "/usr/local/opt/nvm/nvm.sh"
+source /usr/local/Cellar/nvm/0.33.4/nvm.sh --no-use
+alias node='unalias node ; unalias npm ; nvm use default ; node $@'
+alias npm='unalias node ; unalias npm ; nvm use default ; npm $@'
 
 PATH="/Users/rafaeldelboni/.composer/vendor/bin":$PATH
 
