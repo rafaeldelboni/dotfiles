@@ -14,6 +14,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'tomasiser/vim-code-dark'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'terryma/vim-multiple-cursors'
 
 call plug#end()
 
@@ -49,7 +50,7 @@ set listchars=tab:▶-,trail:•,extends:»,precedes:«,eol:¬
 au FocusGained,BufEnter * :checktime " Refresh changed content
 
 " NERDTree
-map <C-n> :NERDTreeToggle<CR> " Ctrl + N open/close
+map <leader>n :NERDTreeToggle<CR> " Leader + n open/close tree
 map <leader>r :NERDTreeFind<cr> " Leader + r show file on tree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | wincmd p | endif
