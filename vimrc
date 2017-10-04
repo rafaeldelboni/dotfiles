@@ -12,7 +12,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'stephpy/vim-php-cs-fixer'
 Plug 'vim-airline/vim-airline'
 Plug 'tomasiser/vim-code-dark'
-Plug 'jelera/vim-javascript-syntax'
+Plug 'pangloss/vim-javascript'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'terryma/vim-multiple-cursors'
 
