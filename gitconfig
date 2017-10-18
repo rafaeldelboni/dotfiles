@@ -28,3 +28,5 @@
   untracked = cyan
 [core]
   editor = vim
+[commit]
+  template = ~/.gitmessage
