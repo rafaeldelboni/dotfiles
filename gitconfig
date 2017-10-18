@@ -9,6 +9,7 @@
   pl = pull
   ps = push
   aa = add -A
+  upd = ! git pull && git submodule update --recursive
 [color]
   branch = auto
   diff = auto
