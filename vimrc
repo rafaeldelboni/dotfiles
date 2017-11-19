@@ -15,6 +15,7 @@ Plug 'tomasiser/vim-code-dark'
 Plug 'pangloss/vim-javascript'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'mxw/vim-jsx'
 
 call plug#end()
 
@@ -96,3 +97,8 @@ nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
 
 " php-cs-fixer
 let g:php_cs_fixer_cache = "~/.php_cs.cache" " options: --cache-file
+
+" JSX
+highlight link xmlEndTag xmlTag 
+let g:jsx_ext_required = 0 " JSX should not be required as an extension
+
