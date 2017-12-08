@@ -72,7 +72,7 @@ endif
 set t_Co=256
 set bg=dark
 
-colorscheme ron
+colorscheme default
 
 hi Normal guifg=#c0c0c0 guibg=#000040 ctermfg=gray ctermbg=black
 hi NonText  ctermfg=239
