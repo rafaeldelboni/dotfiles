@@ -27,6 +27,9 @@ set encoding=utf-8    " Set default encoding to UTF-8
 set backspace=2
 set colorcolumn=80
 
+set ignorecase
+set smartcase
+
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 
 set rtp+=~/.fzf
