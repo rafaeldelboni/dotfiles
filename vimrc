@@ -9,9 +9,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-fugitive'
-Plug 'stephpy/vim-php-cs-fixer'
 Plug 'vim-airline/vim-airline'
-Plug 'tomasiser/vim-code-dark'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'pangloss/vim-javascript'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'terryma/vim-multiple-cursors'
@@ -69,18 +68,21 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
-" syntax/theme
-syntax sync minlines=100
-syntax sync maxlines=240
-set synmaxcol=800
-
+" theme
 set t_Co=256
-set t_ut=
-colorscheme codedark
-let g:airline_theme = 'codedark'
+set bg=dark
 
-hi NonText ctermfg=237 guifg=Grey23     " Invisible chars color
-hi SpecialKey ctermfg=237 guifg=Grey23  " Invisible chars color
+colorscheme ron
+
+hi Normal guifg=#c0c0c0 guibg=#000040 ctermfg=gray ctermbg=black
+hi NonText  ctermfg=239
+hi SpecialKey ctermfg=239
+hi ColorColumn ctermbg=234
+hi LineNr ctermfg=239
+
+set fillchars=""
+
+let g:airline_theme='deus'
 
 " FZF
 nnoremap <c-p> :Files<CR>
@@ -94,9 +96,6 @@ nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
 nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
 nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
-
-" php-cs-fixer
-let g:php_cs_fixer_cache = "~/.php_cs.cache" " options: --cache-file
 
 " JSX
 highlight link xmlEndTag xmlTag 
