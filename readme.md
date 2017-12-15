@@ -21,7 +21,7 @@ $ git clone https://github.com/RafaelDelboni/dotfiles .dotfiles
 
 Install [rcm](https://github.com/thoughtbot/rcm)
 
-Run rcm (this command expects that you cloned your dotfiles to `~/.dotfiles/`)
+Run `rcup` (this command expects that you cloned your dotfiles to `~/.dotfiles/`)
 
 RCM creates dotfile symlinks (`.vimrc` -> `~/.dotfiles/vimrc`) from your home directory to your `~/.dotfiles/` directory.
 
