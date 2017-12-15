@@ -15,6 +15,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'mxw/vim-jsx'
+Plug 'dim13/smyck.vim'
 
 call plug#end()
 
@@ -34,7 +35,6 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 
 set rtp+=~/.fzf
 
-set visualbell           " don't beep
 set noerrorbells         " don't beep
 
 set nobackup             " no backup
@@ -72,15 +72,12 @@ if executable('ag')
 endif
 
 " theme
-set t_Co=256
-set bg=dark
+syntax on
+color smyck
 
-colorscheme default
-
-hi Normal guifg=#c0c0c0 guibg=#000040 ctermfg=gray ctermbg=black
 hi NonText  ctermfg=239
 hi SpecialKey ctermfg=239
-hi ColorColumn ctermbg=234
+hi ColorColumn ctermbg=236
 hi LineNr ctermfg=239
 
 set fillchars=""
