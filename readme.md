@@ -16,7 +16,7 @@ Install [tmux](https://github.com/tmux/tmux/wiki)
 Clone this repo (or your own fork!) to your **home** directory (`/Users/username`).
 ```
 $ cd ~
-$ git clone https://github.com/RafaelDelboni/dotfiles .dotfiles
+$ git clone git@github.com:RafaelDelboni/dotfiles.git .dotfiles
 ```
 
 Install [rcm](https://github.com/thoughtbot/rcm)
