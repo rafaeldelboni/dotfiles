@@ -50,10 +50,10 @@ Follow instructions here: https://github.com/RafaelDelboni/dotfiles
   For chromium: `sudo apt-get install chromium-browser`
 
 - Install Docker CE & Docker Compose
-    1. Docker: https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/#install-docker-ce
+    1. Docker: https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/#install-docker-ce  
       1.1 Add user to docker group: `sudo usermod -a -G docker $USER`
-    2. Compose:
-      2.1 `sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose`
+    2. Compose:  
+      2.1 `sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose`  
       2.2 `sudo chmod +x /usr/local/bin/docker-compose`
 - Install N (Node version manager):  
   `curl -L https://git.io/n-install | bash`
