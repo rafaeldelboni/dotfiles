@@ -13,20 +13,20 @@
   [mouse]power off
   [bluet]power on
   ```
-- Install tmux git zsh curl xsel unity-tweak-tool
+- Install tmux git zsh curl xsel unity-tweak-tool:  
 `sudo apt install tmux git zsh curl xsel unity-tweak-tool`
-- Install Oh-My-Zsh
+- Install Oh-My-Zsh:  
 Follow instructions here: https://github.com/robbyrussell/oh-my-zsh
-- Install Vim 8
+- Install Vim 8:  
 `sudo apt-get install vim-gtk`
-- Install Vim-plug
+- Install Vim-plug:  
 Follow instructions here: https://github.com/junegunn/vim-plug
-- Install gnome-terminal themes
+- Install gnome-terminal themes:  
 Follow instructions here: https://github.com/Mayccoll/Gogh
-- Change gnome-terminal profile
+- Change gnome-terminal profile:  
 Command tab, "Run a custom command instead of my shell": `tmux`
 Scrolling tab, "Show scrollbar": false
-- Configure your .dotfiles
+- Configure your .dotfiles:  
 Follow instructions here: https://github.com/RafaelDelboni/dotfiles
 - Install Firefox Developer Edition / Chromium
   1. Download from Mozilla Firefox Developer Edition webpage.
@@ -55,7 +55,7 @@ Follow instructions here: https://github.com/RafaelDelboni/dotfiles
     2. Compose:
       2.1 `sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose`
       2.2 `sudo chmod +x /usr/local/bin/docker-compose`
-- Install N (Node version manager)
+- Install N (Node version manager):  
   `curl -L https://git.io/n-install | bash`
 - Install PHP and Composer
   1. PHP: 
@@ -87,5 +87,5 @@ Follow instructions here: https://github.com/RafaelDelboni/dotfiles
       sudo curl -s https://getcomposer.org/installer | php
       sudo mv composer.phar /usr/local/bin/composer
       ```
-- Install Virtual Box
+- Install Virtual Box:  
 Follow the "Debian-based Linux distributions": https://www.virtualbox.org/wiki/Linux_Downloads
