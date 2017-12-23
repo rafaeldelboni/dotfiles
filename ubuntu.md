@@ -98,3 +98,6 @@ Follow instructions here: https://github.com/RafaelDelboni/dotfiles
       ```
 - Install Virtual Box:  
 Follow the "Debian-based Linux distributions": https://www.virtualbox.org/wiki/Linux_Downloads
+
+- Install Redis:
+Follow this: ttps://www.digitalocean.com/community/tutorials/how-to-install-and-configure-redis-on-ubuntu-16-04
