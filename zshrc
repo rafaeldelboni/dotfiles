@@ -1,7 +1,7 @@
 # Basic settings
 DISABLE_AUTO_TITLE="true"
-DEFAULT_USER="rafaeldelboni"
-PATH="/usr/local/bin:/Users/rafaeldelboni/.composer/vendor/bin":$PATH
+DEFAULT_USER="rafael"
+PATH="/usr/local/bin:$HOME/.config/composer/vendor/bin":$PATH
 ZSH_THEME="agnoster"
 
 export ZSH=~/.oh-my-zsh
