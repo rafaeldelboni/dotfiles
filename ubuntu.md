@@ -74,6 +74,7 @@ Follow instructions here: https://github.com/RafaelDelboni/dotfiles
     php7.0-json \
     php7.0-cgi \
     php7.0-fpm \
+    php7.0-xml \
     autoconf \
     automake \
     libxml2-dev \
