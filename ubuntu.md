@@ -1,4 +1,5 @@
 # Setup a new (Ubuntu) machine
+
 - Configure Bluetooth mouse
   ```
   bluetoothctl
@@ -13,21 +14,29 @@
   [mouse]power off
   [bluet]power on
   ```
+
 - Install tmux git zsh curl xsel unity-tweak-tool:  
 `sudo apt install tmux git zsh curl xsel unity-tweak-tool`
+
 - Install Oh-My-Zsh:  
 Follow instructions here: https://github.com/robbyrussell/oh-my-zsh
+
 - Install Vim 8:  
 `sudo apt-get install vim-gtk`
+
 - Install Vim-plug:  
 Follow instructions here: https://github.com/junegunn/vim-plug
+
 - Install gnome-terminal themes:  
 Follow instructions here: https://github.com/Mayccoll/Gogh
+
 - Change gnome-terminal profile:  
 Command tab, "Run a custom command instead of my shell": `tmux`
 Scrolling tab, "Show scrollbar": false
+
 - Configure your .dotfiles:  
 Follow instructions here: https://github.com/RafaelDelboni/dotfiles
+
 - Install Firefox Developer Edition / Chromium
   1. Download from Mozilla Firefox Developer Edition webpage.
   2. Extract it with file-roller and move the folder to its final location.
@@ -51,15 +60,15 @@ Follow instructions here: https://github.com/RafaelDelboni/dotfiles
 
 - Install Docker CE & Docker Compose
     1. Docker: https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/#install-docker-ce  
-      1.1 Add user to docker group: `sudo usermod -a -G docker $USER`
-    2. Compose:  
-      2.1 `sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose`  
-      2.2 `sudo chmod +x /usr/local/bin/docker-compose`
+      1.1. Add user to docker group: `sudo usermod -a -G docker $USER`
+    2. Compose: https://docs.docker.com/compose/install/#prerequisites
+
 - Install N (Node version manager):  
-  `curl -L https://git.io/n-install | bash`
+  `sudo curl -L https://git.io/n-install | bash`
+
 - Install PHP and Composer
   1. PHP: 
-    `apt install \
+    `sudo apt install \
     php7.0 \
     php7.0-curl \
     php7.0-json \
