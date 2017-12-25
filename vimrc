@@ -101,3 +101,6 @@ nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
 highlight link xmlEndTag xmlTag 
 let g:jsx_ext_required = 0 " JSX should not be required as an extension
 
+" Ale
+let g:ale_sign_error = ''
+let g:ale_sign_warning = '⚠'
