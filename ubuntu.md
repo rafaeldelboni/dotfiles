@@ -15,8 +15,15 @@
   [bluet]power on
   ```
 
-- Install tmux git zsh curl xsel unity-tweak-tool:  
-`sudo apt install tmux git zsh curl xsel unity-tweak-tool`
+- Set permanently switch Caps Lock and Esc
+After starting the dconf-editor, navigate to org >> gnome >> desktop >> input-sources
+
+Add `caps:swapescape` to the options that you need in xkb-options.
+The option strings are surrounded by single quotes and separated by commas.
+Be careful not to delete the brackets on the ends.
+
+- Install tmux git zsh curl xsel unity-tweak-tool dconf-tools:  
+`sudo apt install tmux git zsh curl xsel unity-tweak-tool dconf-tools`
 
 - Install Oh-My-Zsh:  
 Follow instructions here: https://github.com/robbyrussell/oh-my-zsh
