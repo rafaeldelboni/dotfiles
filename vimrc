@@ -102,5 +102,12 @@ highlight link xmlEndTag xmlTag
 let g:jsx_ext_required = 0 " JSX should not be required as an extension
 
 " Ale
-let g:ale_sign_error = ''
-let g:ale_sign_warning = '⚠'
+let g:ale_sign_warning = ''
+let g:ale_sign_error = ''
+let g:ale_echo_msg_format = '%severity%: %s [%linter%]'
+highlight ALEErrorSign ctermbg=NONE ctermfg=red
+highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
+highlight ALEError cterm=underline ctermfg=none
+let g:ale_fixers = { 'javascript': ['eslint'] }
+map <leader>f :ALEFix<cr>
+map <leader>l :ALELint<cr>
