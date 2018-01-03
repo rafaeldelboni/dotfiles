@@ -86,6 +86,7 @@ let g:airline_theme='deus'
 
 " FZF
 nnoremap <c-p> :Files<CR>
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
 
 " Fugitive
 nnoremap <leader>g :Git<Space>
