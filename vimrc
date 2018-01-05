@@ -51,6 +51,7 @@ set list                 " Show invisible characters
 set listchars=tab:▶-,trail:•,extends:»,precedes:«,eol:¬
 
 au FocusGained,BufEnter * :checktime " Refresh changed content
+au FileType php setl sw=4 sts=4 et " Tab spaces for PHP files
 
 " NERDTree
 map <leader>n :NERDTreeToggle<CR> " Leader + n open/close tree
@@ -110,6 +111,6 @@ highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 highlight ALEError cterm=underline ctermfg=none
 highlight ALEWarning cterm=underline ctermfg=none
-let g:ale_fixers = { 'javascript': ['eslint'] }
+let g:ale_fixers = { 'javascript': 'eslint', 'php': 'phpcbf' }
 map <leader>f :ALEFix<cr>
 map <leader>l :ALELint<cr>

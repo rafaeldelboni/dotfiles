@@ -1,7 +1,7 @@
 # Basic settings
+PATH="/usr/local/bin:$HOME/.config/composer/vendor/bin:$HOME/.cargo/bin":$PATH
 DISABLE_AUTO_TITLE="true"
 DEFAULT_USER="rafael"
-PATH="/usr/local/bin:$HOME/.config/composer/vendor/bin":$PATH
 ZSH_THEME="agnoster"
 
 export ZSH=~/.oh-my-zsh
