@@ -7,7 +7,6 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'w0rp/ale'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -62,12 +61,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.git$[[dir]]']
 
-" Ack
-let g:ack_mappings = {
-  \  'v':  '<C-W><CR><C-W>L<C-W>p<C-W>J<C-W>p',
-  \ 'gv': '<C-W><CR><C-W>L<C-W>p<C-W>J' }
-
-nnoremap <leader>a :Ack<Space>
+" Ag
+nnoremap <Leader>a :Ag<Space>
+nnoremap <Leader>ag :Ag <C-R><C-W><CR>
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
@@ -84,12 +80,12 @@ hi LineNr ctermfg=239
 set fillchars=""
 
 
-" display ALE status in Airline
+" ALE status in Airline
 call airline#parts#define_function('ALE', 'ALEGetStatusLine')
 call airline#parts#define_condition('ALE', 'exists("*ALEGetStatusLine")')
 let g:airline_section_error = airline#section#create_right(['ALE'])
 
-" " Airline settings
+" Airline settings
 set noshowmode
 let g:airline_powerline_fonts = 0
 let g:airline_theme = 'deus'
@@ -127,6 +123,8 @@ highlight link xmlEndTag xmlTag
 let g:jsx_ext_required = 0 " JSX should not be required as an extension
 
 " Ale
+let g:ale_lint_on_text_changed = 0 "dont lint on text change
+let g:ale_lint_on_save = 1 "lint on save
 let g:ale_sign_warning = ''
 let g:ale_sign_error = ''
 let g:ale_echo_msg_format = '%severity%: %s [%linter%]'
