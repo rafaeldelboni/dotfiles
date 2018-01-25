@@ -76,9 +76,10 @@ hi NonText  ctermfg=239
 hi SpecialKey ctermfg=239
 hi ColorColumn ctermbg=236
 hi LineNr ctermfg=239
+hi TabLineFill ctermfg=236
+hi TabLine ctermfg=242 ctermbg=236 cterm=none term=none gui=none
 
 set fillchars=""
-
 
 " ALE status in Airline
 call airline#parts#define_function('ALE', 'ALEGetStatusLine')
@@ -93,7 +94,7 @@ let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline_mode_map = {
    \ '__' : '--',
-   \ 'n'  : 'N', 
+   \ 'n'  : 'N',
    \ 'i'  : 'I',
    \ 'R'  : 'R',
    \ 'c'  : 'C',
