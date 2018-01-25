@@ -111,6 +111,7 @@ let g:airline_left_alt_sep = '' " no separators
 let g:airline_right_sep = '' " no separators
 let g:airline_right_alt_sep = '' " no separators
 let g:airline_section_x = airline#section#create_right(['tagbar']) " no filetype
+let g:airline_section_z = airline#section#create(['windowswap', 'linenr', 'maxlinenr', ':%3v'])
 
 " FZF
 nnoremap <c-p> :Files<CR>
