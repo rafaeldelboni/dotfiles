@@ -104,6 +104,13 @@ let g:airline_mode_map = {
    \ 'S'  : 'S-L',
    \ 't'  : 'T'
    \ }
+let g:airline#extensions#branch#displayed_head_limit = 10 " branch name size
+let g:airline#extensions#branch#format = 2 " branch name format
+let g:airline_left_sep = '' " no separators
+let g:airline_left_alt_sep = '' " no separators
+let g:airline_right_sep = '' " no separators
+let g:airline_right_alt_sep = '' " no separators
+let g:airline_section_x = airline#section#create_right(['tagbar']) " no filetype
 
 " FZF
 nnoremap <c-p> :Files<CR>
