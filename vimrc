@@ -140,8 +140,8 @@ let g:ale_sign_error = ''
 let g:ale_echo_msg_format = '%severity%: %s [%linter%]'
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
-highlight ALEError cterm=underline ctermfg=none
-highlight ALEWarning cterm=underline ctermfg=none
+highlight ALEError cterm=undercurl ctermfg=none
+highlight ALEWarning cterm=undercurl ctermfg=none
 let g:ale_fixers = { 'javascript': 'eslint', 'php': 'phpcbf' }
 map <leader>f :ALEFix<cr>
 map <leader>l :ALELint<cr>
