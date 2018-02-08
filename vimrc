@@ -8,6 +8,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'w0rp/ale'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -63,17 +64,25 @@ let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.git$[[dir]]']
 
 " Ag
+" Default options are --nogroup --column --color
+let s:ag_options = ' --skip-vcs-ignores --smart-case -Q '
+command! -bang -nargs=* AgQ
+      \ call fzf#vim#ag(
+      \   <q-args>,
+      \   s:ag_options,
+      \  <bang>0 ? fzf#vim#with_preview('up:60%')
+      \        : fzf#vim#with_preview('right:50%:hidden', '?'),
+      \   <bang>0
+      \ )
 nnoremap <Leader>a :Ag<Space>
+nnoremap <Leader>aq :AgQ<Space>
 nnoremap <Leader>ag :Ag <C-R><C-W><CR>
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
 
 " theme
 syntax on
 color smyck
 
-hi NonText  ctermfg=239
+hi NonText ctermfg=239
 hi SpecialKey ctermfg=239
 hi ColorColumn ctermbg=236
 hi LineNr ctermfg=239
@@ -99,7 +108,7 @@ let g:airline_mode_map = {
    \ 'i'  : 'I',
    \ 'R'  : 'R',
    \ 'c'  : 'C',
-   \ 'v'  : 'V', 
+   \ 'v'  : 'V',
    \ 'V'  : 'V-L',
    \ 's'  : 'S',
    \ 'S'  : 'S-L',
