@@ -37,7 +37,7 @@ Follow instructions here: https://github.com/junegunn/vim-plug
 - Configure your .dotfiles:  
 Follow instructions here: https://github.com/RafaelDelboni/dotfiles
 
-- Configure URxvt as Default Terminal
+- Configure URxvt as Default Terminal:  
 `sudo update-alternatives --config x-terminal-emulator`
 
 - Install Firefox Developer Edition / Chromium
