@@ -25,6 +25,9 @@ Run `rcup` (this command expects that you cloned your dotfiles to `~/.dotfiles/`
 
 RCM creates dotfile symlinks (`.vimrc` -> `~/.dotfiles/vimrc`) from your home directory to your `~/.dotfiles/` directory.
 
+### Sync X Server Settings
+Run `xrdb ~/.Xresources`
+
 ### Installing Vim Plugins
 To install them you'll need vim-plug, as mentioned above.
 Once Plug is installed. Open vim (`$ vim`) and type `:PlugInstall`. And then restart vim. You'll need to do this for all the plugins to work.
