@@ -1,6 +1,6 @@
 dotfiles
 ===================
-![screenshot](https://github.com/RafaelDelboni/dotfiles/blob/master/screenshot.png)
+![screenshot](https://github.com/RafaelDelboni/dotfiles/blob/master/.docs/screenshot.png)
 (Here's what my setup looks like. Vim/Tmux)
 
 ## Installation
