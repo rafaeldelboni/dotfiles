@@ -1,6 +1,6 @@
 dotfiles
 ===================
-![screenshot](https://github.com/RafaelDelboni/dotfiles/blob/master/.docs/screenshot.png)
+![screenshot](https://github.com/RafaelDelboni/dotfiles/blob/master/docs/screenshot.png)
 (Here's what my setup looks like. Vim/Tmux)
 
 ## Installation
@@ -12,21 +12,20 @@ Install [vim](https://vim.sourceforge.io/download.php) and setup [vim-plug](http
 
 Install [tmux](https://github.com/tmux/tmux/wiki)
 
+Install [rcm](https://github.com/thoughtbot/rcm)
+
 ### Dotfiles
 Clone this repo (or your own fork!) to your **home** directory (`/Users/username`).
 ```
 $ cd ~
 $ git clone git@github.com:RafaelDelboni/dotfiles.git .dotfiles
+$ rcup -x docs -x readme.md
+$ xrdb ~/.Xresources
 ```
 
-Install [rcm](https://github.com/thoughtbot/rcm)
+`rcup` expects that you cloned your dotfiles to `~/.dotfiles/` and will create dotfile symlinks (`.vimrc` -> `~/.dotfiles/vimrc`) from your home directory to your `~/.dotfiles/` directory.
 
-Run `rcup` (this command expects that you cloned your dotfiles to `~/.dotfiles/`)
-
-RCM creates dotfile symlinks (`.vimrc` -> `~/.dotfiles/vimrc`) from your home directory to your `~/.dotfiles/` directory.
-
-### Sync X Server Settings
-Run `xrdb ~/.Xresources`
+`xrdb ~/.Xresources` sync the Xresources file with your current XServer
 
 ### Installing Vim Plugins
 To install them you'll need vim-plug, as mentioned above.
