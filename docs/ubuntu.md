@@ -34,15 +34,11 @@ Follow instructions here: https://github.com/robbyrussell/oh-my-zsh
 - Install Vim-plug:  
 Follow instructions here: https://github.com/junegunn/vim-plug
 
-- Install gnome-terminal themes:  
-Follow instructions here: https://github.com/Mayccoll/Gogh
-
-- Change gnome-terminal profile:  
-Command tab, "Run a custom command instead of my shell": `tmux`
-Scrolling tab, "Show scrollbar": false
-
 - Configure your .dotfiles:  
 Follow instructions here: https://github.com/RafaelDelboni/dotfiles
+
+- Configure URxvt as Default Terminal
+`sudo update-alternatives --config x-terminal-emulator`
 
 - Install Firefox Developer Edition / Chromium
   1. Download from Mozilla Firefox Developer Edition webpage.
