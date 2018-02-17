@@ -10,7 +10,7 @@ source $ZSH/oh-my-zsh.sh
 # Start Tmux if available
 if [ -z "$TMUX" ]
 then
-    tmux attach -t TMUX || tmux new -s TMUX
+    tmux new-session
 fi
 
 # User configuration
