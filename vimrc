@@ -81,6 +81,8 @@ nnoremap <Leader>ag :Ag <C-R><C-W><CR>
 syntax on
 color smyck
 
+set t_Co=256
+
 hi NonText ctermfg=239
 hi SpecialKey ctermfg=239
 hi ColorColumn ctermbg=236
@@ -119,8 +121,13 @@ let g:airline_left_sep = '' " no separators
 let g:airline_left_alt_sep = '' " no separators
 let g:airline_right_sep = '' " no separators
 let g:airline_right_alt_sep = '' " no separators
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
 let g:airline_section_x = airline#section#create_right(['tagbar']) " no filetype
-let g:airline_section_z = airline#section#create(['windowswap', 'linenr', 'maxlinenr', ':%3v'])
+call airline#parts#define_raw('linenr', '%l')
+call airline#parts#define_accent('linenr', 'bold')
+let g:airline_section_z = airline#section#create(['%3p%%  ', g:airline_symbols.linenr .' ', 'linenr', ':%c '])
 
 " FZF
 nnoremap <c-p> :Files<CR>

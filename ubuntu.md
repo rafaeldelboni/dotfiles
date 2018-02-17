@@ -22,8 +22,8 @@ Add `caps:swapescape` to the options that you need in xkb-options.
 The option strings are surrounded by single quotes and separated by commas.
 Be careful not to delete the brackets on the ends.
 
-- Install tmux git zsh curl xsel unity-tweak-tool dconf-tools silversearcher-ag:
-`sudo apt install tmux git zsh curl xsel unity-tweak-tool dconf-tools silversearcher-ag`
+- Install Basic Tools:
+`sudo apt install tmux git zsh curl xsel unity-tweak-tool dconf-tools silversearcher-ag rxvt-unicode-256color wmctrl`
 
 - Install Oh-My-Zsh:  
 Follow instructions here: https://github.com/robbyrussell/oh-my-zsh
