@@ -153,6 +153,7 @@ let g:ale_lint_on_save = 1 "lint on save
 let g:ale_sign_warning = ''
 let g:ale_sign_error = ''
 let g:ale_echo_msg_format = '%severity%: %s [%linter%]'
+let g:ale_statusline_format = ['E:%s', 'W:%s', 'OK']
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 highlight ALEError cterm=undercurl ctermfg=none
