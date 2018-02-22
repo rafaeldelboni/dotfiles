@@ -114,7 +114,7 @@ let g:airline_mode_map = {
    \ 'S'  : 'S-L',
    \ 't'  : 'T'
    \ }
-let g:airline#extensions#branch#displayed_head_limit = 10 " branch name size
+let g:airline#extensions#branch#displayed_head_limit = 12 " branch name size
 let g:airline#extensions#branch#format = 2 " branch name format
 let g:airline_left_sep = '' " no separators
 let g:airline_left_alt_sep = '' " no separators
@@ -123,6 +123,7 @@ let g:airline_right_alt_sep = '' " no separators
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
+let g:airline_symbols.notexists = ''
 let g:airline_section_x = airline#section#create_right(['tagbar']) " no filetype
 call airline#parts#define_raw('linenr', '%l')
 call airline#parts#define_accent('linenr', 'bold')
