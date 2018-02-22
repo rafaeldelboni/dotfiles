@@ -80,14 +80,14 @@ nnoremap <Leader>ag :Ag <C-R><C-W><CR>
 " theme
 syntax on
 color smyck
-
 set t_Co=256
+set noshowmode
 
-hi NonText ctermfg=239
-hi SpecialKey ctermfg=239
-hi ColorColumn ctermbg=236
+hi NonText ctermfg=236
+hi SpecialKey ctermfg=236
+hi ColorColumn ctermbg=234
 hi LineNr ctermfg=239
-hi TabLineFill ctermfg=236
+hi TabLineFill ctermfg=239
 hi TabLine ctermfg=242 ctermbg=236 cterm=none term=none gui=none
 
 set fillchars=""
@@ -98,9 +98,8 @@ call airline#parts#define_condition('ALE', 'exists("*ALEGetStatusLine")')
 let g:airline_section_error = airline#section#create_right(['ALE'])
 
 " Airline settings
-set noshowmode
+let g:airline_theme = 'minimalist'
 let g:airline_powerline_fonts = 0
-let g:airline_theme = 'deus'
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline_mode_map = {
