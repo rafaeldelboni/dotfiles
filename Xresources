@@ -56,3 +56,9 @@ URxvt.iso14755_52: false
 ! white
 *.color7:       #b9b9b9
 *.color15:      #f7f7f7
+
+! Rofi
+rofi.lines: 12
+rofi.font: SourceCodePro Nerd Font Mono 12
+rofi.show-icons: true
+rofi.theme: ~/.rofi/oxide.rasi

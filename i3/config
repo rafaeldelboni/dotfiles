@@ -20,8 +20,11 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+# start rofi (a program launcher)
+bindsym $mod+d exec rofi -show drun
+
+# switching window with win+tab
+bindsym $mod+Tab exec --no-startup-id rofi -show window
 
 # change focus
 bindsym $mod+h focus left
@@ -137,10 +140,10 @@ for_window [class="Lxappearance"]                   floating enable
 
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #2B83A6 #2B83A6 #FFFFFF #DDDDDD   #2B83A6
+client.focused          #c75646 #c75646 #FFFFFF #DDDDDD   #2B83A6
 client.focused_inactive #212121 #212121 #86888C #292D2E   #5A5A5A
 client.unfocused        #212121 #212121 #86888C #292D2E   #5A5A5A
-client.urgent           #D64E4E #D64E4E #FFFFFF #D64E4E   #D64E4E
+client.urgent           #FFFFFF #FFFFFF #212121 #c75646   #c75646
 client.placeholder      #212121 #0C0C0C #FFFFFF #212121   #262626
 client.background       #212121
 
