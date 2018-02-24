@@ -11,25 +11,43 @@ URxvt*letterSpace: 0
 URxvt.allow_bold: true
 
 ! Terminal Colors
-URxvt.color0: #000000
-URxvt.color1: #C75646
-URxvt.color2: #8EB33B
-URxvt.color3: #D0B03C
-URxvt.color4: #72B3CC
-URxvt.color5: #C8A0D1
-URxvt.color6: #218693
-URxvt.color7: #B0B0B0
-URxvt.color8: #5D5D5D
-URxvt.color9: #E09690
-URxvt.color10: #CDEE69
-URxvt.color11: #FFE377
-URxvt.color12: #9CD9F0
-URxvt.color13: #FBB1F9
-URxvt.color14: #77DFD8
-URxvt.color15: #F7F7F7
 
-URxvt.foreground: #FFFFFF
-URxvt.background: rgba:2400/2400/2400/dcdc
+! special
+*.foreground:   #ffffff
+*.background:   #191919
+*.cursorColor:  #ffffff
+
+! black
+*.color0:       #101010
+*.color8:       #525252
+
+! red
+*.color1:       #C75646
+*.color9:       #E09690
+
+! green
+*.color2:       #c3c3c3
+*.color10:      #c3c3c3
+
+! yellow
+*.color3:       #a0a0a0
+*.color11:      #a0a0a0
+
+! blue
+*.color4:       #686868
+*.color12:      #686868
+
+! magenta
+*.color5:       #747474
+*.color13:      #747474
+
+! cyan
+*.color6:       #868686
+*.color14:      #868686
+
+! white
+*.color7:       #b9b9b9
+*.color15:      #f7f7f7
 
 ! Extensions
 URxvt.perl-ext-common: fullscreen

@@ -16,6 +16,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'mxw/vim-jsx'
 Plug 'dim13/smyck.vim'
+Plug 'widatama/vim-phoenix'
 
 call plug#end()
 
@@ -79,18 +80,17 @@ nnoremap <Leader>ag :Ag <C-R><C-W><CR>
 
 " theme
 syntax on
-color smyck
 set t_Co=256
 set noshowmode
-
-hi NonText ctermfg=236
-hi SpecialKey ctermfg=236
-hi ColorColumn ctermbg=234
-hi LineNr ctermfg=239
-hi TabLineFill ctermfg=239
-hi TabLine ctermfg=242 ctermbg=236 cterm=none term=none gui=none
-
 set fillchars=""
+
+color phoenix
+PhoenixRed
+
+hi NonText ctermfg=237
+hi SpecialKey ctermfg=237
+hi ColorColumn ctermbg=234
+hi VertSplit ctermfg=235
 
 " ALE status in Airline
 call airline#parts#define_function('ALE', 'ALEGetStatusLine')
