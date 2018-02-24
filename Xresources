@@ -10,6 +10,14 @@ URxvt.internalBorder: 0
 URxvt*letterSpace: 0
 URxvt.allow_bold: true
 
+! Extensions
+URxvt.perl-ext-common: fullscreen
+URxvt.keysym.F11: perl:fullscreen:switch
+
+! Disable ctrl+shift 'feature'
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
 ! Terminal Colors
 
 ! special
@@ -48,7 +56,3 @@ URxvt.allow_bold: true
 ! white
 *.color7:       #b9b9b9
 *.color15:      #f7f7f7
-
-! Extensions
-URxvt.perl-ext-common: fullscreen
-URxvt.keysym.F11: perl:fullscreen:switch
