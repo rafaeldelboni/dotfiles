@@ -15,7 +15,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'mxw/vim-jsx'
-Plug 'dim13/smyck.vim'
 Plug 'widatama/vim-phoenix'
 
 call plug#end()
