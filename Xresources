@@ -59,6 +59,6 @@ URxvt.iso14755_52: false
 
 ! Rofi
 rofi.lines: 12
-rofi.font: SourceCodePro Nerd Font Mono 12
+rofi.font: SauceCodePro Nerd Font Mono 12
 rofi.show-icons: true
 rofi.theme: ~/.rofi/oxide.rasi

@@ -140,7 +140,7 @@ for_window [class="Lxappearance"]                   floating enable
 
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #c75646 #c75646 #FFFFFF #DDDDDD   #2B83A6
+client.focused          #c75646 #c75646 #FFFFFF #DDDDDD   #c75646
 client.focused_inactive #212121 #212121 #86888C #292D2E   #5A5A5A
 client.unfocused        #212121 #212121 #86888C #292D2E   #5A5A5A
 client.urgent           #FFFFFF #FFFFFF #212121 #c75646   #c75646

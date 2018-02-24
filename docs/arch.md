@@ -129,7 +129,7 @@ yaourt -Syu --devel --aur
 
 ### Windows Manager and Apps
 ```bash
-pacman -S i3-gaps dmenu i3lock i3status i3blocks rxvt-unicode xorg xorg-xinit
+pacman -S i3-gaps rofi i3lock i3status i3blocks rxvt-unicode xorg xorg-xinit compton
 pacman -S xsel tmux arandr bluez bluez-utils devmon tlp alsa-firmware alsa-utils alsa-plugins pulseaudio-alsa pulseaudio acpi sysstat lxappearance
 pacman -S libreoffice-writer libreoffice-calc zathura zathura-pdf-poppler imagemagick gimp playerctl pavucontrol
 yaourt -Sy rcm ttf-ms-fonts ttf-ubuntu-font-family nerd-fonts-source-code-pro xfce-theme-greybird
