@@ -99,7 +99,7 @@ Uncomment this line: `%wheel ALL=(ALL) ALL`
 ```bash
 echo alpha-arch > /etc/hostname
 printf "\n127.0.0.1 localhost\n::1 localhost\n127.0.1.1 alpha-arch.localdomain alpha-arch" >> /etc/hosts
-pacman -S networkmanager
+pacman -S bluez bluez-utils networkmanager
 systemctl enable NetworkManager.service
 nmtui-connect
 ```
@@ -132,7 +132,7 @@ yaourt -Syu --devel --aur
 ### Windows Manager and Apps
 ```bash
 pacman -S i3-gaps rofi i3lock i3blocks rxvt-unicode xorg xorg-xinit compton
-pacman -S xsel tmux arandr bluez bluez-utils devmon tlp alsa-firmware alsa-utils alsa-plugins pulseaudio-alsa pulseaudio acpi sysstat lxappearance
+pacman -S xsel tmux arandr devmon tlp alsa-firmware alsa-utils alsa-plugins pulseaudio-alsa pulseaudio acpi sysstat lxappearance
 pacman -S libreoffice-writer libreoffice-calc zathura zathura-pdf-poppler imagemagick gimp playerctl pavucontrol ttf-font-awesome
 yaourt -Sy rcm ttf-ms-fonts ttf-ubuntu-font-family nerd-fonts-source-code-pro xfce-theme-greybird
 ```
