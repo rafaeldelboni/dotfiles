@@ -4,8 +4,8 @@ URxvt.copyCommand: xsel -ib
 URxvt.pasteCommand: xsel -ob
 
 ! Fonts SourceCodePro Nerd Font Mono Semibold
-URxvt.font: xft:SourceCodePro Nerd Font Mono:style=semibold:size=10
-URxvt.boldFont: xft:SourceCodePro Nerd Font Mono:style=bold:size=10
+URxvt.font: xft:SauceCodePro Nerd Font Mono:style=semibold:size=10
+URxvt.boldFont: xft:SauceCodePro Nerd Font Mono:style=bold:size=10
 URxvt.internalBorder: 0
 URxvt*letterSpace: 0
 URxvt.allow_bold: true
@@ -56,3 +56,9 @@ URxvt.iso14755_52: false
 ! white
 *.color7:       #b9b9b9
 *.color15:      #f7f7f7
+
+! Rofi
+rofi.lines: 12
+rofi.font: SauceCodePro Nerd Font Mono 12
+rofi.show-icons: true
+rofi.theme: ~/.rofi/oxide.rasi

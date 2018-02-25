@@ -38,7 +38,7 @@ Follow instructions here: https://github.com/junegunn/vim-plug
 Follow instructions here: https://github.com/RafaelDelboni/dotfiles
 
 - Configure URxvt as Default Terminal:  
-`sudo update-alternatives --config x-terminal-emulator`
+`gsettings set org.gnome.desktop.default-applications.terminal exec 'urxvt -e tmux new-session'`
 
 - Install Firefox Developer Edition / Chromium
   1. Download from Mozilla Firefox Developer Edition webpage.

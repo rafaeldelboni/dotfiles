@@ -15,12 +15,6 @@ DISABLE_AUTO_TITLE="true"
 # remove delay
 KEYTIMEOUT=1
 
-# start Tmux if available
-if [ -z "$TMUX" ]
-then
-    tmux new-session
-fi
-
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
