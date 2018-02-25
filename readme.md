@@ -32,6 +32,6 @@ To install them you'll need vim-plug, as mentioned above.
 Once Plug is installed. Open vim (`$ vim`) and type `:PlugInstall`. And then restart vim. You'll need to do this for all the plugins to work.
 
 #### Custom Fonts
-You'll need to use a custom font for Airline to look nice. (Seeing weird symbols? This is why!). See here: https://github.com/ryanoasis/nerd-fonts
-I use `Knack Nerd Font`. Once installed, go into iterm2 and Profiles > Text. Change both fonts.
+See here: https://github.com/ryanoasis/nerd-fonts  
+I use `SauceCodePro Nerd Font Mono`.
 

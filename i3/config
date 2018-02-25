@@ -2,7 +2,7 @@
 set $mod Mod4
 
 # font
-font pango: SourceCodePro Nerd Font Mono 10
+font pango: SauceCodePro Nerd Font Mono 10
 
 # window border settings
 new_window none
