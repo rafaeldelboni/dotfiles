@@ -70,7 +70,7 @@ vim /etc/pacman.d/mirrorlist
 ```
 
 ```bash
-pacstrap /mnt
+pacstrap /mnt base base-devel
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
