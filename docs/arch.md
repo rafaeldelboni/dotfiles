@@ -97,7 +97,7 @@ Uncomment this line: `%wheel ALL=(ALL) ALL`
 ### Network
 ```bash
 echo alpha-arch > /etc/hostname
-printf "\n127.0.0.1 localhost\n::1 localhost\n127.0.1.1 alpha-arch.localdomain alpha-arch" >> /etc/hosts
+printf "\n127.0.0.1 localhost\n::1 localhost\n127.0.0.1 alpha-arch.localdomain alpha-arch" >> /etc/hosts
 pacman -S bluez bluez-utils networkmanager
 systemctl enable NetworkManager.service
 nmtui-connect
