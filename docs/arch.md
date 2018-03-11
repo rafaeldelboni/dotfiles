@@ -70,7 +70,7 @@ vim /etc/pacman.d/mirrorlist
 ```
 
 ```bash
-pacstrap /mnt base base-devel vim
+pacstrap /mnt base base-devel vim zsh
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
@@ -87,7 +87,6 @@ echo LANG=en_US.UTF-8 > /etc/locale.conf
 
 ### User
 ```bash
-pacman -S sudo zsh
 passwd
 useradd -m -G wheel -s /usr/bin/zsh rafael
 passwd rafael
