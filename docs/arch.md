@@ -70,14 +70,14 @@ vim /etc/pacman.d/mirrorlist
 ```
 
 ```bash
-pacstrap /mnt base base-devel
+pacstrap /mnt base base-devel vim
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
 ### Locale
 
 ```bash
-arch-chroot /mnt base base-devel
+arch-chroot /mnt
 ln -sf /usr/share/zoneinfo/Europe/Amsterdam /etc/localtime
 hwclock --systohc
 printf "\nen_US.UTF-8 UTF-8\npt_BR.UTF-8 UTF-8\n" >> /etc/locale.gen
@@ -87,7 +87,7 @@ echo LANG=en_US.UTF-8 > /etc/locale.conf
 
 ### User
 ```bash
-pacman -S vim sudo zsh
+pacman -S sudo zsh
 passwd
 useradd -m -G wheel -s /usr/bin/zsh rafael
 passwd rafael
