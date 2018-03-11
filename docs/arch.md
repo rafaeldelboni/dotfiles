@@ -98,7 +98,7 @@ Uncomment this line: `%wheel ALL=(ALL) ALL`
 ```bash
 echo alpha-arch > /etc/hostname
 printf "\n127.0.0.1 localhost\n::1 localhost\n127.0.0.1 alpha-arch.localdomain alpha-arch" >> /etc/hosts
-pacman -S bluez bluez-utils networkmanager
+pacman -S dialog bluez bluez-utils networkmanager
 systemctl enable NetworkManager.service
 nmtui-connect
 ```
@@ -135,3 +135,8 @@ pacman -S xsel tmux arandr devmon tlp alsa-firmware alsa-utils alsa-plugins puls
 pacman -S libreoffice-writer libreoffice-calc zathura zathura-pdf-poppler imagemagick gimp playerctl pavucontrol ttf-font-awesome
 yaourt -Sy rcm ttf-ms-fonts ttf-ubuntu-font-family nerd-fonts-source-code-pro xfce-theme-greybird
 ```
+### Oh Ny Zsh
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
+
