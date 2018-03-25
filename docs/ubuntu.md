@@ -15,6 +15,12 @@
   [bluet]power on
   ```
 
+- Ubuntu Gnome Touch issue
+```bash
+sudo apt install xserver-xorg-input-libinput-hwe-16.04
+sudo apt purge xserver-xorg-input-synaptics-hwe-16.04
+```
+
 - Set permanently switch Caps Lock and Esc
 After starting the dconf-editor, navigate to org >> gnome >> desktop >> input-sources
 
@@ -23,13 +29,16 @@ The option strings are surrounded by single quotes and separated by commas.
 Be careful not to delete the brackets on the ends.
 
 - Install Basic Tools:
-`sudo apt install tmux git zsh curl xsel unity-tweak-tool dconf-tools silversearcher-ag rxvt-unicode-256color wmctrl`
+`sudo apt install tmux git zsh curl xsel silversearcher-ag rxvt-unicode-256color wmctrl autojump`
 
 - Install Oh-My-Zsh:  
 Follow instructions here: https://github.com/robbyrussell/oh-my-zsh
 
 - Install Vim 8:  
-`sudo apt-get install vim-gtk`
+```bash
+sudo add-apt-repository ppa:jonathonf/vim
+sudo apt-get install vim-gtk
+```
 
 - Install Vim-plug:  
 Follow instructions here: https://github.com/junegunn/vim-plug
@@ -37,29 +46,27 @@ Follow instructions here: https://github.com/junegunn/vim-plug
 - Configure your .dotfiles:  
 Follow instructions here: https://github.com/RafaelDelboni/dotfiles
 
+- Fonts Source Code Pro
+```bash
+mkdir -p ~/.local/share/fonts
+curl -fLo ~/.local/share/fonts/SourceCodePro.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v1.2.0/SourceCodePro.zip
+cd ~/.local/share/fonts
+unzip SourceCodePro.zip
+```
+
 - Configure URxvt as Default Terminal:  
 `gsettings set org.gnome.desktop.default-applications.terminal exec 'urxvt -e tmux new-session'`
 
 - Install Firefox Developer Edition / Chromium
-  1. Download from Mozilla Firefox Developer Edition webpage.
-  2. Extract it with file-roller and move the folder to its final location.
-  3. A good practice is to install it in /opt/ or /usr/local/.
-  4. Once you moved the files to their final location (say /opt/firefox_dev/),  
-     you can create the following file ~/.local/share/applications/firefox_dev.desktop  
-     to get a launcher with an icon distinct from normal Firefox.
+For Firefox Developer:
+```bash
+sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make
+sudo apt update
+sudo apt upgrade
+umake web firefox-dev
+```
 
-        ```
-        [Desktop Entry]
-        Name=Firefox Developer 
-        GenericName=Firefox Developer Edition
-        Exec=/opt/firefox_dev/firefox %u
-        Terminal=false
-        Icon=/opt/firefox_dev/browser/icons/mozicon128.png
-        Type=Application
-        Categories=Application;Network;X-Developer;
-        Comment=Firefox Developer Edition Web Browser.
-        ```
-  For chromium: `sudo apt-get install chromium-browser`
+For chromium: `sudo apt-get install chromium-browser`
 
 - Install Docker CE & Docker Compose
     1. Docker: https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/#install-docker-ce  
