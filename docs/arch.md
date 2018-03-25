@@ -131,8 +131,9 @@ yaourt -Syu --devel --aur
 ### Windows Manager and Apps
 ```bash
 pacman -S xsel tmux arandr devmon tlp alsa-firmware alsa-utils alsa-plugins pulseaudio-alsa pulseaudio acpi sysstat
-pacman -S xorg-server xorg-xinit xorg-server-utils mesa 
-pacman -S nvidia lib32-nvidia-utils
+pacman -S mesa xf86-video-intel
+pacman -S nvidia nvidia-settings
+pacman -S xorg-server xorg-xinit xorg-server-utils
 pacman -S i3-gaps rofi i3lock i3blocks rxvt-unicode compton lxappearance
 pacman -S libreoffice-writer libreoffice-calc zathura zathura-pdf-poppler imagemagick gimp playerctl pavucontrol ttf-font-awesome
 yaourt -Sy rcm ttf-ms-fonts ttf-ubuntu-font-family nerd-fonts-source-code-pro xfce-theme-greybird
