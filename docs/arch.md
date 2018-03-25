@@ -17,11 +17,11 @@ fdisk -l
 
 #### Scheme
 
-| Name   | Size        | System |
-| ------ |:-----------:|:------:|
-| /boot  | 512MB       | fat    |
-| swap   | 2x RAM      | swap   |
-| /      | All Rest    | ext4   |
+| Name      | Size        | System |
+| --------- |:-----------:|:------:|
+| /boot/efi | 512MB       | fat    |
+| swap      | 2x RAM      | swap   |
+| /         | All Rest    | ext4   |
 
 ```bash
 parted /dev/sda
@@ -59,7 +59,7 @@ mkfs.ext4 /dev/sda3
 ```bash
 mount /dev/sda3 /mnt
 mkdir /mnt/boot
-mount /dev/sda1 /mnt/boot
+mount /dev/sda1 /mnt/boot/efi
 ```
 
 ### Install the base packages
@@ -106,9 +106,9 @@ nmtui-connect
 ### Bootloader
 ```bash
 pacman -S grub efibootmgr
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub
-mkdir /boot/EFI/boot
-cp /boot/EFI/grub/grubx64.efi /boot/EFI/boot/bootx64.efi
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=grub
+mkdir /boot/efi/EFI/boot
+cp /boot/efi/EFI/grub/grubx64.efi /boot/efi/EFI/boot/bootx64.efi
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
@@ -130,8 +130,10 @@ yaourt -Syu --devel --aur
 
 ### Windows Manager and Apps
 ```bash
-pacman -S i3-gaps rofi i3lock i3blocks rxvt-unicode xorg xorg-xinit compton
-pacman -S xsel tmux arandr devmon tlp alsa-firmware alsa-utils alsa-plugins pulseaudio-alsa pulseaudio acpi sysstat lxappearance
+pacman -S xsel tmux arandr devmon tlp alsa-firmware alsa-utils alsa-plugins pulseaudio-alsa pulseaudio acpi sysstat
+pacman -S xorg-server xorg-xinit xorg-server-utils mesa 
+pacman -S nvidia lib32-nvidia-utils
+pacman -S i3-gaps rofi i3lock i3blocks rxvt-unicode compton lxappearance
 pacman -S libreoffice-writer libreoffice-calc zathura zathura-pdf-poppler imagemagick gimp playerctl pavucontrol ttf-font-awesome
 yaourt -Sy rcm ttf-ms-fonts ttf-ubuntu-font-family nerd-fonts-source-code-pro xfce-theme-greybird
 ```
