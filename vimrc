@@ -92,9 +92,7 @@ hi ColorColumn ctermbg=234
 hi VertSplit ctermfg=235
 
 " ALE status in Airline
-call airline#parts#define_function('ALE', 'ALEGetStatusLine')
-call airline#parts#define_condition('ALE', 'exists("*ALEGetStatusLine")')
-let g:airline_section_error = airline#section#create_right(['ALE'])
+let g:airline#extensions#ale#enabled = 1
 
 " Airline settings
 let g:airline_theme = 'minimalist'
@@ -119,6 +117,7 @@ let g:airline_left_sep = '' " no separators
 let g:airline_left_alt_sep = '' " no separators
 let g:airline_right_sep = '' " no separators
 let g:airline_right_alt_sep = '' " no separators
+let g:airline_symbols = {}
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
