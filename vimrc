@@ -16,6 +16,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'mxw/vim-jsx'
 Plug 'widatama/vim-phoenix'
+Plug 'racer-rust/vim-racer'
 
 call plug#end()
 
@@ -159,3 +160,9 @@ highlight ALEWarning cterm=undercurl ctermfg=none
 let g:ale_fixers = { 'javascript': 'eslint', 'php': 'phpcbf' }
 map <leader>f :ALEFix<cr>
 map <leader>l :ALELint<cr>
+
+" Rust
+au FileType rust nmap gd <Plug>(rust-def)
+au FileType rust nmap gs <Plug>(rust-def-split)
+au FileType rust nmap gx <Plug>(rust-def-vertical)
+au FileType rust nmap <leader>gd <Plug>(rust-doc)

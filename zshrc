@@ -19,6 +19,9 @@ KEYTIMEOUT=1
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # PATH adds
-PATH="/usr/local/bin:$HOME/.config/composer/vendor/bin:$HOME/.cargo/bin":$PATH
+PATH="/usr/local/bin":$PATH
+PATH="$HOME/.cargo/bin:$HOME/.cargo/bin/racer":$PATH
+
+export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
