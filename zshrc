@@ -3,7 +3,7 @@ ZSH_THEME="minimal"
 
 # Zsh init
 export ZSH=~/.oh-my-zsh
-plugins=(git autojump httpie yarn tmux)
+plugins=(vi-mode git autojump httpie yarn tmux)
 source $ZSH/oh-my-zsh.sh
 
 # HISTORY
