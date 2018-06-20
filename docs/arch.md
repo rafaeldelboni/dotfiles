@@ -4,7 +4,7 @@
 
 ### Load Keyboard Layout
 ```bash
-loadKeys uk
+loadkeys uk
 ```
 
 ### Partition the disks
@@ -59,6 +59,7 @@ mkfs.ext4 /dev/sda3
 ```bash
 mount /dev/sda3 /mnt
 mkdir /mnt/boot
+mkdir /mnt/boot/efi
 mount /dev/sda1 /mnt/boot/efi
 ```
 
@@ -88,7 +89,7 @@ echo LANG=en_US.UTF-8 > /etc/locale.conf
 ### User
 ```bash
 passwd
-useradd -m -G wheel -s /usr/bin/zsh rafael
+useradd -m -G wheel,storage,power -s /usr/bin/zsh rafael
 passwd rafael
 visudo
 ```
@@ -105,11 +106,29 @@ nmtui-connect
 
 ### Bootloader
 ```bash
-pacman -S grub efibootmgr
+pacman -S grub efibootmgr ntfs-3g os-prober
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=grub
 mkdir /boot/efi/EFI/boot
 cp /boot/efi/EFI/grub/grubx64.efi /boot/efi/EFI/boot/bootx64.efi
 grub-mkconfig -o /boot/grub/grub.cfg
+vim /boot/grub/grub.cfg
+```
+Add the following on the kernel startup parameters: `acpi_osi=! acpi_osi="Windows 2009"`
+
+### Windows Manager
+```bash
+pacman -S alsa-firmware alsa-utils alsa-plugins pulseaudio-alsa pulseaudio
+pacman -S xorg-server xorg-xinit xorg-apps
+pacman -S mesa xf86-video-intel
+pacman -S nvidia nvidia-utils
+pacman -S i3-gaps rofi polybar compton rxvt-unicode lxappearance
+pacman -S ttf-dejavu ttf-font-awesome
+```
+Create the file `.xinitrc` file
+```
+xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
+exec i3
 ```
 
 ### Yaourt
@@ -128,18 +147,13 @@ cd ..
 yaourt -Syu --devel --aur
 ```
 
-### Windows Manager and Apps
+### Apps
 ```bash
-pacman -S xsel tmux arandr devmon tlp alsa-firmware alsa-utils alsa-plugins pulseaudio-alsa pulseaudio acpi sysstat
-pacman -S mesa xf86-video-intel
-pacman -S nvidia nvidia-settings
-pacman -S xorg-server xorg-xinit xorg-server-utils
-pacman -S i3-gaps rofi i3lock i3blocks rxvt-unicode compton lxappearance
-pacman -S libreoffice-writer libreoffice-calc zathura zathura-pdf-poppler imagemagick gimp playerctl pavucontrol ttf-font-awesome
+pacman -S imagemagick gimp playerctl xsel tmux arandr devmon tlp acpi sysstat
 yaourt -Sy rcm ttf-ms-fonts ttf-ubuntu-font-family nerd-fonts-source-code-pro xfce-theme-greybird
 ```
-### Oh Ny Zsh
+
+### Oh My Zsh
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
-
