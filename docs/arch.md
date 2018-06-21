@@ -120,7 +120,6 @@ Add the following on the kernel startup parameters: `acpi_osi=! acpi_osi="Window
 ```bash
 pacman -S alsa-firmware alsa-utils alsa-plugins pulseaudio-alsa pulseaudio
 pacman -S xorg-server xorg-xinit xorg-apps
-pacman -S mesa xf86-video-intel
 pacman -S nvidia nvidia-utils nvidia-settings
 ```
 
