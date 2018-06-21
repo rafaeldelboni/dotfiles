@@ -100,7 +100,7 @@ Uncomment this line: `%wheel ALL=(ALL) ALL`
 ```bash
 echo alpha-arch > /etc/hostname
 printf "\n127.0.0.1 localhost\n::1 localhost\n127.0.0.1 alpha-arch.localdomain alpha-arch" >> /etc/hosts
-pacman -S dialog bluez bluez-utils networkmanager
+pacman -S dialog bluez bluez-utils networkmanager wireless_tools
 systemctl enable NetworkManager.service
 ```
 To connect to network after the reboot use `nmtui-connect` 
@@ -154,7 +154,7 @@ yaourt -Syu --devel --aur
 
 ### Apps
 ```bash
-pacman -S imagemagick gimp playerctl xsel tmux arandr devmon tlp acpi sysstat
+pacman -S imagemagick gimp playerctl xsel tmux arandr devmon tlp acpi sysstat libmpdclient
 yaourt -Sy rcm polybar ttf-ms-fonts ttf-ubuntu-font-family nerd-fonts-source-code-pro xfce-theme-greybird
 ```
 
