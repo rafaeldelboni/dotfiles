@@ -1,6 +1,7 @@
 # Arch Linux Setup
 
 ## Installation
+You can download this raw file using `wget bit.ly/rdarchdocs`
 
 ### Load Keyboard Layout
 ```bash
@@ -115,12 +116,16 @@ vim /boot/grub/grub.cfg
 ```
 Add the following on the kernel startup parameters: `acpi_osi=! acpi_osi="Windows 2009"`
 
-### Windows Manager
+### Audio & Video
 ```bash
 pacman -S alsa-firmware alsa-utils alsa-plugins pulseaudio-alsa pulseaudio
 pacman -S xorg-server xorg-xinit xorg-apps
 pacman -S mesa xf86-video-intel
-pacman -S nvidia nvidia-utils
+pacman -S nvidia nvidia-utils nvidia-settings
+```
+
+### Windows Manager (i3)
+```bash
 pacman -S i3-gaps rofi compton rxvt-unicode lxappearance
 pacman -S ttf-dejavu ttf-font-awesome
 ```
@@ -130,6 +135,7 @@ xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
 exec i3
 ```
+Run `startx`
 
 ### Yaourt
 ```bash
