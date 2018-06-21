@@ -102,8 +102,8 @@ echo alpha-arch > /etc/hostname
 printf "\n127.0.0.1 localhost\n::1 localhost\n127.0.0.1 alpha-arch.localdomain alpha-arch" >> /etc/hosts
 pacman -S dialog bluez bluez-utils networkmanager
 systemctl enable NetworkManager.service
-nmtui-connect
 ```
+To connect to network after the reboot use `nmtui-connect` 
 
 ### Bootloader
 ```bash
