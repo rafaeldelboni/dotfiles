@@ -121,7 +121,7 @@ pacman -S alsa-firmware alsa-utils alsa-plugins pulseaudio-alsa pulseaudio
 pacman -S xorg-server xorg-xinit xorg-apps
 pacman -S mesa xf86-video-intel
 pacman -S nvidia nvidia-utils
-pacman -S i3-gaps rofi polybar compton rxvt-unicode lxappearance
+pacman -S i3-gaps rofi compton rxvt-unicode lxappearance
 pacman -S ttf-dejavu ttf-font-awesome
 ```
 Create the file `.xinitrc` file
@@ -150,7 +150,7 @@ yaourt -Syu --devel --aur
 ### Apps
 ```bash
 pacman -S imagemagick gimp playerctl xsel tmux arandr devmon tlp acpi sysstat
-yaourt -Sy rcm ttf-ms-fonts ttf-ubuntu-font-family nerd-fonts-source-code-pro xfce-theme-greybird
+yaourt -Sy rcm polybar ttf-ms-fonts ttf-ubuntu-font-family nerd-fonts-source-code-pro xfce-theme-greybird
 ```
 
 ### Oh My Zsh
