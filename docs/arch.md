@@ -154,7 +154,7 @@ yaourt -Syu --devel --aur
 
 ### Apps
 ```bash
-pacman -S imagemagick gimp playerctl xsel tmux arandr devmon tlp acpi sysstat libmpdclient
+pacman -S imagemagick gimp playerctl xsel tmux arandr devmon tlp acpi sysstat libmpdclient openssh
 yaourt -Sy rcm polybar ttf-ms-fonts ttf-ubuntu-font-family nerd-fonts-source-code-pro xfce-theme-greybird
 ```
 
