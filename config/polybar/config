@@ -78,7 +78,7 @@ label-layout-underline = ${colors.secondary}
 
 label-indicator-padding = 2
 label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
+label-indicator-background = ${colors.primary}
 label-indicator-underline = ${colors.secondary}
 
 [module/bspwm]
