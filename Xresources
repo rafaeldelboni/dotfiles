@@ -4,8 +4,8 @@ URxvt.copyCommand: xsel -ib
 URxvt.pasteCommand: xsel -ob
 
 ! Fonts SauceCodePro Nerd Font Mono Semibold
-URxvt.font: xft:SauceCodePro Nerd Font Mono:style=semibold:size=13
-URxvt.boldFont: xft:SauceCodePro Nerd Font Mono:style=bold:size=13
+URxvt.font: xft:SauceCodePro Nerd Font Mono:style=semibold:size=12
+URxvt.boldFont: xft:SauceCodePro Nerd Font Mono:style=bold:size=12
 URxvt.internalBorder: 0
 URxvt*letterSpace: 0
 URxvt.allow_bold: true
