@@ -197,3 +197,8 @@ EndSection
   [mouse]power off
   [bluet]power on
 ```
+Now you just need to add the line AutoEnable=true in /etc/bluetooth/main.conf at the bottom in the [Policy] section:
+```
+[Policy]
+AutoEnable=true
+```
