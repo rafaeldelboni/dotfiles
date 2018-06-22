@@ -114,7 +114,10 @@ cp /boot/efi/EFI/grub/grubx64.efi /boot/efi/EFI/boot/bootx64.efi
 grub-mkconfig -o /boot/grub/grub.cfg
 vim /boot/grub/grub.cfg
 ```
-Add the following on the kernel startup parameters: `acpi_osi=! acpi_osi="Windows 2009"`
+Add the following kernel startup parameters on `/etc/default/grub`:
+```
+  GRUB_CMDLINE_LINUX_DEFAULT="acpi_osi=! acpi_osi=\"Windows 2009\" nvidia-drm.modeset=1 quiet"
+```
 
 ### Audio & Video
 ```bash
