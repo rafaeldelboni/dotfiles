@@ -199,6 +199,9 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym --release Print exec scrot $HOME/Pictures/`date +%Y-%m-%d_%H:%M:%S`.png
 bindsym --release $mod+Print exec scrot -s $HOME/Pictures/`date +%Y-%m-%d_%H:%M:%S`.png
 
+# Keyboard Swap
+bindsym Shift+space exec $HOME/.config/i3/keyboardswap.sh
+
 # Window colours
 #     border      background    text      indicator
 client.focused   $bg-color   $bg-color   $text-color   $00ff00
