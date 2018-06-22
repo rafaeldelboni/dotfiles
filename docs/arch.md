@@ -182,3 +182,18 @@ Section "InputClass"
         Option "NaturalScrolling" "true"
 EndSection
 ```
+
+### Blutooth Mouse (MX Anywhere 2S)
+```
+  bluetoothctl
+  [bluet]power off
+  [bluet]power on
+  [bluet]scan on
+  [mouse]connect XX:XX:XX:XX:XX:XX
+  [mouse]trust
+  [mouse]connect XX:XX:XX:XX:XX:XX
+  [mouse]pair
+  [mouse]unblock
+  [mouse]power off
+  [bluet]power on
+```
