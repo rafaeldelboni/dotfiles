@@ -190,7 +190,7 @@ format-volume = <bar-volume>
 ;label-volume = VOL
 ;label-volume-foreground = ${root.foreground}
 
-format-muted-prefix = " "
+format-muted-prefix = "婢 "
 format-muted-foreground = ${colors.foreground-alt}
 label-muted = 🔇 Muted
 label-muted-foreground = #66

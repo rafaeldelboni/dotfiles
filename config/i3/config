@@ -107,7 +107,7 @@ assign [class="URxvt"] 1
 assign [class="Firefox"] 2
 assign [class="Telegram"] 3
 assign [class="Slack"] 3
-assign [class="Spotify"] 4
+for_window [class="Spotify"] move to workspace $ws4
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
