@@ -56,6 +56,8 @@ if ($status eq 'Discharging') {
 	}
 } elsif ($status eq 'Charging') {
 	$icon = '';
+} else {
+	$icon = '';
 }
 
 $full_text = "<span color='#868686'>$icon</span><span size='xx-small'> </span>$percent%";
