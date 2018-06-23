@@ -1,0 +1,76 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+command=/usr/lib/i3blocks/$BLOCK_NAME
+markup=pango
+separator_block_width=18
+
+# XTitle indicator
+#
+[volume]
+command=xtitle -s -t 33
+interval=persist
+align=left
+
+# Volume indicator
+#
+[volume]
+command=$HOME/.config/i3blocks/scripts/volume
+interval=once
+signal=11
+
+# Keyboard indicator
+#
+[keyboard]
+command=$HOME/.config/i3blocks/scripts/keyboard
+interval=once
+signal=12
+
+# Key indicators
+#
+[keyindicator]
+command=$HOME/.config/i3blocks/scripts/keyindicator
+instance=CAPS
+interval=once
+signal=13
+
+#[keyindicator]
+#command=$HOME/.config/i3blocks/scripts/keyindicator
+#instance=NUM
+#interval=once
+#signal=13
+
+# Battery indicator
+#
+[battery]
+command=$HOME/.config/i3blocks/scripts/battery 0
+interval=60
+
+# Date Time
+#
+[time]
+command=date '+%d/%m/%Y %H:%M:%S'
+interval=5

@@ -158,7 +158,7 @@ yaourt -Syu --devel --aur
 ### Apps
 ```bash
 pacman -S ranger feh imagemagick gimp playerctl xsel tmux arandr devmon tlp acpi sysstat libmpdclient openssh the_silver_searcher scrot
-yaourt -Sy rcm polybar ttf-ms-fonts ttf-ubuntu-font-family nerd-fonts-source-code-pro xfce-theme-greybird acpilight
+yaourt -Sy rcm polybar ttf-ms-fonts ttf-ubuntu-font-family nerd-fonts-source-code-pro xfce-theme-greybird acpilight xtitle-git
 ```
 
 ### Oh My Zsh

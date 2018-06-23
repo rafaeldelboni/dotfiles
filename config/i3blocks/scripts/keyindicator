@@ -1,0 +1,51 @@
+#!/usr/bin/perl
+#
+# Copyright 2014 Marcelo Cerri <mhcerri at gmail dot com>
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+use strict;
+use warnings;
+use utf8;
+use Getopt::Long;
+use File::Basename;
+
+# Default values
+my $indicator = $ENV{BLOCK_INSTANCE} || "CAPS";
+
+Getopt::Long::config qw(no_ignore_case);
+
+# Key mapping
+my %indicators = (
+    CAPS => 0x00000001,
+    NUM  => 0x00000002,
+);
+
+# Retrieve key flags
+my $mask = 0;
+open(XSET, "xset -q |") or die;
+while (<XSET>) {
+    if (/LED mask:\s*([0-9]+)/) {
+        $mask = $1;
+        last;
+    }
+}
+close(XSET);
+
+# Output
+if (($indicators{$indicator} || 0) & $mask) {
+  printf "<span fgcolor='#FFFFFF' bgcolor='#C75646'> $indicator </span>";
+}
+
+exit 0

@@ -34,11 +34,12 @@ for_window [class="^.*"] border pixel 1
 hide_edge_borders both
 
 # Some colour variables
-set $bg-color             #444444
-set $inactive-bg-color    #191919
-set $text-color       #ffffff
+set $text-color           #ffffff
 set $inactive-text-color  #ffffff
-set $urgent-bg-color #191919
+set $primary-color        #C75646
+set $bg-color             #191919
+set $urgent-bg-color      #444444
+set $inactive-bg-color    #868686
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -102,25 +103,26 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-# assign programs to certain workspaces
-assign [class="URxvt"] 1
-assign [class="Firefox"] 2
-assign [class="Telegram"] 3
-assign [class="Slack"] 3
-for_window [class="Spotify"] move to workspace $ws4
-
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+set $ws1 1  
+set $ws2 2  
+set $ws3 3  
+set $ws4 4  
+set $ws5 5 卑 
+set $ws6 6 ﱣ 
+set $ws7 7 ﱢ 
+set $ws8 8  
+set $ws9 9  
+set $ws10 10
+
+# assign programs to certain workspaces
+assign [class="URxvt"] $ws1
+assign [class="Firefox"] $ws2
+assign [class="Chromium"] $ws2
+assign [class="Telegram"] $ws3
+assign [class="Slack"] $ws3
+for_window [class="Spotify"] move to workspace $ws4
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -185,9 +187,9 @@ bindsym $mod+F4 exec sudo xbacklight -inc 10 # increase screen brightness
 bindsym $mod+F3 exec sudo xbacklight -dec 10 # decrease screen brightness
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% && pkill -SIGRTMIN+11 i3blocks #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% && pkill -SIGRTMIN+11 i3blocks  #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && pkill -SIGRTMIN+11 i3blocks # mute sound
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -200,7 +202,11 @@ bindsym --release Print exec scrot $HOME/Pictures/`date +%Y-%m-%d_%H:%M:%S`.png
 bindsym --release $mod+Print exec scrot -s $HOME/Pictures/`date +%Y-%m-%d_%H:%M:%S`.png
 
 # Keyboard Swap
-bindsym Ctrl+space exec $HOME/.config/i3/keyboardswap.sh
+bindsym Ctrl+space exec $HOME/.config/i3/keyboardswap.sh && pkill -SIGRTMIN+12 i3blocks
+
+# i3blocks Key indicators
+bindsym --release Caps_Lock exec pkill -SIGRTMIN+13 i3blocks
+bindsym --release Num_Lock  exec pkill -SIGRTMIN+13 i3blocks
 
 # Window colours
 #     border      background    text      indicator
@@ -211,10 +217,23 @@ client.urgent $urgent-bg-color $urgent-bg-color $text-color $00ff00
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-#bar {
-        #status_command i3status
-#}
+bar {
+    height 20
+    position top
+    strip_workspace_numbers yes
+    status_command i3blocks -c $HOME/.config/i3blocks/config
+    font pango:SauceCodePro Nerd Font 12
+    colors{
+      background $bg-color
+      statusline $text-color
+      # class            boarder          backgr           text
+      focused_workspace  $urgent-bg-color $urgent-bg-color $text-color
+      inactive_workspace $bg-color        $bg-color        $text-color
+      active_workspace   $bg-color        $bg-color        $text-color
+      urgent_workspace   $primary-color   $primary-color   $text-color
+    }
+}
 
 # Start programs
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id $HOME/.config/i3/fehbg.sh
+exec_always --no-startup-id compton

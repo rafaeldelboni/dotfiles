@@ -1,6 +1,10 @@
 # Reload Xresources on start
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
+# Set keyboard layout and delay/rate
+setxkbmap -layout gb -variant extd -option caps:swapescape
+xset r rate 200 30
+
 # Set mouse acceleration
 xset mouse 3 6 &
 
