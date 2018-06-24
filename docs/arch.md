@@ -158,7 +158,7 @@ yaourt -Syu --devel --aur
 ### Apps
 ```bash
 pacman -S ranger feh imagemagick gimp playerctl xsel tmux arandr devmon tlp acpi sysstat libmpdclient openssh the_silver_searcher scrot
-yaourt -Sy rcm ttf-ms-fonts ttf-ubuntu-font-family nerd-fonts-source-code-pro xfce-theme-greybird acpilight xtitle-git
+yaourt -Sy rcm ttf-ms-fonts ttf-ubuntu-font-family nerd-fonts-source-code-pro xfce-theme-blackbird acpilight xtitle-git
 ```
 
 ### Oh My Zsh
@@ -169,6 +169,14 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 ### Bumblebee
 Bumblebee is the best way to minimize battery usage and selective usage of GPU
 https://wiki.archlinux.org/index.php/bumblebee
+
+### xbacklight
+Add this 3 lines on the visudo to enable run xbacklight:
+```
+Cmnd_Alias PASSWORDLESS = /usr/bin/xbacklight
+rafael ALL=(ALL) ALL
+rafael ALL=(ALL) NOPASSWD: PASSWORDLESS
+```
 
 ### Touchpad
 Make sure your touchpad config `/usr/share/X11/xorg.conf.d/40-libinput.con` is like this:
