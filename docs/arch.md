@@ -128,7 +128,7 @@ pacman -S nvidia nvidia-utils nvidia-settings
 
 ### Windows Manager (i3)
 ```bash
-pacman -S i3-gaps rofi compton rxvt-unicode lxappearance
+pacman -S i3-gaps i3blocks rofi compton rxvt-unicode lxappearance
 pacman -S ttf-dejavu ttf-font-awesome
 ```
 Create the file `.xinitrc` file
@@ -158,7 +158,7 @@ yaourt -Syu --devel --aur
 ### Apps
 ```bash
 pacman -S ranger feh imagemagick gimp playerctl xsel tmux arandr devmon tlp acpi sysstat libmpdclient openssh the_silver_searcher scrot
-yaourt -Sy rcm polybar ttf-ms-fonts ttf-ubuntu-font-family nerd-fonts-source-code-pro xfce-theme-greybird acpilight xtitle-git
+yaourt -Sy rcm ttf-ms-fonts ttf-ubuntu-font-family nerd-fonts-source-code-pro xfce-theme-greybird acpilight xtitle-git
 ```
 
 ### Oh My Zsh
@@ -202,3 +202,20 @@ Now you just need to add the line AutoEnable=true in /etc/bluetooth/main.conf at
 [Policy]
 AutoEnable=true
 ```
+
+### Dotfiles
+Clone this repo (or your own fork!) to your **home** directory (`/Users/username`).
+```
+$ cd ~
+$ git clone --recurse-submodules git@github.com:RafaelDelboni/dotfiles.git .dotfiles
+$ rcup -x docs -x readme.md
+$ xrdb ~/.Xresources
+```
+
+`rcup` expects that you cloned your dotfiles to `~/.dotfiles/` and will create dotfile symlinks (`.vimrc` -> `~/.dotfiles/vimrc`) from your home directory to your `~/.dotfiles/` directory.
+
+`xrdb ~/.Xresources` sync the Xresources file with your current XServer
+
+### Installing Vim Plugins
+To install them you'll need vim-plug, as mentioned above.
+Once Plug is installed. Open vim (`$ vim`) and type `:PlugInstall`. And then restart vim. You'll need to do this for all the plugins to work.
