@@ -5,5 +5,5 @@ dotfiles
 
 ## Installation / Setup
 
-[Arch](https://github.com/RafaelDelboni/dotfiles/blob/master/docs/arch.md)
-[Ubuntu](https://github.com/RafaelDelboni/dotfiles/blob/master/docs/ubuntu.md)
+ - [Arch](https://github.com/RafaelDelboni/dotfiles/blob/master/docs/arch.md)  
+ - [Ubuntu](https://github.com/RafaelDelboni/dotfiles/blob/master/docs/ubuntu.md)
