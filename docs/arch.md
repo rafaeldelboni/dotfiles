@@ -178,7 +178,7 @@ To complete TLP's install, you must enable the systemd services `tlp.service` an
 
 #### TLP vs Bumblebee with NVIDIA driver
 If you're running Bumblebee with NVIDIA driver, you need to disable power management for the GPU in TLP in order to make Bumblebee control the power of the GPU.
-Run lspci to determine the address of the GPU (such as 01:00.0), then set the value:
+Run `lspci` to determine the address of the GPU (such as 01:00.0), then set the value in the top config file `/etc/default/tlp`:
 ```
  RUNTIME_PM_BLACKLIST="01:00.0"
 ```
