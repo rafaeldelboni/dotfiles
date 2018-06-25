@@ -90,7 +90,7 @@ echo LANG=en_US.UTF-8 > /etc/locale.conf
 ### User
 ```bash
 passwd
-useradd -m -G wheel,storage,power -s /usr/bin/zsh rafael
+useradd -m -G wheel,storage,power,video -s /usr/bin/zsh rafael
 passwd rafael
 visudo
 ```
@@ -116,7 +116,7 @@ vim /boot/grub/grub.cfg
 ```
 Add the following kernel startup parameters on `/etc/default/grub`:
 ```
-  GRUB_CMDLINE_LINUX_DEFAULT="acpi_osi=! acpi_osi=\"Windows 2009\" nvidia-drm.modeset=1 quiet"
+  GRUB_CMDLINE_LINUX_DEFAULT="acpi_osi=! acpi_osi=\"Windows 2009\" nvidia-drm.modeset=1 quiet loglevel=0 vga=current"
 ```
 
 ### Audio & Video
@@ -157,7 +157,7 @@ yaourt -Syu --devel --aur
 
 ### Apps
 ```bash
-pacman -S ranger feh imagemagick gimp playerctl xsel tmux arandr devmon tlp acpi sysstat libmpdclient openssh the_silver_searcher scrot
+pacman -S ranger feh imagemagick gimp playerctl xsel tmux arandr devmon tlp acpi sysstat libmpdclient openssh the_silver_searcher scrot autojump
 yaourt -Sy rcm ttf-ms-fonts ttf-ubuntu-font-family nerd-fonts-source-code-pro xfce-theme-blackbird acpilight xtitle-git
 ```
 
@@ -170,12 +170,25 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 Bumblebee is the best way to minimize battery usage and selective usage of GPU
 https://wiki.archlinux.org/index.php/bumblebee
 
-### xbacklight
-Add this 3 lines on the visudo to enable run xbacklight:
+### TLP
+To complete TLP's install, you must enable the systemd services `tlp.service` and `tlp-sleep.service`. You should also mask the systemd service `systemd-rfkill.service` and socket `systemd-rfkill.socket` to avoid conflicts and assure proper operation of TLP's radio device switching options.
+
+#### TLP vs Bumblebee with NVIDIA driver
+If you're running Bumblebee with NVIDIA driver, you need to disable power management for the GPU in TLP in order to make Bumblebee control the power of the GPU.
+Run lspci to determine the address of the GPU (such as 01:00.0), then set the value:
 ```
-Cmnd_Alias PASSWORDLESS = /usr/bin/xbacklight
-rafael ALL=(ALL) ALL
-rafael ALL=(ALL) NOPASSWD: PASSWORDLESS
+ RUNTIME_PM_BLACKLIST="01:00.0"
+```
+
+### acpilight / xbacklight
+Normally, users are prohibited to alter files in the sys filesystem. It's
+advisable (and recommended) to setup an "udev" rule to allow users in the
+"video" group to set the display brightness.
+To do so, place a file in /etc/udev/rules.d/90-backlight.rules containing:
+```
+SUBSYSTEM=="backlight", ACTION=="add", \
+  RUN+="/bin/chgrp video /sys/class/backlight/%k/brightness", \
+  RUN+="/bin/chmod g+w /sys/class/backlight/%k/brightness"
 ```
 
 ### Touchpad

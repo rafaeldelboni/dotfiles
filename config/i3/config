@@ -183,8 +183,8 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Sreen brightness controls
-bindsym $mod+F4 exec sudo xbacklight -inc 10 # increase screen brightness
-bindsym $mod+F3 exec sudo xbacklight -dec 10 # decrease screen brightness
+bindsym $mod+F4 exec xbacklight -inc 10 # increase screen brightness
+bindsym $mod+F3 exec xbacklight -dec 10 # decrease screen brightness
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% && pkill -SIGRTMIN+11 i3blocks #increase sound volume
@@ -222,7 +222,7 @@ bar {
     position top
     strip_workspace_numbers yes
     status_command i3blocks -c $HOME/.config/i3blocks/config
-    font pango:SauceCodePro Nerd Font 12
+    font pango:SauceCodePro Nerd Font Semibold 12
     colors{
       background $bg-color
       statusline $text-color
