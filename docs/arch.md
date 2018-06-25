@@ -129,7 +129,10 @@ pacman -S nvidia nvidia-utils nvidia-settings
 ### Windows Manager (i3)
 ```bash
 pacman -S i3-gaps i3blocks rofi compton rxvt-unicode lxappearance
-pacman -S ttf-dejavu ttf-font-awesome
+```
+Some basic fonts
+```
+  pacman -S ttf-dejavu ttf-font-awesome adobe-source-han-sans-otc-fonts ttf-indic-otf
 ```
 Create the file `.xinitrc` file
 ```
