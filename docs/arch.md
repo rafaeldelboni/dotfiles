@@ -128,7 +128,7 @@ pacman -S nvidia nvidia-utils nvidia-settings
 
 ### Windows Manager (i3)
 ```bash
-pacman -S i3-gaps i3blocks rofi compton rxvt-unicode lxappearance
+pacman -S i3-gaps i3blocks i3lock rofi compton rxvt-unicode lxappearance
 ```
 Some basic fonts
 ```
