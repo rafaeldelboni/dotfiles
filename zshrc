@@ -34,7 +34,7 @@ DISABLE_AUTO_TITLE="true"
 KEYTIMEOUT=1
 
 # fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
 
 # PATH adds
 PATH="/usr/local/bin":$PATH

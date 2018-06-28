@@ -63,6 +63,10 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.git$[[dir]]']
 
+" FZF
+let $FZF_DEFAULT_COMMAND = 'ag --hidden -l --ignore .git'
+nnoremap <c-p> :Files<CR>
+
 " Ag
 " Default options are --nogroup --column --color
 let s:ag_options = ' --skip-vcs-ignores --smart-case -Q '
@@ -127,10 +131,6 @@ let g:airline_section_x = airline#section#create_right(['tagbar']) " no filetype
 call airline#parts#define_raw('linenr', '%l')
 call airline#parts#define_accent('linenr', 'bold')
 let g:airline_section_z = airline#section#create(['%3p%%  ', g:airline_symbols.linenr .' ', 'linenr', ':%c '])
-
-" FZF
-nnoremap <c-p> :Files<CR>
-let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
 
 " Fugitive
 nnoremap <leader>g :Git<Space>
