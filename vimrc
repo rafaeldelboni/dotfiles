@@ -58,7 +58,7 @@ au FileType php setl sw=4 sts=4 et " Tab spaces for PHP files
 map <leader>n :NERDTreeToggle<CR> " Leader + n open/close tree
 map <leader>r :NERDTreeFind<cr> " Leader + r show file on tree
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | wincmd p | endif
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | wincmd p | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.git$[[dir]]']
