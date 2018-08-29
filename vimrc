@@ -169,8 +169,10 @@ au FileType rust nmap gx <Plug>(rust-def-vertical)
 au FileType rust nmap <leader>gd <Plug>(rust-doc)
 
 " GVim
+
 if has('gui_running')
-  set noeb vb t_vb= "no bell and visuals
+  set noerrorbells visualbell t_vb= "no bell and visuals
+  autocmd GUIEnter * set visualbell t_vb=
   set guifont=FuraMono_Nerd_Font_Mono:h10
   set guioptions-=m "menu bar
   set guioptions-=T "toolbar
