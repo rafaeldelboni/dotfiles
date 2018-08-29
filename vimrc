@@ -17,6 +17,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'mxw/vim-jsx'
 Plug 'widatama/vim-phoenix'
 Plug 'racer-rust/vim-racer'
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
@@ -166,3 +167,15 @@ au FileType rust nmap gd <Plug>(rust-def)
 au FileType rust nmap gs <Plug>(rust-def-split)
 au FileType rust nmap gx <Plug>(rust-def-vertical)
 au FileType rust nmap <leader>gd <Plug>(rust-doc)
+
+" GVim
+if has('gui_running')
+  set guifont=FuraMono_Nerd_Font_Mono:h10
+  set guioptions-=m "menu bar
+  set guioptions-=T "toolbar
+  set guioptions-=r "r scrollbar
+  set guioptions-=R "R scrollbar
+  set guioptions-=l "l scrollbar
+  set guioptions-=L "L scrollbar
+  set guioptions-=b "b scrollbar
+endif
