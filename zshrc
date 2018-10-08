@@ -33,9 +33,6 @@ DISABLE_AUTO_TITLE="true"
 # remove delay
 KEYTIMEOUT=1
 
-# fzf
-[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
-
 # PATH adds
 PATH="/usr/local/bin":$PATH
 PATH="$HOME/.cargo/bin:$HOME/.cargo/bin/racer":$PATH
@@ -46,4 +43,5 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 [[ ! $DISPLAY && $XDG_VTNR -eq 1 && $(id --group) -ne 0 ]] && exec startx -- vt1 &> /dev/null
 
+# fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
