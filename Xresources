@@ -30,12 +30,12 @@ URxvt.iso14755_52: false
 *.color8:       #525252
 
 ! red
-*.color1:       #C75646
-*.color9:       #E09690
+*.color1:       #87bf19
+*.color9:       #c3c3c3
 
 ! green
-*.color2:       #c3c3c3
-*.color10:      #c3c3c3
+*.color2:       #65910f
+*.color10:      #9fb785
 
 ! yellow
 *.color3:       #a0a0a0

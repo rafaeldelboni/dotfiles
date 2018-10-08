@@ -90,7 +90,7 @@ set noshowmode
 set fillchars=""
 
 color phoenix
-PhoenixRed
+PhoenixGreen
 
 hi NonText ctermfg=237
 hi SpecialKey ctermfg=237
