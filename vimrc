@@ -1,21 +1,24 @@
 " set the runtime path to include vim-plug and initialize
 call plug#begin('~/.vim/plugged')
 
+" Utilities
+Plug 'w0rp/ale'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'ryanoasis/vim-devicons'
-Plug 'w0rp/ale'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'christoomey/vim-tmux-navigator'
+" Theme/Visual
+Plug 'widatama/vim-phoenix'
+Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+" Javascript
 Plug 'pangloss/vim-javascript'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'mxw/vim-jsx'
-Plug 'widatama/vim-phoenix'
+" Rust
 Plug 'racer-rust/vim-racer'
 Plug 'rust-lang/rust.vim'
 
@@ -55,11 +58,13 @@ set listchars=tab:▶-,trail:•,extends:»,precedes:«,eol:¬
 au FocusGained,BufEnter * :checktime " Refresh changed content
 au FileType php setl sw=4 sts=4 et " Tab spaces for PHP files
 
+set hlsearch                       " enable highlighting search
+nnoremap <CR> :noh<CR><CR>         " clear highlighting on escape in normal mode
+
 " NERDTree
 map <leader>n :NERDTreeToggle<CR> " Leader + n open/close tree
 map <leader>r :NERDTreeFind<cr> " Leader + r show file on tree
 autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | wincmd p | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.git$[[dir]]']
@@ -142,10 +147,6 @@ nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
 nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
 nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
-
-" JSX
-highlight link xmlEndTag xmlTag 
-let g:jsx_ext_required = 0 " JSX should not be required as an extension
 
 " Ale
 let g:ale_lint_on_text_changed = 0 "dont lint on text change

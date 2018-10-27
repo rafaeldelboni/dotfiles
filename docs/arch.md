@@ -160,7 +160,7 @@ yaourt -Syu --devel --aur
 
 ### Apps
 ```bash
-pacman -S ranger feh imagemagick w3m gimp playerctl xsel tmux arandr devmon tlp acpi sysstat libmpdclient openssh the_silver_searcher scrot autojump
+pacman -S ranger feh imagemagick w3m gimp playerctl xsel tmux arandr devmon tlp acpi sysstat libmpdclient openssh the_silver_searcher scrot autojump zsh-autosuggestions
 yaourt -Sy rcm ttf-ms-fonts ttf-ubuntu-font-family nerd-fonts-source-code-pro xfce-theme-greybird acpilight xtitle-git
 ```
 

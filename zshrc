@@ -43,5 +43,8 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 [[ ! $DISPLAY && $XDG_VTNR -eq 1 && $(id --group) -ne 0 ]] && exec startx -- vt1 &> /dev/null
 
+# arch zsh-autosuggestions
+[ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
