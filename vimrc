@@ -18,6 +18,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Javascript
 Plug 'pangloss/vim-javascript'
+" Typescript
+Plug 'leafgarland/typescript-vim'
+Plug 'Quramy/tsuquyomi'
 " Rust
 Plug 'racer-rust/vim-racer'
 Plug 'rust-lang/rust.vim'
@@ -59,7 +62,7 @@ au FocusGained,BufEnter * :checktime " Refresh changed content
 au FileType php setl sw=4 sts=4 et " Tab spaces for PHP files
 
 set hlsearch                       " enable highlighting search
-nnoremap <CR> :noh<CR><CR>         " clear highlighting on escape in normal mode
+nnoremap <CR> :noh<CR><CR>         " clear highlighting on enter in normal mode
 
 " NERDTree
 map <leader>n :NERDTreeToggle<CR> " Leader + n open/close tree
