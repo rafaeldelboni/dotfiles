@@ -166,6 +166,11 @@ let g:ale_fixers = { 'javascript': 'eslint', 'php': 'phpcbf' }
 map <leader>f :ALEFix<cr>
 map <leader>l :ALELint<cr>
 
+" Typescript
+au FileType typescript nmap gd <Plug>(TsuquyomiDefinition)
+au FileType typescript nmap gs <Plug>(TsuquyomiSplitDefinition)
+au FileType typescript nmap gx <Plug>(TsuquyomiRenameSymbol)
+
 " Rust
 au FileType rust nmap gd <Plug>(rust-def)
 au FileType rust nmap gs <Plug>(rust-def-split)
