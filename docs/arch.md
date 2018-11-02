@@ -3,6 +3,14 @@
 ## Installation
 You can download this raw file using `wget bit.ly/rdarchdocs`
 
+### Wireless on Installation
+The command `iw dev` gives the interface name (`wlp2s0` in the exaple)
+to use in the following commands:
+```bash
+wpa_supplicant -B -i wlp2s0 -c <(wpa_passphrase "the network SSID" "wpa passkey")
+dhcpcd wlp2s0
+```
+
 ### Load Keyboard Layout
 ```bash
 loadkeys uk
