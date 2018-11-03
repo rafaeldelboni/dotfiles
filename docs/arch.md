@@ -203,7 +203,7 @@ SUBSYSTEM=="backlight", ACTION=="add", \
 ```
 
 ### Touchpad
-Make sure your touchpad config `/usr/share/X11/xorg.conf.d/40-libinput.con` is like this:
+Make sure your touchpad config `/usr/share/X11/xorg.conf.d/40-libinput.conf` is like this:
 ```
 Section "InputClass"
         Identifier "libinput touchpad catchall"
