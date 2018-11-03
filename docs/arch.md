@@ -130,7 +130,7 @@ Add the following kernel startup parameters on `/etc/default/grub`:
 ### Audio & Video
 ```bash
 pacman -S alsa-firmware alsa-utils alsa-plugins pulseaudio-alsa pulseaudio
-pacman -S xorg-server xorg-xinit xorg-apps
+pacman -S xorg-server xorg-xinit xorg-apps xf86-input-evdev
 pacman -S nvidia nvidia-utils nvidia-settings
 ```
 
