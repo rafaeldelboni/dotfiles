@@ -24,6 +24,12 @@ Plug 'Quramy/tsuquyomi'
 " Rust
 Plug 'racer-rust/vim-racer'
 Plug 'rust-lang/rust.vim'
+" Clojure
+Plug 'guns/vim-clojure-static'
+Plug 'tpope/vim-salve', { 'for': 'clojure' }
+Plug 'tpope/vim-projectionist', { 'for': 'clojure' }
+Plug 'tpope/vim-dispatch', { 'for': 'clojure' }
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 
 call plug#end()
 
