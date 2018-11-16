@@ -239,7 +239,7 @@ AutoEnable=true
 Clone this repo (or your own fork!) to your **home** directory (`/Users/username`).
 ```
 $ cd ~
-$ git clone --recurse-submodules git@github.com:RafaelDelboni/dotfiles.git .dotfiles
+$ git clone --recurse-submodules git@github.com:rafaeldelboni/dotfiles.git .dotfiles
 $ rcup -x docs -x readme.md
 $ xrdb ~/.Xresources
 ```
@@ -249,5 +249,9 @@ $ xrdb ~/.Xresources
 `xrdb ~/.Xresources` sync the Xresources file with your current XServer
 
 ### Installing Vim Plugins
-To install them you'll need vim-plug, as mentioned above.
+To install them you'll need [vim-plug](https://github.com/junegunn/vim-plug), as mentioned above.
 Once Plug is installed. Open vim (`$ vim`) and type `:PlugInstall`. And then restart vim. You'll need to do this for all the plugins to work.
+
+### Installing Tmux Plugins
+[tmux-plugins](https://github.com/tmux-plugins/tpm)
+Once installed press `prefix` + <kbd>I</kbd> (capital I, as in **I**nstall) to fetch the plugin.
