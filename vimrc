@@ -183,6 +183,12 @@ au FileType rust nmap gs <Plug>(rust-def-split)
 au FileType rust nmap gx <Plug>(rust-def-vertical)
 au FileType rust nmap <leader>gd <Plug>(rust-doc)
 
+" Clojure
+au FileType clojure nmap gd <Plug>FireplaceDjump
+au FileType clojure nmap gs <Plug>FireplaceDsplit
+au FileType clojure nmap gx <Plug>FireplaceSource
+au FileType clojure nmap <leader>gd <Plug>FireplaceK
+
 " GVim
 
 if has('gui_running')
