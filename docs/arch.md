@@ -257,7 +257,7 @@ Once Plug is installed. Open vim (`$ vim`) and type `:PlugInstall`. And then res
 Once installed press `prefix` + <kbd>I</kbd> (capital I, as in **I**nstall) to fetch the plugin.
 
 ### Set AltGr+HJKL to Arrows
-Into the files `/usr/share/X11/xkb/symbols/us` and `/usr/share/X11/xkb/symbols/gb` in the sessions `intl` and `extd` respectively as the example below:
+Change the files `/usr/share/X11/xkb/symbols/us` and `/usr/share/X11/xkb/symbols/gb` in the sessions `intl` and `extd` respectively, as the example below:
 
 ```
     key <AC06> { [	   h,          H,          Left,             Left ] };
