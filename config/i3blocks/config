@@ -30,7 +30,7 @@ separator_block_width=18
 
 # XTitle indicator
 #
-[volume]
+[xtitle]
 command=xtitle -s -t 33
 interval=persist
 align=left
