@@ -1,25 +1,27 @@
-#!/usr/bin/env python
-from __future__ import print_function
-import os
+#!/usr/bin/env bash
 
+while getopts u:d:m option
+do
+  case "${option}"
+    in
+    u) $(pactl set-sink-volume 0 +${OPTARG}%);;
+    d) $(pactl set-sink-volume 0 -${OPTARG}%);;
+    m) $(pactl set-sink-mute 0 toggle);;
+  esac
+done
 
-ICONS = ['奄', '奔', '墳', '']
-MUTE_ICON = '婢'
+MUTED=$(pactl list sinks | grep Mute | awk '
+  BEGIN{FS=":"}
+  {gsub(/^[ \t]+/, "", $2); print $2}'
+)
 
-is_muted = "yes" in os.popen("pactl list sinks | grep Mute").read()
-volume_line = os.popen("pactl list sinks | grep Volume").read()
-# volume_line = "Volume: front-left: 31449 /  48% / -19.13 dB,   front-right: 32760 /  50% / -18.07 dB Base Volume: 65536 / 100% / 0.00 dB"
+VOLUME=$(pactl list sinks | grep Volume | sed ':a;N;$!ba;s/\n/+/g' | awk '
+  BEGIN{FS="/"}{print ($2+$4)/2}'
+)
 
-volume_line = volume_line.replace("\n","").split("%")
-volume_line = [int(volume_line[i].split(" ")[-1]) for i in [0,1]]
-volume = int( (volume_line[0] + volume_line[1])/2.0)
-
-icon_index = int(len(ICONS) * volume/(101.0))
-
-icon = ICONS[icon_index] if not is_muted else MUTE_ICON
-
-form = "<span>{}</span>"
-
-syntax = form.format(icon)
-
-print(syntax)
+if [ $MUTED = 'yes' ]
+  then
+    echo "<span color='#868686'>婢</span>"
+  else
+    echo "<span color='#868686'>墳</span><span> $VOLUME%</span>"
+fi
