@@ -64,6 +64,8 @@ set expandtab            " use spaces, not tabs
 set list                 " Show invisible characters
 set listchars=tab:▶-,trail:•,extends:»,precedes:«,eol:¬
 
+set spelllang=pt_br,en
+
 au FocusGained,BufEnter * :checktime " Refresh changed content
 au FileType php setl sw=4 sts=4 et " Tab spaces for PHP files
 
