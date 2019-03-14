@@ -265,3 +265,9 @@ Change the files `/usr/share/X11/xkb/symbols/us` and `/usr/share/X11/xkb/symbols
     key <AC08> { [	   k,          K,            Up,               Up ] };
     key <AC09> { [	   l,          L,         Right,            Right ] };
 ```
+
+### Set Login Screen Issue
+```
+  sudo cp /etc/issue /etc/issue.bkp
+  sudo cp ~/.config/issue /etc/issue
+```
