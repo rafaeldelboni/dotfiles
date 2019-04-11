@@ -45,7 +45,7 @@ set $inactive-bg-color    #868686
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt -title urxvt -e tmux new-session
+bindsym $mod+Return exec alacritty -e tmux new-session
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -123,7 +123,7 @@ set $ws9 9 
 set $ws10 10
 
 # assign programs to certain workspaces
-assign [class="URxvt"] $ws1
+assign [class="Terminal"] $ws1
 assign [class="Firefox"] $ws2
 assign [class="Chromium"] $ws2
 assign [class="Telegram"] $ws3

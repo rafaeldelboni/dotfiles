@@ -136,7 +136,7 @@ pacman -S nvidia nvidia-utils nvidia-settings
 
 ### Windows Manager (i3)
 ```bash
-pacman -S i3-gaps i3blocks i3lock rofi compton rxvt-unicode lxappearance
+pacman -S i3-gaps i3blocks i3lock rofi compton alacritty tmux lxappearance
 ```
 Some basic fonts
 ```
@@ -168,7 +168,7 @@ yaourt -Syu --devel --aur
 
 ### Apps
 ```bash
-pacman -S ranger feh imagemagick w3m gimp playerctl xsel tmux arandr devmon tlp acpi sysstat libmpdclient openssh the_silver_searcher scrot autojump zsh-autosuggestions
+pacman -S ranger feh imagemagick w3m gimp playerctl xsel arandr devmon tlp acpi sysstat libmpdclient openssh the_silver_searcher scrot autojump zsh-autosuggestions
 yaourt -Sy rcm ttf-ms-fonts ttf-ubuntu-font-family nerd-fonts-source-code-pro xfce-theme-greybird acpilight xtitle-git
 ```
 
