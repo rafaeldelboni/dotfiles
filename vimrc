@@ -18,6 +18,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Javascript
 Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 " Typescript
 Plug 'leafgarland/typescript-vim'
 Plug 'Quramy/tsuquyomi'
