@@ -22,6 +22,7 @@ Plug 'mxw/vim-jsx'
 " Typescript
 Plug 'leafgarland/typescript-vim'
 Plug 'Quramy/tsuquyomi'
+Plug 'ianks/vim-tsx', { 'for': 'typescript.tsx' }
 " Rust
 Plug 'racer-rust/vim-racer'
 Plug 'rust-lang/rust.vim'
