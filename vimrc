@@ -11,6 +11,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 " Theme/Visual
 Plug 'widatama/vim-phoenix'
 Plug 'ryanoasis/vim-devicons'
