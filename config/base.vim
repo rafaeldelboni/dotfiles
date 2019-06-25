@@ -71,7 +71,7 @@ set noerrorbells         " don't beep
 set nobackup             " no backup
 set noswapfile           " no backup
 
-set clipboard=unnamed    " Shared clipboard with osx
+set clipboard=unnamedplus    " Shared clipboard with osx
 
 set nowrap               " don't wrap lines
 set tabstop=2            " a tab is two spaces
