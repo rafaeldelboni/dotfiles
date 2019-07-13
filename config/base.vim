@@ -47,6 +47,8 @@ Plug 'tpope/vim-projectionist', { 'for': 'clojure' }
 Plug 'tpope/vim-dispatch', { 'for': 'clojure' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'clojure-vim/async-clj-omni'
+" Godot
+Plug 'calviken/vim-gdscript3'
 
 call plug#end()
 
