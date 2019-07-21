@@ -123,12 +123,11 @@ set $ws9 9 
 set $ws10 10
 
 # assign programs to certain workspaces
-assign [class="Terminal"] $ws1
-assign [class="Firefox"] $ws2
-assign [class="Chromium"] $ws2
-assign [class="Telegram"] $ws3
-assign [class="Slack"] $ws3
-for_window [class="Spotify"] move to workspace $ws4
+assign [class="(?i)firefox"] $ws2
+assign [class="(?i)chromium"] $ws2
+assign [class="(?i)telegram"] $ws3
+assign [class="(?i)slack"] $ws3
+for_window [class="(?i)spotify"] move to workspace $ws4
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
