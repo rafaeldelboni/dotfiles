@@ -42,10 +42,7 @@ Plug 'racer-rust/vim-racer'
 Plug 'rust-lang/rust.vim'
 " Clojure
 Plug 'guns/vim-clojure-static'
-Plug 'tpope/vim-salve', { 'for': 'clojure' }
-Plug 'tpope/vim-projectionist', { 'for': 'clojure' }
-Plug 'tpope/vim-dispatch', { 'for': 'clojure' }
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+Plug 'Olical/conjure', { 'branch': 'master', 'do': 'bin/compile' }
 Plug 'clojure-vim/async-clj-omni'
 " Godot
 Plug 'calviken/vim-gdscript3'
@@ -207,8 +204,5 @@ au FileType rust nmap gx <Plug>(rust-def-vertical)
 au FileType rust nmap <leader>gd <Plug>(rust-doc)
 
 " Clojure
-au FileType clojure nmap gd <Plug>FireplaceDjump
-au FileType clojure nmap gs <Plug>FireplaceDsplit
-au FileType clojure nmap gx <Plug>FireplaceSource
-au FileType clojure nmap <leader>gd <Plug>FireplaceK
-au FileType clojure nmap cpt :Eval (require 'midje.repl)(midje.repl/load-facts)<CR>
+let g:conjure_log_direction = "horizontal"
+let g:conjure_log_blacklist = ["up", "ret", "ret-multiline", "load-file", "eval"]
