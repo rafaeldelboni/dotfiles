@@ -1,1 +1,3 @@
-{:conns {:lein {:port 55555}}}
+{:conns
+ {:lein {:port 55555}
+  :node {:port 55556 :lang :cljs}}}

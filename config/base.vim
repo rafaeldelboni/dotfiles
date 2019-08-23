@@ -206,3 +206,7 @@ au FileType rust nmap <leader>gd <Plug>(rust-doc)
 " Clojure
 let g:conjure_log_direction = "horizontal"
 let g:conjure_log_blacklist = ["up", "ret", "ret-multiline", "load-file", "eval"]
+let g:conjure_quick_doc_normal_mode = 0
+let g:conjure_quick_doc_insert_mode = 0
+command! -range ConjureQuickDoc call conjure#notify("quick_doc")
+au FileType clojure nmap <localleader>gd :ConjureQuickDoc<cr>
