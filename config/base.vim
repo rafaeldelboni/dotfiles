@@ -88,7 +88,8 @@ au FileType php setl sw=4 sts=4 et   " Tab spaces for PHP files
 set hlsearch                         " enable highlighting search
 nnoremap <CR> :noh<CR><CR>           " clear highlighting on enter in normal mode
 
-let mapleader = ","                  " Use , as leader key
+let mapleader = "\<space>" " Use space as leader key
+let maplocalleader = "," " Use , as local leader key
 
 " NERDTree
 map <leader>n :NERDTreeToggle<CR> " Leader + n open/close tree
