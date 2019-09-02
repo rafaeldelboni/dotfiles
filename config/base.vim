@@ -43,7 +43,6 @@ Plug 'rust-lang/rust.vim'
 " Clojure
 Plug 'guns/vim-clojure-static'
 Plug 'Olical/conjure', { 'branch': 'master', 'do': 'bin/compile' }
-Plug 'clojure-vim/async-clj-omni'
 " Godot
 Plug 'calviken/vim-gdscript3'
 
