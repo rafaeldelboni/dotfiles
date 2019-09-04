@@ -1,5 +1,10 @@
-{:user {:plugins [[cider/cider-nrepl "0.21.1"]]}
- :repl {:repl-options
+{:user {:plugins [[cider/cider-nrepl "0.22.0"]]}
+ :repl {:dependencies [[olical/propel "1.0.0"]]
+        :repl-options
         {:init
-         (do (println "pREPL server started on port 55555 on localhost")
-             (clojure.core.server/start-server {:accept 'clojure.core.server/io-prepl :address "localhost" :port 55555 :name "lein"}))}}}
+          (do (require 'propel.core)
+              (let [prepl (propel.core/start-prepl! {:port-file? true})]
+                (println "pREPL server started on port"
+                         (:port prepl)
+                         "on host"
+                         (:address prepl))))}}}

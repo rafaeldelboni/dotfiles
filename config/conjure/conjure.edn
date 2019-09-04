@@ -1,3 +1,4 @@
 {:conns
- {:lein {:port 55555}
-  :node {:port 55556 :lang :cljs}}}
+ {:propel {:port #slurp-edn ".prepl-port"}
+  :lein   {:port 55555}
+  :node   {:port 55556 :lang :cljs}}}
