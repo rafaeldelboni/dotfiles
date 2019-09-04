@@ -47,5 +47,5 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # fzf
-export FZF_DEFAULT_OPTS='--color=info:22,prompt:76,spinner:240,pointer:76,marker:240'
+export FZF_DEFAULT_OPTS='--color=info:22,prompt:2,spinner:1,pointer:2,marker:1'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
