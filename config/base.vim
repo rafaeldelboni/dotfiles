@@ -130,8 +130,10 @@ command! -bang -nargs=* AgQ
       \ )
 nnoremap <Leader>a :Ag<Space>
 nnoremap <Leader>aq :AgQ<Space>
-nnoremap <Leader>ag :Ag <C-R><C-W><CR> " Gets word under cursor and send to ag
-vnoremap <Leader>ag y:Ag <C-r><C-r>"<CR> " Gets selected text and send to ag
+" Gets word under cursor and send to ag
+nnoremap <Leader>ag :Ag <C-R><C-W><CR>
+" Gets selected text and send to ag
+vnoremap <Leader>ag y:Ag <C-r><C-r>"<CR>
 
 " theme
 syntax on
