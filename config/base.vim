@@ -42,7 +42,7 @@ Plug 'racer-rust/vim-racer'
 Plug 'rust-lang/rust.vim'
 " Clojure
 Plug 'guns/vim-clojure-static'
-Plug 'Olical/conjure', { 'branch': 'master', 'do': 'bin/compile' }
+Plug 'Olical/conjure', { 'branch': 'develop', 'do': 'bin/compile' }
 " Godot
 Plug 'calviken/vim-gdscript3'
 
@@ -101,6 +101,17 @@ let NERDTreeIgnore=['\.git$[[dir]]']
 " FZF
 let $FZF_DEFAULT_COMMAND = 'ag --hidden -l --ignore .git'
 nnoremap <c-p> :Files<CR>
+" CTRL-Q build quickfix list
+function! s:build_quickfix_list(lines)
+  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+  copen
+  cc
+endfunction
+let g:fzf_action = {
+  \ 'ctrl-q': function('s:build_quickfix_list'),
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
 " hide lastsatus (> fzf) on fzf
 autocmd! FileType fzf
 autocmd  FileType fzf set laststatus=0 noshowmode noruler
