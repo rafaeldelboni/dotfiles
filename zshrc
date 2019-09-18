@@ -6,6 +6,12 @@ export ZSH=~/.oh-my-zsh
 plugins=(vi-mode git autojump httpie yarn tmux)
 source $ZSH/oh-my-zsh.sh
 
+# NVIM S2
+alias vim="nvim"
+alias vi="nvim"
+alias vimdiff='nvim -d'
+export EDITOR=nvim
+
 # HISTORY
 HISTSIZE=10000000
 SAVEHIST=10000000

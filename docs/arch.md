@@ -80,7 +80,7 @@ vim /etc/pacman.d/mirrorlist
 ```
 
 ```bash
-pacstrap /mnt base base-devel vim zsh
+pacstrap /mnt base base-devel neovim zsh
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
 

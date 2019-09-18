@@ -1,4 +1,5 @@
-{:user {:plugins [[cider/cider-nrepl "0.22.0"]]}
+{:user {:plugins [[cider/cider-nrepl "0.22.0"]
+                  [lein-ancient "0.6.15"]]}
  :repl {:dependencies [[olical/propel "1.0.0"]]
         :repl-options
         {:init
