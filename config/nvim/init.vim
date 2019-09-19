@@ -13,6 +13,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " Tmux
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'melonmanchan/vim-tmux-resizer'
 " Theme/Visual
 Plug 'widatama/vim-phoenix'
 Plug 'ryanoasis/vim-devicons'
@@ -89,20 +90,17 @@ autocmd  FileType fzf set laststatus=0 noshowmode noruler
  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 
 " Ag
-" Default options are --nogroup --column --color
-let s:ag_options = ' --skip-vcs-ignores --smart-case -Q '
-command! -bang -nargs=* AgQ
-      \ call fzf#vim#ag(
-      \   <q-args>,
-      \   s:ag_options,
-      \  <bang>0 ? fzf#vim#with_preview('up:60%')
-      \        : fzf#vim#with_preview('right:50%:hidden', '?'),
-      \   <bang>0
-      \ )
+" :Ag  - Start fzf with hidden preview window that can be enabled with "?" key
+" :Ag! - Start fzf in fullscreen and display the preview window above
+command! -bang -nargs=* Ag
+  \ call fzf#vim#ag(<q-args>,
+  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \                 <bang>0)
 nnoremap <Leader>a :Ag<Space>
-nnoremap <Leader>aq :AgQ<Space>
 nnoremap <Leader>ag :Ag <C-R><C-W><CR>
 vnoremap <Leader>ag y:Ag <C-r><C-r>"<CR>
+noremap <Leader>ag y:Ag <C-r><C-r>"<CR>
 
 " ALE status in Airline
 let g:airline#extensions#ale#enabled = 1

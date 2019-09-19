@@ -14,6 +14,7 @@
       "additionalSchemes": ["jar", "zipfile"],
       "trace.server": "off",
       "initializationOptions": {
+        "source-paths": ["src", "test", "src-common"]
       }
     }
   }

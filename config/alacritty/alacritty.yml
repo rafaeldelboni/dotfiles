@@ -480,7 +480,10 @@ key_bindings:
   #- { key: H,      mods: Command, action: Hide             }
   #- { key: Q,      mods: Command, action: Quit             }
   #- { key: W,      mods: Command, action: Quit             }
-
+  - { key: J,        mods: Alt,     chars: "\x1bj"                           }
+  - { key: K,        mods: Alt,     chars: "\x1bk"                           }
+  - { key: H,        mods: Alt,     chars: "\x1bh"                           }
+  - { key: L,        mods: Alt,     chars: "\x1bl"                           }
   - { key: Paste,                   action: Paste                            }
   - { key: Copy,                    action: Copy                             }
   - { key: L,        mods: Control, action: ClearLogNotice                   }
