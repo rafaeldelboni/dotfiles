@@ -9,4 +9,4 @@ else
   setxkbmap -layout us -variant intl -option caps:swapescape
 fi
 
-xset r rate 200 30
+xset r rate 150 55
