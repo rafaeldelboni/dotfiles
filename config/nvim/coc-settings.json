@@ -1,0 +1,20 @@
+{
+  "suggest.noselect": false,
+  "suggest.maxCompleteItemCount": 15,
+  "suggest.echodocSupport": false,
+  "javascript.suggest.enabled": true,
+  "languageserver": {
+    "clojure-lsp": {
+      "command": "bash",
+      "args": ["-c", "clojure-lsp"],
+      "filetypes": ["clojure"],
+      "disableDiagnostics": true,
+      "disableCompletion": false,
+      "rootPatterns": ["project.clj"],
+      "additionalSchemes": ["jar", "zipfile"],
+      "trace.server": "off",
+      "initializationOptions": {
+      }
+    }
+  }
+}

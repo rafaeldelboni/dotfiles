@@ -28,6 +28,7 @@
   changed = green
   untracked = cyan
 [core]
-  editor = vim
+  editor = nvim
+  excludesfile = ~/.gitignoreglobal
 [commit]
   template = ~/.gitmessage
