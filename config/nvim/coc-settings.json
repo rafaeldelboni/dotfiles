@@ -17,5 +17,7 @@
         "source-paths": ["src", "test", "src-common"]
       }
     }
-  }
+  },
+  "coc.source.conjure.priority": 999999,
+  "suggest.removeDuplicateItems": true,
 }

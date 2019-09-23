@@ -185,7 +185,7 @@ let g:conjure_quick_doc_normal_mode = 0
 let g:conjure_quick_doc_insert_mode = 0
 
 " COC.Nvim
-" CocInstall coc-conjure coc-rls coc-tsserver
+let g:coc_global_extensions = ['coc-json', 'coc-conjure', 'coc-rls', 'coc-tsserver']
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
