@@ -2,7 +2,9 @@
   "suggest.noselect": false,
   "suggest.maxCompleteItemCount": 15,
   "suggest.echodocSupport": false,
+  "suggest.removeDuplicateItems": true,
   "javascript.suggest.enabled": true,
+  "coc.source.conjure.priority": 999999,
   "languageserver": {
     "clojure-lsp": {
       "command": "bash",
@@ -14,10 +16,22 @@
       "additionalSchemes": ["jar", "zipfile"],
       "trace.server": "off",
       "initializationOptions": {
-        "source-paths": ["src", "test", "src-common"]
+        "source-paths": ["src", "test", "src-common"],
+        "macro-defs": {
+          "schema.core/def": [
+            "declaration", "params", "bound-elements"
+          ],
+          "schema.core/defn": [
+            "declaration", "params", "bound-elements"
+          ],
+          "schema.core/fn": [
+            "declaration", "params", "bound-elements"
+          ],
+          "schema.core/defschema": [
+            "declaration", "params", "bound-elements"
+          ],
+        }
       }
     }
-  },
-  "coc.source.conjure.priority": 999999,
-  "suggest.removeDuplicateItems": true,
+  }
 }
