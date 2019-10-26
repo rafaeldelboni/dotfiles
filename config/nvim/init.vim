@@ -1,7 +1,7 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
 " Utilities
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 Plug 'tpope/vim-fugitive'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -27,6 +27,8 @@ Plug 'rust-lang/rust.vim'
 " Clojure
 Plug 'guns/vim-clojure-static'
 Plug 'Olical/conjure', { 'branch': 'develop', 'do': 'bin/compile'  }
+" Godot
+Plug 'rafaeldelboni/vim-gdscript3'
 
 call plug#end()
 
