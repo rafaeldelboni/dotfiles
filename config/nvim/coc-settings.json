@@ -12,7 +12,7 @@
       "filetypes": ["clojure"],
       "disableDiagnostics": true,
       "disableCompletion": false,
-      "rootPatterns": ["project.clj",  "deps.edn"],
+      "rootPatterns": ["project.clj", "deps.edn"],
       "additionalSchemes": ["jar", "zipfile"],
       "trace.server": "off",
       "initializationOptions": {
@@ -28,6 +28,9 @@
             "declaration", "params", "bound-elements"
           ],
           "schema.core/defschema": [
+            "declaration", "params", "bound-elements"
+          ],
+          "fulcro.client.primitives/defsc": [
             "declaration", "params", "bound-elements"
           ],
         }
