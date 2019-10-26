@@ -12,9 +12,9 @@
       "filetypes": ["clojure"],
       "disableDiagnostics": true,
       "disableCompletion": false,
-      "rootPatterns": ["project.clj", "deps.edn"],
-      "additionalSchemes": ["jar", "zipfile"],
-      "trace.server": "off",
+      "rootPatterns": ["deps.edn", "project.clj"],
+      "additionalSchemes": ["zipfile", "jar"],
+      "trace.server": "verbose",
       "initializationOptions": {
         "source-paths": ["src", "test", "src-common"],
         "macro-defs": {
