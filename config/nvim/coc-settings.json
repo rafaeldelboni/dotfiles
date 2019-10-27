@@ -12,7 +12,7 @@
       "filetypes": ["clojure"],
       "disableDiagnostics": true,
       "disableCompletion": false,
-      "rootPatterns": ["deps.edn", "project.clj"],
+      "rootPatterns": ["project.clj", "deps.edn"],
       "additionalSchemes": ["zipfile", "jar"],
       "trace.server": "verbose",
       "initializationOptions": {

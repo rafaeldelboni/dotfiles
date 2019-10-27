@@ -102,7 +102,6 @@ command! -bang -nargs=* Ag
 nnoremap <Leader>a :Ag<Space>
 nnoremap <Leader>ag :Ag <C-R><C-W><CR>
 vnoremap <Leader>ag y:Ag <C-r><C-r>"<CR>
-noremap <Leader>ag y:Ag <C-r><C-r>"<CR>
 
 " ALE status in Airline
 let g:airline#extensions#ale#enabled = 1
