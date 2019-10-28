@@ -28,7 +28,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'guns/vim-clojure-static'
 Plug 'Olical/conjure', { 'branch': 'develop', 'do': 'bin/compile'  }
 " Godot
-Plug 'rafaeldelboni/vim-gdscript3'
+Plug 'clktmr/vim-gdscript3'
 
 call plug#end()
 
