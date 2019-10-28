@@ -33,6 +33,24 @@
           "fulcro.client.primitives/defsc": [
             "declaration", "params", "bound-elements"
           ],
+          "com.fulcrologic.fulcro.components/defsc": [
+            "declaration", "params", "bound-elements"
+          ],
+          "com.fulcrologic.fulcro.ui-state-machines/defstatemachine": [
+            "declaration", "params", "bound-elements"
+          ],
+          "com.fulcrologic.fulcro.mutations/defmutation": [
+            "declaration", "params", "bound-elements"
+          ],
+          "com.wsscode.pathom.connect/defresolver": [
+            "declaration", "params", "bound-elements"
+          ],
+          "com.wsscode.pathom.connect/defmutation": [
+            "declaration", "params", "bound-elements"
+          ],
+          "ghostwheel.core/>defn": [
+            "declaration", "params", "bound-elements"
+          ],
         }
       }
     }
