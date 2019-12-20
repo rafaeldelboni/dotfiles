@@ -9,6 +9,7 @@ to use in the following commands:
 ```bash
 wpa_supplicant -B -i wlp2s0 -c <(wpa_passphrase "the network SSID" "wpa passkey")
 dhcpcd wlp2s0
+
 # or
 
 wifi-menu
@@ -83,7 +84,7 @@ vim /etc/pacman.d/mirrorlist
 ```
 
 ```bash
-pacstrap /mnt base base-devel neovim zsh
+pacstrap /mnt base base-devel linux linux-firmware neovim zsh
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
