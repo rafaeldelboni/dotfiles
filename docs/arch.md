@@ -95,7 +95,15 @@ locale-gen
 echo LANG=en_US.UTF-8 > /etc/locale.conf
 ```
 
+### Default text editor
+
+```
+export VISUAL="vim"
+export EDITOR="$VISUAL"
+```
+
 ### User
+
 ```bash
 passwd
 useradd -m -G wheel,storage,power,audio,video -s /usr/bin/zsh rafael
