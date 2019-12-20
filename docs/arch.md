@@ -9,6 +9,9 @@ to use in the following commands:
 ```bash
 wpa_supplicant -B -i wlp2s0 -c <(wpa_passphrase "the network SSID" "wpa passkey")
 dhcpcd wlp2s0
+# or
+
+wifi-menu
 ```
 
 ### Load Keyboard Layout
