@@ -193,7 +193,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 Bumblebee is the best way to minimize battery usage and selective usage of GPU
 https://wiki.archlinux.org/index.php/bumblebee
 ```bash
-pacman -Sy xf86-video-intel bumblebee bbswitch
+pacman -Sy xf86-video-intel mesa bumblebee bbswitch
 gpasswd -a rafael bumblebee
 systemctl enable bumblebeed.service
 systemctl start bumblebeed.service
