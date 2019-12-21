@@ -32,3 +32,4 @@
   excludesfile = ~/.gitignoreglobal
 [commit]
   template = ~/.gitmessage
+  gpgsign = true
