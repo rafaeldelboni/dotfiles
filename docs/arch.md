@@ -195,6 +195,14 @@ https://wiki.archlinux.org/index.php/bumblebee
 
 ### TLP
 To complete TLP's install, you must enable the systemd services `tlp.service` and `tlp-sleep.service`. You should also mask the systemd service `systemd-rfkill.service` and socket `systemd-rfkill.socket` to avoid conflicts and assure proper operation of TLP's radio device switching options.
+```bash
+sudo systemctl enable tlp
+sudo systemctl start tlp
+sudo systemctl enable tlp-sleep
+sudo systemctl start tlp-sleep
+sudo systemctl mask systemd-rfkill.service
+sudo systemctl mask systemd-rfkill.socket
+```
 
 #### TLP vs Bumblebee with NVIDIA driver
 If you're running Bumblebee with NVIDIA driver, you need to disable power management for the GPU in TLP in order to make Bumblebee control the power of the GPU.
