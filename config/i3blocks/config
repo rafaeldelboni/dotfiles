@@ -31,7 +31,7 @@ separator_block_width=18
 # XTitle indicator
 #
 [xtitle]
-command=xtitle -s -t 33
+command=xtitle -s -t 33 | cat
 interval=persist
 align=left
 
