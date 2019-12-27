@@ -282,6 +282,13 @@ Once Plug is installed. Open vim (`$ vim`) and type `:PlugInstall`. And then res
 [tmux-plugins](https://github.com/tmux-plugins/tpm)
 Once installed press `prefix` + <kbd>I</kbd> (capital I, as in **I**nstall) to fetch the plugin.
 
+### GPG
+```bash
+pacman -Sy gnupg pinentry
+gpg --import backuped-gpg.asc
+gpg-connect-agent reloadagent /bye
+```
+
 ### Set AltGr+HJKL to Arrows
 Change the files `/usr/share/X11/xkb/symbols/us` and `/usr/share/X11/xkb/symbols/gb` in the sessions `intl` and `extd` respectively, as the example below:
 
