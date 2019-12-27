@@ -57,3 +57,5 @@ export FZF_DEFAULT_OPTS='--color=info:22,prompt:2,spinner:1,pointer:2,marker:1'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export GPG_TTY=$(tty)
+
+[ -f ~/.nurc ] && source ~/.nurc
