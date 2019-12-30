@@ -31,7 +31,7 @@ separator_block_width=18
 # XTitle indicator
 #
 [xtitle]
-command=xtitle -s -t 33 | cat
+command=xtitle -i -s -t 33 | cat
 interval=persist
 align=left
 
@@ -68,6 +68,13 @@ signal=13
 [battery]
 command=$HOME/.config/i3blocks/scripts/battery 0
 interval=60
+
+# CPU Speed indicator
+#
+[cpuspeed]
+command= $HOME/.config/i3blocks/scripts/cpuspeed
+interval=60
+align=left
 
 # Date Time
 #

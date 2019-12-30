@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+CPU=$(lscpu | grep "^[C]PU MHz" | awk '{
+  split($0,raw);
+  split(raw[3],speed,".");
+  result="<span color=\"#868686\"></span><span> "speed[1]" MHz</span>";
+  print result
+}')
+
+echo $CPU

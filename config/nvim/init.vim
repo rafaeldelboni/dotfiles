@@ -85,6 +85,7 @@ let NERDTreeIgnore=['\.git$[[dir]]']
 
 " FZF
 let $FZF_DEFAULT_COMMAND = 'ag --hidden -l --ignore .git'
+nnoremap <Leader>p :Buffers<CR>
 nnoremap <c-p> :Files<CR>
 " hide lastsatus (> fzf) on fzf
 autocmd! FileType fzf

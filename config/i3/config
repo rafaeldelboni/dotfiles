@@ -283,4 +283,4 @@ bar {
 # Start programs
 exec_always --no-startup-id $HOME/.config/i3/fehbg.sh
 exec_always --no-startup-id compton
-exec_always --no-startup-id dunst
+exec_always --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
