@@ -27,7 +27,7 @@ font pango:SauceCodePro Nerd Font Mono 12
 # font, it doesn’t scale on retina/hidpi displays.
 
 # Remove titlebar
-new_window 1pixel
+default_border pixel 1
 
 # Border size
 for_window [class="^.*"] border pixel 1
@@ -128,6 +128,8 @@ assign [class="(?i)chromium"] $ws2
 assign [class="(?i)telegram"] $ws3
 assign [class="(?i)slack"] $ws3
 for_window [class="(?i)spotify"] move to workspace $ws4
+
+for_window [title="^Android Emulator -"] floating enable border pixel 3
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
