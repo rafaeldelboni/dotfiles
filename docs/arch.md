@@ -198,6 +198,14 @@ gpasswd -a rafael bumblebee
 systemctl enable bumblebeed.service
 systemctl start bumblebeed.service
 ```
+In case `startx` doesn't work after bumblebee is installed, add file `/etc/X11/xorg.conf.d/20-intel.conf` with the following contents:
+```
+Section "Device"
+        Identifier "Intel Graphics"
+        Driver     "intel"
+        Option     "Virtualheads 3"
+EndSection
+```
 
 ### TLP
 To complete TLP's install, you must enable the systemd services `tlp.service` and `tlp-sleep.service`. You should also mask the systemd service `systemd-rfkill.service` and socket `systemd-rfkill.socket` to avoid conflicts and assure proper operation of TLP's radio device switching options.
