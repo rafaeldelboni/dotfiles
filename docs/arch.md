@@ -152,7 +152,7 @@ pacman -S i3-gaps i3blocks i3lock rofi compton alacritty tmux lxappearance
 ```
 Some basic fonts
 ```
-  pacman -S ttf-dejavu ttf-font-awesome adobe-source-han-sans-otc-fonts ttf-indic-otf
+  pacman -S ttf-dejavu ttf-font-awesome adobe-source-han-sans-otc-fonts ttf-indic-otf noto-fonts-emoji
 ```
 Create the file `.xinitrc` file
 ```
