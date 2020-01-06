@@ -67,6 +67,8 @@ scrolling:
 # change the `it` value in terminfo when altering this setting.
 tabspaces: 8
 
+scale_with_dpi: true
+
 # Font configuration (changes require restart)
 font:
   # Normal (roman) font face

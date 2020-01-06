@@ -45,7 +45,7 @@ set $inactive-bg-color    #868686
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty -e tmux new-session
+bindsym $mod+Return exec WINIT_HIDPI_FACTOR=1.2 alacritty -e tmux new-session
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -82,12 +82,6 @@ bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
-
-# split in horizontal orientation
-bindsym $mod+c split h
-
-# split in vertical orientation
-bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -188,6 +182,38 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+# Mode Setup Video
+set $mode_video (d)efault, (m)irroing, (n)otebook only, (e)xtend 2k
+mode "$mode_video" {
+        bindsym d exec --no-startup-id xrandr --output HDMI1 --auto --dpi 80 --above eDP1, mode "default"
+        bindsym m exec --no-startup-id xrandr --output HDMI1 --auto --dpi 80 --mode 2560x1440 --same-as eDP1, mode "default"
+        bindsym n exec --no-startup-id xrandr --output HDMI1 --off, mode "default"
+        bindsym e exec --no-startup-id xrandr --output HDMI1 --auto --dpi 80 --mode 2560x1440 --left-of eDP1, mode "default"
+
+        # exit system mode: "Enter" or "Escape"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+v mode "$mode_video"
+
+set $mode_move_workspaces_monitor Move Current Workspace to: (h)HDMI, (n)notebook, Vim arrows
+mode "$mode_move_workspaces_monitor" {
+        bindsym h move workspace to output HDMI1, mode "default"
+        bindsym n move workspace to output eDP1, mode "default"
+
+        bindsym j move workspace to output down, mode "default"
+        bindsym k move workspace to output up, mode "default"
+        bindsym h move workspace to output left, mode "default"
+        bindsym l move workspace to output right, mode "default"
+
+        # exit system mode: "Enter" or "Escape"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+m mode "$mode_move_workspaces_monitor"
 
 # Sreen brightness controls
 bindsym $mod+F4 exec xbacklight -inc 10 # increase screen brightness
