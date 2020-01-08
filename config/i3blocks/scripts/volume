@@ -1,25 +1,24 @@
 #!/usr/bin/env bash
 
+# gets only the active sound source
+SINK=$(pactl list short sinks | grep RUNNING | sed -e 's,^\([0-9][0-9]*\)[^0-9].*,\1,' | head -n 1)
+# if there isn't any active sound source get the first one
+[ -z "$SINK" ] && SINK=$(pactl list short sinks | sed -e 's,^\([0-9][0-9]*\)[^0-9].*,\1,' | head -n 1)
+
 while getopts u:d:m option
 do
   case "${option}"
     in
-    u) $(pactl set-sink-volume 0 +${OPTARG}%);;
-    d) $(pactl set-sink-volume 0 -${OPTARG}%);;
-    m) $(pactl set-sink-mute 0 toggle);;
+    u) $(pactl set-sink-volume $SINK +${OPTARG}%);;
+    d) $(pactl set-sink-volume $SINK -${OPTARG}%);;
+    m) $(pactl set-sink-mute $SINK toggle);;
   esac
 done
 
-MUTED=$(pactl list sinks | grep Mute | awk '
-  BEGIN{FS=":"}
-  {gsub(/^[ \t]+/, "", $2); print $2}'
-)
+VOLUME=$(pactl list sinks | grep '^[[:space:]]Volume:' | head -n $(( $SINK + 1 )) | tail -n 1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,')
+MUTED=$(pactl list sinks | grep '^[[:space:]]Mute:' | head -n $(( $SINK + 1 )) | tail -n 1 | awk ' BEGIN{FS=":"} {gsub(/^[ \t]+/, "", $2); print $2}')
 
-VOLUME=$(pactl list sinks | grep Volume | sed ':a;N;$!ba;s/\n/+/g' | awk '
-  BEGIN{FS="/"}{print ($2+$4)/2}'
-)
-
-if [ $MUTED = 'yes' ]
+if [ $MUTED == 'yes' ]
   then
     echo "<span color='#868686'>婢</span>"
   else

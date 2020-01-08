@@ -189,10 +189,10 @@ bindsym $mod+r mode "resize"
 # Mode Setup Video
 set $mode_video (d)efault, (m)irroing, (n)otebook only, (e)xtend 2k
 mode "$mode_video" {
-        bindsym d exec --no-startup-id xrandr --output HDMI1 --auto --dpi 80 --above eDP1, mode "default"
-        bindsym m exec --no-startup-id xrandr --output HDMI1 --auto --dpi 80 --mode 2560x1440 --same-as eDP1, mode "default"
+        bindsym d exec --no-startup-id xrandr --output HDMI1 --auto --dpi 96 --above eDP1, mode "default"
+        bindsym m exec --no-startup-id xrandr --output HDMI1 --auto --dpi 96 --mode 2560x1440 --same-as eDP1, mode "default"
         bindsym n exec --no-startup-id xrandr --output HDMI1 --off, mode "default"
-        bindsym e exec --no-startup-id xrandr --output HDMI1 --auto --dpi 80 --mode 2560x1440 --left-of eDP1, mode "default"
+        bindsym e exec --no-startup-id xrandr --output HDMI1 --auto --dpi 96 --mode 2560x1440 --left-of eDP1, mode "default"
 
         # exit system mode: "Enter" or "Escape"
         bindsym Return mode "default"
@@ -220,9 +220,9 @@ bindsym $mod+F4 exec xbacklight -inc 10 # increase screen brightness
 bindsym $mod+F3 exec xbacklight -dec 10 # decrease screen brightness
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% && pkill -SIGRTMIN+11 i3blocks #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% && pkill -SIGRTMIN+11 i3blocks  #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && pkill -SIGRTMIN+11 i3blocks # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id $HOME/.config/i3blocks/scripts/volume -u 5 && pkill -SIGRTMIN+11 i3blocks #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id $HOME/.config/i3blocks/scripts/volume -d 5 && pkill -SIGRTMIN+11 i3blocks  #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id $HOME/.config/i3blocks/scripts/volume -m && pkill -SIGRTMIN+11 i3blocks # mute sound
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
