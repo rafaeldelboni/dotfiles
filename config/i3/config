@@ -41,6 +41,9 @@ set $bg-color             #191919
 set $urgent-bg-color      #444444
 set $inactive-bg-color    #868686
 
+# Disable mouse warping when changing workspace focus
+mouse_warping none
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -198,11 +201,8 @@ mode "$mode_video" {
 
 bindsym $mod+v mode "$mode_video"
 
-set $mode_move_workspaces_monitor Move Current Workspace to: (h)HDMI, (n)notebook, Vim arrows
+set $mode_move_workspaces_monitor Move Current Workspace to: Vim arrows(h, j, k, l)
 mode "$mode_move_workspaces_monitor" {
-        bindsym h move workspace to output HDMI1, mode "default"
-        bindsym n move workspace to output eDP1, mode "default"
-
         bindsym j move workspace to output down, mode "default"
         bindsym k move workspace to output up, mode "default"
         bindsym h move workspace to output left, mode "default"
@@ -292,11 +292,11 @@ client.urgent $urgent-bg-color $urgent-bg-color $text-color $00ff00
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    height 20
+    height 15
     position top
     strip_workspace_numbers yes
     status_command i3blocks -c $HOME/.config/i3blocks/config
-    font pango:SauceCodePro Nerd Font Semibold 12
+    font pango:SauceCodePro Nerd Font Semibold 11
     colors{
       background $bg-color
       statusline $text-color
