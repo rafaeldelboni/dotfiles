@@ -9,7 +9,7 @@ while getopts ":d :m :n :h :j :k :l" option
 do
   case "${option}"
     in
-    d) $([ -z "$SECONDARY" ] && xrand --auto || xrandr --output $SECONDARY --auto --dpi $DPI --mode $MODE --left-of $PRIMARY);;
+    d) $([ -z "$SECONDARY" ] && xrandr --auto || xrandr --output $SECONDARY --auto --dpi $DPI --mode $MODE --left-of $PRIMARY);;
     m) $(xrandr --output $SECONDARY --auto --same-as $PRIMARY);;
     n) $(xrandr --output $SECONDARY --off);;
     h) $(xrandr --output $SECONDARY --auto --dpi $DPI --mode $MODE --left-of  $PRIMARY);;
