@@ -10,6 +10,6 @@ xset mouse 3 6 &
 
 # Set Video Output
 xrandr --setprovideroutputsource modesetting NVIDIA-0
-xrandr --auto
+source ~/.config/i3/video.sh -d
 
 exec i3
