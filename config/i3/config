@@ -300,7 +300,7 @@ bar {
     position top
     strip_workspace_numbers yes
     status_command i3blocks -c $HOME/.config/i3blocks/config
-    font pango:SauceCodePro Nerd Font Semibold 10
+    font pango:SauceCodePro Nerd Font Semibold 9
     colors{
       background $bg-color
       statusline $text-color
