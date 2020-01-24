@@ -19,8 +19,11 @@
           "nubank.shuffle.common.ui.helpers/defc": [
             "declaration", "params", "bound-elements"
           ],
+          "midge.sweet/fact": [
+            "element", "element", "_", "element"
+          ],
           "schema.core/def": [
-            "declaration", "params", "bound-elements"
+            "declaration", "elements"
           ],
           "schema.core/defn": [
             "declaration", "params", "bound-elements"
