@@ -312,3 +312,12 @@ Change the files `/usr/share/X11/xkb/symbols/us` and `/usr/share/X11/xkb/symbols
   sudo cp /etc/issue /etc/issue.bkp
   sudo cp ~/.config/issue /etc/issue
 ```
+
+
+### Set local enviroment settings
+Create the following file `~/.local-env`
+```bash
+export LOCAL_DPI="96"
+export LOCAL_MODE="2560x1440"
+export LOCAL_DPI_FACTOR=1.4
+```
