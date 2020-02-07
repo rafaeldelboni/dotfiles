@@ -1,3 +1,5 @@
+[ -f ~/.local-env ] && source ~/.local-env
+
 SSH_ENV="$HOME/.ssh/environment"
 
 function start_agent {

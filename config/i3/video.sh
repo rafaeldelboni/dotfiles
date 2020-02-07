@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-DPI="96"
-MODE="2560x1440"
+[[ -z "${LOCAL_DPI}" ]] && DPI="96" || DPI="${LOCAL_DPI}"
+[[ -z "${LOCAL_MODE}" ]] && MODE="2560x1440" || MODE="${LOCAL_MODE}"
+
 PRIMARY=$(xrandr | grep " connected" | grep "primary" | sed -e "s/\([A-Z0-9]\+\) connected.*/\1/" | tail -n 1)
 SECONDARY=$(xrandr | grep " connected" | grep -v "primary" | sed -e "s/\([A-Z0-9]\+\) connected.*/\1/" | tail -n 1)
 

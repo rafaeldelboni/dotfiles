@@ -48,7 +48,7 @@ mouse_warping none
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec WINIT_HIDPI_FACTOR=1.2 alacritty -e tmux new-session
+bindsym $mod+Return exec $HOME/.config/i3/terminal.sh
 
 # kill focused window
 bindsym $mod+Shift+q kill
