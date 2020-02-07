@@ -182,7 +182,7 @@ let g:ale_fixers = { 'javascript': ['eslint'], 'scss': ['stylelint'] }
 let g:conjure_nmap_definition = "<localleader>gd"
 let g:conjure_nmap_doc = "<localleader>K"
 let g:conjure_log_direction = "horizontal"
-let g:conjure_log_blacklist = ["up", "ret", "ret-multiline", "load-file", "eval", "refresh"]
+let g:conjure_log_blacklist = ["up", "ret", "ret-multiline", "load-file", "eval", "refresh", "out", "ret"]
 let g:conjure_quick_doc_normal_mode = 0
 let g:conjure_quick_doc_insert_mode = 0
 
