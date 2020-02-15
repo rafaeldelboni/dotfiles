@@ -5,6 +5,11 @@
   "suggest.removeDuplicateItems": true,
   "javascript.suggest.enabled": true,
   "languageserver": {
+    "godot": {
+      "host": "127.0.0.1",
+      "filetypes": ["gd", "gdscript3"],
+      "port": 6008
+    },
     "clojure-lsp": {
       "command": "bash",
       "args": ["-c", "clojure-lsp"],
