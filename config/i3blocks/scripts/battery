@@ -23,7 +23,6 @@ if [ $STATUS == 'Discharging' ]; then
   else
     ICON=" "
   fi
-
 elif [ $STATUS == 'Charging' ]; then
   ICON=""
 else
