@@ -5,7 +5,9 @@ ACPI=$(acpi -b | grep "Battery $BAT_NUMBER")
 
 STATUS=$(echo $ACPI | awk '{ gsub(/,/,""); print $3 }')
 PERCENT=$(echo $ACPI | awk '{ gsub(/,/,""); print $4 }' | tr -d %)
-REMAIN="($(echo $ACPI | sed -rn 's/.* ([0-9]+:[0-9]+).*/\1/gp'))"
+REMAIN="$(echo $ACPI | sed -rn 's/.* ([0-9]+:[0-9]+).*/\1/gp')"
+
+[[ -n "${REMAIN}" ]] && REMAIN="(${REMAIN})"
 
 if [ $STATUS == 'Discharging' ]; then
   if [ $PERCENT -lt 5 ]; then
