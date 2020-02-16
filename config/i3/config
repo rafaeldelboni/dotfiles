@@ -312,7 +312,11 @@ bar {
     }
 }
 
+# Store current socket to i3 session
+exec_always --no-startup-id ln -sf $I3SOCK /tmp/i3-ipc.sock
+
 # Start programs
+exec_always --no-startup-id $HOME/.config/i3/logout.sh
 exec_always --no-startup-id $HOME/.config/i3/fehbg.sh
 exec_always --no-startup-id compton
 exec_always --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
