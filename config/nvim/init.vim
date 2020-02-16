@@ -15,14 +15,13 @@ Plug 'junegunn/fzf.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'melonmanchan/vim-tmux-resizer'
 " Theme/Visual
-Plug 'widatama/vim-phoenix'
+Plug 'rafaeldelboni/novum.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Javascript / Typescript
 Plug 'pangloss/vim-javascript'
-Plug 'herringtondarkholme/yats.vim'
-" Rust
+Plug 'herringtondarkholme/yats.vim' " Rust
 Plug 'rust-lang/rust.vim'
 " Clojure
 Plug 'guns/vim-clojure-static'
@@ -145,14 +144,7 @@ syntax on
 set t_Co=256
 set noshowmode
 set fillchars=""
-
-color phoenix
-PhoenixGreen
-
-hi NonText ctermfg=237
-hi SpecialKey ctermfg=237
-hi ColorColumn ctermbg=235
-hi VertSplit ctermfg=235
+colorscheme novum
 
 " Fugitive
 nnoremap <leader>g :Git<Space>
@@ -171,7 +163,7 @@ let g:ale_sign_warning = ''
 let g:ale_sign_error = ''
 let g:ale_echo_msg_format = '%severity%: %s [%linter%]'
 let g:ale_statusline_format = ['E:%s', 'W:%s', 'OK']
-highlight ALEErrorSign ctermbg=NONE ctermfg=red
+highlight ALEErrorSign ctermbg=NONE ctermfg=darkred
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 highlight ALEError cterm=undercurl ctermfg=none
 highlight ALEWarning cterm=undercurl ctermfg=none
@@ -185,6 +177,8 @@ let g:conjure_log_direction = "horizontal"
 let g:conjure_log_blacklist = ["up", "ret", "ret-multiline", "load-file", "eval", "refresh", "out", "ret"]
 let g:conjure_quick_doc_normal_mode = 0
 let g:conjure_quick_doc_insert_mode = 0
+" Regex to highlight head element from list
+au FileType clojure syntax match clojureFunc "\(\('\)\@<!(\)\@<=\<.\{-1,}\>?\{0,1}"
 
 " COC.Nvim
 let g:coc_global_extensions = ['coc-json', 'coc-conjure', 'coc-rls', 'coc-tsserver']
