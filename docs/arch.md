@@ -181,7 +181,7 @@ yaourt -Syu --devel --aur
 ### Apps
 ```bash
 pacman -S ranger xfce4-notifyd feh imagemagick w3m gimp playerctl xsel arandr devmon tlp acpi sysstat libmpdclient openssh the_silver_searcher scrot zsh-autosuggestions
-yaourt -Sy rcm autojump ttf-ms-fonts ttf-ubuntu-font-family nerd-fonts-source-code-pro xfce-theme-greybird acpilight xtitle-git
+yaourt -Sy rcm autojump ttf-ms-fonts ttf-ubuntu-font-family nerd-fonts-jetbrains-mono xfce-theme-greybird acpilight xtitle-git
 ```
 
 ### Oh My Zsh

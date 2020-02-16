@@ -45,7 +45,7 @@ close(XSET);
 
 # Output
 if (($indicators{$indicator} || 0) & $mask) {
-  printf "<span fgcolor='#FFFFFF' bgcolor='#65910f'> $indicator </span>";
+  printf "<span fgcolor='#FFFFFF' bgcolor='#3ea290'> $indicator </span>";
 }
 
 exit 0

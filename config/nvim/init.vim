@@ -26,7 +26,7 @@ Plug 'herringtondarkholme/yats.vim'
 Plug 'rust-lang/rust.vim'
 " Clojure
 Plug 'guns/vim-clojure-static'
-Plug 'Olical/conjure', { 'branch': 'develop', 'do': 'bin/compile'  }
+Plug 'Olical/conjure', { 'branch': 'master', 'do': 'bin/compile' }
 " Godot
 Plug 'rafaeldelboni/vim-gdscript3'
 
@@ -151,7 +151,7 @@ PhoenixGreen
 
 hi NonText ctermfg=237
 hi SpecialKey ctermfg=237
-hi ColorColumn ctermbg=234
+hi ColorColumn ctermbg=235
 hi VertSplit ctermfg=235
 
 " Fugitive

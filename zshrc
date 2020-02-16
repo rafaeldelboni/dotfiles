@@ -1,5 +1,5 @@
 # theme
-ZSH_THEME="minimal"
+ZSH_THEME="lambda"
 
 # Zsh init
 export ZSH=~/.oh-my-zsh
@@ -30,9 +30,6 @@ setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording en
 setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
 setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 
-# prompt overide
-PROMPT='%2~ $(vcs_status)%b '
-
 # avoid window rename
 DISABLE_AUTO_TITLE="true"
 
@@ -53,7 +50,7 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # fzf
-export FZF_DEFAULT_OPTS='--color=info:22,prompt:2,spinner:1,pointer:2,marker:1'
+export FZF_DEFAULT_OPTS='--color=info:1,prompt:2,spinner:1,pointer:2,marker:1'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export GPG_TTY=$(tty)
