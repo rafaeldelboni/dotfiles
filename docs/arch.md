@@ -180,7 +180,7 @@ yaourt -Syu --devel --aur
 
 ### Apps
 ```bash
-pacman -S ranger xfce4-notifyd feh imagemagick w3m gimp playerctl xsel arandr devmon tlp acpi sysstat libmpdclient openssh the_silver_searcher scrot zsh-autosuggestions acpilight
+pacman -S ranger xfce4-notifyd feh imagemagick w3m gimp playerctl xsel arandr devmon tlp acpi sysstat libmpdclient openssh the_silver_searcher scrot zsh-autosuggestions acpilight zip unzip
 yaourt -Sy rcm autojump ttf-ms-fonts ttf-ubuntu-font-family nerd-fonts-jetbrains-mono xfce-theme-greybird xtitle-git --noconfirm
 ```
 
