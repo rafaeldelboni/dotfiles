@@ -31,9 +31,10 @@ separator_block_width=18
 # XTitle indicator
 #
 [xtitle]
-command=xtitle -i -s -t 33 | cat
-interval=persist
+command=xtitle -i -t 35
 align=left
+interval=once
+signal=10
 
 # Volume indicator
 #
@@ -56,12 +57,6 @@ command=$HOME/.config/i3blocks/scripts/keyindicator
 instance=CAPS
 interval=once
 signal=13
-
-#[keyindicator]
-#command=$HOME/.config/i3blocks/scripts/keyindicator
-#instance=NUM
-#interval=once
-#signal=13
 
 # Battery indicator
 #
