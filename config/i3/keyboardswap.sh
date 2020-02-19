@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 #switch between two layouts (Us and Uk in this case)
 current_layouts=$(setxkbmap -query | grep layout)
