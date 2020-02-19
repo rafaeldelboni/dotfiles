@@ -102,7 +102,7 @@ echo LANG=en_US.UTF-8 > /etc/locale.conf
 ### Default text editor
 
 ```
-export VISUAL="vim"
+export VISUAL="nvim"
 export EDITOR="$VISUAL"
 ```
 
@@ -180,13 +180,41 @@ yaourt -Syu --devel --aur
 
 ### Apps
 ```bash
-pacman -S ranger xfce4-notifyd feh imagemagick w3m gimp playerctl xsel arandr devmon tlp acpi sysstat libmpdclient openssh the_silver_searcher scrot zsh-autosuggestions
-yaourt -Sy rcm autojump ttf-ms-fonts ttf-ubuntu-font-family nerd-fonts-jetbrains-mono xfce-theme-greybird acpilight xtitle-git
+pacman -S ranger xfce4-notifyd feh imagemagick w3m gimp playerctl xsel arandr devmon tlp acpi sysstat libmpdclient openssh the_silver_searcher scrot zsh-autosuggestions acpilight
+yaourt -Sy rcm autojump ttf-ms-fonts ttf-ubuntu-font-family nerd-fonts-jetbrains-mono xfce-theme-greybird xtitle-git --noconfirm
 ```
 
 ### Oh My Zsh
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
+
+### Dotfiles
+Clone this repo (or your own fork!) to your **home** directory (`/Users/username`).
+```
+$ cd ~
+$ git clone git@github.com:rafaeldelboni/dotfiles.git .dotfiles
+$ rcup -x docs -x readme.md
+$ xrdb ~/.Xresources
+```
+
+`rcup` expects that you cloned your dotfiles to `~/.dotfiles/` and will create dotfile symlinks (`.vimrc` -> `~/.dotfiles/vimrc`) from your home directory to your `~/.dotfiles/` directory.
+
+`xrdb ~/.Xresources` sync the Xresources file with your current XServer
+
+### Installing Vim Plugins
+To install them you'll need [vim-plug](https://github.com/junegunn/vim-plug), as mentioned above.
+Once Plug is installed. Open vim (`$ vim`) and type `:PlugInstall`. And then restart vim. You'll need to do this for all the plugins to work.
+
+### Installing Tmux Plugins
+[tmux-plugins](https://github.com/tmux-plugins/tpm)
+Once installed press `prefix` + <kbd>I</kbd> (capital I, as in **I**nstall) to fetch the plugin.
+
+### GPG
+```bash
+pacman -Sy gnupg pinentry
+gpg --import backuped-gpg.asc
+gpg-connect-agent reloadagent /bye
 ```
 
 ### Bumblebee
@@ -267,34 +295,6 @@ Now you just need to add the line AutoEnable=true in /etc/bluetooth/main.conf at
 ```
 [Policy]
 AutoEnable=true
-```
-
-### Dotfiles
-Clone this repo (or your own fork!) to your **home** directory (`/Users/username`).
-```
-$ cd ~
-$ git clone --recurse-submodules git@github.com:rafaeldelboni/dotfiles.git .dotfiles
-$ rcup -x docs -x readme.md
-$ xrdb ~/.Xresources
-```
-
-`rcup` expects that you cloned your dotfiles to `~/.dotfiles/` and will create dotfile symlinks (`.vimrc` -> `~/.dotfiles/vimrc`) from your home directory to your `~/.dotfiles/` directory.
-
-`xrdb ~/.Xresources` sync the Xresources file with your current XServer
-
-### Installing Vim Plugins
-To install them you'll need [vim-plug](https://github.com/junegunn/vim-plug), as mentioned above.
-Once Plug is installed. Open vim (`$ vim`) and type `:PlugInstall`. And then restart vim. You'll need to do this for all the plugins to work.
-
-### Installing Tmux Plugins
-[tmux-plugins](https://github.com/tmux-plugins/tpm)
-Once installed press `prefix` + <kbd>I</kbd> (capital I, as in **I**nstall) to fetch the plugin.
-
-### GPG
-```bash
-pacman -Sy gnupg pinentry
-gpg --import backuped-gpg.asc
-gpg-connect-agent reloadagent /bye
 ```
 
 ### Set AltGr+HJKL to Arrows
