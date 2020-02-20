@@ -6,4 +6,4 @@ LAYOUT=$(setxkbmap -query | awk '
     /^variant/{variant=" ("$2")"}
   END{printf("%s%s",layout,variant)}')
 
-echo "<span color='#868686'></span><span> $LAYOUT</span>"
+echo "<span color='#868686' size='large'></span><span> $LAYOUT</span>"

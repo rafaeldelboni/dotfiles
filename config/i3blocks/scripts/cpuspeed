@@ -3,7 +3,7 @@
 CPU=$(lscpu | grep "^[C]PU MHz" | awk '{
   split($0,raw);
   split(raw[3],speed,".");
-  result="<span color=\"#868686\"></span><span> "speed[1]" MHz</span>";
+  result="<span color=\"#868686\" size=\"large\"></span><span> "speed[1]" MHz</span>";
   print result
 }')
 

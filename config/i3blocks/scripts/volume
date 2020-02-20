@@ -20,7 +20,7 @@ MUTED=$(pactl list sinks | grep '^[[:space:]]Mute:' | head -n $(( $SINK + 1 )) |
 
 if [ $MUTED == 'yes' ]
   then
-    echo "<span color='#868686'>婢</span>"
+    echo "<span color='#868686' size='large'>婢</span>"
   else
-    echo "<span color='#868686'>墳</span><span> $VOLUME%</span>"
+    echo "<span color='#868686' size='large'>墳</span><span> $VOLUME%</span>"
 fi

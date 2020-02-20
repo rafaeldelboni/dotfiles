@@ -13,15 +13,15 @@ if [ $STATUS == 'Discharging' ]; then
   if [ $PERCENT -lt 5 ]; then
     exit 33
   elif [ $PERCENT -lt 20 ]; then
-    ICON=" "
+    ICON=""
   elif [ $PERCENT -lt 40 ]; then
-    ICON=" "
+    ICON=""
   elif [ $PERCENT -lt 60 ]; then
-    ICON=" "
+    ICON=""
   elif [ $PERCENT -lt 85 ]; then
-    ICON=" "
+    ICON=""
   else
-    ICON=" "
+    ICON=""
   fi
 elif [ $STATUS == 'Charging' ]; then
   ICON=""
@@ -29,4 +29,4 @@ else
   ICON=""
 fi
 
-echo "<span color='#868686'>$ICON</span><span> $PERCENT%$REMAIN</span>";
+echo "<span color='#868686' size='large'>$ICON</span><span> $PERCENT%$REMAIN</span>";

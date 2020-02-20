@@ -106,16 +106,16 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 1  
-set $ws2 2  
-set $ws3 3  
-set $ws4 4  
-set $ws5 5 卑 
-set $ws6 6 ﱣ 
-set $ws7 7 ﱢ 
-set $ws8 8  
-set $ws9 9  
-set $ws10 10
+set $ws1   1 <span size='x-large'></span> 
+set $ws2   2 <span size='x-large'></span> 
+set $ws3   3 <span size='x-large'></span> 
+set $ws4   4 <span size='x-large'></span> 
+set $ws5   5 <span size='x-large'>卑</span> 
+set $ws6   6 <span size='x-large'>ﱣ</span> 
+set $ws7   7 <span size='x-large'>ﱢ</span> 
+set $ws8   8 <span size='x-large'></span> 
+set $ws9   9 <span size='x-large'></span> 
+set $ws10 10 <span size='x-large'></span> 
 
 # assign programs to certain workspaces
 assign [class="(?i)firefox"] $ws2
