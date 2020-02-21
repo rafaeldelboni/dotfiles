@@ -136,7 +136,7 @@ vim /boot/grub/grub.cfg
 ```
 Add the following kernel startup parameters on `/etc/default/grub`:
 ```
-  GRUB_CMDLINE_LINUX_DEFAULT="acpi_osi=! acpi_osi=\"Windows 2009\" nvidia-drm.modeset=1 quiet loglevel=0 vga=current"
+  GRUB_CMDLINE_LINUX_DEFAULT="acpi_osi=! acpi_osi=\"Windows 2009\" nvidia-drm.modeset=1 quiet loglevel=0"
 ```
 
 ### Audio & Video
