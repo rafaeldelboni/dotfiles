@@ -84,6 +84,13 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
+# switch between the current and the previously focused one
+bindsym $mod+Tab workspace back_and_forth
+
+# switch to the next and previous workspace on the output (display)
+bindsym $mod+comma workspace prev_on_output
+bindsym $mod+period workspace next_on_output
+
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
