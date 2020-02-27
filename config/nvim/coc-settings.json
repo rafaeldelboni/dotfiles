@@ -31,23 +31,7 @@
             "declaration", "elements"
           ],
           "schema.core/defn": [
-            {
-              "element": "declaration",
-              "signature": [
-                "vector"
-              ],
-              "doc?": true,
-              "{:element :element, :pred :keyword}": {
-                "element": "element",
-                "pred": "symbol"
-              },
-              "{:element :element, :pred :string}": {
-                "element": "element",
-                "pred": "map"
-              },
-              "{:element :sub-elements}": "match-patterns",
-              "[[:symbol :keyword :any] [:param :element :element] [:symbol] [:param]]": "bound-elements"
-            }
+            "declaration", "params", "bound-elements"
           ],
           "schema.core/fn": [
             "declaration", "params", "bound-elements"
