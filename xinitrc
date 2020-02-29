@@ -2,8 +2,7 @@
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
 # Set keyboard layout and delay/rate
-setxkbmap -layout gb -variant extd -option caps:swapescape
-xset r rate 150 55
+source ~/.config/i3/keyboardswap.sh us
 
 # Set mouse acceleration
 xset mouse 3 6 &
