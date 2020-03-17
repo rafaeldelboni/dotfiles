@@ -15,8 +15,8 @@ do
   esac
 done
 
-VOLUME=$(pactl list sinks | grep '^[[:space:]]Volume:' | head -n $(( $SINK + 1 )) | tail -n 1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,')
-MUTED=$(pactl list sinks | grep '^[[:space:]]Mute:' | head -n $(( $SINK + 1 )) | tail -n 1 | awk ' BEGIN{FS=":"} {gsub(/^[ \t]+/, "", $2); print $2}')
+VOLUME=$(pactl list sinks | tr '\n' '|' | sed -e 's/Sink #/\nSink#/g' | grep Sink#$SINK | tr '|' '\n' | grep '^[[:space:]]Volume:' | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,')
+MUTED=$(pactl list sinks | tr '\n' '|' | sed -e 's/Sink #/\nSink#/g' | grep Sink#$SINK | tr '|' '\n' | grep '^[[:space:]]Mute:' | awk ' BEGIN{FS=":"} {gsub(/^[ \t]+/, "", $2); print $2}')
 
 if [ $MUTED == 'yes' ]
   then
