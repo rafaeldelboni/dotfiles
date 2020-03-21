@@ -162,26 +162,17 @@ exec i3
 ```
 Run `startx`
 
-### Yaourt
+### Yay
 ```bash
-pacman -S git
-mkdir ~/Sources
-cd ~/Sources
-git clone https://aur.archlinux.org/package-query.git
-cd package-query
+git clone https://aur.archlinux.org/yay.git
+cd yay
 makepkg -si
-cd ..
-git clone https://aur.archlinux.org/yaourt.git
-cd yaourt
-makepkg -si
-cd ..
-yaourt -Syu --devel --aur
 ```
 
 ### Apps
 ```bash
 pacman -S ranger xfce4-notifyd feh imagemagick w3m gimp playerctl xsel arandr devmon tlp acpi sysstat libmpdclient openssh the_silver_searcher scrot zsh-autosuggestions acpilight zip unzip
-yaourt -Sy rcm autojump ttf-ms-fonts ttf-ubuntu-font-family nerd-fonts-jetbrains-mono xfce-theme-greybird xtitle-git --noconfirm
+yay -Sy rcm autojump ttf-ms-fonts ttf-ubuntu-font-family nerd-fonts-jetbrains-mono xfce-theme-greybird xtitle-git --noconfirm
 ```
 
 ### Oh My Zsh
