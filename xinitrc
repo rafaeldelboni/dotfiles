@@ -4,8 +4,8 @@
 # Set keyboard layout and delay/rate
 source ~/.config/i3/keyboardswap.sh us
 
-# Set mouse acceleration
-xset mouse 3 6 &
+# Set mouse acceleration and make it 5x faster after moving past 2 units
+xset m 5 2 &
 
 # Set Video Output
 xrandr --setprovideroutputsource modesetting NVIDIA-0
