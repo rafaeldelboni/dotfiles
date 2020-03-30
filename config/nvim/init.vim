@@ -66,6 +66,8 @@ set listchars=tab:▶-,trail:•,extends:»,precedes:«,eol:¬
 
 set spelllang=pt_br,en
 
+set undofile             " persistent undo, even if you close and reopen Vim
+
 au FocusGained,BufEnter * :checktime " Refresh changed content
 
 set hlsearch                         " enable highlighting search
@@ -73,6 +75,9 @@ nnoremap <CR> :noh<CR><CR>           " clear highlighting on enter in normal mod
 
 let mapleader = "\<space>" " Use space as leader key
 let maplocalleader = "," " Use , as local leader key
+
+" Opens this file anywhere
+command! Vimrc :vs $MYVIMRC
 
 " NERDTree
 map <leader>n :NERDTreeToggle<CR> " Leader + n open/close tree
