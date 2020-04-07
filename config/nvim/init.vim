@@ -28,6 +28,9 @@ Plug 'guns/vim-clojure-static'
 Plug 'Olical/conjure', { 'branch': 'master', 'do': 'bin/compile' }
 " Godot
 Plug 'rafaeldelboni/vim-gdscript3'
+" Haskell
+Plug 'neovimhaskell/haskell-vim'
+Plug 'bitc/vim-hdevtools'
 
 call plug#end()
 
