@@ -28,6 +28,8 @@ Plug 'guns/vim-clojure-static'
 Plug 'Olical/conjure', { 'branch': 'master', 'do': 'bin/compile' }
 " Godot
 Plug 'rafaeldelboni/vim-gdscript3'
+" Haskell 
+Plug 'neovimhaskell/haskell-vim'
 
 call plug#end()
 
@@ -172,8 +174,15 @@ highlight ALEErrorSign ctermbg=NONE ctermfg=darkred
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 highlight ALEError cterm=undercurl ctermfg=none
 highlight ALEWarning cterm=undercurl ctermfg=none
-let g:ale_linters = { 'javascript': ['eslint'], 'scss': ['stylelint'] }
-let g:ale_fixers = { 'javascript': ['eslint'], 'scss': ['stylelint'] }
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\   'scss': ['stylelint']
+\}
+let g:ale_fixers = {
+\   'javascript': ['eslint'],
+\   'scss': ['stylelint'],
+\   'haskell': ['brittany']
+\}
 
 " Clojure
 let g:conjure_nmap_definition = "<localleader>gd"
@@ -192,6 +201,7 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>ac <Plug>(coc-codeaction)
 " Use TAB and CR to trigger completion.
 inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "\<C-g>u\<TAB>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
