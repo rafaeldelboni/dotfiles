@@ -37,7 +37,7 @@ DISABLE_AUTO_TITLE="true"
 KEYTIMEOUT=1
 
 # PATH adds
-PATH="/usr/local/bin":$PATH
+PATH="$HOME/.local/bin:/usr/local/bin":$PATH
 PATH="$HOME/.cargo/bin:$HOME/.cargo/bin/racer":$PATH
 
 [ -f $HOME/.cargo/bin/rustc ] && export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
