@@ -1,9 +1,14 @@
 {
   "coc.source.conjure.priority": 99,
+  "diagnostic.errorSign":"\uf444",
+  "diagnostic.warningSign":"\uf445",
+  "diagnostic.infoSign":"\uf48b",
+  "diagnostic.hintSign":"\uf48b",
+  "javascript.suggest.enabled": true,
   "suggest.maxCompleteItemCount": 15,
   "suggest.noselect": false,
   "suggest.removeDuplicateItems": true,
-  "javascript.suggest.enabled": true,
+
   "languageserver": {
     "godot": {
       "host": "127.0.0.1",
