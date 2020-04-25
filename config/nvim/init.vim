@@ -25,7 +25,7 @@ Plug 'herringtondarkholme/yats.vim' " Rust
 Plug 'rust-lang/rust.vim'
 " Clojure
 Plug 'guns/vim-clojure-static'
-Plug 'Olical/conjure', { 'branch': 'master', 'do': 'bin/compile' }
+Plug 'Olical/conjure', {'branch': 'develop'}
 " Godot
 Plug 'rafaeldelboni/vim-gdscript3'
 " Haskell 
@@ -185,17 +185,10 @@ let g:ale_fixers = {
 \}
 
 " Clojure
-let g:conjure_nmap_definition = "<localleader>gd"
-let g:conjure_nmap_doc = "<localleader>K"
-let g:conjure_log_direction = "horizontal"
-let g:conjure_log_blacklist = ["up", "ret", "ret-multiline", "load-file", "eval", "refresh", "out", "ret"]
-let g:conjure_quick_doc_normal_mode = 0
-let g:conjure_quick_doc_insert_mode = 0
-" Regex to highlight head element from list
-au FileType clojure syntax match clojureFunc "\(\('\)\@<!(\)\@<=\<.\{-1,}\>?\{0,1}"
+let g:conjure_config = {"mappings.doc-word": "K", "mappings.def-word": "gd"}
 
 " COC.Nvim
-let g:coc_global_extensions = ['coc-json', 'coc-conjure', 'coc-rls', 'coc-tsserver']
+let g:coc_global_extensions = ['coc-json', 'coc-conjure-olical', 'coc-rls', 'coc-tsserver', 'coc-eslint']
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)

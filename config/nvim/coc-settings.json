@@ -4,7 +4,6 @@
   "diagnostic.warningSign":"\uf445",
   "diagnostic.infoSign":"\uf48b",
   "diagnostic.hintSign":"\uf48b",
-  "javascript.suggest.enabled": true,
   "suggest.maxCompleteItemCount": 15,
   "suggest.noselect": false,
   "suggest.removeDuplicateItems": true,
