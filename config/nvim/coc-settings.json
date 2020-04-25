@@ -18,7 +18,6 @@
       "command": "bash",
       "args": ["-c", "clojure-lsp"],
       "filetypes": ["clojure"],
-      "disableDiagnostics": true,
       "rootPatterns": ["project.clj", "deps.edn"],
       "additionalSchemes": ["zipfile", "jar"],
       "trace.server": "off",
