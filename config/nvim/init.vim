@@ -70,6 +70,9 @@ set spelllang=pt_br,en
 
 set undofile             " persistent undo, even if you close and reopen Vim
 
+set splitbelow           " open new horizontal panes on down pane
+set splitright           " open new vertical panes on right pane
+
 au FocusGained,BufEnter * :checktime " Refresh changed content
 
 set hlsearch                         " enable highlighting search
