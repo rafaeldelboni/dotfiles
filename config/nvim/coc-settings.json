@@ -20,6 +20,7 @@
       "filetypes": ["clojure"],
       "rootPatterns": ["project.clj", "deps.edn"],
       "additionalSchemes": ["zipfile", "jar"],
+      "disableDiagnostics": true,
       "trace.server": "off",
       "initializationOptions": {
         "source-paths": ["src", "test", "src-common", "workspaces"],
