@@ -25,7 +25,7 @@ Plug 'herringtondarkholme/yats.vim' " Rust
 Plug 'rust-lang/rust.vim'
 " Clojure
 Plug 'guns/vim-clojure-static'
-Plug 'Olical/conjure', {'branch': 'develop'}
+Plug 'Olical/conjure', {'branch': 'master'}
 " Godot
 Plug 'rafaeldelboni/vim-gdscript3'
 " Haskell 
@@ -191,7 +191,7 @@ let g:ale_fixers = {
 let g:conjure_config = {"mappings.doc-word": "K", "mappings.def-word": "gd"}
 
 " COC.Nvim
-let g:coc_global_extensions = ['coc-json', 'coc-conjure-olical', 'coc-rls', 'coc-tsserver', 'coc-eslint']
+let g:coc_global_extensions = ['coc-json', 'coc-conjure', 'coc-rls', 'coc-tsserver', 'coc-eslint']
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
