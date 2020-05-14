@@ -171,7 +171,7 @@ makepkg -si
 
 ### Apps
 ```bash
-pacman -S ranger xfce4-notifyd feh imagemagick w3m gimp playerctl xsel arandr devmon tlp acpi sysstat libmpdclient openssh the_silver_searcher maim zsh-autosuggestions acpilight zip unzip
+pacman -S ranger xfce4-notifyd feh imagemagick w3m gimp playerctl xclip arandr devmon tlp acpi sysstat libmpdclient openssh the_silver_searcher maim zsh-autosuggestions acpilight zip unzip
 yay -Sy rcm autojump ttf-ms-fonts ttf-ubuntu-font-family nerd-fonts-jetbrains-mono xfce-theme-greybird xtitle-git --noconfirm
 ```
 

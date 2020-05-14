@@ -240,8 +240,10 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Printscreen
-bindsym --release Print exec maim "$HOME/Pictures/`date +%Y-%m-%d_%H:%M:%S`.png" && notify-send -u normal -t 5000 'Screenshot taken'
-bindsym --release $mod+Print exec maim -s "$HOME/Pictures/`date +%Y-%m-%d_%H:%M:%S`.png" && notify-send -u normal -t 5000 'Screenshot taken'
+bindsym --release Print exec maim "$HOME/Pictures/`date +%Y-%m-%d_%H:%M:%S`.png" && notify-send -u normal -t 5000 'Full screenshot taken'
+bindsym --release $mod+Print exec maim -s "$HOME/Pictures/`date +%Y-%m-%d_%H:%M:%S`.png" && notify-send -u normal -t 5000 'Partial screenshot taken'
+bindsym --release Ctrl+Print exec maim | xclip -selection clipboard -t image/png && notify-send -u normal -t 5000 'Full screenshot taken to clipboard'
+bindsym --release Ctrl+$mod+Print exec maim -s | xclip -selection clipboard -t image/png && notify-send -u normal -t 5000 'Partial screenshot taken to clipboard'
 
 # Keyboard Swap
 bindsym Ctrl+space exec $HOME/.config/i3/keyboardswap.sh && pkill -SIGRTMIN+12 i3blocks
