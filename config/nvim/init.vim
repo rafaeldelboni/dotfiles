@@ -30,6 +30,8 @@ Plug 'Olical/conjure', {'branch': 'master'}
 Plug 'rafaeldelboni/vim-gdscript3'
 " Haskell 
 Plug 'neovimhaskell/haskell-vim'
+" Janet
+Plug 'janet-lang/janet.vim'
 
 call plug#end()
 

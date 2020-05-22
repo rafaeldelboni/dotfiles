@@ -1,0 +1,15 @@
+{"source-paths" ["src" "test" "src-common" "workspaces"],
+ "macro-defs" {com.fulcrologic.fulcro.components/defsc [:declaration :params :bound-elements],
+               com.fulcrologic.fulcro.mutations/defmutation [:declaration :params :bound-elements],
+               com.fulcrologic.fulcro.ui-state-machines/defstatemachine [:declaration :params :bound-elements],
+               com.wsscode.pathom.connect/defmutation [:declaration :params :bound-elements],
+               com.wsscode.pathom.connect/defresolver [:declaration :params :bound-elements],
+               fulcro.client.primitives/defsc [:declaration :params :bound-elements]
+               ghostwheel.core/>defn [:declaration :params :bound-elements],
+               nubank.shuffle.common.ui.helpers/defc [:declaration :params :bound-elements],
+               schema.core/defschema [:declaration :elements]
+               schema.core/def [:declaration :elements]
+               schema.core/fn [:params :bound-elements]
+               midge.sweet/fact [:element :element :_ :element]
+               org.httpkit.server/with-channel [:element :param :bound-elements]}
+ "use-metadata-for-privacy?" true}
