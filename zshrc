@@ -3,7 +3,7 @@ ZSH_THEME="lambda"
 
 # Zsh init
 export ZSH=~/.oh-my-zsh
-plugins=(vi-mode git autojump httpie yarn tmux)
+plugins=(vi-mode git autojump tmux)
 source $ZSH/oh-my-zsh.sh
 
 # NVIM S2
@@ -11,10 +11,6 @@ alias vim="nvim"
 alias vi="nvim"
 alias vimdiff='nvim -d'
 export EDITOR=nvim
-
-# HISTORY
-HISTSIZE=10000000
-SAVEHIST=10000000
 
 setopt BANG_HIST                 # Treat the '!' character specially during expansion.
 setopt EXTENDED_HISTORY          # Write the history file in the ":start:elapsed;command" format.
@@ -30,21 +26,18 @@ setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording en
 setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
 setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 
-# avoid window rename
-DISABLE_AUTO_TITLE="true"
-
-# remove delay
-KEYTIMEOUT=1
+HISTSIZE=10000000                # history size
+SAVEHIST=10000000                # history save size
+DISABLE_AUTO_TITLE="true"        # avoid window rename
+KEYTIMEOUT=1                     # remove delay
 
 # PATH adds
 PATH="$HOME/.local/bin:/usr/local/bin":$PATH
 PATH="$HOME/.cargo/bin:$HOME/.cargo/bin/racer":$PATH
 
-[ -f $HOME/.cargo/bin/rustc ] && export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+# language specific
+[ -f $HOME/.cargo/bin/rustc ] && export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src" # rust
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
-[[ ! $DISPLAY && $XDG_VTNR -eq 1 && $(id --group) -ne 0 ]] && exec startx -- vt1 &> /dev/null
 
 # arch zsh-autosuggestions
 [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -53,6 +46,10 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export FZF_DEFAULT_OPTS='--color=info:1,prompt:2,spinner:1,pointer:2,marker:1'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+[[ ! $DISPLAY && $XDG_VTNR -eq 1 && $(id --group) -ne 0 ]] && exec startx -- vt1 &> /dev/null
+
+# gpg
 export GPG_TTY=$(tty)
 
+# work specific configs
 [ -f ~/.nurc ] && source ~/.nurc
