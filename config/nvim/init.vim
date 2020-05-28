@@ -28,10 +28,13 @@ Plug 'guns/vim-clojure-static'
 Plug 'Olical/conjure', {'branch': 'master'}
 " Godot
 Plug 'rafaeldelboni/vim-gdscript3'
-" Haskell 
+" Haskell
 Plug 'neovimhaskell/haskell-vim'
-" Janet
-Plug 'janet-lang/janet.vim'
+" Markdown
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+" Distraction Free
+Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
@@ -212,3 +215,36 @@ function! s:show_documentation()
   endif
 endfunction
 nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+" Goyo
+let g:goyo_width = 120
+let g:goyo_height = 95
+
+function! s:goyo_enter()
+  set wrap
+  set linebreak
+  hi NonText ctermfg=235
+  let b:quitting = 0
+  let b:quitting_bang = 0
+  autocmd QuitPre <buffer> let b:quitting = 1
+  cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+endfunction
+
+function! s:goyo_leave()
+  set nowrap
+  set nolinebreak
+  " Quit Vim if this is the only remaining buffer
+  if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+    if b:quitting_bang
+      qa!
+    else
+      qa
+    endif
+  endif
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+" Vim Markdown
+let g:vim_markdown_folding_disabled = 1

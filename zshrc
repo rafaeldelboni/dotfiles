@@ -3,7 +3,7 @@ ZSH_THEME="lambda"
 
 # Zsh init
 export ZSH=~/.oh-my-zsh
-plugins=(vi-mode git autojump tmux)
+plugins=(vi-mode git autojump tmux jira)
 source $ZSH/oh-my-zsh.sh
 
 # NVIM S2
