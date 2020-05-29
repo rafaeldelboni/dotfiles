@@ -71,7 +71,7 @@ set expandtab            " use spaces, not tabs
 set list                 " Show invisible characters
 set listchars=tab:▶-,trail:•,extends:»,precedes:«,eol:¬
 
-set spelllang=pt_br,en
+set spelllang=en_us
 
 set undofile             " persistent undo, even if you close and reopen Vim
 
