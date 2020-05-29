@@ -1,11 +1,13 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
 " Utilities
-Plug 'dense-analysis/ale'
-Plug 'tpope/vim-fugitive'
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'scrooloose/nerdcommenter'
+Plug 'dense-analysis/ale'                           " Static analysis / error lint
+Plug 'tpope/vim-fugitive'                           " Git Wrapper
+Plug 'mg979/vim-visual-multi', {'branch': 'master'} " Multi selection
+Plug 'neoclide/coc.nvim', {'branch': 'release'}     " LSP / Autocomplete
+Plug 'scrooloose/nerdcommenter'                     " Code comment
+Plug 'junegunn/goyo.vim'                            " Distraction free mode
+Plug 'junegunn/vim-easy-align'                      " Text alignment 
 " File Exploration
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -31,10 +33,7 @@ Plug 'rafaeldelboni/vim-gdscript3'
 " Haskell
 Plug 'neovimhaskell/haskell-vim'
 " Markdown
-Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
-" Distraction Free
-Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
@@ -248,3 +247,9 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 " Vim Markdown
 let g:vim_markdown_folding_disabled = 1
+
+" Easy Align
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
