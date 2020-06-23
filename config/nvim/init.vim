@@ -183,7 +183,8 @@ highlight ALEError cterm=undercurl ctermfg=none
 highlight ALEWarning cterm=undercurl ctermfg=none
 let g:ale_linters = {
 \   'javascript': ['eslint'],
-\   'scss': ['stylelint']
+\   'scss': ['stylelint'],
+\   'clojure': ['clj-kondo', 'joker']
 \}
 let g:ale_fixers = {
 \   'javascript': ['eslint'],
