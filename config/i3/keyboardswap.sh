@@ -1,24 +1,28 @@
 #!/usr/bin/env bash
+argument=$1
+us_layout_cmd="setxkbmap -layout us -variant intl -option"
+gb_swap_layout_cmd="setxkbmap -layout gb -variant extd -option caps:swapescape"
+us_swap_layout_cmd="setxkbmap -layout us -variant intl -option caps:swapescape"
 
-uk_layout_cmd="setxkbmap -layout gb -variant extd -option caps:swapescape"
-us_layout_cmd="setxkbmap -layout us -variant intl -option caps:swapescape"
+current_layouts=$(setxkbmap -query | awk '
+  BEGIN{layout="";variant=""}
+    /^layout/{layout=$2}
+    /swapescape$/{swap="_swap"}
+  END{printf("%s%s",layout,swap)}')
 
-#switch between two layouts (Us and Uk in this case)
-current_layouts=$(setxkbmap -query | grep layout)
-
-#no argument swap between us - uk
-if [ -z $1 ]; then
-  if [ "${current_layouts: -2}" = "us" ]; then
-    eval $uk_layout_cmd
-  else
-    eval $us_layout_cmd
+#if no argument is supplied switch between layouts (Us, Us Swap and Gb Swap in this case)
+if [ -z $argument ]; then
+  if [ $current_layouts == 'us' ]; then
+    argument='us_swap'
+  elif [ $current_layouts == 'us_swap' ]; then
+    argument='gb_swap'
+  elif [ $current_layouts == 'gb_swap' ]; then
+    argument='us'
   fi
-#us argument
-elif [ $1 == 'us' ]; then
-  eval $us_layout_cmd
-#uk argument
-elif [ $1 == 'uk' ]; then
-  eval $uk_layout_cmd
 fi
+
+echo ${current_layouts}"->"${argument}
+
+eval "$"$argument"_layout_cmd"
 
 xset r rate 150 55
