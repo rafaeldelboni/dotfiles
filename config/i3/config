@@ -208,9 +208,17 @@ mode "$mode_video" {
 }
 bindsym $mod+v mode "$mode_video"
 
-# Sreen brightness controls
-bindsym $mod+F4 exec xbacklight -inc 10 # increase screen brightness
-bindsym $mod+F3 exec xbacklight -dec 10 # decrease screen brightness
+# Mode Monitor Brightness Setting
+set $mode_monitor (j)decrease brightness, (k)increase brightness
+mode "$mode_monitor" {
+        bindsym k exec xbacklight -inc 10 # increase screen brightness
+        bindsym j exec xbacklight -dec 10 # decrease screen brightness
+
+        # exit system mode: "Enter" or "Escape"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+m mode "$mode_monitor"
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id $HOME/.config/i3blocks/scripts/volume -u 5 && pkill -SIGRTMIN+11 i3blocks #increase sound volume
