@@ -12,13 +12,17 @@ current_layouts=$(setxkbmap -query | awk '
 
 #if no argument is supplied switch between layouts (Us, Us Swap and Gb Swap in this case)
 if [ -z $argument ]; then
-  if [ $current_layouts == 'us' ]; then
-    argument='us_swap'
-  elif [ $current_layouts == 'us_swap' ]; then
-    argument='gb_swap'
-  elif [ $current_layouts == 'gb_swap' ]; then
-    argument='us'
-  fi
+  case $current_layouts in
+    us)
+      argument='us_swap'
+      ;;
+    us_swap)
+      argument='gb_swap'
+      ;;
+    gb_swap)
+      argument='us'
+      ;;
+  esac
 fi
 
 echo ${current_layouts}"->"${argument}
