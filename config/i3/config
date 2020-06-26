@@ -188,8 +188,25 @@ mode "resize" {
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
 }
-
 bindsym $mod+r mode "resize"
+
+# Mode Setup Video
+set $mode_video (d)efault, (m)irroing, (n)otebook only, extend to (vim arrows)
+mode "$mode_video" {
+        bindsym d exec --no-startup-id $HOME/.config/i3/video.sh -d, mode "default"
+        bindsym m exec --no-startup-id $HOME/.config/i3/video.sh -m, mode "default"
+        bindsym n exec --no-startup-id $HOME/.config/i3/video.sh -n, mode "default"
+
+        bindsym h exec --no-startup-id $HOME/.config/i3/video.sh -h, mode "default"
+        bindsym j exec --no-startup-id $HOME/.config/i3/video.sh -j, mode "default"
+        bindsym k exec --no-startup-id $HOME/.config/i3/video.sh -k, mode "default"
+        bindsym l exec --no-startup-id $HOME/.config/i3/video.sh -l, mode "default"
+
+        # exit system mode: "Enter" or "Escape"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+v mode "$mode_video"
 
 # Sreen brightness controls
 bindsym $mod+F4 exec xbacklight -inc 10 # increase screen brightness
