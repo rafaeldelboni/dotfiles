@@ -193,7 +193,9 @@ let g:ale_fixers = {
 \}
 
 " Clojure
-let g:conjure_config = {"mappings.doc-word": "K", "mappings.def-word": "gd", "clojure.nrepl/eval.auto-require?": v:false}
+let g:conjure#mapping#doc_word = "K"
+let g:conjure#mapping#def_word = "gd"
+let g:conjure#client#clojure#nrepl#eval#auto_require = v:false
 
 " COC.Nvim
 let g:coc_global_extensions = ['coc-json', 'coc-conjure', 'coc-rls', 'coc-tsserver', 'coc-eslint']
