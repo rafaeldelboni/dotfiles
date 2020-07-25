@@ -30,8 +30,6 @@ Plug 'guns/vim-clojure-static'
 Plug 'Olical/conjure', {'branch': 'master'}
 " Godot
 Plug 'rafaeldelboni/vim-gdscript3'
-" Haskell
-Plug 'neovimhaskell/haskell-vim'
 " Markdown
 Plug 'plasticboy/vim-markdown'
 
@@ -189,7 +187,6 @@ let g:ale_linters = {
 let g:ale_fixers = {
 \   'javascript': ['eslint'],
 \   'scss': ['stylelint'],
-\   'haskell': ['brittany']
 \}
 
 " Clojure
