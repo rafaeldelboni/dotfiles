@@ -129,6 +129,7 @@ assign [class="(?i)firefox"] $ws2
 assign [class="(?i)chromium"] $ws2
 assign [class="(?i)telegram"] $ws3
 assign [class="(?i)slack"] $ws3
+assign [class="(?i)discord"] $ws3
 for_window [class="(?i)spotify"] move to workspace $ws4
 
 for_window [title="^Android Emulator -"] floating enable border pixel 3
