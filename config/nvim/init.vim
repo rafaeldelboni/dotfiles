@@ -97,7 +97,7 @@ let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.git$[[dir]]']
 
 " FZF
-let $FZF_DEFAULT_COMMAND = 'ag --hidden -l --ignore .git'
+let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
 nnoremap <Leader>p :Buffers<CR>
 nnoremap <c-p> :Files<CR>
 " hide lastsatus (> fzf) on fzf
