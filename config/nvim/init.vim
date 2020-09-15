@@ -109,10 +109,9 @@ autocmd  FileType fzf set laststatus=0 noshowmode noruler
 " :Ag  - Start fzf with hidden preview window that can be enabled with "?" key
 " :Ag! - Start fzf in fullscreen and display the preview window above
 command! -bang -nargs=* Ag
-  \ call fzf#vim#ag(<q-args>,
-  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
-  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
-  \                 <bang>0)
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview(), <bang>0)
 nnoremap <Leader>a :Ag<Space>
 nnoremap <Leader>ag :Ag <C-R><C-W><CR>
 vnoremap <Leader>ag y:Ag <C-r><C-r>"<CR>
