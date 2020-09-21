@@ -1,1 +1,1 @@
-EXCLUDES="readme.md docs"
+EXCLUDES="readme.md docs .gitignore"
