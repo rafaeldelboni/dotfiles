@@ -226,6 +226,16 @@ Section "Device"
 EndSection
 ```
 
+In some instances, running optirun will return:
+```
+[ERROR]Cannot access secondary GPU - error: [XORG] (EE) No devices detected.
+[ERROR]Aborting because fallback start is disabled.
+```
+You might need to define the NVIDIA card in the file `/etc/bumblebee/xorg.conf.nvidia`, using the correct BusID according to lspci output
+```
+    BusID "PCI:01:00:0"
+```
+
 ### TLP
 To complete TLP's install, you must enable the systemd services `tlp.service` and `tlp-sleep.service`. You should also mask the systemd service `systemd-rfkill.service` and socket `systemd-rfkill.socket` to avoid conflicts and assure proper operation of TLP's radio device switching options.
 ```bash
