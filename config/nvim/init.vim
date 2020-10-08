@@ -197,7 +197,7 @@ let g:conjure#mapping#def_word = "gd"
 let g:conjure#client#clojure#nrepl#eval#auto_require = v:false
 
 " COC.Nvim
-let g:coc_global_extensions = ['coc-json', 'coc-conjure', 'coc-rls', 'coc-tsserver', 'coc-eslint']
+let g:coc_global_extensions = ['coc-json', 'coc-conjure', 'coc-rust-analyzer', 'coc-tsserver', 'coc-eslint']
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
@@ -217,11 +217,11 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" Use <c-space> to trigger completion.
+" Use <shift-control-a> to trigger completion.
 if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
+  inoremap <silent><expr> <s-c-a> coc#refresh()
 else
-  inoremap <silent><expr> <c-@> coc#refresh()
+  inoremap <silent><expr> <s-c-@> coc#refresh()
 endif
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.

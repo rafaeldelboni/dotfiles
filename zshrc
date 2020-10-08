@@ -34,7 +34,6 @@ KEYTIMEOUT=1                     # remove delay
 # PATH adds
 PATH="$HOME/.local/bin:/usr/local/bin":$PATH
 PATH="$HOME/.cargo/bin:$HOME/.cargo/bin/racer":$PATH
-export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/library"
 
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
