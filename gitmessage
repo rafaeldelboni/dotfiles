@@ -27,3 +27,8 @@
 #    Use the body to explain what and why vs. how
 #    Can use multiple lines with "-" for bullet points in body
 # --------------------
+
+# Github Specifics
+
+# Co-authored-by: name <name@example.com>
+# Co-authored-by: another-name <github-username@users.noreply.github.com>
