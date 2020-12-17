@@ -27,7 +27,7 @@ Plug 'herringtondarkholme/yats.vim' " Rust
 Plug 'rust-lang/rust.vim'
 " Clojure
 Plug 'guns/vim-clojure-static'
-Plug 'Olical/conjure', {'branch': 'master'}
+Plug 'Olical/conjure', {'branch': 'develop'}
 " Godot
 Plug 'rafaeldelboni/vim-gdscript3'
 " Markdown

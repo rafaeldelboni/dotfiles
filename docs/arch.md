@@ -148,7 +148,7 @@ pacman -S nvidia nvidia-utils nvidia-settings
 
 ### Windows Manager (i3)
 ```bash
-pacman -S i3-gaps i3blocks i3lock rofi picom alacritty tmux lxappearance
+pacman -S i3-gaps i3blocks rofi picom alacritty tmux lxappearance
 ```
 Some basic fonts
 ```
@@ -172,7 +172,7 @@ makepkg -si
 ### Apps
 ```bash
 pacman -S nnn xfce4-notifyd feh imagemagick w3m gimp playerctl xclip arandr devmon tlp acpi sysstat libmpdclient openssh ripgrep maim zsh-autosuggestions acpilight zip unzip
-yay -Sy rcm autojump-rs ttf-ms-fonts ttf-ubuntu-font-family nerd-fonts-jetbrains-mono xfce-theme-greybird xtitle-git --noconfirm
+yay -Sy i3lock-color rcm autojump-rs ttf-ms-fonts ttf-ubuntu-font-family nerd-fonts-jetbrains-mono xfce-theme-greybird xtitle-git --noconfirm
 ```
 
 ### Oh My Zsh
