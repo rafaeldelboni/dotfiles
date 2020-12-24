@@ -35,7 +35,6 @@ KEYTIMEOUT=1                     # remove delay
 PATH="$HOME/.local/bin:/usr/local/bin":$PATH
 PATH="$HOME/.cargo/bin:$HOME/.cargo/bin/racer":$PATH
 
-export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
 # arch zsh-autosuggestions
 [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -51,3 +50,7 @@ export GPG_TTY=$(tty)
 
 # work specific configs
 [ -f ~/.nurc ] && source ~/.nurc
+
+# fnm 
+[ -f /usr/bin/fnm ] && eval "$(fnm env)"
+
