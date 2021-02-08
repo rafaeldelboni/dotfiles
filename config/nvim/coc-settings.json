@@ -15,8 +15,7 @@
       "port": 6008
     },
     "clojure-lsp": {
-      "command": "bash",
-      "args": ["-c", "clojure-lsp"],
+      "command": "clojure-lsp",
       "filetypes": ["clojure"],
       "rootPatterns": ["project.clj", "deps.edn"],
       "additionalSchemes": ["zipfile", "jar"],
