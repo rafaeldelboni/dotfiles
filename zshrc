@@ -43,6 +43,7 @@ PATH="$HOME/.cargo/bin:$HOME/.cargo/bin/racer":$PATH
 export FZF_DEFAULT_OPTS='--color=info:1,prompt:2,spinner:1,pointer:2,marker:1'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Autostart xserver after login on virtual terminal 1
 [[ ! $DISPLAY && $XDG_VTNR -eq 1 && $(id --group) -ne 0 ]] && exec startx -- vt1 &> /dev/null
 
 # gpg
