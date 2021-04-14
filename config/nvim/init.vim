@@ -8,6 +8,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}     " LSP / Autocomplete
 Plug 'scrooloose/nerdcommenter'                     " Code comment
 Plug 'junegunn/goyo.vim'                            " Distraction free mode
 Plug 'junegunn/vim-easy-align'                      " Text alignment 
+Plug 'sheerun/vim-polyglot'                         " Syntax highlighting and indentation support
 " File Exploration
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -21,17 +22,8 @@ Plug 'rafaeldelboni/novum.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" Javascript / Typescript
-Plug 'pangloss/vim-javascript'
-Plug 'herringtondarkholme/yats.vim' " Rust
-Plug 'rust-lang/rust.vim'
 " Clojure
-Plug 'guns/vim-clojure-static'
 Plug 'Olical/conjure', {'branch': 'develop'}
-" Godot
-Plug 'rafaeldelboni/vim-gdscript3'
-" Markdown
-Plug 'plasticboy/vim-markdown'
 " CSharp
 Plug 'OmniSharp/omnisharp-vim'
 
