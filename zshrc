@@ -35,6 +35,8 @@ KEYTIMEOUT=1                     # remove delay
 PATH="$HOME/.local/bin:/usr/local/bin":$PATH
 PATH="$HOME/.cargo/bin:$HOME/.cargo/bin/racer":$PATH
 
+# clojure
+alias clj='clojure'
 
 # arch zsh-autosuggestions
 [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -50,8 +52,7 @@ export FZF_DEFAULT_OPTS='--color=info:1,prompt:2,spinner:1,pointer:2,marker:1'
 export GPG_TTY=$(tty)
 
 # work specific configs
-[ -f ~/.nurc ] && source ~/.nurc
+[ -f ~/.workrc ] && source ~/.workrc
 
 # fnm 
 [ -f /usr/bin/fnm ] && eval "$(fnm env)"
-

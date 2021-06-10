@@ -6,7 +6,6 @@ Plug 'tpope/vim-fugitive'                           " Git Wrapper
 Plug 'mg979/vim-visual-multi', {'branch': 'master'} " Multi selection
 Plug 'neoclide/coc.nvim', {'branch': 'release'}     " LSP / Autocomplete
 Plug 'scrooloose/nerdcommenter'                     " Code comment
-Plug 'junegunn/goyo.vim'                            " Distraction free mode
 Plug 'junegunn/vim-easy-align'                      " Text alignment 
 Plug 'sheerun/vim-polyglot'                         " Syntax highlighting and indentation support
 " File Exploration
@@ -23,9 +22,14 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Clojure
-Plug 'Olical/conjure', {'branch': 'develop'}
+Plug 'Olical/conjure', {'tag': 'v4.19.0'}
 " CSharp
 Plug 'OmniSharp/omnisharp-vim'
+" Lisp
+Plug 'guns/vim-sexp'
+Plug 'tpope/vim-sexp-mappings-for-regular-people'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
 
 call plug#end()
 
@@ -175,7 +179,7 @@ highlight ALEWarning cterm=undercurl ctermfg=none
 let g:ale_linters = {
 \   'javascript': ['eslint'],
 \   'scss': ['stylelint'],
-\   'clojure': ['clj-kondo', 'joker'],
+\   'clojure': ['clj-kondo'],
 \   'cs': ['OmniSharp'],
 \}
 let g:ale_fixers = {
@@ -194,6 +198,8 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nmap <silent> fb <Plug>(coc-format)
+
 nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>ac <Plug>(coc-codeaction)
 nmap <leader>ax <Plug>(coc-codeaction-line)
@@ -282,41 +288,17 @@ augroup omnisharp_commands
   autocmd FileType cs nmap <silent> <buffer> <Leader>ossp <Plug>(omnisharp_stop_server)
 augroup END
 
-" Goyo
-let g:goyo_width = 120
-let g:goyo_height = 95
-
-function! s:goyo_enter()
-  set wrap
-  set linebreak
-  hi NonText ctermfg=235
-  let b:quitting = 0
-  let b:quitting_bang = 0
-  autocmd QuitPre <buffer> let b:quitting = 1
-  cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
-endfunction
-
-function! s:goyo_leave()
-  set nowrap
-  set nolinebreak
-  " Quit Vim if this is the only remaining buffer
-  if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
-    if b:quitting_bang
-      qa!
-    else
-      qa
-    endif
-  endif
-endfunction
-
-autocmd! User GoyoEnter nested call <SID>goyo_enter()
-autocmd! User GoyoLeave nested call <SID>goyo_leave()
-
-" Vim Markdown
-let g:vim_markdown_folding_disabled = 1
-
 " Easy Align
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" Sexp 
+
+let g:sexp_mappings = {
+         \ 'sexp_swap_list_backward':    '',
+         \ 'sexp_swap_list_forward':     '',
+         \ 'sexp_swap_element_backward': '',
+         \ 'sexp_swap_element_forward':  '',
+         \ }
