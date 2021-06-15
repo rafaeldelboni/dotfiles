@@ -101,16 +101,16 @@ autocmd! FileType fzf
 autocmd  FileType fzf set laststatus=0 noshowmode noruler
  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 
-" Ag
-" :Ag  - Start fzf with hidden preview window that can be enabled with "?" key
-" :Ag! - Start fzf in fullscreen and display the preview window above
-command! -bang -nargs=* Ag
+" Rg
+" :Rg  - Start fzf with hidden preview window that can be enabled with "?" key
+" :Rg! - Start fzf in fullscreen and display the preview window above
+command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
   \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
   \   fzf#vim#with_preview(), <bang>0)
-nnoremap <Leader>a :Ag<Space>
-nnoremap <Leader>ag :Ag <C-R><C-W><CR>
-vnoremap <Leader>ag y:Ag <C-r><C-r>"<CR>
+nnoremap <Leader>a :Rg<Space>
+nnoremap <Leader>ag :Rg <C-R><C-W><CR>
+vnoremap <Leader>ag y:Rg <C-r><C-r>"<CR>
 
 " ALE status in Airline
 let g:airline#extensions#ale#enabled = 1
