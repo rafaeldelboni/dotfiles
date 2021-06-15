@@ -22,7 +22,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Clojure
-Plug 'Olical/conjure', {'tag': 'v4.19.0'}
+Plug 'Olical/conjure', {'branch': 'master'}
 " CSharp
 Plug 'OmniSharp/omnisharp-vim'
 " Lisp
@@ -191,6 +191,7 @@ let g:ale_fixers = {
 let g:conjure#mapping#doc_word = "K"
 let g:conjure#mapping#def_word = "gd"
 let g:conjure#client#clojure#nrepl#eval#auto_require = v:false
+let g:conjure#client#clojure#nrepl#connection#auto_repl#enabled = v:false
 
 " COC.Nvim
 let g:coc_global_extensions = ['coc-json', 'coc-conjure', 'coc-rust-analyzer', 'coc-tsserver', 'coc-eslint']
