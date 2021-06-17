@@ -66,8 +66,8 @@ interval=60
 
 # CPU Speed indicator
 #
-[cpuspeed]
-command= $HOME/.config/i3blocks/scripts/cpuspeed
+[cpumemory]
+command=$HOME/.config/i3blocks/scripts/cpumemory.clj
 interval=60
 align=left
 
