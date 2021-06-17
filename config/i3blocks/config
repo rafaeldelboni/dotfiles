@@ -46,7 +46,7 @@ signal=11
 # Keyboard indicator
 #
 [keyboard]
-command=$HOME/.config/i3blocks/scripts/keyboard
+command=$HOME/.config/i3blocks/scripts/keyboard.clj
 interval=once
 signal=12
 
