@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-CAPS=$(xset q | grep Caps | awk '{
-  if ($4=="on") {
-    print "<span fgcolor=\"#FFFFFF\" bgcolor=\"#3ea290\">CAPS</span>";
-  }
-}')
-
-echo $CAPS

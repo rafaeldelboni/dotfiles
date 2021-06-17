@@ -53,7 +53,7 @@ signal=12
 # Key indicators
 #
 [keyindicator]
-command=$HOME/.config/i3blocks/scripts/keyindicator
+command=$HOME/.config/i3blocks/scripts/keyindicator.clj
 instance=CAPS
 interval=once
 signal=13
