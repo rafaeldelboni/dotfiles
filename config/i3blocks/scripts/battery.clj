@@ -9,7 +9,7 @@
       string/split-lines))
 
 (defn read-acpi []
-  (let [batt-num (str "Battery " (or (System/getenv "BLOCK_INSTANCE") 0) ":")]
+  (let [batt-num (str "Battery 0:")]
     (-> (sh-acpi)
         (as-> lines (filter (fn [line] (string/includes? line batt-num)) lines))
         last

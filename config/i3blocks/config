@@ -39,7 +39,7 @@ signal=10
 # Volume indicator
 #
 [volume]
-command=$HOME/.config/i3blocks/scripts/volume
+command=$HOME/.config/i3blocks/scripts/volume.clj
 interval=once
 signal=11
 
