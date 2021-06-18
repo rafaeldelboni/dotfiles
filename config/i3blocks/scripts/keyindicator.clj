@@ -8,20 +8,24 @@
       :out
       string/split-lines))
 
-(defn read-xset-led-mask []
-  (-> (sh-xset)
+(defn read-xset [raw-xset]
+  (-> raw-xset
       (as-> lines (filter (fn [line] (string/includes? line "LED mask:")) lines))
       last
       (string/split #"LED mask:")
       last
       string/trim))
 
-(let [caps "<span fgcolor=\"#FFFFFF\" bgcolor=\"#3ea290\">CAPS</span>"
-      lock "<span fgcolor=\"#FFFFFF\" bgcolor=\"#3ea290\">NUML</span>"
-      mask (read-xset-led-mask)]
-  (-> (case mask
-        "00000001" caps
-        "00000002" lock
-        "00000003" (str caps " " lock)
-        "")
-      println))
+(defn xset->output [xset]
+  (let [caps "<span fgcolor=\"#FFFFFF\" bgcolor=\"#3ea290\">CAPS</span>"
+        lock "<span fgcolor=\"#FFFFFF\" bgcolor=\"#3ea290\">NUML</span>"]
+    (case xset
+      "00000001" caps
+      "00000002" lock
+      "00000003" (str caps " " lock)
+      "")))
+
+(-> (sh-xset)
+    read-xset
+    xset->output
+    println)

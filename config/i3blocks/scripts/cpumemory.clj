@@ -8,8 +8,8 @@
       :out
       string/split-lines))
 
-(defn read-memory []
-  (->> (sh-proc "/proc/meminfo")
+(defn read-memory [raw-memory]
+  (->> raw-memory
        (filter (fn [line] (string/includes? line "Mem")))
        (mapv (fn [line]
                (let [coll (string/split line #":")]
@@ -26,8 +26,8 @@
                       (/ 1000000))})))
        (reduce merge)))
 
-(defn read-cpu []
-  (let [cpu (->> (sh-proc "/proc/cpuinfo")
+(defn read-cpu [raw-cpu]
+  (let [cpu (->> raw-cpu
                  (filter (fn [line] (string/includes? line "cpu MHz")))
                  (mapv (fn [line]
                          (->  line
@@ -38,12 +38,14 @@
         num (count cpu)]
     (/ (apply + cpu) num)))
 
-(let [{:keys [available]} (read-memory)
-      cpu (read-cpu)]
-  (-> (str "<span color=\"#868686\" size=\"large\"> </span><span>"
+(defn procs->output [{:keys [available]} cpu]
+  (str "<span color=\"#868686\" size=\"large\"> </span><span>"
        (format "%.2f" available)
        " Gb</span>"
        "<span color=\"#868686\" size=\"large\"> ﬙ </span><span>"
        (format "%.2f" cpu)
-       " MHz</span>")
-      println))
+       " MHz</span>"))
+
+(let [memory (-> "/proc/meminfo" sh-proc read-memory)
+      cpu (-> "/proc/cpuinfo" sh-proc read-cpu)]
+  (println (procs->output memory cpu)))

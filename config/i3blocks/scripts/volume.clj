@@ -8,15 +8,22 @@
       :out
       string/split-lines))
 
-(defn read-amixer []
-  (let [volume (filter (fn [line] (string/split line #"Left")) (sh-amixer))]
-    (-> volume
-        last
-        (clojure.string/split #"(?<=\[)|(?=\])"))))
+(defn read-amixer [raw-amixer]
+  (-> raw-amixer
+      (as-> lines (filter (fn [line] (string/split line #"Left")) lines))
+      last
+      (clojure.string/split #"(?<=\[)|(?=\])")))
 
-(let [volume (nth (read-amixer) 1)
-      status (nth (read-amixer) 3)]
-  (-> (if (= status "on")
-        (str "<span color='#868686' size='large'>墳</span><span> " volume "</span>")
-        "<span color='#868686' size='large'>婢</span>")
-      println))
+(defn amixer->output [amixer]
+  (let [volume (nth amixer 1)
+        status (nth amixer 3)]
+    (if (= status "on")
+      (str "<span color='#868686' size='large'>墳</span><span> "
+           volume
+           "</span>")
+      "<span color='#868686' size='large'>婢</span>")))
+
+(-> (sh-amixer)
+    read-amixer
+    amixer->output
+    println)

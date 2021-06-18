@@ -8,8 +8,8 @@
       :out
       string/split-lines))
 
-(defn read-setxkbmap []
-  (->> (sh-setxkbmap)
+(defn read-setxkbmap [raw-setxkbmap]
+  (->> raw-setxkbmap
        (mapv (fn [line]
                (let [coll (string/split line #":")]
                  {(-> coll
@@ -21,11 +21,17 @@
                       string/trim)})))
        (reduce merge)))
 
-(let [{:keys [layout variant options]
-       :or {options ""}} (read-setxkbmap)]
-  (-> (str "<span color='#868686' size='large'> </span><span>"
-           layout
-           " (" variant ")"
-           (when (string/includes? options "swapescape") " ")
-           "</span>")
-      println))
+(defn setxkbmap->output [setxkbmap]
+  (let [{:keys [layout variant options]
+         :or {options ""}} setxkbmap]
+    (str "<span color='#868686' size='large'> </span><span>"
+         layout
+         " (" variant ")"
+         (when (string/includes? options "swapescape")
+           " ")
+         "</span>")))
+
+(-> (sh-setxkbmap)
+    read-setxkbmap
+    setxkbmap->output
+    println)
