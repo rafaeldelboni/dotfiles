@@ -3,10 +3,13 @@
 (require '[clojure.java.shell :refer [sh]]
          '[clojure.string :as string])
 
-(defn read-xset-led-mask []
+(defn sh-xset []
   (-> (sh "xset" "q")
       :out
-      string/split-lines
+      string/split-lines))
+
+(defn read-xset-led-mask []
+  (-> (sh-xset)
       (as-> lines (filter (fn [line] (string/includes? line "LED mask:")) lines))
       last
       (string/split #"LED mask:")

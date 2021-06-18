@@ -3,10 +3,13 @@
 (require '[clojure.java.shell :refer [sh]]
          '[clojure.string :as string])
 
+(defn sh-setxkbmap []
+  (-> (sh "setxkbmap" "-query")
+      :out
+      string/split-lines))
+
 (defn read-setxkbmap []
-  (->> (sh "setxkbmap" "-query")
-       :out
-       string/split-lines
+  (->> (sh-setxkbmap)
        (mapv (fn [line]
                (let [coll (string/split line #":")]
                  {(-> coll

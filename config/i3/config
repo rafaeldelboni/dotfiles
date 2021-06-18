@@ -223,9 +223,9 @@ mode "$mode_monitor" {
 bindsym $mod+m mode "$mode_monitor"
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id $HOME/.config/i3blocks/scripts/volume -u 5 && pkill -SIGRTMIN+11 i3blocks #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id $HOME/.config/i3blocks/scripts/volume -d 5 && pkill -SIGRTMIN+11 i3blocks  #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id $HOME/.config/i3blocks/scripts/volume -m && pkill -SIGRTMIN+11 i3blocks # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id $HOME/.config/i3/volume.sh -u 5 && pkill -SIGRTMIN+11 i3blocks #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id $HOME/.config/i3/volume.sh -d 5 && pkill -SIGRTMIN+11 i3blocks  #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id $HOME/.config/i3/volume.sh -m && pkill -SIGRTMIN+11 i3blocks # mute sound
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause

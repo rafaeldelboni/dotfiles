@@ -3,13 +3,13 @@
 (require '[clojure.java.shell :refer [sh]]
          '[clojure.string :as string])
 
-(defn read-proc [path]
+(defn sh-proc [path]
   (-> (sh "cat" path)
       :out
       string/split-lines))
 
 (defn read-memory []
-  (->> (read-proc "/proc/meminfo")
+  (->> (sh-proc "/proc/meminfo")
        (filter (fn [line] (string/includes? line "Mem")))
        (mapv (fn [line]
                (let [coll (string/split line #":")]
@@ -27,7 +27,7 @@
        (reduce merge)))
 
 (defn read-cpu []
-  (let [cpu (->> (read-proc "/proc/cpuinfo")
+  (let [cpu (->> (sh-proc "/proc/cpuinfo")
                  (filter (fn [line] (string/includes? line "cpu MHz")))
                  (mapv (fn [line]
                          (->  line

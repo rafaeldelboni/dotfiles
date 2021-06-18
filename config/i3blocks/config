@@ -61,7 +61,7 @@ signal=13
 # Battery indicator
 #
 [battery]
-command=$HOME/.config/i3blocks/scripts/battery 0
+command=$HOME/.config/i3blocks/scripts/battery.clj
 interval=60
 
 # CPU Speed indicator
