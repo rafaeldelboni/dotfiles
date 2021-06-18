@@ -7,7 +7,7 @@ T='#ffffff'   # text
 W='#ffffff'   # wrong
 V='#191919'   # verifying
 
-i3lock -i $HOME/.config/i3/josh-rose-trYl7JYATH0-unsplash.png \
+i3lock \
 --insidever-color=$C   \
 --ringver-color=$V     \
 \
@@ -34,10 +34,18 @@ i3lock -i $HOME/.config/i3/josh-rose-trYl7JYATH0-unsplash.png \
 --time-str="%H:%M:%S"  \
 --date-str="%A, %m %Y" \
 --keylayout 1         \
+--time-font="JetBrainsMono Nerd Font Mono" \
+--date-font="JetBrainsMono Nerd Font Mono" \
+--layout-font="JetBrainsMono Nerd Font Mono" \
+--verif-font="JetBrainsMono Nerd Font Mono" \
+--wrong-font="JetBrainsMono Nerd Font Mono" \
+--greeter-font="JetBrainsMono Nerd Font Mono" \
+--radius=120 \
+--ring-width=10 \
+--time-size=40 \
+--date-size=20 \
+--layout-size=15 \
 
 # --veriftext="Drinking verification can..."
 # --wrongtext="Nope!"
-# --textsize=20
 # --modsize=10
-# --timefont="JetBrainsMono Nerd Font Mono"
-# --datefont=monofur
