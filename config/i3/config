@@ -251,8 +251,8 @@ bindsym --release Num_Lock  exec pkill -SIGRTMIN+13 i3blocks
 bindsym $mod+z exec $HOME/.config/i3/lock.sh
 
 # Default gaps
-gaps inner 7
-gaps outer 7
+gaps inner 8
+gaps outer 8
 
 # Enable Mode gaps
 set $mode_gaps Gaps: (o) outer, (i) inner
