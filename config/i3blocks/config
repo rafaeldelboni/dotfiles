@@ -29,7 +29,7 @@ markup=pango
 separator_block_width=18
 
 # XTitle indicator
-#
+# waits signal 10
 [xtitle]
 command=xtitle -i -t 35
 align=left
@@ -37,21 +37,21 @@ interval=once
 signal=10
 
 # Volume indicator
-#
+# waits signal 11
 [volume]
 command=$HOME/.config/i3blocks/scripts/volume.clj
 interval=once
 signal=11
 
 # Keyboard indicator
-#
+# waits signal 12
 [keyboard]
 command=$HOME/.config/i3blocks/scripts/keyboard.clj
 interval=once
 signal=12
 
 # Key indicators
-#
+# waits signal 13
 [keyindicator]
 command=$HOME/.config/i3blocks/scripts/keyindicator.clj
 instance=CAPS
@@ -59,20 +59,27 @@ interval=once
 signal=13
 
 # Battery indicator
-#
+# Each minute
 [battery]
 command=$HOME/.config/i3blocks/scripts/battery.clj
 interval=60
 
 # CPU Speed indicator
-#
+# Each minute
 [cpumemory]
 command=$HOME/.config/i3blocks/scripts/cpumemory.clj
 interval=60
 align=left
 
+# BTC price indicator
+# Each 10 minutes
+[btcprice]
+command=$HOME/.config/i3blocks/scripts/btcprice.clj
+interval=600
+align=left
+
 # Date Time
-#
+# Each 5 seconds
 [time]
 command=date '+%d/%m/%Y %H:%M:%S'
 interval=5
