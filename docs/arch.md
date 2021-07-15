@@ -259,14 +259,17 @@ Normally, users are prohibited to alter files in the sys filesystem. It's
 advisable (and recommended) to setup an "udev" rule to allow users in the
 "video" group to set the display brightness.
 To do so, place a file in /etc/udev/rules.d/90-backlight.rules containing:
-```
+```bash
 SUBSYSTEM=="backlight", ACTION=="add", \
   RUN+="/bin/chgrp video /sys/class/backlight/%k/brightness", \
   RUN+="/bin/chmod g+w /sys/class/backlight/%k/brightness"
 ```
 
-### Touchpad
-Make sure your touchpad config `/usr/share/X11/xorg.conf.d/40-libinput.conf` is like this:
+### Touchpad and Slimblade
+Make sure you link the following files:
+```bash
+sudo ln -sf ~/.xorg/10-touchpad.conf /usr/share/X11/xorg.conf.d/10-touchpad.conf
+sudo ln -sf ~/.xorg/10-slimblade.conf /usr/share/X11/xorg.conf.d/10-slimblade.conf
 ```
 Section "InputClass"
         Identifier "libinput touchpad catchall"
@@ -279,7 +282,7 @@ EndSection
 ```
 
 ### Blutooth Mouse (MX Anywhere 2S)
-```
+```bash
   bluetoothctl
   [bluet]power off
   [bluet]power on
@@ -309,7 +312,7 @@ Change the files `/usr/share/X11/xkb/symbols/us` and `/usr/share/X11/xkb/symbols
 ```
 
 ### Set Login Screen Issue
-```
+```bash
   sudo cp /etc/issue /etc/issue.bkp
   sudo cp ~/.config/issue /etc/issue
 ```

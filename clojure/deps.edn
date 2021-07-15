@@ -9,7 +9,7 @@
            ;;   - clj -X:new :template lib :name myname/my-cool-lib
            ;;   - cd my-cool-lib
            ;;   - clj -X:test:runner # run the tests!
-           :new {:extra-deps {com.github.seancorfield/clj-new {:mvn/version "1.1.309"}}
+           :new {:extra-deps {com.github.seancorfield/clj-new {:mvn/version "1.1.317"}}
                  :exec-fn clj-new/create
                  :exec-args {:template "app"}}
 
@@ -19,15 +19,15 @@
            ;;   - clj -M:outdated
            ;;     --upgrade upgrade outdated versions interactively.
            ;;     --force for upgrading without confirmation.
-           :outdated {:extra-deps {com.github.liquidz/antq {:mvn/version "0.15.3"}}
+           :outdated {:extra-deps {com.github.liquidz/antq {:mvn/version "0.16.0"}}
                       :main-opts ["-m" "antq.core"]}
 
-           :cider {:extra-deps {org.clojure/clojure {:mvn/version "1.10.1"}
+           :cider {:extra-deps {org.clojure/clojure {:mvn/version "1.10.3"}
                                 cider/cider-nrepl {:mvn/version "0.26.0"}}
                    :main-opts ["-m" "nrepl.cmdline" "--middleware" "[cider.nrepl/cider-middleware]"]}
 
-           :cider-cljs {:extra-deps {org.clojure/clojure {:mvn/version "1.10.1"}
-                                     org.clojure/clojurescript {:mvn/version "1.10.339"}
+           :cider-cljs {:extra-deps {org.clojure/clojure {:mvn/version "1.10.3"}
+                                     org.clojure/clojurescript {:mvn/version "1.10.866"}
                                      cider/cider-nrepl {:mvn/version "0.26.0"}
                                      cider/piggieback {:mvn/version "0.5.2"}}
                         :main-opts ["-m" "nrepl.cmdline" "--middleware"
