@@ -1,4 +1,8 @@
-{:aliases {;; project creation from templates:
+{:mvn/repos {"central" {:url "https://repo1.maven.org/maven2/"}
+             "clojars" {:url "https://repo.clojars.org/"}
+             "release" {:url "s3://180s-maven-repo/release"}}
+
+ :aliases {;; project creation from templates:
            ;; https://github.com/seancorfield/clj-new
            ;; - create an application project:
            ;;   - clj -X:new :name myname/myapp
