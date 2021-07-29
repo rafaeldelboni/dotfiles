@@ -81,6 +81,9 @@ nnoremap <CR> :noh<CR><CR>           " clear highlighting on enter in normal mod
 let mapleader = "\<space>" " Use space as leader key
 let maplocalleader = "," " Use , as local leader key
 
+" Duplicate currents panel in a new Tab
+nnoremap <silent><C-w>T :tab split<CR> 
+
 " Opens this file anywhere
 command! Vimrc :vs $MYVIMRC
 
