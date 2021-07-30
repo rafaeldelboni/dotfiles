@@ -73,16 +73,17 @@ set undofile             " persistent undo, even if you close and reopen Vim
 set splitbelow           " open new horizontal panes on down pane
 set splitright           " open new vertical panes on right pane
 
-au FocusGained,BufEnter * :checktime " Refresh changed content
+autocmd FocusGained,BufEnter * :checktime " Refresh changed content
 
 set hlsearch                         " enable highlighting search
-nnoremap <CR> :noh<CR><CR>           " clear highlighting on enter in normal mode
 
 let mapleader = "\<space>" " Use space as leader key
 let maplocalleader = "," " Use , as local leader key
 
+" clear highlighting on enter in normal mode
+nnoremap <CR> :noh<CR><CR>
 " Duplicate currents panel in a new Tab
-nnoremap <silent><C-w>T :tab split<CR> 
+nnoremap <silent><C-w>T :tab split<CR>
 
 " Opens this file anywhere
 command! Vimrc :vs $MYVIMRC
