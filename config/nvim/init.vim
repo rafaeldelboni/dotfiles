@@ -2,22 +2,11 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " Utilities
 Plug 'dense-analysis/ale'                           " Static analysis / error lint
-Plug 'tpope/vim-fugitive'                           " Git Wrapper
-Plug 'mg979/vim-visual-multi', {'branch': 'master'} " Multi selection
 Plug 'neoclide/coc.nvim', {'branch': 'release'}     " LSP / Autocomplete
-Plug 'junegunn/vim-easy-align'                      " Text alignment 
 Plug 'sheerun/vim-polyglot'                         " Syntax highlighting and indentation support
 " File Exploration
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-" Tmux
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'melonmanchan/vim-tmux-resizer'
-" Lisp
-Plug 'guns/vim-sexp'
-Plug 'tpope/vim-sexp-mappings-for-regular-people'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
 
 call plug#end()
 
@@ -40,16 +29,6 @@ command! -bang -nargs=* Rg
 nnoremap <Leader>a :Rg<Space>
 nnoremap <Leader>ag :Rg <C-R><C-W><CR>
 vnoremap <Leader>ag y:Rg <C-r><C-r>"<CR>
-
-" Fugitive
-nnoremap <leader>g :Git<Space>
-
-" Tmux
-let g:tmux_navigator_no_mappings = 1
-nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
-nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
-nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
-nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
 
 " COC.Nvim
 let g:coc_global_extensions = ['coc-json', 'coc-conjure', 'coc-rust-analyzer', 'coc-tsserver', 'coc-eslint']
@@ -101,19 +80,5 @@ function! s:show_documentation()
 endfunction
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
-" Easy Align
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
-
-" Sexp 
-
-let g:sexp_mappings = {
-         \ 'sexp_swap_list_backward':    '',
-         \ 'sexp_swap_list_forward':     '',
-         \ 'sexp_swap_element_backward': '',
-         \ 'sexp_swap_element_forward':  '',
-         \ }
-
+" use aniseed config files
 lua require('init')

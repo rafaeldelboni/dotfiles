@@ -39,5 +39,18 @@
   ;commeting code
   :preservim/nerdcommenter {}
   ;clojure
-  :Olical/conjure {:mod :conjure}
-  )
+  :Olical/conjure {:branch :master :mod :conjure}
+  ; multicursor selector
+  :mg979/vim-visual-multi {}
+  ;text alignment
+  :junegunn/vim-easy-align {:mod :easy-align}
+  ;git helper
+  :tpope/vim-fugitive {}
+  ;sexp
+  :guns/vim-sexp {:mod :sexp}
+  :tpope/vim-sexp-mappings-for-regular-people {}
+  :tpope/vim-repeat {}
+  :tpope/vim-surround {}
+  ;tmux
+  :christoomey/vim-tmux-navigator {:mod :tmux-navigator}
+  :melonmanchan/vim-tmux-resizer {})
