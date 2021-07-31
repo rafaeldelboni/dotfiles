@@ -29,8 +29,10 @@
   ;nvim config and plugins in Fennel
   :Olical/aniseed {:branch :develop}
   ;theme
-  :rafaeldelboni/novum.vim {}
+  :rafaeldelboni/novum.vim {:mod :theme}
   :ryanoasis/vim-devicons {}
+  ;status line
+  :hoob3rt/lualine.nvim {:mod :lualine}
   ;file exploration
   :preservim/nerdtree {:mod :nerdtree}
   :Xuyuanp/nerdtree-git-plugin {}

@@ -4,16 +4,11 @@
              util config.util
              str aniseed.string}})
 
-;set theme
-(nvim.ex.colorscheme :novum)
-
 ;refresh changed content
 (nvim.ex.autocmd "FocusGained,BufEnter" "*" ":checktime")
 
 ;don't wrap lines
 (nvim.ex.set :nowrap)
-
-;TODO: vim status show git branch, mode and file encoding
 
 (let [options
       {:encoding "utf-8"
