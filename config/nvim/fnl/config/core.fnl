@@ -18,9 +18,7 @@
        :errorbells true
        :backup false
        :swapfile false
-
        :showmode false
-
        ;show line numbers
        :number true
        ;show line and column number

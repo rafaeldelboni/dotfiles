@@ -1,34 +1,10 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
 " Utilities
-Plug 'dense-analysis/ale'                           " Static analysis / error lint
 Plug 'neoclide/coc.nvim', {'branch': 'release'}     " LSP / Autocomplete
 Plug 'sheerun/vim-polyglot'                         " Syntax highlighting and indentation support
-" File Exploration
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
 
 call plug#end()
-
-" FZF
-let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
-nnoremap <Leader>p :Buffers<CR>
-nnoremap <c-p> :Files<CR>
-" hide lastsatus (> fzf) on fzf
-autocmd! FileType fzf
-autocmd  FileType fzf set laststatus=0 noshowmode noruler
- \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
-
-" Rg
-" :Rg  - Start fzf with hidden preview window that can be enabled with "?" key
-" :Rg! - Start fzf in fullscreen and display the preview window above
-command! -bang -nargs=* Rg
-  \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
-  \   fzf#vim#with_preview(), <bang>0)
-nnoremap <Leader>a :Rg<Space>
-nnoremap <Leader>ag :Rg <C-R><C-W><CR>
-vnoremap <Leader>ag y:Rg <C-r><C-r>"<CR>
 
 " COC.Nvim
 let g:coc_global_extensions = ['coc-json', 'coc-conjure', 'coc-rust-analyzer', 'coc-tsserver', 'coc-eslint']
@@ -79,14 +55,5 @@ function! s:show_documentation()
   endif
 endfunction
 nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-" Sexp 
-
-let g:sexp_mappings = {
-         \ 'sexp_swap_list_backward':    '',
-         \ 'sexp_swap_list_forward':     '',
-         \ 'sexp_swap_element_backward': '',
-         \ 'sexp_swap_element_forward':  '',
-         \ }
 
 lua require('init')

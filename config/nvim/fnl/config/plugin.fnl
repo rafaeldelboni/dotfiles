@@ -41,7 +41,7 @@
   ;clojure
   :Olical/conjure {:branch :master :mod :conjure}
   ; multicursor selector
-  :mg979/vim-visual-multi {}
+  :mg979/vim-visual-multi {:commit "46c082aad84fd83c3c3d962c65afa800c2c33d85"}
   ;text alignment
   :junegunn/vim-easy-align {:mod :easy-align}
   ;git helper
@@ -53,4 +53,9 @@
   :tpope/vim-surround {}
   ;tmux
   :christoomey/vim-tmux-navigator {:mod :tmux-navigator}
-  :melonmanchan/vim-tmux-resizer {})
+  :melonmanchan/vim-tmux-resizer {}
+  ;file searching
+  :nvim-telescope/telescope.nvim {:requires [:nvim-lua/popup.nvim
+                                             :nvim-lua/plenary.nvim]
+                                  :mod :telescope}
+  )
