@@ -80,5 +80,13 @@ function! s:show_documentation()
 endfunction
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
-" use aniseed config files
+" Sexp 
+
+let g:sexp_mappings = {
+         \ 'sexp_swap_list_backward':    '',
+         \ 'sexp_swap_list_forward':     '',
+         \ 'sexp_swap_element_backward': '',
+         \ 'sexp_swap_element_forward':  '',
+         \ }
+
 lua require('init')

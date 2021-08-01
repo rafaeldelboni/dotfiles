@@ -29,9 +29,7 @@
        :completeopt "longest"
        ;turn on the wild menu, auto complete for commands in command line
        :wildmenu true
-       :wildignore (str.join "," (-> nvim.o.wildignore
-                                     (str.split ",")
-                                     (core.concat ["*/tmp/*" "*.so" "*.swp" "*.zip"])))
+       :wildignore "*/tmp/*,*.so,*.swp,*.zip"
        ;case insensitive search
        :ignorecase true
        ;smart search case
@@ -40,11 +38,7 @@
        :clipboard "unnamedplus"
        ;show invisible characters
        :list true
-       :listchars (str.join "," ["tab:▶-"
-                                 "trail:•"
-                                 "extends:»"
-                                 "precedes:«"
-                                 "eol:¬"])
+       :listchars (str.join "," ["tab:▶-" "trail:•" "extends:»" "precedes:«" "eol:¬"])
        ;tabs is space
        :expandtab true
        ;tab/indent size
