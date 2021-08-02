@@ -1,9 +1,6 @@
 call plug#begin('~/.local/share/nvim/plugged')
-
 " Utilities
 Plug 'neoclide/coc.nvim', {'branch': 'release'}     " LSP / Autocomplete
-Plug 'sheerun/vim-polyglot'                         " Syntax highlighting and indentation support
-
 call plug#end()
 
 " COC.Nvim

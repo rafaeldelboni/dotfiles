@@ -58,4 +58,7 @@
   :nvim-telescope/telescope.nvim {:requires [:nvim-lua/popup.nvim
                                              :nvim-lua/plenary.nvim]
                                   :mod :telescope}
+  ;parsing system
+  :nvim-treesitter/nvim-treesitter {:run ":TSUpdate"
+                                    :mod :treesitter}
   )
