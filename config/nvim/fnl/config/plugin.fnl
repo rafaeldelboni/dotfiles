@@ -28,11 +28,11 @@
   :wbthomason/packer.nvim {}
   ;nvim config and plugins in Fennel
   :Olical/aniseed {:branch :develop}
-  ;theme
-  :rafaeldelboni/novum.vim {:mod :theme}
-  :ryanoasis/vim-devicons {}
   ;status line
   :hoob3rt/lualine.nvim {:mod :lualine}
+  ;theme
+  :projekt0n/github-nvim-theme {:mod :theme}
+  :ryanoasis/vim-devicons {}
   ;file exploration
   :preservim/nerdtree {:mod :nerdtree}
   :Xuyuanp/nerdtree-git-plugin {}
@@ -60,5 +60,4 @@
                                   :mod :telescope}
   ;parsing system
   :nvim-treesitter/nvim-treesitter {:run ":TSUpdate"
-                                    :mod :treesitter}
-  )
+                                    :mod :treesitter})
