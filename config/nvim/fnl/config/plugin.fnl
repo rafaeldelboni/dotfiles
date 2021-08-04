@@ -60,4 +60,10 @@
                                   :mod :telescope}
   ;parsing system
   :nvim-treesitter/nvim-treesitter {:run ":TSUpdate"
-                                    :mod :treesitter})
+                                    :mod :treesitter}
+  ;lsp
+  :neovim/nvim-lspconfig {:requires [:nvim-lua/lsp-status.nvim]
+                          :mod :lspconfig}
+  ;autocomplete
+  :hrsh7th/nvim-compe {:requires [:tami5/compe-conjure]
+                       :mod :compe})

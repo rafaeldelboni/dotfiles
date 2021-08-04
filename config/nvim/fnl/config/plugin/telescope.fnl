@@ -2,10 +2,7 @@
   {autoload {nvim aniseed.nvim
              telescope telescope}})
 
-(telescope.setup {
-  :defaults {
-    :file_ignore_patterns ["node_modules"]
-  }})
+(telescope.setup {:defaults {:file_ignore_patterns ["node_modules"]}})
 
 (nvim.set_keymap :n :<leader>ff ":lua require('telescope.builtin').find_files()<cr>" {:noremap true})
 (nvim.set_keymap :n :<leader>fg ":lua require('telescope.builtin').live_grep()<cr>" {:noremap true})

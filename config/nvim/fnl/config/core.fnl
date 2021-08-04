@@ -1,6 +1,5 @@
 (module config.core
-  {autoload {core aniseed.core
-             nvim aniseed.nvim
+  {autoload {nvim aniseed.nvim
              util config.util
              str aniseed.string}})
 
@@ -24,7 +23,7 @@
        ;show line and column number
        :ruler true
        ;inserts the longest, ignore native autocomplete
-       :completeopt "longest"
+       :completeopt "menuone,noselect"
        ;turn on the wild menu, auto complete for commands in command line
        :wildmenu true
        :wildignore "*/tmp/*,*.so,*.swp,*.zip"
