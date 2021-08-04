@@ -62,8 +62,7 @@
   :nvim-treesitter/nvim-treesitter {:run ":TSUpdate"
                                     :mod :treesitter}
   ;lsp
-  :neovim/nvim-lspconfig {:requires [:nvim-lua/lsp-status.nvim]
-                          :mod :lspconfig}
+  :neovim/nvim-lspconfig {:mod :lspconfig}
   ;autocomplete
   :hrsh7th/nvim-compe {:requires [:tami5/compe-conjure]
                        :mod :compe})

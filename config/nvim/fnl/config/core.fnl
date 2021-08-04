@@ -22,7 +22,7 @@
        :number true
        ;show line and column number
        :ruler true
-       ;inserts the longest, ignore native autocomplete
+       ;settings needed for compe autocompletion
        :completeopt "menuone,noselect"
        ;turn on the wild menu, auto complete for commands in command line
        :wildmenu true

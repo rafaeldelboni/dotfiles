@@ -1,6 +1,5 @@
 (module config.plugin.lualine
   {autoload {lualine lualine
-             lsp-status lsp-status
              lsp config.plugin.lspconfig}})
 
 (defn lsp_connection []

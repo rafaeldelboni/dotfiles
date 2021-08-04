@@ -11,8 +11,3 @@
 
 ;duplicate currents panel in a new tab
 (nvim.set_keymap :n :<C-w>T ":tab split<CR>" {:noremap true :silent true})
-
-;temporary coc settings
-;(nvim.set_keymap :n :<leader>rn "<Plug>(coc-rename)" {})
-;(nvim.set_keymap :n :<leader>ac "<Plug>(coc-codeaction)" {})
-;(nvim.set_keymap :n :<leader>ax "<Plug>(coc-codeaction-line)" {})
