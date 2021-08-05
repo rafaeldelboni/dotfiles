@@ -1,6 +1,5 @@
 (module config.plugin.lspconfig
   {autoload {nvim aniseed.nvim
-             lsp-status lsp-status
              lsp lspconfig}})
 
 (vim.fn.sign_define "LspDiagnosticsSignError" {:text ""})
@@ -42,9 +41,14 @@
                     (nvim.buf_set_keymap bufnr :n :<leader>lw ":lua require('telescope.builtin').lsp_workspace_diagnostics()<cr>" {:noremap true})
                     (nvim.buf_set_keymap bufnr :n :<leader>lr ":lua require('telescope.builtin').lsp_references()<cr>" {:noremap true})
                     (nvim.buf_set_keymap bufnr :n :<leader>li ":lua require('telescope.builtin').lsp_implementations()<cr>" {:noremap true})))]
+
   ;; Clojure
   (lsp.clojure_lsp.setup {:on_attach on_attach
                           :handlers handlers})
+
+  ;; C/Cpp
+  (lsp.clangd.setup {:on_attach on_attach
+                     :handlers handlers})
 
 
   ;; JavaScript and TypeScript
