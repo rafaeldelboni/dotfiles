@@ -5,7 +5,7 @@
 
 (theme.setup {:themeStyle "dark"
               :commentStyle "italic"
-              :hideInactiveStatusline true
+              :hideInactiveStatusline false
               :colors {:bg "#1b1b1b"}})
 
 (nvim.ex.hi "ColorColumn guibg=#303030")
