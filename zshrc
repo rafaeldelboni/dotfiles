@@ -1,5 +1,5 @@
 # theme
-TERM="tmux-256color"
+export TERM="tmux-256color"
 ZSH_THEME="lambda"
 
 # Zsh init

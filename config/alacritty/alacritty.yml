@@ -3,14 +3,14 @@
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
-#env:
+env:
   # TERM variable
   #
   # This value is used to set the `$TERM` environment variable for
   # each instance of Alacritty. If it is not present, alacritty will
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
-  #TERM: xterm-256color
+  TERM: tmux-256color
 
 window:
   # Allow terminal applications to change Alacritty's window title.
@@ -152,44 +152,38 @@ debug:
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
 
-# Colors (kasugano)
+# github Alacritty Colors
 colors:
   # Default colors
   primary:
     background: '0x1b1b1b'
-    foreground: '0xffffff'
+    foreground: '0xd1d5da'
 
   # Normal colors
   normal:
-    black:   '0x3d3d3d'
-    red:     '0x6673bf'
-    green:   '0x3ea290'
-    yellow:  '0xb0ead9'
-    blue:    '0x31658c'
-    magenta: '0x596196'
-    cyan:    '0x8292b2'
-    white:   '0xc8cacc'
+    black:   '0x24292e'
+    red:     '0xc03c3c'
+    green:   '0x1ca76f'
+    yellow:  '0xe2e210'
+    blue:    '0x2f71bb'
+    magenta: '0xbc3fbc'
+    cyan:    '0x2092ae'
+    white:   '0xc3c8cf'
 
   # Bright colors
   bright:
-    black:   '0x4d4d4d'
-    red:     '0x899aff'
-    green:   '0x52ad91'
-    yellow:  '0x98c9bb'
-    blue:    '0x477ab3'
-    magenta: '0x7882bf'
-    cyan:    '0x95a7cc'
-    white:   '0xedeff2'
+    black:   '0x666666'
+    red:     '0xf14c4c'
+    green:   '0x23d18b'
+    yellow:  '0xf5f543'
+    blue:    '0x3b8eea'
+    magenta: '0xd670d6'
+    cyan:    '0x29b7da'
+    white:   '0xd1d5da'
 
-  # Indexed Colors
-  #
-  # The indexed colors include all colors from 16 to 256.
-  # When these are not set, they're filled with sensible defaults.
-  #
-  # Example:
-  #   `- { index: 16, color: '0xff00ff' }`
-  #
-  indexed_colors: []
+  indexed_colors:
+    - { index: 16, color: '0xd18616' }
+    - { index: 17, color: '0xf14c4c' }
 
 # Visual Bell
 #

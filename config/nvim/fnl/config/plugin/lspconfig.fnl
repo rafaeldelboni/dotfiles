@@ -57,4 +57,5 @@
 
   ;; Rust
   (lsp.rust_analyzer.setup {:on_attach on_attach
-                            :handlers handlers}))
+                            :handlers handlers
+                            :cmd ["rustup" "run" "nightly" "rust-analyzer"]}))

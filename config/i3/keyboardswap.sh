@@ -29,4 +29,4 @@ echo ${current_layouts}"->"${argument}
 
 eval "$"$argument"_layout_cmd"
 
-xset r rate 150 55
+xset r rate 150 70
