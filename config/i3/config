@@ -34,8 +34,8 @@ hide_edge_borders both
 # Some colour variables
 set $text-color           #ffffff
 set $inactive-text-color  #ffffff
-set $primary-color        #3ea290
-set $bg-color             #191919
+set $primary-color        #2f71bb
+set $bg-color             #1c1b22
 set $urgent-bg-color      #444444
 set $inactive-bg-color    #303030
 

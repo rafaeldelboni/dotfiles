@@ -17,8 +17,8 @@
       string/trim))
 
 (defn xset->output [xset]
-  (let [caps "<span fgcolor=\"#FFFFFF\" bgcolor=\"#3ea290\">CAPS</span>"
-        lock "<span fgcolor=\"#FFFFFF\" bgcolor=\"#3ea290\">NUML</span>"]
+  (let [caps "<span fgcolor=\"#FFFFFF\" bgcolor=\"#2f71bb\">CAPS</span>"
+        lock "<span fgcolor=\"#FFFFFF\" bgcolor=\"#2f71bb\">NUML</span>"]
     (case xset
       "00000001" caps
       "00000002" lock

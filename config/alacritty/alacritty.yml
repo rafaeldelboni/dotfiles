@@ -156,7 +156,7 @@ draw_bold_text_with_bright_colors: true
 colors:
   # Default colors
   primary:
-    background: '0x1b1b1b'
+    background: '0x1c1b22'
     foreground: '0xd1d5da'
 
   # Normal colors

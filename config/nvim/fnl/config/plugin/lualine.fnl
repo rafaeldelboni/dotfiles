@@ -8,9 +8,12 @@
 
 (lualine.setup {:options {:theme (core.assoc
                                    (require :lualine.themes.github)
-                                   :inactive {:a {:bg "#1b1b1b" :fg "#808080"}
-                                              :b {:bg "#1b1b1b" :fg "#808080" :gui "bold"}
-                                              :c {:bg "#1b1b1b" :fg "#808080"}})
+                                   :inactive {:a {:bg "#19181e" :fg "#a4a3a6"}
+                                              :b {:bg "#19181e" :fg "#a4a3a6" :gui "bold"}
+                                              :c {:bg "#19181e" :fg "#a4a3a6"}}
+                                   :normal {:a {:bg "#131217" :fg "#24292e"}
+                                            :b {:bg "#131217" :fg "#3b8eea"}
+                                            :c {:bg "#19181e" :fg "#d1d5da"}})
                           :icons_enabled false
                           :section_separators ["" ""]
                           :component_separators ["" ""]}
