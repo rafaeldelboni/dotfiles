@@ -11,9 +11,9 @@
               :documentation {:winhighlight "NormalFloat:CompeDocumentation,FloatBorder:CompeDocumentationBorder"
                               :border "single"}
               :source {:spell false
+                       :vsnip false
                        :path true
                        :buffer true
-                       :vsnip true
                        :nvim_lsp true
                        :conjure true
                        :treesitter true
