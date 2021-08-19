@@ -23,7 +23,7 @@
            ;;   - clj -M:outdated
            ;;     --upgrade upgrade outdated versions interactively.
            ;;     --force for upgrading without confirmation.
-           :outdated {:extra-deps {com.github.liquidz/antq {:mvn/version "0.16.0"}}
+           :outdated {:extra-deps {com.github.liquidz/antq {:mvn/version "0.16.3"}}
                       :main-opts ["-m" "antq.core"]}
 
            :cider {:extra-deps {org.clojure/clojure {:mvn/version "1.10.3"}

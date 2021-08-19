@@ -55,6 +55,13 @@
   (lsp.tsserver.setup {:on_attach on_attach
                        :handlers handlers})
 
+  ;; Lua
+  (lsp.sumneko_lua.setup {:on_attach on_attach
+                          :handlers handlers
+                          :cmd ["lua-language-server"]
+                          :settings {:Lua {:workspace {:maxPreload 2000
+                                                       :preloadFileSize 1000}}}})
+
   ;; Rust
   (lsp.rust_analyzer.setup {:on_attach on_attach
                             :handlers handlers

@@ -51,8 +51,9 @@ bindsym $mod+Return exec $HOME/.config/i3/terminal.sh
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show run -config ~/.config/rofi.conf
+# start rofi (a program launcher)
+set $menu "rofi -combi-modi window,drun,run -show combi -config ~/.config/rofi.conf"
+bindsym $mod+d exec $menu
 
 # change focus
 bindsym $mod+h focus left
@@ -114,16 +115,16 @@ bindsym $mod+a focus parent
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 
-set $ws1   1 <span weight='bold' size='medium'>ア</span> 
-set $ws2   2 <span weight='bold' size='medium'>イ</span> 
-set $ws3   3 <span weight='bold' size='medium'>ウ</span> 
-set $ws4   4 <span weight='bold' size='medium'>エ</span> 
-set $ws5   5 <span weight='bold' size='medium'>オ</span> 
-set $ws6   6 <span weight='bold' size='medium'>カ</span> 
-set $ws7   7 <span weight='bold' size='medium'>キ</span> 
-set $ws8   8 <span weight='bold' size='medium'>ク</span> 
-set $ws9   9 <span weight='bold' size='medium'>ケ</span> 
-set $ws10 10 <span weight='bold' size='medium'>コ</span> 
+set $ws1   1 ア 
+set $ws2   2 イ 
+set $ws3   3 ウ 
+set $ws4   4 エ 
+set $ws5   5 オ 
+set $ws6   6 カ 
+set $ws7   7 キ 
+set $ws8   8 ク 
+set $ws9   9 ケ 
+set $ws10 10 コ 
 
 # assign programs to certain workspaces
 assign [class="(?i)firefox"] $ws2
@@ -292,12 +293,11 @@ mode "$mode_gaps_outer" {
     bindsym Escape mode "default"
 }
 
-# Window colours
-#     border      background    text      indicator
-client.focused   $bg-color   $bg-color   $text-color   $00ff00
-client.unfocused $inactive-bg-color  $inactive-bg-color  $inactive-text-color  $00ff00
-client.focused_inactive  $inactive-bg-color  $inactive-bg-color  $inactive-text-color  $00ff00
-client.urgent $urgent-bg-color $urgent-bg-color $text-color $00ff00
+# Window colours        #border            background         text                 indicator
+client.focused          $bg-color          $bg-color          $text-color          $urgent-bg-color
+client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color $urgent-bg-color
+client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color $urgent-bg-color
+client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color          $urgent-bg-color
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -307,7 +307,7 @@ bar {
     strip_workspace_numbers yes
     status_command i3blocks -c $HOME/.config/i3blocks/config
     font pango:JetBrainsMono Nerd Font Mono Bold 9
-    colors{
+    colors {
       background $bg-color
       statusline $text-color
       # class            boarder          backgr           text
