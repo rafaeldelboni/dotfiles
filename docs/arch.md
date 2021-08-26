@@ -264,7 +264,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 
 ### Dotfiles
 Clone this repo (or your own fork!) to your **home** directory (`/Users/username`).
-```
+```bash
 $ cd ~
 $ git clone git@github.com:rafaeldelboni/dotfiles.git .dotfiles
 $ rcup -x docs -x readme.md
