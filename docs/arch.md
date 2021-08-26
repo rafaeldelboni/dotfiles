@@ -4,15 +4,27 @@
 You can download this raw file using `wget bit.ly/rdarchdocs`
 
 ### Wireless on Installation
-The command `iw dev` gives the interface name (`wlp2s0` in the exaple)
-to use in the following commands:
+Use the command `iwctl` to get an interactive prompt.
+> In the iwctl prompt you can auto-complete commands, device names and SSID by hitting Tab.
+
+First, if you do not know your wireless device name, list all Wi-Fi devices:
 ```bash
-wpa_supplicant -B -i wlp2s0 -c <(wpa_passphrase "the network SSID" "wpa passkey")
-dhcpcd wlp2s0
+[iwd]# device list
+```
 
-# or
+Then, to scan for networks:
+```bash
+[iwd]# station device scan
+```
 
-wifi-menu
+You can then list all available networks:
+```bash
+[iwd]# station device get-networks
+```
+
+Finally, to connect to a network:
+```bash
+[iwd]# station device connect SSID
 ```
 
 ### Load Keyboard Layout
@@ -49,6 +61,20 @@ parted /dev/sda
 lsblk /dev/sda
 ```
 
+### Encrypt 
+
+```bash
+cryptsetup luksFormat --type luks2 /dev/sda3
+cryptsetup open /dev/sda3 cryptlvm
+```
+
+### LVM setup
+```bash
+pvcreate /dev/mapper/cryptlvm
+vgcreate cryptvg /dev/mapper/cryptlvm
+lvcreate -l 100%FREE cryptvg -n root
+```
+
 ### Format partitions
 
 Boot partition:
@@ -62,18 +88,18 @@ mkswap /dev/sda2
 swapon /dev/sda2
 ```
 
-Data partition:
+Data encrypted partition:
 ```bash
-mkfs.ext4 /dev/sda3
+mkfs.ext4 /dev/cryptvg/root
 ```
+
 
 ### Mount partitions
 
 ```bash
-mount /dev/sda3 /mnt
+mount /dev/cryptvg/root /mnt
 mkdir /mnt/boot
-mkdir /mnt/boot/efi
-mount /dev/sda1 /mnt/boot/efi
+mount /dev/sda1 /mnt/boot
 ```
 
 ### Install the base packages
@@ -125,24 +151,80 @@ systemctl enable NetworkManager.service
 ```
 To connect to network after the reboot use `nmtui-connect` 
 
+### Generate an initramfs
+Edit `/etc/mkinitcpio.conf` so we can generate an initramfs which lets us decrypt our root partition during start-up.
+Change the HOOKS definition to look like this:
+```
+HOOKS=(base systemd udev keyboard autodetect sd-vconsole modconf block sd-encrypt lvm2 filesystems fsck)
+```
+
+We have to create an `/etc/crypttab.initramfs` to identify our encrypted volume.
+Linux uses UUIDs to uniquely identify your data volumes, independent of the system they’re attached to.
+
+Let’s figure out the UUID of our encrypted partition:
+```bash
+ls -l /dev/disk/by-uuid | grep sda3
+```
+
+Copy the UUID and edit `/etc/crypttab.initramfs`:
+```
+cryptlvm UUID=<your UUID> none luks2,discard
+```
+
+We can edit /etc/vconsole.conf to define the keyboard layout used for entering our encryption passphrase during start-up:
+```
+KEYMAP=us
+```
+
+Let’s generate a new initramfs image that contains everything we need for decrypting our volume:
+```bash
+pacman -S lvm2
+mkinitcpio -p linux
+```
+
 ### Bootloader
 ```bash
-pacman -S grub efibootmgr ntfs-3g os-prober
-grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=grub
-mkdir /boot/efi/EFI/boot
-cp /boot/efi/EFI/grub/grubx64.efi /boot/efi/EFI/boot/bootx64.efi
-grub-mkconfig -o /boot/grub/grub.cfg
-vim /boot/grub/grub.cfg
+bootctl install
 ```
-Add the following kernel startup parameters on `/etc/default/grub`:
+We will have to tell the boot loader which root partition to boot from.
+Look at your `cat /etc/fstab` and copy the UUID of your root filesystem.
+> Note that this is a different UUID than the one we used before!
+
+Edit `/boot/loader/entries/arch.conf` and add the following lines:
 ```
-  GRUB_CMDLINE_LINUX_DEFAULT="acpi_osi=! acpi_osi=\"Windows 2009\" nvidia-drm.modeset=1 quiet loglevel=0"
+title   Arch Linux
+linux   /vmlinuz-linux
+initrd  /initramfs-linux.img
+options root=UUID=<your UUID> rw quiet loglevel=0 splash
 ```
 
 ### Audio & Video
 ```bash
 pacman -S alsa-firmware alsa-utils alsa-plugins pulseaudio-alsa pulseaudio
 pacman -S xorg-server xorg-xinit xorg-apps xf86-input-evdev
+pacman -S mesa vulkan-intel
+```
+
+#### Intel Video (Old Cards)
+```bash
+pacman -S xf86-video-intel
+```
+In case `startx` doesn't work, add file `/usr/share/X11/xorg.conf.d/20-intel.conf` with the following contents:
+```
+Section "Device"
+        Identifier "Intel Graphics"
+        Driver     "intel"
+        Option     "Virtualheads 3"
+EndSection
+```
+
+#### Intel Video (New Cards, Eg. Iris XE)
+```bash
+pacman -S intel-media-driver
+```
+
+#### Nvidia Cards
+```bash
 pacman -S nvidia nvidia-utils nvidia-settings
 ```
 
@@ -152,7 +234,7 @@ pacman -S i3-gaps i3blocks rofi picom alacritty tmux lxappearance
 ```
 Some basic fonts
 ```
-  pacman -S ttf-dejavu ttf-font-awesome adobe-source-han-sans-otc-fonts ttf-indic-otf noto-fonts-emoji
+pacman -S ttf-dejavu ttf-font-awesome adobe-source-han-sans-otc-fonts ttf-indic-otf noto-fonts-emoji
 ```
 Create the file `.xinitrc` file
 ```
@@ -212,18 +294,10 @@ gpg-connect-agent reloadagent /bye
 Bumblebee is the best way to minimize battery usage and selective usage of GPU
 https://wiki.archlinux.org/index.php/bumblebee
 ```bash
-pacman -Sy xf86-video-intel mesa bumblebee bbswitch
+pacman -Sy bumblebee bbswitch
 gpasswd -a rafael bumblebee
 systemctl enable bumblebeed.service
 systemctl start bumblebeed.service
-```
-In case `startx` doesn't work after bumblebee is installed, add file `/etc/X11/xorg.conf.d/20-intel.conf` with the following contents:
-```
-Section "Device"
-        Identifier "Intel Graphics"
-        Driver     "intel"
-        Option     "Virtualheads 3"
-EndSection
 ```
 
 In some instances, running optirun will return:
