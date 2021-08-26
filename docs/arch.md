@@ -216,7 +216,7 @@ EndSection
 ```bash
 pacman -S mesa intel-media-driver vulkan-intel
 ```
-You also need to add `i915` kernel argument into `/boot/loader/entries/arch.conf` options.
+You also need to add `i915 i915.enable_guc=2` kernel argument into `/boot/loader/entries/arch.conf` options.
 
 ### Nvidia Cards
 ```bash
