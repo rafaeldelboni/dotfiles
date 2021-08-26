@@ -56,14 +56,14 @@ parted /dev/sda
 lsblk /dev/sda
 ```
 
-## Encrypt 
+## Encrypt: Start
 
 ```bash
 cryptsetup luksFormat --type luks2 /dev/sda3
 cryptsetup open /dev/sda3 cryptlvm
 ```
 
-## LVM setup
+## Encrypt: LVM setup
 ```bash
 pvcreate /dev/mapper/cryptlvm
 vgcreate cryptvg /dev/mapper/cryptlvm
@@ -87,7 +87,6 @@ Data encrypted partition:
 ```bash
 mkfs.ext4 /dev/cryptvg/root
 ```
-
 
 ## Mount partitions
 
@@ -146,7 +145,7 @@ systemctl enable NetworkManager.service
 ```
 To connect to network after the reboot use `nmtui-connect` 
 
-## Generate an initramfs
+## Encrypt: Generate an initramfs
 Edit `/etc/mkinitcpio.conf` so we can generate an initramfs which lets us decrypt our root partition during start-up.
 Change the HOOKS definition to look like this:
 ```
@@ -181,6 +180,7 @@ mkinitcpio -p linux
 ```bash
 bootctl install
 ```
+### Encrypt: Bootloader setup
 We will have to tell the boot loader which root partition to boot from.
 Look at your `cat /etc/fstab` and copy the UUID of your root filesystem.
 > Note that this is a different UUID than the one we used before!
