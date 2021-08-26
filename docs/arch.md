@@ -3,7 +3,7 @@
 ## Installation
 You can download this raw file using `wget bit.ly/rdarchdocs`
 
-### Wireless on Installation
+## Wireless on Installation
 Use the command `iwctl` to get an interactive prompt.
 > In the iwctl prompt you can auto-complete commands, device names and SSID by hitting Tab.
 
@@ -27,12 +27,7 @@ Finally, to connect to a network:
 [iwd]# station device connect SSID
 ```
 
-### Load Keyboard Layout
-```bash
-loadkeys uk
-```
-
-### Partition the disks
+## Partition the disks
 
 Check available SSDs
 
@@ -40,7 +35,7 @@ Check available SSDs
 fdisk -l
 ```
 
-#### Scheme
+### Scheme
 
 | Name      | Size        | System |
 | --------- |:-----------:|:------:|
@@ -61,21 +56,21 @@ parted /dev/sda
 lsblk /dev/sda
 ```
 
-### Encrypt 
+## Encrypt 
 
 ```bash
 cryptsetup luksFormat --type luks2 /dev/sda3
 cryptsetup open /dev/sda3 cryptlvm
 ```
 
-### LVM setup
+## LVM setup
 ```bash
 pvcreate /dev/mapper/cryptlvm
 vgcreate cryptvg /dev/mapper/cryptlvm
 lvcreate -l 100%FREE cryptvg -n root
 ```
 
-### Format partitions
+## Format partitions
 
 Boot partition:
 ```bash
@@ -94,7 +89,7 @@ mkfs.ext4 /dev/cryptvg/root
 ```
 
 
-### Mount partitions
+## Mount partitions
 
 ```bash
 mount /dev/cryptvg/root /mnt
@@ -102,7 +97,7 @@ mkdir /mnt/boot
 mount /dev/sda1 /mnt/boot
 ```
 
-### Install the base packages
+## Install the base packages
 
 Select the best mirror
 ```bash
@@ -114,7 +109,7 @@ pacstrap /mnt base base-devel linux linux-firmware neovim zsh
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
-### Locale
+## Locale
 
 ```bash
 arch-chroot /mnt
@@ -125,14 +120,14 @@ locale-gen
 echo LANG=en_US.UTF-8 > /etc/locale.conf
 ```
 
-### Default text editor
+## Default text editor
 
 ```
 export VISUAL="nvim"
 export EDITOR="$VISUAL"
 ```
 
-### User
+## User
 
 ```bash
 passwd
@@ -142,7 +137,7 @@ visudo
 ```
 Uncomment this line: `%wheel ALL=(ALL) ALL`
 
-### Network
+## Network
 ```bash
 echo alpha-arch > /etc/hostname
 printf "\n127.0.0.1 localhost\n::1 localhost\n127.0.0.1 alpha-arch.localdomain alpha-arch" >> /etc/hosts
@@ -151,7 +146,7 @@ systemctl enable NetworkManager.service
 ```
 To connect to network after the reboot use `nmtui-connect` 
 
-### Generate an initramfs
+## Generate an initramfs
 Edit `/etc/mkinitcpio.conf` so we can generate an initramfs which lets us decrypt our root partition during start-up.
 Change the HOOKS definition to look like this:
 ```
@@ -182,7 +177,7 @@ pacman -S lvm2
 mkinitcpio -p linux
 ```
 
-### Bootloader
+## Bootloader
 ```bash
 bootctl install
 ```
@@ -198,16 +193,15 @@ initrd  /initramfs-linux.img
 options root=UUID=<your UUID> rw quiet loglevel=0 splash
 ```
 
-### Audio & Video
+## Audio & Video
 ```bash
 pacman -S alsa-firmware alsa-utils alsa-plugins pulseaudio-alsa pulseaudio
 pacman -S xorg-server xorg-xinit xorg-apps xf86-input-evdev
-pacman -S mesa vulkan-intel
 ```
 
-#### Intel Video (Old Cards)
+### Intel Video (Old Cards)
 ```bash
-pacman -S xf86-video-intel
+pacman -S mesa xf86-video-intel vulkan-intel
 ```
 In case `startx` doesn't work, add file `/usr/share/X11/xorg.conf.d/20-intel.conf` with the following contents:
 ```
@@ -218,17 +212,19 @@ Section "Device"
 EndSection
 ```
 
-#### Intel Video (New Cards, Eg. Iris XE)
+### Intel Video (New Cards, Eg. Iris XE)
 ```bash
-pacman -S intel-media-driver
+pacman -S mesa intel-media-driver vulkan-intel
 ```
+You also need to add `i915` kernel argument into `/boot/loader/entries/arch.conf` options.
 
-#### Nvidia Cards
+### Nvidia Cards
 ```bash
 pacman -S nvidia nvidia-utils nvidia-settings
 ```
+You also need to add `acpi_osi=! acpi_osi=\"Windows 2009\" nvidia-drm.modeset=1` kernel arguments into `/boot/loader/entries/arch.conf` options.
 
-### Windows Manager (i3)
+## Windows Manager (i3)
 ```bash
 pacman -S i3-gaps i3blocks rofi picom alacritty tmux lxappearance
 ```
@@ -244,25 +240,34 @@ exec i3
 ```
 Run `startx`
 
-### Yay
+# Config
+
+## Yay
 ```bash
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 ```
 
-### Apps
+## Apps
 ```bash
-pacman -S fzf xfce4-notifyd feh imagemagick w3m gimp playerctl xclip arandr devmon tlp acpi sysstat libmpdclient openssh ripgrep maim zsh-autosuggestions acpilight zip unzip
+pacman -S xdg-utils fzf xfce4-notifyd feh imagemagick w3m gimp playerctl xclip arandr devmon tlp acpi sysstat libmpdclient openssh ripgrep maim zsh-autosuggestions acpilight zip unzip
 yay -Sy i3lock-color rcm autojump-rs ttf-ms-fonts ttf-ubuntu-font-family nerd-fonts-jetbrains-mono xfce-theme-greybird xtitle-git babashka-bin --noconfirm
 ```
 
-### Oh My Zsh
+## Oh My Zsh
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
-### Dotfiles
+## GPG
+```bash
+pacman -Sy gnupg pinentry
+gpg --import backuped-gpg.asc
+gpg-connect-agent reloadagent /bye
+```
+
+## Dotfiles
 Clone this repo (or your own fork!) to your **home** directory (`/Users/username`).
 ```bash
 $ cd ~
@@ -275,22 +280,20 @@ $ xrdb ~/.Xresources
 
 `xrdb ~/.Xresources` sync the Xresources file with your current XServer
 
-### Installing Vim Plugins
-To install them you'll need [vim-plug](https://github.com/junegunn/vim-plug), as mentioned above.
-Once Plug is installed. Open vim (`$ vim`) and type `:PlugInstall`. And then restart vim. You'll need to do this for all the plugins to work.
-
-### Installing Tmux Plugins
+## Installing Tmux Plugin
 [tmux-plugins](https://github.com/tmux-plugins/tpm)
 Once installed press `prefix` + <kbd>I</kbd> (capital I, as in **I**nstall) to fetch the plugin.
 
-### GPG
+## TLP
+To complete TLP's install, you must enable the systemd services `tlp.service` and `tlp-sleep.service`. You should also mask the systemd service `systemd-rfkill.service` and socket `systemd-rfkill.socket` to avoid conflicts and assure proper operation of TLP's radio device switching options.
 ```bash
-pacman -Sy gnupg pinentry
-gpg --import backuped-gpg.asc
-gpg-connect-agent reloadagent /bye
+sudo systemctl enable tlp
+sudo systemctl start tlp
+sudo systemctl mask systemd-rfkill.service
+sudo systemctl mask systemd-rfkill.socket
 ```
 
-### Bumblebee
+## Bumblebee
 Bumblebee is the best way to minimize battery usage and selective usage of GPU
 https://wiki.archlinux.org/index.php/bumblebee
 ```bash
@@ -310,25 +313,14 @@ You might need to define the NVIDIA card in the file `/etc/bumblebee/xorg.conf.n
     BusID "PCI:01:00:0"
 ```
 
-### TLP
-To complete TLP's install, you must enable the systemd services `tlp.service` and `tlp-sleep.service`. You should also mask the systemd service `systemd-rfkill.service` and socket `systemd-rfkill.socket` to avoid conflicts and assure proper operation of TLP's radio device switching options.
-```bash
-sudo systemctl enable tlp
-sudo systemctl start tlp
-sudo systemctl enable tlp-sleep
-sudo systemctl start tlp-sleep
-sudo systemctl mask systemd-rfkill.service
-sudo systemctl mask systemd-rfkill.socket
-```
-
-#### TLP vs Bumblebee with NVIDIA driver
+### TLP vs Bumblebee with NVIDIA driver
 If you're running Bumblebee with NVIDIA driver, you need to disable power management for the GPU in TLP in order to make Bumblebee control the power of the GPU.
 Run `lspci` to determine the address of the GPU (such as 01:00.0), then set the value in the top config file `/etc/default/tlp`:
 ```
  RUNTIME_PM_BLACKLIST="01:00.0"
 ```
 
-### acpilight / xbacklight
+## acpilight / xbacklight
 Normally, users are prohibited to alter files in the sys filesystem. It's
 advisable (and recommended) to setup an "udev" rule to allow users in the
 "video" group to set the display brightness.
@@ -339,23 +331,14 @@ SUBSYSTEM=="backlight", ACTION=="add", \
   RUN+="/bin/chmod g+w /sys/class/backlight/%k/brightness"
 ```
 
-### Touchpad and Slimblade
+## Touchpad and Slimblade
 Make sure you link the following files:
 ```bash
 sudo ln -sf ~/.xorg/10-touchpad.conf /usr/share/X11/xorg.conf.d/10-touchpad.conf
 sudo ln -sf ~/.xorg/10-slimblade.conf /usr/share/X11/xorg.conf.d/10-slimblade.conf
 ```
-Section "InputClass"
-        Identifier "libinput touchpad catchall"
-        MatchIsTouchpad "on"
-        MatchDevicePath "/dev/input/event*"
-        Driver "libinput"
-        Option "Tapping" "on"
-        Option "NaturalScrolling" "true"
-EndSection
-```
 
-### Blutooth Mouse (MX Anywhere 2S)
+## Blutooth Mouse (MX Anywhere 2S)
 ```bash
   bluetoothctl
   [bluet]power off
@@ -375,24 +358,13 @@ Now you just need to add the line AutoEnable=true in /etc/bluetooth/main.conf at
 AutoEnable=true
 ```
 
-### Set AltGr+HJKL to Arrows
-Change the files `/usr/share/X11/xkb/symbols/us` and `/usr/share/X11/xkb/symbols/gb` in the sessions `intl` and `extd` respectively, as the example below:
-
-```
-    key <AC06> { [	   h,          H,          Left,             Left ] };
-    key <AC07> { [	   j,          J,          Down,             Down ] };
-    key <AC08> { [	   k,          K,            Up,               Up ] };
-    key <AC09> { [	   l,          L,         Right,            Right ] };
-```
-
-### Set Login Screen Issue
+## Set Login Screen Issue
 ```bash
   sudo cp /etc/issue /etc/issue.bkp
   sudo cp ~/.config/issue /etc/issue
 ```
 
-
-### Set local enviroment settings
+## Set local enviroment settings
 Create the following file `~/.local-env`
 ```bash
 export LOCAL_DPI="96"

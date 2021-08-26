@@ -4,7 +4,7 @@ ZSH_THEME="lambda"
 
 # Zsh init
 export ZSH=~/.oh-my-zsh
-plugins=(vi-mode git autojump tmux jira)
+plugins=(vi-mode git autojump tmux jira fzf)
 source $ZSH/oh-my-zsh.sh
 
 # NVIM S2
@@ -55,5 +55,5 @@ export GPG_TTY=$(tty)
 # work specific configs
 [ -f ~/.workrc ] && source ~/.workrc
 
-# fnm 
+# fnm
 [ -f /usr/bin/fnm ] && eval "$(fnm env)"
