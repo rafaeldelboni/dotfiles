@@ -251,7 +251,7 @@ makepkg -si
 
 ## Apps
 ```bash
-pacman -S xdg-utils fzf xfce4-notifyd feh imagemagick w3m gimp playerctl xclip arandr devmon tlp acpi sysstat libmpdclient openssh ripgrep maim zsh-autosuggestions acpilight zip unzip
+pacman -S zsh-completions xdg-utils fzf xfce4-notifyd feh imagemagick w3m gimp playerctl xclip arandr devmon tlp acpi sysstat libmpdclient openssh ripgrep maim zsh-autosuggestions acpilight zip unzip
 yay -Sy i3lock-color rcm autojump-rs ttf-ms-fonts ttf-ubuntu-font-family nerd-fonts-jetbrains-mono xfce-theme-greybird xtitle-git babashka-bin --noconfirm
 ```
 
