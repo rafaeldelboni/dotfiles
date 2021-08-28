@@ -12,7 +12,6 @@ function start_agent {
 }
 
 # Source SSH settings, if applicable
-
 if [ -f "${SSH_ENV}" ]; then
     . "${SSH_ENV}" > /dev/null
     #ps ${SSH_AGENT_PID} doesn't work under cywgin
@@ -22,3 +21,6 @@ if [ -f "${SSH_ENV}" ]; then
 else
     start_agent;
 fi
+
+# Autostart xserver after login on virtual terminal 1
+[[ ! $DISPLAY && $XDG_VTNR -eq 1 && $(id --group) -ne 0 ]] && exec startx -- vt1 &> /dev/null

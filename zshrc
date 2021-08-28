@@ -4,7 +4,7 @@ ZSH_THEME="lambda"
 
 # Zsh init
 export ZSH=~/.oh-my-zsh
-plugins=(vi-mode git autojump tmux jira fzf)
+plugins=(vi-mode git autojump tmux fzf)
 source $ZSH/oh-my-zsh.sh
 
 # NVIM S2
@@ -39,18 +39,11 @@ PATH="$HOME/.cargo/bin:$HOME/.cargo/bin/racer":$PATH
 # clojure
 alias clj='clojure'
 
-# arch zsh-autosuggestions
-[ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# fzf
-export FZF_DEFAULT_OPTS='--color=info:1,prompt:2,spinner:1,pointer:2,marker:1'
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Autostart xserver after login on virtual terminal 1
-[[ ! $DISPLAY && $XDG_VTNR -eq 1 && $(id --group) -ne 0 ]] && exec startx -- vt1 &> /dev/null
-
 # gpg
 export GPG_TTY=$(tty)
+
+# arch zsh-autosuggestions
+[ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # work specific configs
 [ -f ~/.workrc ] && source ~/.workrc
