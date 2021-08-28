@@ -192,6 +192,8 @@ linux   /vmlinuz-linux
 initrd  /initramfs-linux.img
 options root=UUID=<your UUID> rw quiet loglevel=0 splash
 ```
+Edit `/boot/loader/loader.conf` and uncomment `timeout`
+in case you want the boot menu to show up.
 
 ## Audio & Video
 ```bash
@@ -216,7 +218,7 @@ EndSection
 ```bash
 pacman -S mesa intel-media-driver vulkan-intel
 ```
-You also need to add `i915 i915.enable_guc=2` kernel argument into `/boot/loader/entries/arch.conf` options.
+You also need to add `i915.enable_guc=2` kernel argument into `/boot/loader/entries/arch.conf` options.
 
 ### Nvidia Cards
 ```bash
@@ -270,10 +272,10 @@ gpg-connect-agent reloadagent /bye
 ## Dotfiles
 Clone this repo (or your own fork!) to your **home** directory (`/Users/username`).
 ```bash
-$ cd ~
-$ git clone git@github.com:rafaeldelboni/dotfiles.git .dotfiles
-$ rcup -x docs -x readme.md
-$ xrdb ~/.Xresources
+cd
+git clone git@github.com:rafaeldelboni/dotfiles.git .dotfiles
+rcup -x docs -x readme.md
+xrdb ~/.Xresources
 ```
 
 `rcup` expects that you cloned your dotfiles to `~/.dotfiles/` and will create dotfile symlinks (`.vimrc` -> `~/.dotfiles/vimrc`) from your home directory to your `~/.dotfiles/` directory.
@@ -291,33 +293,6 @@ sudo systemctl enable tlp
 sudo systemctl start tlp
 sudo systemctl mask systemd-rfkill.service
 sudo systemctl mask systemd-rfkill.socket
-```
-
-## Bumblebee
-Bumblebee is the best way to minimize battery usage and selective usage of GPU
-https://wiki.archlinux.org/index.php/bumblebee
-```bash
-pacman -Sy bumblebee bbswitch
-gpasswd -a rafael bumblebee
-systemctl enable bumblebeed.service
-systemctl start bumblebeed.service
-```
-
-In some instances, running optirun will return:
-```
-[ERROR]Cannot access secondary GPU - error: [XORG] (EE) No devices detected.
-[ERROR]Aborting because fallback start is disabled.
-```
-You might need to define the NVIDIA card in the file `/etc/bumblebee/xorg.conf.nvidia`, using the correct BusID according to lspci output
-```
-    BusID "PCI:01:00:0"
-```
-
-### TLP vs Bumblebee with NVIDIA driver
-If you're running Bumblebee with NVIDIA driver, you need to disable power management for the GPU in TLP in order to make Bumblebee control the power of the GPU.
-Run `lspci` to determine the address of the GPU (such as 01:00.0), then set the value in the top config file `/etc/default/tlp`:
-```
- RUNTIME_PM_BLACKLIST="01:00.0"
 ```
 
 ## acpilight / xbacklight
@@ -358,16 +333,37 @@ Now you just need to add the line AutoEnable=true in /etc/bluetooth/main.conf at
 AutoEnable=true
 ```
 
-## Set Login Screen Issue
-```bash
-  sudo cp /etc/issue /etc/issue.bkp
-  sudo cp ~/.config/issue /etc/issue
-```
-
 ## Set local enviroment settings
 Create the following file `~/.local-env`
 ```bash
 export LOCAL_DPI="96"
 export LOCAL_MODE="2560x1440"
 export LOCAL_DPI_FACTOR=1.4
+```
+
+## Bumblebee
+Bumblebee is the best way to minimize battery usage and selective usage of GPU
+https://wiki.archlinux.org/index.php/bumblebee
+```bash
+pacman -Sy bumblebee bbswitch
+gpasswd -a rafael bumblebee
+systemctl enable bumblebeed.service
+systemctl start bumblebeed.service
+```
+
+In some instances, running optirun will return:
+```
+[ERROR]Cannot access secondary GPU - error: [XORG] (EE) No devices detected.
+[ERROR]Aborting because fallback start is disabled.
+```
+You might need to define the NVIDIA card in the file `/etc/bumblebee/xorg.conf.nvidia`, using the correct BusID according to lspci output
+```
+    BusID "PCI:01:00:0"
+```
+
+### TLP vs Bumblebee with NVIDIA driver
+If you're running Bumblebee with NVIDIA driver, you need to disable power management for the GPU in TLP in order to make Bumblebee control the power of the GPU.
+Run `lspci` to determine the address of the GPU (such as 01:00.0), then set the value in the top config file `/etc/default/tlp`:
+```
+ RUNTIME_PM_BLACKLIST="01:00.0"
 ```
