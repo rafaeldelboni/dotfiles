@@ -36,6 +36,7 @@ set $text-color           #ffffff
 set $inactive-text-color  #ffffff
 set $primary-color        #2f71bb
 set $bg-color             #1c1b22
+set $urgent-bg-color      #444444
 set $inactive-bg-color    #19181e
 set $light-bg-color       #42414d
 set $selected-bg-color    #2b2a33
@@ -53,8 +54,7 @@ bindsym $mod+Return exec $HOME/.config/i3/terminal.sh
 bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher)
-set $menu "rofi -combi-modi window,drun,run -show combi -config ~/.config/rofi.conf"
-bindsym $mod+d exec $menu
+bindsym $mod+d exec "rofi -show combi"
 
 # change focus
 bindsym $mod+h focus left
