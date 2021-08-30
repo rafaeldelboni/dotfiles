@@ -36,8 +36,9 @@ set $text-color           #ffffff
 set $inactive-text-color  #ffffff
 set $primary-color        #2f71bb
 set $bg-color             #1c1b22
-set $urgent-bg-color      #444444
-set $inactive-bg-color    #303030
+set $inactive-bg-color    #19181e
+set $light-bg-color       #42414d
+set $selected-bg-color    #2b2a33
 
 # Disable mouse warping when changing workspace focus
 mouse_warping none
@@ -294,10 +295,10 @@ mode "$mode_gaps_outer" {
 }
 
 # Window colours        #border            background         text                 indicator
-client.focused          $bg-color          $bg-color          $text-color          $urgent-bg-color
-client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color $urgent-bg-color
-client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color $urgent-bg-color
-client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color          $urgent-bg-color
+client.focused          $selected-bg-color $selected-bg-color $text-color          $selected-bg-color
+client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color $selected-bg-color
+client.focused_inactive $selected-bg-color $selected-bg-color $inactive-text-color $selected-bg-color
+client.urgent           $light-bg-color    $light-bg-color    $text-color          $selected-bg-color
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -310,11 +311,11 @@ bar {
     colors {
       background $bg-color
       statusline $text-color
-      # class            boarder          backgr           text
-      focused_workspace  $urgent-bg-color $urgent-bg-color $text-color
-      inactive_workspace $bg-color        $bg-color        $text-color
-      active_workspace   $bg-color        $bg-color        $text-color
-      urgent_workspace   $primary-color   $primary-color   $text-color
+      # class            boarder         backgr          text
+      focused_workspace  $light-bg-color $light-bg-color $text-color
+      inactive_workspace $bg-color       $bg-color       $text-color
+      active_workspace   $bg-color       $bg-color       $text-color
+      urgent_workspace   $primary-color  $primary-color  $text-color
     }
 }
 
