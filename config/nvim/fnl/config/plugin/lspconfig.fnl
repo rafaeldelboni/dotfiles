@@ -1,6 +1,7 @@
 (module config.plugin.lspconfig
   {autoload {nvim aniseed.nvim
-             lsp lspconfig}})
+             lsp lspconfig
+             cmplsp cmp_nvim_lsp}})
 
 (vim.fn.sign_define "LspDiagnosticsSignError" {:text ""})
 (vim.fn.sign_define "LspDiagnosticsSignWarning" {:text ""})
@@ -22,6 +23,7 @@
                 (vim.lsp.with
                   vim.lsp.handlers.signature_help
                   {:border "single"})}
+      capabilities (cmplsp.update_capabilities (vim.lsp.protocol.make_client_capabilities))
       on_attach (fn [client bufnr]
                   (do
                     (nvim.buf_set_keymap bufnr :n :gd "<Cmd>lua vim.lsp.buf.definition()<CR>" {:noremap true})
@@ -44,20 +46,24 @@
 
   ;; Clojure
   (lsp.clojure_lsp.setup {:on_attach on_attach
-                          :handlers handlers})
+                          :handlers handlers
+                          :capabilities capabilities})
 
   ;; C/Cpp
   (lsp.clangd.setup {:on_attach on_attach
-                     :handlers handlers})
+                     :handlers handlers
+                     :capabilities capabilities})
 
 
   ;; JavaScript and TypeScript
   (lsp.tsserver.setup {:on_attach on_attach
-                       :handlers handlers})
+                       :handlers handlers
+                       :capabilities capabilities})
 
   ;; Lua
   (lsp.sumneko_lua.setup {:on_attach on_attach
                           :handlers handlers
+                          :capabilities capabilities
                           :cmd ["lua-language-server"]
                           :settings {:Lua {:workspace {:maxPreload 2000
                                                        :preloadFileSize 1000}}}})
@@ -65,4 +71,5 @@
   ;; Rust
   (lsp.rust_analyzer.setup {:on_attach on_attach
                             :handlers handlers
+                            :capabilities capabilities
                             :cmd ["rustup" "run" "nightly" "rust-analyzer"]}))
