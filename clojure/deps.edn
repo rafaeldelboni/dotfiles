@@ -13,7 +13,8 @@
            ;;   - clj -X:new :template lib :name myname/my-cool-lib
            ;;   - cd my-cool-lib
            ;;   - clj -X:test:runner # run the tests!
-           :new {:extra-deps {com.github.seancorfield/clj-new {:mvn/version "1.1.321"}}
+           :new {:extra-deps {com.github.seancorfield/clj-new
+                              {:mvn/version "1.1.331"}}
                  :exec-fn clj-new/create
                  :exec-args {:template "app"}}
 
