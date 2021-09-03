@@ -61,8 +61,16 @@
   ;parsing system
   :nvim-treesitter/nvim-treesitter {:run ":TSUpdate"
                                     :mod :treesitter}
+  ;snippets
+  :L3MON4D3/LuaSnip {:requires [:saadparwaiz1/cmp_luasnip]}
   ;lsp
   :neovim/nvim-lspconfig {:mod :lspconfig}
   ;autocomplete
-  :hrsh7th/nvim-compe {:requires [:tami5/compe-conjure]
-                       :mod :compe})
+  :hrsh7th/nvim-cmp {:requires [:hrsh7th/cmp-buffer
+                                :hrsh7th/cmp-path
+                                :hrsh7th/cmp-calc
+                                :hrsh7th/cmp-nvim-lsp
+                                :hrsh7th/cmp-nvim-lua
+                                :hrsh7th/cmp-vsnip
+                                :PaterJason/cmp-conjure]
+                     :mod :cmp})
