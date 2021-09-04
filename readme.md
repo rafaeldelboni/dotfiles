@@ -10,6 +10,7 @@ _Here's how my setup looks like currently [i3-gaps/Nvim/Tmux]_
 
 ## Notable stuff
  - [Nvim configuration with Aniseed/Fennel](https://github.com/rafaeldelboni/dotfiles/tree/master/config/nvim)
+   - [Extensive Documentation about this](https://github.com/rafaeldelboni/nvim-fennel-lsp-conjure-as-clojure-ide)
  - [i3blocks Blocklets with Babashka](https://github.com/rafaeldelboni/dotfiles/tree/master/config/i3blocks/scripts)
 
 ## Contributing
