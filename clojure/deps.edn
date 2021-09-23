@@ -13,8 +13,10 @@
            ;;   - clj -X:new :template lib :name myname/my-cool-lib
            ;;   - cd my-cool-lib
            ;;   - clj -X:test:runner # run the tests!
+
+           ;; add this inside your :aliases map:
            :new {:extra-deps {com.github.seancorfield/clj-new
-                              {:mvn/version "1.1.331"}}
+                              {:mvn/version "1.2.362"}}
                  :exec-fn clj-new/create
                  :exec-args {:template "app"}}
 
