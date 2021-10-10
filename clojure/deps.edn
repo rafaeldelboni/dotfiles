@@ -26,16 +26,16 @@
            ;;   - clj -M:outdated
            ;;     --upgrade upgrade outdated versions interactively.
            ;;     --force for upgrading without confirmation.
-           :outdated {:extra-deps {com.github.liquidz/antq {:mvn/version "0.16.3"}}
+           :outdated {:extra-deps {com.github.liquidz/antq {:mvn/version "1.1.0"}}
                       :main-opts ["-m" "antq.core"]}
 
            :cider {:extra-deps {org.clojure/clojure {:mvn/version "1.10.3"}
-                                cider/cider-nrepl {:mvn/version "0.26.0"}}
+                                cider/cider-nrepl {:mvn/version "0.27.2"}}
                    :main-opts ["-m" "nrepl.cmdline" "--middleware" "[cider.nrepl/cider-middleware]"]}
 
            :cider-cljs {:extra-deps {org.clojure/clojure {:mvn/version "1.10.3"}
-                                     org.clojure/clojurescript {:mvn/version "1.10.866"}
-                                     cider/cider-nrepl {:mvn/version "0.26.0"}
+                                     org.clojure/clojurescript {:mvn/version "1.10.879"}
+                                     cider/cider-nrepl {:mvn/version "0.27.2"}
                                      cider/piggieback {:mvn/version "0.5.2"}}
                         :main-opts ["-m" "nrepl.cmdline" "--middleware"
                                     "[cider.nrepl/cider-middleware,cider.piggieback/wrap-cljs-repl]"]}}}
