@@ -38,3 +38,5 @@
             :snippet {:expand (fn [args]
                                 (luasnip.lsp_expand args.body))}
             :sources cmp-srcs})
+
+(nvim.ex.hi "CmpItemMenu ctermfg=7 guifg=#b1b1b1")
