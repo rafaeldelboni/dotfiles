@@ -10,6 +10,7 @@ source $ZSH/oh-my-zsh.sh
 # NVIM S2
 alias vim="nvim"
 alias vi="nvim"
+alias v="nvim"
 alias vimdiff='nvim -d'
 export EDITOR=nvim
 
