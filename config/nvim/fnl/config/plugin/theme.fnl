@@ -3,7 +3,7 @@
              nvim aniseed.nvim
              theme github-theme}})
 
-(theme.setup {:theme_style "dark_default"
+(theme.setup {:theme_style "dark"
               :comment_style "italic"
               :hide_inactive_statusline false
               :colors {:bg "#1c1b22"}})
