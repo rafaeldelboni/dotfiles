@@ -37,7 +37,7 @@
   ;clojure
   :Olical/conjure {:branch :master :mod :conjure}
   ; multicursor selector
-  :mg979/vim-visual-multi {:commit "46c082aad84fd83c3c3d962c65afa800c2c33d85"}
+  :mg979/vim-visual-multi {}
   ;text alignment
   :junegunn/vim-easy-align {:mod :easy-align}
   ;git helper
