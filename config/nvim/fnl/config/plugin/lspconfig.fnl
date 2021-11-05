@@ -60,13 +60,15 @@
                        :handlers handlers
                        :capabilities capabilities})
 
-  ;; Lua
-  (lsp.sumneko_lua.setup {:on_attach on_attach
-                          :handlers handlers
-                          :capabilities capabilities
-                          :cmd ["lua-language-server"]
-                          :settings {:Lua {:workspace {:maxPreload 2000
-                                                       :preloadFileSize 1000}}}})
+  ;; html / css
+
+  (lsp.cssls.setup {:on_attach on_attach
+                    :handlers handlers
+                    :capabilities capabilities})
+
+  (lsp.html.setup {:on_attach on_attach
+                   :handlers handlers
+                   :capabilities capabilities})
 
   ;; Rust
   (lsp.rust_analyzer.setup {:on_attach on_attach
