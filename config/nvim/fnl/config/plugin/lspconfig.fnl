@@ -60,7 +60,7 @@
                        :handlers handlers
                        :capabilities capabilities})
 
-  ;; html / css
+  ;; html / css / json
 
   (lsp.cssls.setup {:on_attach on_attach
                     :handlers handlers
@@ -69,6 +69,10 @@
   (lsp.html.setup {:on_attach on_attach
                    :handlers handlers
                    :capabilities capabilities})
+
+  (lsp.jsonls.setup {:on_attach on_attach
+                     :handlers handlers
+                     :capabilities capabilities})
 
   ;; Rust
   (lsp.rust_analyzer.setup {:on_attach on_attach
