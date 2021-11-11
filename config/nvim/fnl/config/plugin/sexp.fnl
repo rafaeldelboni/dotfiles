@@ -6,3 +6,5 @@
                            :sexp_swap_element_forward ""
                            :sexp_swap_list_backward ""
                            :sexp_swap_list_forward ""})
+
+(set nvim.g.sexp_filetypes "clojure,scheme,lisp,timl,fennel,janet")

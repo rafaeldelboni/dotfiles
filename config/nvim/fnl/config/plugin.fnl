@@ -74,4 +74,6 @@
   :hoob3rt/lualine.nvim {:mod :lualine}
   ;theme
   :projekt0n/github-nvim-theme {:mod :theme}
-  :ryanoasis/vim-devicons {})
+  :ryanoasis/vim-devicons {}
+  ;jannet
+  :bakpakin/janet.vim {})
