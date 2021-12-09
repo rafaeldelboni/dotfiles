@@ -3,18 +3,19 @@
              lsp lspconfig
              cmplsp cmp_nvim_lsp}})
 
-(vim.fn.sign_define "LspDiagnosticsSignError" {:text ""})
-(vim.fn.sign_define "LspDiagnosticsSignWarning" {:text ""})
-(vim.fn.sign_define "LspDiagnosticsSignInformation" {:text ""})
-(vim.fn.sign_define "LspDiagnosticsSignHint" {:text ""})
+(vim.fn.sign_define "DiagnosticSignError" {:text "" :texthl "DiagnosticSignError"})
+(vim.fn.sign_define "DiagnosticSignWarn" {:text "" :texthl "DiagnosticSignWarn"})
+(vim.fn.sign_define "DiagnosticSignInfo" {:text "" :texthl "DiagnosticSignInfo"})
+(vim.fn.sign_define "DiagnosticSignHint" {:text "" :texthl "DiagnosticSignHint"})
 
 (let [handlers {"textDocument/publishDiagnostics"
                 (vim.lsp.with
                   vim.lsp.diagnostic.on_publish_diagnostics
-                  {:severity_sort true
-                   :update_in_insert false
+                  {:virtual_text false
+                   :signs true
                    :underline true
-                   :virtual_text false})
+                   :update_in_insert false
+                   :severity_sort false})
                 "textDocument/hover"
                 (vim.lsp.with
                   vim.lsp.handlers.hover
