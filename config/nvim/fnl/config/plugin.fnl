@@ -35,7 +35,7 @@
   ;commeting code
   :preservim/nerdcommenter {}
   ;clojure
-  :Olical/conjure {:branch :master :mod :conjure}
+  :rafaeldelboni/conjure {:branch :master :mod :conjure}
   ; multicursor selector
   :mg979/vim-visual-multi {}
   ;text alignment
