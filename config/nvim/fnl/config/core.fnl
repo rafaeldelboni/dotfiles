@@ -49,6 +49,8 @@
        ;open new vertical panes on right pane
        :splitright true
        ;enable highlighting search
-       :hlsearch true}]
+       :hlsearch true
+       ;makes signcolumn always one column with signs and linenumber
+       :signcolumn "number"}]
   (each [option value (pairs options)]
     (util.set-global-option option value)))
