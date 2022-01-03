@@ -16,7 +16,7 @@
 
            ;; add this inside your :aliases map:
            :new {:extra-deps {com.github.seancorfield/clj-new
-                              {:mvn/version "1.2.362"}}
+                              {:mvn/version "1.2.381"}}
                  :exec-fn clj-new/create
                  :exec-args {:template "app"}}
 
@@ -26,16 +26,16 @@
            ;;   - clj -M:outdated
            ;;     --upgrade upgrade outdated versions interactively.
            ;;     --force for upgrading without confirmation.
-           :outdated {:extra-deps {com.github.liquidz/antq {:mvn/version "1.3.0"}}
+           :outdated {:extra-deps {com.github.liquidz/antq {:mvn/version "1.3.1"}}
                       :main-opts ["-m" "antq.core"]}
 
            :cider {:extra-deps {org.clojure/clojure {:mvn/version "1.10.3"}
-                                cider/cider-nrepl {:mvn/version "0.27.2"}}
+                                cider/cider-nrepl {:mvn/version "0.27.4"}}
                    :main-opts ["-m" "nrepl.cmdline" "--middleware" "[cider.nrepl/cider-middleware]"]}
 
            :cider-cljs {:extra-deps {org.clojure/clojure {:mvn/version "1.10.3"}
-                                     org.clojure/clojurescript {:mvn/version "1.10.893"}
-                                     cider/cider-nrepl {:mvn/version "0.27.2"}
+                                     org.clojure/clojurescript {:mvn/version "1.11.4"}
+                                     cider/cider-nrepl {:mvn/version "0.27.4"}
                                      cider/piggieback {:mvn/version "0.5.3"}}
                         :main-opts ["-m" "nrepl.cmdline" "--middleware"
                                     "[cider.nrepl/cider-middleware,cider.piggieback/wrap-cljs-repl]"]}}}
