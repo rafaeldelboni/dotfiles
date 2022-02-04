@@ -25,43 +25,64 @@
 
 ;plugins managed by packer
 (use
-  ;plugin Manager
+  ; plugin Manager
   :wbthomason/packer.nvim {}
-  ;nvim config and plugins in Fennel
+  ; nvim config and plugins in Fennel
   :Olical/aniseed {:branch :develop}
-  ;file exploration
+
+  ; theme
+  :projekt0n/github-nvim-theme {:mod :theme}
+  :ryanoasis/vim-devicons {}
+  :kyazdani42/nvim-web-devicons {}
+
+  ; status line
+  :nvim-lualine/lualine.nvim {:mod :lualine}
+
+  ; file exploration
   :preservim/nerdtree {:mod :nerdtree}
   :Xuyuanp/nerdtree-git-plugin {}
-  ;commeting code
+
+  ; file searching
+  :nvim-telescope/telescope.nvim {:requires [:nvim-lua/popup.nvim
+                                             :nvim-lua/plenary.nvim]
+                                  :mod :telescope}
+
+  ; commeting code
   :preservim/nerdcommenter {}
-  ;clojure
+
+  ; repl tools
   :Olical/conjure {:branch :master :mod :conjure}
+
   ; multicursor selector
   :mg979/vim-visual-multi {}
-  ;text alignment
+
+  ; text alignment
   :junegunn/vim-easy-align {:mod :easy-align}
-  ;git helper
+
+  ; git helper
   :tpope/vim-fugitive {}
-  ;sexp
+
+  ; sexp
   :guns/vim-sexp {:mod :sexp}
   :tpope/vim-sexp-mappings-for-regular-people {}
   :tpope/vim-repeat {}
   :tpope/vim-surround {}
-  ;tmux
+
+  ; tmux
   :christoomey/vim-tmux-navigator {:mod :tmux-navigator}
   :melonmanchan/vim-tmux-resizer {}
-  ;file searching
-  :nvim-telescope/telescope.nvim {:requires [:nvim-lua/popup.nvim
-                                             :nvim-lua/plenary.nvim]
-                                  :mod :telescope}
-  ;parsing system
+
+  ; parsing system
   :nvim-treesitter/nvim-treesitter {:run ":TSUpdate"
                                     :mod :treesitter}
-  ;snippets
+
+  ; snippets
   :L3MON4D3/LuaSnip {:requires [:saadparwaiz1/cmp_luasnip]}
-  ;lsp
+
+  ; lsp
   :neovim/nvim-lspconfig {:mod :lspconfig}
-  ;autocomplete
+
+  ; autocomplete
   :hrsh7th/nvim-cmp {:requires [:hrsh7th/cmp-buffer
                                 :hrsh7th/cmp-path
                                 :hrsh7th/cmp-calc
@@ -70,10 +91,6 @@
                                 :hrsh7th/cmp-vsnip
                                 :PaterJason/cmp-conjure]
                      :mod :cmp}
-  ;status line
-  :hoob3rt/lualine.nvim {:mod :lualine}
-  ;theme
-  :projekt0n/github-nvim-theme {:mod :theme}
-  :ryanoasis/vim-devicons {}
-  ;jannet
+
+  ; jannet
   :bakpakin/janet.vim {})

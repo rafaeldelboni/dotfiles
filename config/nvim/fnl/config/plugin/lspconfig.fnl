@@ -1,6 +1,7 @@
 (module config.plugin.lspconfig
   {autoload {nvim aniseed.nvim
              lsp lspconfig
+             util lspconfig.util
              cmplsp cmp_nvim_lsp}})
 
 ;symbols to show for lsp diagnostics
