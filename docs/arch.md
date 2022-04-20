@@ -11,6 +11,7 @@ First, if you do not know your wireless device name, list all Wi-Fi devices:
 ```bash
 [iwd]# device list
 ```
+If the command above don't list any wifi card you can try the following: `rfkill unblock all` and try again.
 
 Then, to scan for networks:
 ```bash
