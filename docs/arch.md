@@ -184,7 +184,7 @@ bootctl install
 ### Encrypt: Bootloader setup
 We will have to tell the boot loader which root partition to boot from.
 Look at your `cat /etc/fstab` and copy the UUID of your root filesystem.
-> Note that this is a different UUID than the one we used before!
+> **Note that this is a different UUID than the one we used before!**
 
 Edit `/boot/loader/entries/arch.conf` and add the following lines:
 ```
