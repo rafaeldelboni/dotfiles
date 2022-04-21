@@ -34,7 +34,8 @@
                               (string/split #":")
                               last
                               string/trim
-                              bigdec))))
+                              bigdec
+                              Math/floor))))
         num (count cpu)]
     (/ (apply + cpu) num)))
 
