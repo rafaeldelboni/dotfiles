@@ -15,7 +15,7 @@ set $mod Mod4
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:JetBrainsMono Nerd Font Mono Medium 7
+font pango:JetBrainsMono Nerd Font Mono Medium 8
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -307,7 +307,7 @@ bar {
     position top
     strip_workspace_numbers yes
     status_command i3blocks -c $HOME/.config/i3blocks/config
-    font pango:JetBrainsMono Nerd Font Mono Bold 7
+    font pango:JetBrainsMono Nerd Font Mono Bold 8
     colors {
       background $bg-color
       statusline $text-color
