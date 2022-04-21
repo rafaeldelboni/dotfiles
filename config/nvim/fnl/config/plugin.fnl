@@ -51,7 +51,7 @@
   :preservim/nerdcommenter {}
 
   ; repl tools
-  :Olical/conjure {:branch :master :mod :conjure}
+  :Olical/conjure {:branch :develop :mod :conjure}
 
   ; multicursor selector
   :mg979/vim-visual-multi {}

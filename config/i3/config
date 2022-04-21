@@ -307,7 +307,7 @@ bar {
     position top
     strip_workspace_numbers yes
     status_command i3blocks -c $HOME/.config/i3blocks/config
-    font pango:JetBrainsMono Nerd Font Mono Bold 9
+    font pango:JetBrainsMono Nerd Font Mono Bold 7
     colors {
       background $bg-color
       statusline $text-color
