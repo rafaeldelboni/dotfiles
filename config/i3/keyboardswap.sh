@@ -2,7 +2,7 @@
 argument=$1
 us_layout_cmd="setxkbmap -layout us -variant intl -option"
 us_swap_layout_cmd="setxkbmap -layout us -variant intl -option caps:swapescape"
-pt_swap_layout_cmd="setxkbmap -layout br -variant abnt2 -option caps:swapescape"
+br_swap_layout_cmd="setxkbmap -layout br -variant abnt2 -option caps:swapescape"
 
 current_layouts=$(setxkbmap -query | awk '
   BEGIN{layout="";variant=""}
@@ -17,9 +17,9 @@ if [ -z $argument ]; then
       argument='us_swap'
       ;;
     us_swap)
-      argument='pt_swap'
+      argument='br_swap'
       ;;
-    gb_swap)
+    br_swap)
       argument='us'
       ;;
   esac
