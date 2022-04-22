@@ -118,6 +118,7 @@ hwclock --systohc
 printf "\nen_US.UTF-8 UTF-8\npt_BR.UTF-8 UTF-8\n" >> /etc/locale.gen
 locale-gen
 echo LANG=en_US.UTF-8 > /etc/locale.conf
+systemctl enable systemd-timesyncd.service
 ```
 
 ## Default text editor
