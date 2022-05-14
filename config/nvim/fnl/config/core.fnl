@@ -3,9 +3,6 @@
              util config.util
              str aniseed.string}})
 
-;load clojure specifics
-(nvim.ex.autocmd :FileType "clojure" ":lua require('config.lang.clojure')")
-
 ;refresh changed content
 (nvim.ex.autocmd "FocusGained,BufEnter" "*" ":checktime")
 
