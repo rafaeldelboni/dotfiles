@@ -1,4 +1,2 @@
 {:log-path "/tmp/clojure-lsp.out"
- :clean {:ns-inner-blocks-indentation :same-line}
- :use-metadata-for-privacy? true
  :keep-require-at-start? true}
