@@ -340,7 +340,7 @@ Create the following file `~/.local-env`
 ```bash
 export LOCAL_DPI="96"
 export LOCAL_MODE="2560x1440"
-export LOCAL_PRIMARY=DP-3
+export LOCAL_EXTERN=DP-3
 ```
 
 ## Bumblebee
