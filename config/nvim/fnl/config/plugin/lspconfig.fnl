@@ -77,15 +77,18 @@
 
   (lsp.cssls.setup {:on_attach on_attach
                     :handlers handlers
-                    :capabilities capabilities})
+                    :capabilities capabilities
+                    :cmd ["vscode-css-languageserver" "--stdio"]})
 
   (lsp.html.setup {:on_attach on_attach
                    :handlers handlers
-                   :capabilities capabilities})
+                   :capabilities capabilities
+                   :cmd ["vscode-html-languageserver" "--stdio"]})
 
   (lsp.jsonls.setup {:on_attach on_attach
                      :handlers handlers
-                     :capabilities capabilities})
+                     :capabilities capabilities
+                     :cmd ["vscode-json-languageserver" "--stdio"]})
 
   ;; Rust
   (lsp.rust_analyzer.setup {:on_attach on_attach
