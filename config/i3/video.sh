@@ -18,7 +18,7 @@ else
   EXTERN="${LOCAL_EXTERN}"
 fi
 
-if [[ -z "${INTERN}" ]]
+if [[ -z "${INTERN}" || $INTERN == $EXTERN ]]
 then
   DEFAULT_MODE="xrandr --output $EXTERN --auto --dpi $DPI --mode $MODE"
 else
