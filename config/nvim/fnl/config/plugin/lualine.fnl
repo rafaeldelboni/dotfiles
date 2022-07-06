@@ -36,13 +36,13 @@
    :sections {:lualine_a []
               :lualine_b [[:mode {:upper true}]]
               :lualine_c [["FugitiveHead"]
-                          [:filename {:filestatus true
-                                      :path 1}]]
-              :lualine_x [[:diagnostics {:sections [:error
-                                                    :warn
-                                                    :info
-                                                    :hint]
-                                         :sources [:nvim_lsp]}]
+                          {1 :filename
+                           :file_status true
+                           :path 2
+                           :shorting_target 40}]
+              :lualine_x [{1 :diagnostics
+                           :sections [:error :warn :info :hint]
+                           :sources [:nvim_lsp]}
                           [lsp_connection]
                           :location
                           :filetype]
@@ -50,8 +50,9 @@
               :lualine_z []}
    :inactive_sections {:lualine_a []
                        :lualine_b []
-                       :lualine_c [[:filename {:filestatus true
-                                               :path 1}]]
+                       :lualine_c [{1 :filename
+                                    :file_status true
+                                    :path 2}]
                        :lualine_x []
                        :lualine_y []
                        :lualine_z []}})

@@ -1,5 +1,5 @@
 # theme
-export TERM="tmux-256color"
+export TERM="xterm-256color"
 ZSH_THEME="lambda"
 
 # Zsh init
@@ -47,11 +47,23 @@ export GRAALVM_HOME=/usr/lib/jvm/java-11-graalvm
 # gpg
 export GPG_TTY=$(tty)
 
-# arch zsh-autosuggestions
-[ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# mac zsh-autosuggestions
+[ -f $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # work specific configs
 [ -f ~/.workrc ] && source ~/.workrc
 
 # fnm
-[ -f /usr/bin/fnm ] && eval "$(fnm env)"
+[ -f /usr/local/bin/fnm ] && eval "$(fnm env)"
+
+# {mark} START IT-ENG JAMF SETUP ZSHRC
+source $HOME/.nurc
+export GOPATH="${NU_HOME}/go"
+export PATH="$GOPATH/bin:${PATH}"
+export MONOREPO_ROOT="$NU_HOME/mini-meta-repo"
+export PATH="$PATH:$MONOREPO_ROOT/monocli/bin"
+eval "$(rbenv init -)"
+# {mark} END IT-ENG JAMF SETUP ZSHRC
+
+export PATH="/opt/homebrew/bin:$PATH"
+
