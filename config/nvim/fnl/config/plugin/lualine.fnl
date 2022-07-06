@@ -11,7 +11,7 @@
     (require :lualine.themes.auto)
     :inactive {:a {:bg "#19181e" :fg "#a4a3a6"}
                :b {:bg "#19181e" :fg "#a4a3a6"}
-               :c {:bg "#19181e" :fg "#a4a3a6"}}
+ LightLight              :c {:bg "#19181e" :fg "#a4a3a6"}}
     :normal {:a {:bg "#131217" :fg "#24292e"}
              :b {:bg "#131217" :fg "#3b8eea"}
              :c {:bg "#19181e" :fg "#d1d5da"}}
