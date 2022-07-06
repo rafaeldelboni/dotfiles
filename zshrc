@@ -55,15 +55,3 @@ export GPG_TTY=$(tty)
 
 # fnm
 [ -f /usr/local/bin/fnm ] && eval "$(fnm env)"
-
-# {mark} START IT-ENG JAMF SETUP ZSHRC
-source $HOME/.nurc
-export GOPATH="${NU_HOME}/go"
-export PATH="$GOPATH/bin:${PATH}"
-export MONOREPO_ROOT="$NU_HOME/mini-meta-repo"
-export PATH="$PATH:$MONOREPO_ROOT/monocli/bin"
-eval "$(rbenv init -)"
-# {mark} END IT-ENG JAMF SETUP ZSHRC
-
-export PATH="/opt/homebrew/bin:$PATH"
-
