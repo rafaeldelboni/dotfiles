@@ -10,28 +10,28 @@ cmd + shift - h  : yabai -m window --display prev; yabai -m display --focus prev
 
 # Change tilling layout
 
-cmd + ctrl - e : yabai -m space --layout bsp
-cmd + ctrl - s : yabai -m space --layout stack
+cmd - e : yabai -m space --layout bsp
+cmd - s : yabai -m space --layout stack
 
 # Focus window [north|south|west|east], support multiple monitors
-cmd + ctrl - j : yabai -m window --focus stack.next || \
+cmd - j : yabai -m window --focus stack.next || \
                  yabai -m window --focus south || \
                  yabai -m window --focus $(yabai -m query --windows --display south | \
                                            jq 'map(select(.visible == 1)) | sort_by(.frame.x, .frame.y) | last | .id') || \
                  yabai -m display --focus south
 
-cmd + ctrl - k : yabai -m window --focus stack.prev || \
+cmd - k : yabai -m window --focus stack.prev || \
                  yabai -m window --focus north || \
                  yabai -m window --focus $(yabai -m query --windows --display north | \
                                            jq 'map(select(.visible == 1)) | sort_by(.frame.x, .frame.y) | last | .id') || \
                  yabai -m display --focus north
 
-cmd + ctrl - h : yabai -m window --focus west || \
+cmd - h : yabai -m window --focus west || \
                  yabai -m window --focus $(yabai -m query --windows --display west | \
                                            jq 'map(select(.visible == 1)) | sort_by(.frame.x, .frame.y) | last | .id') || \
                  yabai -m display --focus west
 
-cmd + ctrl - l : yabai -m window --focus east || \
+cmd - l : yabai -m window --focus east || \
                  yabai -m window --focus $(yabai -m query --windows --display east | \
                                            jq 'map(select(.visible == 1)) | sort_by(.frame.x, .frame.y) | first | .id') || \
                  yabai -m display --focus east
