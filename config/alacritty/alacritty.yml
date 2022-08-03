@@ -301,6 +301,12 @@ live_config_reload: true
 #  program: /bin/bash
 #  args:
 #    - --login
+shell:
+  program: /bin/zsh
+  args:
+    - -l
+    - -c
+    - "tmux attach || tmux"
 
 # Windows 10 ConPTY backend (Windows only)
 #
