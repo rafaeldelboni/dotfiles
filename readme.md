@@ -1,6 +1,13 @@
 dotfiles
 ===================
 These are my dotfiles. I'm using [RCM](https://github.com/thoughtbot/rcm) to manage it.
+```bash
+# for linux
+rcup -x docs -x readme.md -t linux
+
+# for macos
+rcup -x docs -x readme.md -t macos
+```
 
 ![screenshot](https://github.com/RafaelDelboni/dotfiles/blob/master/docs/screenshot.png)
 _Here's how my setup looks like currently [i3-gaps/Nvim/Tmux]_
