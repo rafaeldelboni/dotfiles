@@ -276,13 +276,9 @@ Clone this repo (or your own fork!) to your **home** directory (`/Users/username
 ```bash
 cd
 git clone git@github.com:rafaeldelboni/dotfiles.git .dotfiles
-rcup -x docs -x readme.md
-xrdb ~/.Xresources
+rcup -x docs -x readme.md -t linux
 ```
-
 `rcup` expects that you cloned your dotfiles to `~/.dotfiles/` and will create dotfile symlinks (`.vimrc` -> `~/.dotfiles/vimrc`) from your home directory to your `~/.dotfiles/` directory.
-
-`xrdb ~/.Xresources` sync the Xresources file with your current XServer
 
 ## Installing Tmux Plugin
 [tmux-plugins](https://github.com/tmux-plugins/tpm)
