@@ -66,8 +66,7 @@
   ; sexp
   :guns/vim-sexp {:mod :sexp}
   :tpope/vim-sexp-mappings-for-regular-people {}
-  :tpope/vim-repeat {}
-  :tpope/vim-surround {}
+  :kylechui/nvim-surround {:mod :surround}
 
   ; tmux
   :christoomey/vim-tmux-navigator {:mod :tmux-navigator}
