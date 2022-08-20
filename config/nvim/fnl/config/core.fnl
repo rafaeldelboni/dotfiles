@@ -6,6 +6,9 @@
 ;refresh changed content
 (nvim.ex.autocmd "FocusGained,BufEnter" "*" ":checktime")
 
+;rust tabsize
+(nvim.ex.autocmd "FileType" "rust" "setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab")
+
 ;don't wrap lines
 (nvim.ex.set :nowrap)
 
