@@ -41,8 +41,7 @@ PATH="$HOME/.cargo/bin:$HOME/.cargo/bin/racer":$PATH
 alias clj='clojure'
 
 # java home
-export JAVA_HOME=/usr/lib/jvm/default
-export GRAALVM_HOME=/usr/lib/jvm/java-11-graalvm
+export JAVA_HOME=$(/usr/libexec/java_home)
 
 # gpg
 export GPG_TTY=$(tty)
