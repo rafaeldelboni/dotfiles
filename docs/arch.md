@@ -256,7 +256,12 @@ makepkg -si
 ## Apps
 ```bash
 pacman -S zsh-completions xdg-utils fzf xfce4-notifyd feh imagemagick w3m gimp playerctl xclip arandr tlp acpi sysstat libmpdclient openssh ripgrep maim zsh-autosuggestions acpilight zip unzip
-yay -Sy i3lock-color rcm autojump-rs ttf-ms-fonts ttf-ubuntu-font-family nerd-fonts-jetbrains-mono xfce-theme-greybird xtitle-git babashka-bin --noconfirm
+yay -Sy i3lock-color autojump-rs ttf-ms-fonts ttf-ubuntu-font-family nerd-fonts-jetbrains-mono xfce-theme-greybird xtitle-git babashka-bin --noconfirm
+```
+
+## Paro
+```bash
+bash < <(curl -s https://raw.githubusercontent.com/rafaeldelboni/paro/main/install.sh)
 ```
 
 ## Oh My Zsh
