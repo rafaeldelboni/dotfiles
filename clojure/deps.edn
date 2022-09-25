@@ -2,7 +2,7 @@
              "clojars" {:url "https://repo.clojars.org/"}}
 
  :aliases {;; project creation from templates:
-           ;; https://github.com/seancorfield/clj-new
+           ;; https://github.com/seancorfield/deps-new
            ;; - create an application project:
            ;;   - clj -X:new :name myname/myapp
            ;;   - cd myapp
@@ -14,9 +14,11 @@
            ;;   - clj -X:test:runner # run the tests!
 
            ;; add this inside your :aliases map:
-           :new {:extra-deps {com.github.seancorfield/clj-new
-                              {:mvn/version "1.2.399"}}
-                 :exec-fn clj-new/create
+           :new {:extra-deps {io.github.seancorfield/deps-new
+                              {:git/url "https://github.com/seancorfield/deps-new"
+                               :git/sha "879c4eb"
+                               :git/tag "v0.4.13"}}
+                 :exec-fn org.corfield.new/create
                  :exec-args {:template "app"}}
 
            ;; project dependency version check
