@@ -14,8 +14,10 @@
 
  :repl {;; If you need to have `cider-nrepl` and `refactor-nrepl` in your REPL
         ;; session (i.e.: vim-users), uncomment the following lines
-        ;; :plugins [[cider/cider-nrepl "0.25.3"]
+        :plugins      [[cider/cider-nrepl "0.28.6"]]
         ;;           [refactor-nrepl "2.5.0-SNAPSHOT"]]
         :repl-options {:timeout 300000}
         :dependencies [[cljdev "0.10.2"]]
         :injections   [(require 'nu)]}}
+
+{}
