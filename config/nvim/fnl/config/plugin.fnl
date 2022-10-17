@@ -39,8 +39,7 @@
   :nvim-lualine/lualine.nvim {:mod :lualine}
 
   ; file exploration
-  :preservim/nerdtree {:mod :nerdtree}
-  :Xuyuanp/nerdtree-git-plugin {}
+  :nvim-tree/nvim-tree.lua {:mod :nvim-tree}
 
   ; file searching
   :nvim-telescope/telescope.nvim {:requires [:nvim-telescope/telescope-ui-select.nvim
