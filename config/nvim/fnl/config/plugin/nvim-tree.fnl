@@ -25,7 +25,7 @@
                                      :unmerged ""
                                      :renamed "➜"
                                      :untracked "★"}}}}
-   :filters {:custom ["^\\.git"]}})
+   :filters {:custom ["^\\.git$"]}})
 
 (nvim.ex.hi "NvimTreeNormal guibg=#19181e")
 (nvim.ex.hi "NvimTreeSpecialFile ctermfg=7 guifg=#c6c6c6")
