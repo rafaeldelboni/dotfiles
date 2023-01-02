@@ -3,4 +3,7 @@
 
 (treesitter.setup {:highlight {:enable true}
                    :indent {:enable true}
-                   :ensure_installed "all"})
+                   :ensure_installed [:bash :c :clojure :cmake :commonlisp :cpp
+                                      :css :dart :dockerfile :fennel :go :html
+                                      :java :javascript :json :lua :markdown 
+                                      :python :rust :typescript :vim :yaml :zig]})
