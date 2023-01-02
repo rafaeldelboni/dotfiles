@@ -38,13 +38,10 @@ cmd - l : yabai -m window --focus east || \
                                            jq 'map(select(.visible == 1)) | sort_by(.frame.x, .frame.y) | first | .id') || \
                  yabai -m display --focus east
 
-# Focus in spaces
-#ctrl - 1 : yabai -m space --focus 1
-#ctrl - 2 : yabai -m space --focus 2
-#ctrl - 3 : yabai -m space --focus 3
-#ctrl - 4 : yabai -m space --focus 4
-#ctrl - 5 : yabai -m space --focus 5
-#ctrl - 6 : yabai -m space --focus 6
+# Focus in spaces 
+# Done by setting the shortcut cmd + NUMBER in settings
+# System Preferences -> Keyboard -> Shortcut -> Mission Control
+# Enable "Switch to Desktop NUMBER" and change the shortcut to cmd instead control
 
 cmd + shift - 1 : yabai -m window --space 1
 cmd + shift - 2 : yabai -m window --space 2
