@@ -16,11 +16,10 @@
            ;;   - clj -X:new :template scratch :name poc/simple-app
 
            ;; add this inside your :aliases map:
-           :new {:extra-deps {io.github.seancorfield/deps-new
-                              {:git/url "https://github.com/seancorfield/deps-new"
-                               :git/sha "21bb2c8e9b898f6b93506cd128314585a98cc962"}}
-                 :exec-fn org.corfield.new/create
-                 :exec-args {:template "app"}}
+           :new {:extra-deps {cc.delboni/deps-new-wrap
+                              {:git/url "https://github.com/rafaeldelboni/deps-new-wrap"
+                               :git/sha "aecc4565b917153d66485a62980df67616d600be"}}
+                 :exec-fn cc.delboni.main/new}
 
            ;; project dependency version check
            ;; https://github.com/liquidz/antq
