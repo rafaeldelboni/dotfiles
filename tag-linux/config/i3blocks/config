@@ -71,13 +71,6 @@ command=$HOME/.config/i3blocks/scripts/cpumemory.clj
 interval=60
 align=left
 
-# BTC price indicator
-# Each 10 minutes
-[btcprice]
-command=$HOME/.config/i3blocks/scripts/btcprice.clj
-interval=600
-align=left
-
 # Date Time
 # Each 5 seconds
 [time]
