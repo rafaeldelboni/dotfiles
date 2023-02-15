@@ -230,7 +230,7 @@ You also need to add `acpi_osi=! acpi_osi=\"Windows 2009\" nvidia-drm.modeset=1`
 
 ## Windows Manager (i3)
 ```bash
-pacman -S i3-gaps i3blocks rofi picom alacritty tmux lxappearance
+pacman -S i3 i3blocks rofi picom alacritty tmux lxappearance
 ```
 Some basic fonts
 ```
