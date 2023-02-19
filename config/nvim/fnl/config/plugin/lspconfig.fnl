@@ -57,6 +57,8 @@
                     (nvim.buf_set_keymap bufnr :n :<leader>lr ":lua require('telescope.builtin').lsp_references()<cr>" {:noremap true})
                     (nvim.buf_set_keymap bufnr :n :<leader>li ":lua require('telescope.builtin').lsp_implementations()<cr>" {:noremap true})))]
 
+  ;; https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+
   ;; Clojure
   (lsp.clojure_lsp.setup {:on_attach on_attach
                           :handlers handlers
@@ -94,4 +96,10 @@
   (lsp.rust_analyzer.setup {:on_attach on_attach
                             :handlers handlers
                             :capabilities capabilities
-                            :cmd ["rustup" "run" "nightly" "rust-analyzer"]}))
+                            :cmd ["rustup" "run" "nightly" "rust-analyzer"]})
+
+  ;; Omnisharp for Unity
+  (lsp.omnisharp.setup {:on_attach on_attach
+                        :handlers handlers
+                        :capabilities capabilities
+                        :cmd ["/usr/local/lib/omnisharp/run"]}))
