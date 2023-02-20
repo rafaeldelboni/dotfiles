@@ -9,6 +9,9 @@
 ;rust tabsize
 (nvim.ex.autocmd "FileType" "rust" "setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab")
 
+;csharp tabsize
+(nvim.ex.autocmd "FileType" "cs" "setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab")
+
 ;don't wrap lines
 (nvim.ex.set :nowrap)
 
