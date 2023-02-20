@@ -139,7 +139,7 @@ for_window [title="^Android Emulator -"] floating enable border pixel 3
 for_window [class="Tandem"] floating enable
 
 # reload unity windows on workspace switch
-set $unity-refresh exec i3-msg [class="Unity"] fullscreen toggle; exec i3-msg [class="Unity"] fullscreen toggle
+set $unity-refresh exec i3-msg [class="Unity"] border pixel 2; exec i3-msg [class="Unity"] border pixel 1
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1; $unity-refresh
