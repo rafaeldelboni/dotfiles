@@ -138,10 +138,13 @@ for_window [class="(?i)spotify"] move to workspace $ws4
 for_window [title="^Android Emulator -"] floating enable border pixel 3
 for_window [class="Tandem"] floating enable
 
+# reload unity windows on workspace switch
+set $unity-refresh exec i3-msg [class="Unity"] fullscreen toggle; exec i3-msg [class="Unity"] fullscreen toggle
+
 # switch to workspace
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
+bindsym $mod+1 workspace $ws1; $unity-refresh
+bindsym $mod+2 workspace $ws2; $unity-refresh
+bindsym $mod+3 workspace $ws3; $unity-refresh
 bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
