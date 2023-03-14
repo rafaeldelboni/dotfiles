@@ -1,23 +1,21 @@
 {:user
  {:min-lein-version    "2.9.0"
-  :repositories        [["central"  {:url "https://repo1.maven.org/maven2/" :snapshots false}]
-                        ["clojars"  {:url "https://clojars.org/repo/"}]
-                        ["nu-maven" {:url "s3p://nu-maven/releases/" :region "sa-east-1"}]]
-  :plugin-repositories [["nu-maven" {:url "s3p://nu-maven/releases/"}]]
-  :jvm-opts            ["-Djava.locale.providers='COMPAT,JRE,CLDR'"]
-  :plugins             [[s3-wagon-private "1.3.5"]
-                        [com.jakemccrary/lein-test-refresh "0.25.0"]
-                        [lein-ancient "0.7.1-SNAPSHOT"]]}
+  :repositories        [["nu-codeartifact" {:url "https://maven.cicd.nubank.world"}]]
+  :plugin-repositories [["nu-codeartifact" {:url "https://maven.cicd.nubank.world"}]]
+  :jvm-opts            ["-Djava.locale.providers=COMPAT,JRE,CLDR"
+                        "-Dclojure.core.async.go-checking=true" ;; Enables strict checks of blocking calls inside core.async `go` context
+                        "--illegal-access=deny"]            ;; Note: this option was removed in Java 17
+  :plugins             [[com.jakemccrary/lein-test-refresh "0.25.0"]
+                        [lein-ancient "1.0.0-RC3"]]}
 
- :test {:dependencies [[cljdev "0.10.2"]]
+ :test {:dependencies [[cljdev "0.11.0"]]
         :injections   [(require 'nu)]}
 
  :repl {;; If you need to have `cider-nrepl` and `refactor-nrepl` in your REPL
         ;; session (i.e.: vim-users), uncomment the following lines
-        :plugins      [[cider/cider-nrepl "0.28.6"]]
+        ;; :plugins [[cider/cider-nrepl "0.25.3"]
         ;;           [refactor-nrepl "2.5.0-SNAPSHOT"]]
+        :plugins      [[cider/cider-nrepl "0.28.7"]]
         :repl-options {:timeout 300000}
-        :dependencies [[cljdev "0.10.2"]]
+        :dependencies [[cljdev "0.11.0"]]
         :injections   [(require 'nu)]}}
-
-{}
