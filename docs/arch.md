@@ -151,7 +151,7 @@ To connect to network after the reboot use `nmtui-connect`
 Edit `/etc/mkinitcpio.conf` so we can generate an initramfs which lets us decrypt our root partition during start-up.
 Change the HOOKS definition to look like this:
 ```
-HOOKS=(base systemd udev keyboard autodetect sd-vconsole modconf block sd-encrypt lvm2 filesystems fsck)
+HOOKS=(base systemd udev keyboard autodetect modconf block sd-encrypt lvm2 filesystems fsck)
 ```
 
 We have to create an `/etc/crypttab.initramfs` to identify our encrypted volume.
