@@ -18,7 +18,7 @@
            ;; add this inside your :aliases map:
            :new {:extra-deps {cc.delboni/deps-new-wrap
                               {:git/url "https://github.com/rafaeldelboni/deps-new-wrap"
-                               :git/sha "7646b64a0e7b5c3ef636fdf947b459437a9cbd90"}}
+                               :git/sha "8f39da1f831563ee72910fe546878068d73cb1fb"}}
                  :exec-fn cc.delboni.main/new}
 
            ;; project dependency version check
