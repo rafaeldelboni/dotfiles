@@ -31,7 +31,8 @@
   :Olical/aniseed {:branch :develop}
 
   ; theme
-  :projekt0n/github-nvim-theme {:mod :theme}
+  :projekt0n/github-nvim-theme {:mod :theme
+                                :commit "4bed06edc2f53fceff48afff01b7ecd74c56fdad"}
   :ryanoasis/vim-devicons {}
   :kyazdani42/nvim-web-devicons {}
 
