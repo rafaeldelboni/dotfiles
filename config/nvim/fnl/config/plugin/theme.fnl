@@ -7,11 +7,14 @@
                         :hide_nc_statusline false}
               :colors {:bg "#1c1b22"}
               :overrides (fn [c]
-                           {:ColorColumn {:bg "#19181e"}})})
+                           {:ColorColumn {:bg "#19181e"}
+                            :NonText {:fg "#323138"}
+                            :EndOfBuffer {:fg "#19181e"}
+                            :Pmenu {:bg "#19181e"}
+                            :VertSplit {:fg "#19181e"}
+                            :DiagnosticError {:fg c.error}
+                            :DiagnosticWarn {:fg c.warning}
+                            :DiagnosticInfo {:fg c.info}
+                            :DiagnosticHint {:fg c.hint}})})
 
 (vim.cmd "colorscheme github_dark")
-
-(nvim.ex.hi "NonText ctermfg=7 guifg=#323138")
-(nvim.ex.hi "EndOfBuffer guifg=#19181e")
-(nvim.ex.hi "Pmenu guibg=#19181e")
-(nvim.ex.hi "VertSplit guifg=#19181e")
