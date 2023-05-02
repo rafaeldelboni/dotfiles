@@ -12,6 +12,7 @@
                        :variables {}}
               :on_colors (fn [colors])
               :on_highlights (fn [highlight colors]
+                               (set highlight.String {:fg colors.green2})
                                (set highlight.TelescopeNormal {:bg colors.bg_dark
                                                                :fg colors.fg_dark})
                                (set highlight.TelescopeBorder {:bg colors.bg_dark
