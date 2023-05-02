@@ -1,16 +1,28 @@
 (module config.plugin.theme
   {autoload {core aniseed.core
              nvim aniseed.nvim
-             theme github-theme}})
+             theme tokyonight}})
 
-(theme.setup {:options {:styles {:comments "italic"}
-                        :hide_nc_statusline false}
-              :specs {:all {:bg1 "#1c1b22"}}
-              :groups {:all {:ColorColumn {:bg "#19181e"}
-                             :NonText {:fg "#323138"}
-                             :EndOfBuffer {:fg "#19181e"}
-                             :Pmenu {:bg "#19181e"}
-                             :VertSplit {:fg "#19181e"}
-                             :DiagnosticHint {:link "LspDiagnosticsDefaultHint"}}}})
+(theme.setup {:style :night
+              :styles {:comments {:italic true}
+                       :floats :dark
+                       :functions {}
+                       :keywords {:italic true}
+                       :sidebars :dark
+                       :variables {}}
+              :on_colors (fn [colors])
+              :on_highlights (fn [highlight colors]
+                               (set highlight.TelescopeNormal {:bg colors.bg_dark
+                                                               :fg colors.fg_dark})
+                               (set highlight.TelescopeBorder {:bg colors.bg_dark
+                                                               :fg colors.fg_dark})
+                               (set highlight.FloatBorder {:bg colors.bg_dark
+                                                           :fg colors.fg_dark})
+                               (set highlight.ColorColumn {:bg colors.bg_dark
+                                                           :fg colors.fg_dark})
+                               (set highlight.Pmenu {:bg colors.bg_dark
+                                                     :fg colors.fg_dark})
+                               (set highlight.NonText {:fg "#2d3149"}))
+              :terminal_colors true})
 
-(vim.cmd "colorscheme github_dark")
+(vim.cmd "colorscheme tokyonight")

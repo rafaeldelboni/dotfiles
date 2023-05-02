@@ -31,7 +31,7 @@
   :Olical/aniseed {:branch :develop}
 
   ; theme
-  :projekt0n/github-nvim-theme {:mod :theme}
+  :folke/tokyonight.nvim {:mod :theme}
   :ryanoasis/vim-devicons {}
   :kyazdani42/nvim-web-devicons {}
 
