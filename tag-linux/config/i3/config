@@ -34,11 +34,11 @@ hide_edge_borders both
 # Some colour variables
 set $text-color           #ffffff
 set $inactive-text-color  #ffffff
-set $primary-color        #2f71bb
-set $bg-color             #1c1b22
-set $urgent-bg-color      #444444
-set $inactive-bg-color    #19181e
-set $light-bg-color       #42414d
+set $primary-color        #7aa2f7
+set $bg-color             #16161e
+set $urgent-bg-color      #545c7e
+set $inactive-bg-color    #15161e
+set $light-bg-color       #3b4261
 set $selected-bg-color    #2b2a33
 
 # Disable mouse warping when changing workspace focus
