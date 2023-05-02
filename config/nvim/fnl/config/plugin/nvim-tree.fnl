@@ -42,7 +42,6 @@
                                      :untracked "★"}}}}
    :filters {:custom ["^\\.git$"]}})
 
-(nvim.ex.hi "NvimTreeNormal guibg=#19181e")
 (nvim.ex.hi "NvimTreeSpecialFile ctermfg=7 guifg=#c6c6c6")
 
 (nvim.set_keymap :n :<leader>tt ":NvimTreeToggle<CR>" {:noremap true})
