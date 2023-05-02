@@ -152,38 +152,38 @@ debug:
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
 
-# github Alacritty Colors
+# TokyoNight Alacritty Colors
 colors:
   # Default colors
   primary:
-    background: '0x1c1b22'
-    foreground: '0xd1d5da'
+    background: '0x1a1b26'
+    foreground: '0xc0caf5'
 
   # Normal colors
   normal:
-    black:   '0x24292e'
-    red:     '0xc03c3c'
-    green:   '0x1ca76f'
-    yellow:  '0xe2e210'
-    blue:    '0x2f71bb'
-    magenta: '0xbc3fbc'
-    cyan:    '0x2092ae'
-    white:   '0xc3c8cf'
+    black:   '0x15161e'
+    red:     '0xf7768e'
+    green:   '0x9ece6a'
+    yellow:  '0xe0af68'
+    blue:    '0x7aa2f7'
+    magenta: '0xbb9af7'
+    cyan:    '0x7dcfff'
+    white:   '0xa9b1d6'
 
   # Bright colors
   bright:
-    black:   '0x666666'
-    red:     '0xf14c4c'
-    green:   '0x23d18b'
-    yellow:  '0xf5f543'
-    blue:    '0x3b8eea'
-    magenta: '0xd670d6'
-    cyan:    '0x29b7da'
-    white:   '0xd1d5da'
+    black:   '0x414868'
+    red:     '0xf7768e'
+    green:   '0x9ece6a'
+    yellow:  '0xe0af68'
+    blue:    '0x7aa2f7'
+    magenta: '0xbb9af7'
+    cyan:    '0x7dcfff'
+    white:   '0xc0caf5'
 
   indexed_colors:
-    - { index: 16, color: '0xd18616' }
-    - { index: 17, color: '0xf14c4c' }
+    - { index: 16, color: '0xff9e64' }
+    - { index: 17, color: '0xdb4b4b' }
 
 # Visual Bell
 #
