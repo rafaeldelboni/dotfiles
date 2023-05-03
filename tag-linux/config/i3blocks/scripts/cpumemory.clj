@@ -40,10 +40,10 @@
     (/ (apply + cpu) num)))
 
 (defn procs->output [{:keys [available]} cpu]
-  (str "<span color=\"#868686\" size=\"large\"> </span><span>"
+  (str "<span color=\"#bdbdbd\" size=\"large\">󰍛 </span><span>"
        (format "%.2f" available)
        " Gb</span>"
-       "<span color=\"#868686\" size=\"large\"> ﬙ </span><span>"
+       "<span color=\"#bdbdbd\" size=\"large\">  </span><span>"
        (format "%.2f" cpu)
        " MHz</span>"))
 

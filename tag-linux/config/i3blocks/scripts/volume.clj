@@ -18,10 +18,10 @@
   (let [volume (nth amixer 1)
         status (nth amixer 3)]
     (if (= status "on")
-      (str "<span color='#868686' size='large'>墳</span><span> "
+      (str "<span color='#bdbdbd' size='large'>󰕾</span><span> "
            volume
            "</span>")
-      "<span color='#868686' size='large'>婢</span>")))
+      "<span color='#bdbdbd' size='large'>󰝟</span>")))
 
 (-> (sh-amixer)
     read-amixer

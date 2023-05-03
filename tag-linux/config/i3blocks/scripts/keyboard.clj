@@ -24,7 +24,7 @@
 (defn setxkbmap->output [setxkbmap]
   (let [{:keys [layout variant options]
          :or {options ""}} setxkbmap]
-    (str "<span color='#868686' size='large'> </span><span>"
+    (str "<span color='#bdbdbd' size='large'> </span><span>"
          layout
          " (" variant ")"
          (when (string/includes? options "swapescape")

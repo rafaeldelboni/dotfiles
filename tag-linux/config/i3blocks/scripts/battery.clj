@@ -20,27 +20,27 @@
 
 (defn get-icon [status percent]
   (case status
-    "Full" ""
+    "Full" "󰁹"
     "Discharging" (cond
-                    (< percent 10) ""
-                    (< percent 20) ""
-                    (< percent 30) ""
-                    (< percent 40) ""
-                    (< percent 50) ""
-                    (< percent 60) ""
-                    (< percent 70) ""
-                    (< percent 80) ""
-                    (< percent 90) ""
-                    :else "")
-    "Charging" ""
-    ""))
+                    (< percent 10) "󰁺"
+                    (< percent 20) "󰁻"
+                    (< percent 30) "󰁼"
+                    (< percent 40) "󰁽"
+                    (< percent 50) "󰁾"
+                    (< percent 60) "󰁿"
+                    (< percent 70) "󰂀"
+                    (< percent 80) "󰂁"
+                    (< percent 90) "󰂂"
+                    :else "󰂃")
+    "Charging" "󰂄"
+    "󱉝"))
 
 (defn acpi->output [acpi]
   (let [status (nth acpi 0)
         percent (bigdec (string/replace (nth acpi 1 "0%") "%" ""))
         remain (apply str (take 5 (nth acpi 2 "")))
         icon (get-icon status percent)]
-    (str "<span color='#868686' size='medium'>"
+    (str "<span color='#bdbdbd' size='medium'>"
          icon
          "</span> <span>"
          percent "%"
