@@ -32,8 +32,7 @@
 
   ; theme
   :folke/tokyonight.nvim {:mod :theme}
-  :ryanoasis/vim-devicons {}
-  :kyazdani42/nvim-web-devicons {}
+  :nvim-tree/nvim-web-devicons {}
 
   ; status line
   :nvim-lualine/lualine.nvim {:mod :lualine}

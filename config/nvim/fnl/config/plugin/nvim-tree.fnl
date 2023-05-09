@@ -22,24 +22,11 @@
    :view {:adaptive_size true
           :mappings {:list [{:key "u" :action "dir_up"}]}}
    :renderer {:group_empty true
-              :highlight_git false
-              :highlight_opened_files "none"
               :indent_markers {:enable false}
               :icons {:webdev_colors false
                       :git_placement :after
-                      :padding " "
-                      :symlink_arrow " ➛ "
-                      :show {:file true
-                             :folder true
-                             :folder_arrow true
-                             :git true}
-                      :glyphs {:default ""
-                               :folder {:default "" :open ""}
-                               :git {:unstaged "✗"
-                                     :staged "✓"
-                                     :unmerged ""
-                                     :renamed "➜"
-                                     :untracked "★"}}}}
+                      :glyphs {:bookmark ""
+                               :folder {:default "" :open ""}}}}
    :filters {:custom ["^\\.git$"]}})
 
 (nvim.ex.hi "NvimTreeSpecialFile ctermfg=7 guifg=#c6c6c6")
