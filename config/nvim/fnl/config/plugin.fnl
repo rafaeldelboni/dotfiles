@@ -91,4 +91,7 @@
                      :mod :cmp}
 
   ; jannet
-  :bakpakin/janet.vim {})
+  :bakpakin/janet.vim {}
+  
+  ; copilot
+  :github/copilot.vim {:mod :copilot})

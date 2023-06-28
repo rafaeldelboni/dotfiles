@@ -53,8 +53,8 @@ cmd + shift - 6 : yabai -m window --space 6
 # Toggle float
 ctrl - f : yabai -m window --toggle float
 
-#kRestart yabai
+#Restart yabai
 cmd + lctrl - r : \
     /usr/bin/env osascript <<< \
         "display notification \"Restarting Yabai\" with title \"Yabai\""; \
-    launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
+    yabai --restart-service
