@@ -4,7 +4,12 @@
              lsp config.plugin.lspconfig}})
 
 (defn lsp_connection []
-  (if (vim.tbl_isempty (vim.lsp.buf_get_clients 0)) "" ""))
+  (let [message (lsp.get-progress-message)]
+    (if
+      (or (= message.status "begin")
+          (= message.status "report")) (.. message.msg " : " message.percent "%% ")
+      (= message.status "end") ""
+      "")))
 
 (lualine.setup
   {:options {:theme "tokyonight"

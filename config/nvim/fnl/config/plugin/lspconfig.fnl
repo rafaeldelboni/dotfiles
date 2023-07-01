@@ -1,8 +1,41 @@
-(module config.plugin.lspconfiglsp
+(module config.plugin.lspconfig
   {autoload {nvim aniseed.nvim
              lsp lspconfig
              util lspconfig.util
              cmplsp cmp_nvim_lsp}})
+
+;lsp loading progress
+(var progress-message {:status "" :percent 0 :msg ""})
+
+(defn get-progress-message []
+  progress-message)
+
+(defn progress-handler [_ msg info]
+  (when-let [client (vim.lsp.get_client_by_id info.client_id)]
+    (set progress-message.status msg.value.kind)
+    (when (not= msg.value.percentage nil)
+      (set progress-message.percent msg.value.percentage))
+    (if 
+      (and (not= msg.value.message nil) 
+           (and (not= msg.token nil)
+                (not= (type (tonumber msg.token)) "number")))
+      (set progress-message.msg (.. msg.token " : " msg.value.message))
+
+      (not= msg.value.message nil)
+      (set progress-message.msg msg.value.message)
+
+      (not= msg.token nil)
+      (set progress-message.msg msg.token))))
+
+(defn setup-progress-handler []
+  (let [original-handler (. vim.lsp.handlers :$/progress)]
+    (tset vim.lsp.handlers :$/progress
+          (fn [...]
+            (let [args (vim.F.pack_len ...)]
+              (progress-handler (vim.F.unpack_len args))
+              (original-handler ...))))))
+
+(setup-progress-handler)
 
 ;symbols to show for lsp diagnostics
 (defn define-signs
@@ -16,9 +49,7 @@
   (vim.fn.sign_define info  {:text "" :texthl info})
   (vim.fn.sign_define hint  {:text "" :texthl hint})))
 
-(if (= (nvim.fn.has "nvim-0.6") 1)
-  (define-signs "Diagnostic")
-  (define-signs "LspDiagnostics"))
+(define-signs "Diagnostic")
 
 (let [handlers {"textDocument/publishDiagnostics"
                 (vim.lsp.with
@@ -37,6 +68,8 @@
                   vim.lsp.handlers.signature_help
                   {:border "single"})}
       capabilities (cmplsp.default_capabilities)
+      before_init (fn [params]
+                    (set params.workDoneToken :1))
       on_attach (fn [client bufnr]
                   (do
                     (nvim.buf_set_keymap bufnr :n :gd "<Cmd>lua vim.lsp.buf.definition()<CR>" {:noremap true})
@@ -62,44 +95,52 @@
   ;; Clojure
   (lsp.clojure_lsp.setup {:on_attach on_attach
                           :handlers handlers
+                          :before_init before_init
                           :capabilities capabilities})
 
   ;; C/Cpp
   (lsp.clangd.setup {:on_attach on_attach
                      :handlers handlers
+                     :before_init before_init
                      :capabilities capabilities})
 
 
   ;; JavaScript and TypeScript
   (lsp.tsserver.setup {:on_attach on_attach
                        :handlers handlers
+                       :before_init before_init
                        :capabilities capabilities})
 
   ;; html / css / json
 
   (lsp.cssls.setup {:on_attach on_attach
                     :handlers handlers
+                    :before_init before_init
                     :capabilities capabilities
                     :cmd ["vscode-css-languageserver" "--stdio"]})
 
   (lsp.html.setup {:on_attach on_attach
                    :handlers handlers
+                   :before_init before_init
                    :capabilities capabilities
                    :cmd ["vscode-html-languageserver" "--stdio"]})
 
   (lsp.jsonls.setup {:on_attach on_attach
                      :handlers handlers
+                     :before_init before_init
                      :capabilities capabilities
                      :cmd ["vscode-json-languageserver" "--stdio"]})
 
   ;; Rust
   (lsp.rust_analyzer.setup {:on_attach on_attach
                             :handlers handlers
+                            :before_init before_init
                             :capabilities capabilities
                             :cmd ["rustup" "run" "nightly" "rust-analyzer"]})
 
   ;; Omnisharp for Unity
   (lsp.omnisharp.setup {:on_attach on_attach
                         :handlers handlers
+                        :before_init before_init
                         :capabilities capabilities
                         :cmd ["/usr/local/lib/omnisharp/run"]}))
