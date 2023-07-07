@@ -8,7 +8,8 @@
    :size 120
    :shade_terminals true
    :start_in_insert true
-   :insert_mappings false})
+   :insert_mappings false
+   :terminal_mappings false})
 
 (nvim.set_keymap :n :<leader>tl ":TermSelect<CR>" {:noremap true})
 
