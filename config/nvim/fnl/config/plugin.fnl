@@ -92,6 +92,9 @@
 
   ; jannet
   :bakpakin/janet.vim {}
-  
+
   ; copilot
-  :github/copilot.vim {:mod :copilot})
+  :github/copilot.vim {:mod :copilot}
+
+  ; toogle terminal
+  :akinsho/toggleterm.nvim {:mod :toggleterm})
