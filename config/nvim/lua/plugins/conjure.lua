@@ -6,7 +6,7 @@ local function _2_()
   nvim.g["conjure#mapping#doc_word"] = "K"
   nvim.g["conjure#client#clojure#nrepl#eval#auto_require"] = false
   nvim.g["conjure#client#clojure#nrepl#connection#auto_repl#enabled"] = false
-  nvim.g["conjure#client#clojure#nrepl#test#current_form_names"] = {"deftest", "defflow"}
+  nvim.g["conjure#client#clojure#nrepl#test#current_form_names"] = {"deftest", "defflow", "defspec"}
   return nil
 end
 return {{"Olical/conjure", branch = "master", init = _2_}}
