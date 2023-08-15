@@ -4,6 +4,6 @@ local autoload = _local_1_["autoload"]
 local nvim = autoload("nvim")
 local function _2_()
   local tmux = require("tmux")
-  return tmux.setup()
+  return tmux.setup({copy_sync = {redirect_to_clipboard = true}})
 end
 return {{"aserowy/tmux.nvim", config = _2_}}
