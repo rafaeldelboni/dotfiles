@@ -16,7 +16,7 @@ _Here's how my setup looks like currently [i3-gaps/Nvim/Tmux]_
  - [Arch Setup Guide](https://github.com/RafaelDelboni/dotfiles/blob/master/docs/arch.md)
 
 ## Notable stuff
- - [Nvim configuration with Aniseed/Fennel](https://github.com/rafaeldelboni/dotfiles/tree/master/config/nvim)
+ - [Nvim configuration with nfnl/fennel](https://github.com/rafaeldelboni/dotfiles/tree/master/config/nvim)
    - [Extensive Documentation about this](https://github.com/rafaeldelboni/cajus-nfnl)
  - [i3blocks Blocklets with Babashka](https://github.com/rafaeldelboni/dotfiles/tree/master/config/i3blocks/scripts)
 
