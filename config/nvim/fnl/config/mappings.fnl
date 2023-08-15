@@ -1,10 +1,8 @@
-(module config.mapping
-  {autoload {nvim aniseed.nvim}})
+(local {: autoload} (require :nfnl.module))
+(local nvim (autoload :nvim))
 
 ;generic mapping leaders configuration
 (nvim.set_keymap :n :<space> :<nop> {:noremap true})
-(set nvim.g.mapleader " ")
-(set nvim.g.maplocalleader ",")
 
 ;clear highlighting on enter in normal mode
 (nvim.set_keymap :n :<CR> ":noh<CR><CR>" {:noremap true})
@@ -14,3 +12,5 @@
 
 ;escape from terminal normal mode
 (nvim.set_keymap :t :<esc><esc> "<c-\\><c-n>" {:noremap true})
+
+{}

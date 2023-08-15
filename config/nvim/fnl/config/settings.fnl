@@ -1,7 +1,7 @@
-(module config.core
-  {autoload {nvim aniseed.nvim
-             util config.util
-             str aniseed.string}})
+(local {: autoload} (require :nfnl.module))
+(local str (autoload :nfnl.string))
+(local nvim (autoload :nvim))
+(local core (autoload :nfnl.core))
 
 ;refresh changed content
 (nvim.ex.autocmd "FocusGained,BufEnter" "*" ":checktime")
@@ -15,6 +15,7 @@
 ;don't wrap lines
 (nvim.ex.set :nowrap)
 
+;sets a nvim global options
 (let [options
       {:encoding "utf-8"
        :spelllang "en_us"
@@ -59,4 +60,6 @@
        ;makes signcolumn always one column with signs and linenumber
        :signcolumn "number"}]
   (each [option value (pairs options)]
-    (util.set-global-option option value)))
+    (core.assoc nvim.o option value)))
+
+{}

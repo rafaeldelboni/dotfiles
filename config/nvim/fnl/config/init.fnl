@@ -1,5 +1,4 @@
-(module config.init)
+(require :config.settings)
+(require :config.mappings)
 
-(require :config.core)
-(require :config.mapping)
-(require :config.plugin)
+{}
