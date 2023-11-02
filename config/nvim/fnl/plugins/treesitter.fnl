@@ -9,6 +9,7 @@
                                                     :commonlisp
                                                     :dockerfile
                                                     :fennel
+                                                    :gdscript
                                                     :html
                                                     :java
                                                     :javascript

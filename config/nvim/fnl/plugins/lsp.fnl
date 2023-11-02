@@ -63,4 +63,11 @@
               (lsp.clojure_lsp.setup {:on_attach on_attach
                                       :handlers handlers
                                       :before_init before_init
-                                      :capabilities capabilities})))}]
+                                      :capabilities capabilities})
+ 
+              ;; Godot
+              (lsp.gdscript.setup {:on_attach on_attach
+                                      :handlers handlers
+                                      :before_init before_init
+                                      :capabilities capabilities})
+              ))}]

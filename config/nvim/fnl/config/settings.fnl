@@ -12,6 +12,9 @@
 ;csharp tabsize
 (nvim.ex.autocmd "FileType" "cs" "setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab")
 
+;godot tabsize
+(nvim.ex.autocmd "FileType" "gdscript,gdshader" "setlocal foldmethod=expr tabstop=4 shiftwidth=4 indentexpr= noexpandtab")
+
 ;don't wrap lines
 (nvim.ex.set :nowrap)
 

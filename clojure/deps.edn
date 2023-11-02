@@ -27,9 +27,14 @@
            ;;   - clj -M:outdated
            ;;     --upgrade upgrade outdated versions interactively.
            ;;     --force for upgrading without confirmation.
-           :outdated {:extra-deps {com.github.liquidz/antq {:mvn/version "2.5.1095"}}
+           :outdated {:extra-deps {com.github.liquidz/antq {:mvn/version "2.7.1133"}}
                       :main-opts ["-m" "antq.core"]}
 
            :cider {:extra-deps {org.clojure/clojure {:mvn/version "1.11.1"}
-                                cider/cider-nrepl {:mvn/version "0.31.0"}}
-                   :main-opts ["-m" "nrepl.cmdline" "--middleware" "[cider.nrepl/cider-middleware]"]}}}
+                                cider/cider-nrepl {:mvn/version "0.41.0"}}
+                   :main-opts ["-m" "nrepl.cmdline" "--middleware" "[cider.nrepl/cider-middleware]"]}
+
+           :http {:deps {org.babashka/http-server {:git/url "https://github.com/babashka/http-server"
+                                                   :git/sha "6964d9edb1c7b2ea767f30136da0c658e0a98a44"}}
+                  :main-opts ["-m" "babashka.http-server"]
+                  :exec-fn babashka.http-server/exec}}}

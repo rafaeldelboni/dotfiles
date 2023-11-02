@@ -38,6 +38,11 @@ yabai -m config window_gap                   05
 yabai -m rule --add app='^System Information$' manage=off
 yabai -m rule --add app='^System Preferences$' manage=off
 yabai -m rule --add title='Preferences$' manage=off
+yabai -m rule --add title='^Please Confirm...$' manage=off
+yabai -m rule --add title='^Open a File$' manage=off
+yabai -m rule --add title='^Save a File$' manage=off
+yabai -m rule --add title='^Create Folder$' manage=off
+yabai -m rule --add title='^Resource$' manage=off
 
 # float settings windows
 yabai -m rule --add title='Settings$' manage=off
