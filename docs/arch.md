@@ -289,6 +289,14 @@ rcup -x docs -x readme.md -t linux
 [tmux-plugins](https://github.com/tmux-plugins/tpm)
 Once installed press `prefix` + <kbd>I</kbd> (capital I, as in **I**nstall) to fetch the plugin.
 
+## XORG Keyboard rate default
+Replace the contents of the file `/etc/X11/xinit/xserverrc` with the following:
+```bash
+#!/bin/sh
+# set default keyboard rate speed with -ardelay and -arinterval
+exec /usr/bin/X -nolisten tcp -ardelay 150 -arinterval 70 "$@"
+```
+
 ## TLP
 To complete TLP's install, you must enable the systemd services `tlp.service` and `tlp-sleep.service`. You should also mask the systemd service `systemd-rfkill.service` and socket `systemd-rfkill.socket` to avoid conflicts and assure proper operation of TLP's radio device switching options.
 ```bash
