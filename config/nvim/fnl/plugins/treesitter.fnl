@@ -5,6 +5,7 @@
               (treesitter.setup {:highlight {:enable true}
                                  :indent {:enable true}
                                  :ensure_installed [:bash
+                                                    :c_sharp
                                                     :clojure
                                                     :commonlisp
                                                     :dockerfile
