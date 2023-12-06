@@ -46,6 +46,6 @@ local function _2_()
   on_attach = _4_
   lsp.clojure_lsp.setup({on_attach = on_attach, handlers = handlers, before_init = before_init, capabilities = capabilities})
   lsp.gdscript.setup({on_attach = on_attach, handlers = handlers, before_init = before_init, capabilities = capabilities})
-  return lsp.omnisharp.setup({on_attach = on_attach, handlers = handlers, capabilities = capabilities, cmd = {"/usr/local/lib/omnisharp/run"}, organize_imports_on_format = true, enable_import_completion = true, enable_roslyn_analyzers = true})
+  return lsp.csharp_ls.setup({on_attach = on_attach, handlers = handlers, capabilities = capabilities})
 end
 return {{"neovim/nvim-lspconfig", config = _2_}}

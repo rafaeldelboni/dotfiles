@@ -71,12 +71,8 @@
                                       :before_init before_init
                                       :capabilities capabilities})
 
-              ;; Unity Mono lsp
-              (lsp.omnisharp.setup {:on_attach on_attach
+              ;; Csharp
+              (lsp.csharp_ls.setup {:on_attach on_attach
                                     :handlers handlers
-                                    :capabilities capabilities
-                                    :cmd ["/usr/local/lib/omnisharp/run"]
-                                    :organize_imports_on_format true
-                                    :enable_import_completion true
-                                    :enable_roslyn_analyzers true})
+                                    :capabilities capabilities})
               ))}]
