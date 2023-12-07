@@ -1,4 +1,5 @@
 {
+  "Comment.nvim": { "branch": "master", "commit": "0236521ea582747b58869cb72f70ccfa967d2e89" },
   "LuaSnip": { "branch": "master", "commit": "954c81b53989097faaff0fabc11c29575288c3e1" },
   "cmp-buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
   "cmp-conjure": { "branch": "master", "commit": "d97816d5007be2b060f3a4e09f5b144d97d96fe8" },
@@ -10,7 +11,6 @@
   "janet.vim": { "branch": "master", "commit": "dc14b02f2820bc2aca777a1eeec48627ae6555bf" },
   "lazy.nvim": { "branch": "main", "commit": "96584866b9c5e998cbae300594d0ccfd0c464627" },
   "lualine.nvim": { "branch": "master", "commit": "2248ef254d0a1488a72041cfb45ca9caada6d994" },
-  "nerdcommenter": { "branch": "master", "commit": "da948e160d9f54c2967c7927b9c74c5a68c8dc49" },
   "nfnl": { "branch": "main", "commit": "0979d3b42250a35855f0d2bce49044f8b3d73bfd" },
   "nvim-autopairs": { "branch": "master", "commit": "0f04d78619cce9a5af4f355968040f7d675854a1" },
   "nvim-cmp": { "branch": "main", "commit": "0b751f6beef40fd47375eaf53d3057e0bfa317e4" },

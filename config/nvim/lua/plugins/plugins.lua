@@ -1,2 +1,2 @@
 -- [nfnl] Compiled from fnl/plugins/plugins.fnl by https://github.com/Olical/nfnl, do not edit.
-return {{"tpope/vim-fugitive"}, {"preservim/nerdcommenter"}, {"mg979/vim-visual-multi"}, {"bakpakin/fennel.vim", lazy = true, ft = {"fennel"}}, {"bakpakin/janet.vim", lazy = true, ft = {"janet"}}}
+return {{"tpope/vim-fugitive"}, {"numToStr/Comment.nvim", opts = {toggler = {line = "<leader>cc", block = "<leader>cb"}, opleader = {line = "<leader>cc", block = "<leader>cb"}, extra = {above = "<leader>cO", below = "<leader>co", eol = "<leader>cA"}}}, {"mg979/vim-visual-multi"}, {"bakpakin/fennel.vim", lazy = true, ft = {"fennel"}}, {"bakpakin/janet.vim", lazy = true, ft = {"janet"}}}
