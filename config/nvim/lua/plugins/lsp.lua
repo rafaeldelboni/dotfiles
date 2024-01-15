@@ -46,6 +46,10 @@ local function _2_()
   on_attach = _4_
   lsp.clojure_lsp.setup({on_attach = on_attach, handlers = handlers, before_init = before_init, capabilities = capabilities})
   lsp.gdscript.setup({on_attach = on_attach, handlers = handlers, before_init = before_init, capabilities = capabilities})
-  return lsp.csharp_ls.setup({on_attach = on_attach, handlers = handlers, capabilities = capabilities})
+  lsp.csharp_ls.setup({on_attach = on_attach, handlers = handlers, capabilities = capabilities})
+  lsp.tsserver.setup({on_attach = on_attach, handlers = handlers, before_init = before_init, capabilities = capabilities})
+  lsp.cssls.setup({on_attach = on_attach, handlers = handlers, before_init = before_init, capabilities = capabilities, cmd = {"vscode-css-languageserver", "--stdio"}})
+  lsp.html.setup({on_attach = on_attach, handlers = handlers, before_init = before_init, capabilities = capabilities, cmd = {"vscode-html-languageserver", "--stdio"}})
+  return lsp.jsonls.setup({on_attach = on_attach, handlers = handlers, before_init = before_init, capabilities = capabilities, cmd = {"vscode-json-languageserver", "--stdio"}})
 end
 return {{"neovim/nvim-lspconfig", config = _2_}}

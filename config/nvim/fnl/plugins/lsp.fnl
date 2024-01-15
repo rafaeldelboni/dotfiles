@@ -75,4 +75,31 @@
               (lsp.csharp_ls.setup {:on_attach on_attach
                                     :handlers handlers
                                     :capabilities capabilities})
+
+              ;; JavaScript and TypeScript
+              (lsp.tsserver.setup {:on_attach on_attach
+                                   :handlers handlers
+                                   :before_init before_init
+                                   :capabilities capabilities})
+
+              ;; html / css / json
+
+              (lsp.cssls.setup {:on_attach on_attach
+                                :handlers handlers
+                                :before_init before_init
+                                :capabilities capabilities
+                                :cmd ["vscode-css-languageserver" "--stdio"]})
+
+              (lsp.html.setup {:on_attach on_attach
+                               :handlers handlers
+                               :before_init before_init
+                               :capabilities capabilities
+                               :cmd ["vscode-html-languageserver" "--stdio"]})
+
+              (lsp.jsonls.setup {:on_attach on_attach
+                                 :handlers handlers
+                                 :before_init before_init
+                                 :capabilities capabilities
+                                 :cmd ["vscode-json-languageserver" "--stdio"]})
+
               ))}]
