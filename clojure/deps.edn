@@ -18,7 +18,7 @@
            ;; add this inside your :aliases map:
            :new {:extra-deps {cc.delboni/deps-new-wrap
                               {:git/url "https://github.com/rafaeldelboni/deps-new-wrap"
-                               :git/sha "6bd1f2d3bbdbee0d202288a399824345b84a310f"}}
+                               :git/sha "34557a5f5d98b5815b612c12ca5c407d324aa510"}}
                  :exec-fn cc.delboni.main/new}
 
            ;; project dependency version check
@@ -27,11 +27,11 @@
            ;;   - clj -M:outdated
            ;;     --upgrade upgrade outdated versions interactively.
            ;;     --force for upgrading without confirmation.
-           :outdated {:extra-deps {com.github.liquidz/antq {:mvn/version "2.7.1133"}}
+           :outdated {:extra-deps {com.github.liquidz/antq {:mvn/version "2.8.1173"}}
                       :main-opts ["-m" "antq.core"]}
 
            :cider {:extra-deps {org.clojure/clojure {:mvn/version "1.11.1"}
-                                cider/cider-nrepl {:mvn/version "0.44.0"}}
+                                cider/cider-nrepl {:mvn/version "0.45.0"}}
                    :main-opts ["-m" "nrepl.cmdline" "--middleware" "[cider.nrepl/cider-middleware]"]}
 
            :http {:deps {org.babashka/http-server {:mvn/version "0.1.12"}}
