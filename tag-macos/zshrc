@@ -33,6 +33,9 @@ SAVEHIST=10000000                # history save size
 DISABLE_AUTO_TITLE="true"        # avoid window rename
 KEYTIMEOUT=1                     # remove delay
 
+# Brew
+export PATH="/opt/homebrew/bin:$PATH"
+
 # PATH adds
 PATH="$HOME/.local/bin:/usr/local/bin":$PATH
 PATH="$HOME/.cargo/bin:$HOME/.cargo/bin/racer":$PATH
@@ -54,3 +57,4 @@ export GPG_TTY=$(tty)
 
 # fnm
 [ -f /usr/local/bin/fnm ] && eval "$(fnm env)"
+
