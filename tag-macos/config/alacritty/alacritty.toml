@@ -56,25 +56,25 @@ TERM = "tmux-256color"
 [font]
 size = 13
 
+[font.normal]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Regular"
+
 [font.bold]
 family = "JetBrainsMono Nerd Font Mono"
 style = "Bold"
-
-[font.glyph_offset]
-x = 0
-y = 0
 
 [font.italic]
 family = "JetBrainsMono Nerd Font Mono"
 style = "Italic"
 
-[font.normal]
-family = "JetBrainsMono Nerd Font Mono"
-style = "Regular"
-
 [font.offset]
 x = 0
 y = -2
+
+[font.glyph_offset]
+x = 0
+y = 0
 
 [[keyboard.bindings]]
 action = "ResetFontSize"

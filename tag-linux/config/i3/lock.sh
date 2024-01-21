@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+FONT="JetBrainsMono Nerd Font Mono"
+
 B='#00000000' # blank
 C='#ffffff22' # clear ish
 D='#2f71bb'   # default
@@ -34,12 +36,12 @@ i3lock \
 --time-str="%H:%M:%S"  \
 --date-str="%A, %m %Y" \
 --keylayout 1         \
---time-font="JetBrainsMono Nerd Font Mono" \
---date-font="JetBrainsMono Nerd Font Mono" \
---layout-font="JetBrainsMono Nerd Font Mono" \
---verif-font="JetBrainsMono Nerd Font Mono" \
---wrong-font="JetBrainsMono Nerd Font Mono" \
---greeter-font="JetBrainsMono Nerd Font Mono" \
+--time-font=$FONT \
+--date-font=$FONT \
+--layout-font=$FONT \
+--verif-font=$FONT \
+--wrong-font=$FONT \
+--greeter-font=$FONT \
 --radius=120 \
 --ring-width=10 \
 --time-size=40 \
