@@ -56,5 +56,4 @@ export GPG_TTY=$(tty)
 [ -f ~/.workrc ] && source ~/.workrc
 
 # fnm
-[ -f /usr/local/bin/fnm ] && eval "$(fnm env)"
-
+[ -f $(brew --prefix)/bin/fnm ] && eval "$(fnm env)"

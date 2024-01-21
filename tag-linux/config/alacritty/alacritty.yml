@@ -306,7 +306,7 @@ shell:
   args:
     - -l
     - -c
-    - "tmux attach || tmux"
+    - "tmux new-session"
 
 # Windows 10 ConPTY backend (Windows only)
 #
