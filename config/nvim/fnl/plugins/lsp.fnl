@@ -88,18 +88,18 @@
                                 :handlers handlers
                                 :before_init before_init
                                 :capabilities capabilities
-                                :cmd ["vscode-css-languageserver" "--stdio"]})
+                                :cmd ["vscode-css-language-server" "--stdio"]})
 
               (lsp.html.setup {:on_attach on_attach
                                :handlers handlers
                                :before_init before_init
                                :capabilities capabilities
-                               :cmd ["vscode-html-languageserver" "--stdio"]})
+                               :cmd ["vscode-html-language-server" "--stdio"]})
 
               (lsp.jsonls.setup {:on_attach on_attach
                                  :handlers handlers
                                  :before_init before_init
                                  :capabilities capabilities
-                                 :cmd ["vscode-json-languageserver" "--stdio"]})
+                                 :cmd ["vscode-json-language-server" "--stdio"]})
 
               ))}]
