@@ -1,24 +1,24 @@
-dotfiles
-===================
-These are my dotfiles. I'm using [paro](https://github.com/rafaeldelboni/paro) to manage it.
+# dotfiles
+These are my dotfiles. 
+
+![screenshot](docs/screenshot.png)
+_Here's how my setup looks like currently [i3-gaps/Nvim/Tmux]_
+
+## Config
+I'm using [paro](https://github.com/rafaeldelboni/paro) to manage it.
 ```bash
 # for linux
 paro -t linux
-
 # for macos
 paro -t macos
 ```
 
-![screenshot](https://github.com/RafaelDelboni/dotfiles/blob/master/docs/screenshot.png)
-_Here's how my setup looks like currently [i3-gaps/Nvim/Tmux]_
-
-## Installation
- - [Arch Setup Guide](https://github.com/RafaelDelboni/dotfiles/blob/master/docs/arch.md)
+## Setup
+ - [Arch Setup Guide](https://github.com/rafaeldelboni/dotfiles/blob/master/docs/arch.md)
 
 ## Notable stuff
  - [Nvim configuration with nfnl/fennel](https://github.com/rafaeldelboni/dotfiles/tree/master/config/nvim)
    - [Extensive Documentation about this](https://github.com/rafaeldelboni/cajus-nfnl)
- - [i3blocks Blocklets with Babashka](https://github.com/rafaeldelboni/dotfiles/tree/master/config/i3blocks/scripts)
 
 ## Contributing
 Even though it's a repository of personal settings if you find any dead links, misinformation or any improvements in this at all
