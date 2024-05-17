@@ -37,6 +37,7 @@ fdisk -l
 ```
 
 ### Scheme
+> Note that you need to reuse the Windows boot partition if dual booting in the same SSD.
 
 | Name      | Size        | System |
 | --------- |:-----------:|:------:|
@@ -105,7 +106,7 @@ vim /etc/pacman.d/mirrorlist
 ```
 
 ```bash
-pacstrap /mnt base base-devel linux linux-firmware neovim zsh
+pacstrap /mnt base base-devel linux linux-firmware neovim zsh git 
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
@@ -142,7 +143,7 @@ Uncomment this line: `%wheel ALL=(ALL) ALL`
 ```bash
 echo alpha-arch > /etc/hostname
 printf "\n127.0.0.1 localhost\n::1 localhost\n127.0.0.1 alpha-arch.localdomain alpha-arch" >> /etc/hosts
-pacman -S dialog bluez bluez-utils networkmanager wireless_tools
+pacman -S dialog bluez bluez-utils networkmanager wireless_tools network-manager-applet
 systemctl enable NetworkManager.service
 ```
 To connect to network after the reboot use `nmtui-connect` 
@@ -153,6 +154,7 @@ Change the HOOKS definition to look like this:
 ```
 HOOKS=(base systemd udev keyboard autodetect modconf block sd-encrypt lvm2 filesystems fsck)
 ```
+Ensure **systemd, sd-encrypt and lvm2** are on the HOOKS list. 
 
 We have to create an `/etc/crypttab.initramfs` to identify our encrypted volume.
 Linux uses UUIDs to uniquely identify your data volumes, independent of the system they’re attached to.
@@ -197,51 +199,64 @@ options root=UUID=<your UUID> rw quiet loglevel=0 splash
 Edit `/boot/loader/loader.conf` and uncomment `timeout`
 in case you want the boot menu to show up.
 
-## Audio & Video
+## Tools
+```bash
+pacman -S zsh-autosuggestions curl tmux openssh zip unzip ripgrep fzf xclip jq rustup 
+```
+
+### Installing Tmux Plugin
+[tmux-plugins](https://github.com/tmux-plugins/tpm)
+Once installed press `prefix` + <kbd>I</kbd> (capital I, as in **I**nstall) to fetch the plugin.
+
+### Enable ssh-agent.service
+```bash
+systemctl --user enable ssh-agent.service
+```
+
+## Audio
 ```bash
 pacman -S alsa-firmware alsa-utils alsa-plugins pulseaudio-alsa pulseaudio
-pacman -S xorg-server xorg-xinit xorg-apps xf86-input-evdev
 ```
 
-### Intel Video (Old Cards)
+## Video
 ```bash
-pacman -S mesa xf86-video-intel vulkan-intel
-```
-In case `startx` doesn't work, add file `/usr/share/X11/xorg.conf.d/20-intel.conf` with the following contents:
-```
-Section "Device"
-        Identifier "Intel Graphics"
-        Driver     "intel"
-        Option     "Virtualheads 3"
-EndSection
+pacman -S xorg-server xorg-apps xorg-xinit
 ```
 
-### Intel Video (New Cards, Eg. Iris XE)
+### Intel Driver (New Cards, Eg. Iris XE)
 ```bash
-pacman -S mesa intel-media-driver vulkan-intel
+pacman -S mesa mesa-utils vulkan-intel
 ```
 You also need to add `i915.enable_guc=2` kernel argument into `/boot/loader/entries/arch.conf` options.
 
-### Nvidia Cards
+### Nvidia Driver
 ```bash
-pacman -S nvidia nvidia-utils nvidia-settings
+pacman -S nvidia nvidia-utils nvidia-settings nvidia-prime
 ```
-You also need to add `acpi_osi=! acpi_osi=\"Windows 2009\" nvidia-drm.modeset=1` kernel arguments into `/boot/loader/entries/arch.conf` options.
+You also need to add `acpi_osi=\"Windows 2015\" nvidia-drm.modeset=1` kernel arguments into `/boot/loader/entries/arch.conf` options.
 
 ## Windows Manager (i3)
 ```bash
-pacman -S i3 i3blocks rofi picom alacritty tmux lxappearance
+pacman -S i3 picom rofi alacritty xdg-utils lxappearance xfce4-notifyd feh maim
 ```
+
 Some basic fonts
-```
+```bash
 pacman -S ttf-dejavu ttf-font-awesome adobe-source-han-sans-otc-fonts ttf-indic-otf noto-fonts-emoji
 ```
-Create the file `.xinitrc` file
+
+Create the file `.Xresources`
 ```
-xrandr --setprovideroutputsource modesetting NVIDIA-0
-xrandr --auto
+Xft.dpi: 144
+```
+
+Create the file `.xinitrc`
+```bash
+xrdb -merge $HOME/.Xresources
+xrandr --dpi 144 --auto
 exec i3
 ```
+
 Run `startx`
 
 # Config
@@ -253,10 +268,9 @@ cd yay
 makepkg -si
 ```
 
-## Apps
+## Aur Tools
 ```bash
-pacman -S zsh-completions xdg-utils fzf xfce4-notifyd feh imagemagick w3m gimp playerctl xclip arandr tlp acpi sysstat libmpdclient openssh ripgrep maim zsh-autosuggestions acpilight zip unzip
-yay -Sy i3lock-color autojump-rs ttf-ms-fonts ttf-ubuntu-font-family ttf-jetbrains-mono-nerd xfce-theme-greybird xtitle-git babashka-bin --noconfirm
+yay -Sy autojump-rs ttf-jetbrains-mono-nerd xfce-polkit nordic-theme --noconfirm
 ```
 
 ## Paro
@@ -285,36 +299,23 @@ rcup -x docs -x readme.md -t linux
 ```
 `rcup` expects that you cloned your dotfiles to `~/.dotfiles/` and will create dotfile symlinks (`.vimrc` -> `~/.dotfiles/vimrc`) from your home directory to your `~/.dotfiles/` directory.
 
-## Installing Tmux Plugin
-[tmux-plugins](https://github.com/tmux-plugins/tpm)
-Once installed press `prefix` + <kbd>I</kbd> (capital I, as in **I**nstall) to fetch the plugin.
-
-## XORG Keyboard rate default
-Replace the contents of the file `/etc/X11/xinit/xserverrc` with the following:
-```bash
-#!/bin/sh
-# set default keyboard rate speed with -ardelay and -arinterval
-exec /usr/bin/X -nolisten tcp -ardelay 150 -arinterval 70 "$@"
-```
 
 ## TLP
-To complete TLP's install, you must enable the systemd services `tlp.service` and `tlp-sleep.service`. You should also mask the systemd service `systemd-rfkill.service` and socket `systemd-rfkill.socket` to avoid conflicts and assure proper operation of TLP's radio device switching options.
+To a complete TLP's install, you must enable the systemd services `tlp.service` and `tlp-sleep.service`. You should also mask the systemd service `systemd-rfkill.service` and socket `systemd-rfkill.socket` to avoid conflicts and assure proper operation of TLP's radio device switching options.
 ```bash
+pacman -S tlp tlp-rdw
+
 sudo systemctl enable tlp
 sudo systemctl start tlp
 sudo systemctl mask systemd-rfkill.service
 sudo systemctl mask systemd-rfkill.socket
 ```
 
-## acpilight / xbacklight
-Normally, users are prohibited to alter files in the sys filesystem. It's
-advisable (and recommended) to setup an "udev" rule to allow users in the
-"video" group to set the display brightness.
-To do so, place a file in /etc/udev/rules.d/90-backlight.rules containing:
-```bash
-SUBSYSTEM=="backlight", ACTION=="add", \
-  RUN+="/bin/chgrp video /sys/class/backlight/%k/brightness", \
-  RUN+="/bin/chmod g+w /sys/class/backlight/%k/brightness"
+Edit the TLP config `/etc/tlp.conf` file and enable wifi and blutooth on the system startup.
+
+Add the following line:
+```
+DEVICES_TO_ENABLE_ON_STARTUP="wifi bluetooth"
 ```
 
 ## Touchpad and Slimblade
@@ -344,37 +345,4 @@ Now you just need to add the line AutoEnable=true in /etc/bluetooth/main.conf at
 AutoEnable=true
 ```
 
-## Set local enviroment settings
-Create the following file `~/.local-env`
-```bash
-export LOCAL_DPI="96"
-export LOCAL_MODE="2560x1440"
-export LOCAL_EXTERN=DP-3
-```
-
-## Bumblebee
-Bumblebee is the best way to minimize battery usage and selective usage of GPU
-https://wiki.archlinux.org/index.php/bumblebee
-```bash
-pacman -Sy bumblebee bbswitch
-gpasswd -a rafael bumblebee
-systemctl enable bumblebeed.service
-systemctl start bumblebeed.service
-```
-
-In some instances, running optirun will return:
-```
-[ERROR]Cannot access secondary GPU - error: [XORG] (EE) No devices detected.
-[ERROR]Aborting because fallback start is disabled.
-```
-You might need to define the NVIDIA card in the file `/etc/bumblebee/xorg.conf.nvidia`, using the correct BusID according to lspci output
-```
-    BusID "PCI:01:00:0"
-```
-
-### TLP vs Bumblebee with NVIDIA driver
-If you're running Bumblebee with NVIDIA driver, you need to disable power management for the GPU in TLP in order to make Bumblebee control the power of the GPU.
-Run `lspci` to determine the address of the GPU (such as 01:00.0), then set the value in the top config file `/etc/default/tlp`:
-```
- RUNTIME_PM_BLACKLIST="01:00.0"
-```
+You can install `blueman` for a visual blutooth applet

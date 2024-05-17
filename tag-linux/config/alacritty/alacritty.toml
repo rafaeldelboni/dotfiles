@@ -54,7 +54,7 @@ render_timer = false
 TERM = "tmux-256color"
 
 [font]
-size = 8.5
+size = 10
 
 [font.normal]
 family = "JetBrainsMono Nerd Font Mono"

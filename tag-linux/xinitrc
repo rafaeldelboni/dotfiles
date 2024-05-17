@@ -1,14 +1,21 @@
-# Reload Xresources on start
-[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
+userresources=$HOME/.Xresources
 
-# Set keyboard layout and delay/rate
-source ~/.config/i3/keyboardswap.sh us
+# merge in defaults and keymaps
+if [ -f "$userresources" ]; then
+    xrdb -merge "$userresources"
+fi
 
-# Set mouse acceleration and make it 5x faster after moving past 2 units
-xset m 5 2 &
+# start some nice programs
+if [ -d /etc/X11/xinit/xinitrc.d ] ; then
+    for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
+        [ -x "$f" ] && . "$f"
+    done
+    unset f
+fi
 
-# Set Video Output
-xrandr --auto
-source ~/.config/i3/video.sh -d
+# keyboard configuration
+$HOME/.xorg/scripts/keyboard.sh
 
+# start xorg with i3
+xrandr --dpi 144 --auto
 exec i3
