@@ -1,22 +1,33 @@
 (local {: autoload} (require :nfnl.module))
 (local str (autoload :nfnl.string))
-(local nvim (autoload :nvim))
 (local core (autoload :nfnl.core))
 
 ;refresh changed content
-(nvim.ex.autocmd "FocusGained,BufEnter" "*" ":checktime")
+(vim.api.nvim_create_autocmd
+  [:FocusGained :BufEnter]
+  {:pattern [:*]
+   :command "checktime"})
 
 ;rust tabsize
-(nvim.ex.autocmd "FileType" "rust" "setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab")
+(vim.api.nvim_create_autocmd
+  [:FileType]
+  {:pattern [:rust]
+   :command "setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab"})
 
 ;csharp tabsize
-(nvim.ex.autocmd "FileType" "cs" "setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab")
+(vim.api.nvim_create_autocmd
+  [:FileType]
+  {:pattern [:cs]
+   :command "setlocal tabstop=4 softtabstop=4 shiftwidth=4 expandtab"})
 
 ;godot tabsize
-(nvim.ex.autocmd "FileType" "gdscript,gdshader" "setlocal foldmethod=expr tabstop=4 shiftwidth=4 indentexpr= noexpandtab")
+(vim.api.nvim_create_autocmd
+  [:FileType]
+  {:pattern [:gdscript :gdshader]
+   :command "setlocal foldmethod=expr tabstop=4 shiftwidth=4 indentexpr= noexpandtab"})
 
 ;don't wrap lines
-(nvim.ex.set :nowrap)
+(set vim.wo.wrap false)
 
 ;sets a nvim global options
 (let [options
@@ -63,6 +74,6 @@
        ;makes signcolumn always one column with signs and linenumber
        :signcolumn "number"}]
   (each [option value (pairs options)]
-    (core.assoc nvim.o option value)))
+    (core.assoc vim.o option value)))
 
 {}

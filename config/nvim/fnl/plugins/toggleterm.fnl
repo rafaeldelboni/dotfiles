@@ -13,9 +13,9 @@
                  :insert_mappings false
                  :terminal_mappings false})))
   :init (fn []
-          (nvim.set_keymap :n :<leader>tl ":TermSelect<CR>" {:noremap true})
-          (nvim.ex.tnoremap :<esc> :<c-\><c-n>)
-          (nvim.ex.tnoremap :<c-h> :<c-\><c-n><c-w>h)
-          (nvim.ex.tnoremap :<c-j> :<c-\><c-n><c-w>j)
-          (nvim.ex.tnoremap :<c-k> :<c-\><c-n><c-w>k)
-          (nvim.ex.tnoremap :<c-l> :<c-\><c-n><c-w>l))}]
+          (vim.keymap.set :n :<leader>tl ":TermSelect<CR>" {:noremap true})
+          (vim.keymap.set :t :<esc> :<c-\><c-n>)
+          (vim.keymap.set :t :<c-h> :<c-\><c-n><c-w>h)
+          (vim.keymap.set :t :<c-j> :<c-\><c-n><c-w>j)
+          (vim.keymap.set :t :<c-k> :<c-\><c-n><c-w>k)
+          (vim.keymap.set :t :<c-l> :<c-\><c-n><c-w>l))}]

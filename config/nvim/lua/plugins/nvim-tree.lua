@@ -21,9 +21,9 @@ local function _2_()
 end
 local function _4_()
   nvim.ex.hi("NvimTreeSpecialFile ctermfg=7 guifg=#c6c6c6")
-  nvim.set_keymap("n", "<leader>tt", ":NvimTreeToggle<CR>", {noremap = true})
-  nvim.set_keymap("n", "<leader>tf", ":NvimTreeFocus<CR>", {noremap = true})
-  nvim.set_keymap("n", "<leader>tc", ":NvimTreeCollapse<CR>", {noremap = true})
-  return nvim.set_keymap("n", "<leader>tr", ":NvimTreeFindFile<CR>", {noremap = true})
+  vim.keymap.set("n", "<leader>tt", ":NvimTreeToggle<CR>", {noremap = true})
+  vim.keymap.set("n", "<leader>tf", ":NvimTreeFocus<CR>", {noremap = true})
+  vim.keymap.set("n", "<leader>tc", ":NvimTreeCollapse<CR>", {noremap = true})
+  return vim.keymap.set("n", "<leader>tr", ":NvimTreeFindFile<CR>", {noremap = true})
 end
 return {{"nvim-tree/nvim-tree.lua", branch = "master", config = _2_, init = _4_}}
