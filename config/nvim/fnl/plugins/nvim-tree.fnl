@@ -1,6 +1,3 @@
-(local {: autoload} (require :nfnl.module))
-(local nvim (autoload :nvim))
-
 [{1 :nvim-tree/nvim-tree.lua
   :branch "master"
   :config (fn []
@@ -29,7 +26,7 @@
                  :filters {:custom ["^\\.git$"]}}
                 )))
   :init (fn []
-          (nvim.ex.hi "NvimTreeSpecialFile ctermfg=7 guifg=#c6c6c6")
+          (vim.cmd "hi NvimTreeSpecialFile ctermfg=7 guifg=#c6c6c6")
           (vim.keymap.set :n :<leader>tt ":NvimTreeToggle<CR>" {:noremap true})
           (vim.keymap.set :n :<leader>tf ":NvimTreeFocus<CR>" {:noremap true})
           (vim.keymap.set :n :<leader>tc ":NvimTreeCollapse<CR>" {:noremap true})
