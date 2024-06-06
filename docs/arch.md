@@ -215,7 +215,7 @@ systemctl --user enable ssh-agent.service
 
 ## Audio
 ```bash
-pacman -S alsa-firmware alsa-utils alsa-plugins pulseaudio-alsa pulseaudio
+pacman -S alsa-firmware alsa-utils alsa-plugins pulseaudio-alsa pulseaudio playerctl
 ```
 
 ## Video
