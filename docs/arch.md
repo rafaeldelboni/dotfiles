@@ -318,14 +318,15 @@ Add the following line:
 DEVICES_TO_ENABLE_ON_STARTUP="wifi bluetooth"
 ```
 
-## Touchpad and Slimblade
+## Touchpad and Trackballs
 Make sure you link the following files:
 ```bash
 sudo ln -sf ~/.xorg/10-touchpad.conf /usr/share/X11/xorg.conf.d/10-touchpad.conf
 sudo ln -sf ~/.xorg/10-slimblade.conf /usr/share/X11/xorg.conf.d/10-slimblade.conf
+sudo ln -sf ~/.xorg/10-expert-mouse.conf /usr/share/X11/xorg.conf.d/10-expert-mouse.conf
 ```
 
-## Blutooth Mouse (MX Anywhere 2S)
+## Blutooth
 ```bash
   bluetoothctl
   [bluet]power off
@@ -345,4 +346,9 @@ Now you just need to add the line AutoEnable=true in /etc/bluetooth/main.conf at
 AutoEnable=true
 ```
 
+### GUI
 You can install `blueman` for a visual blutooth applet
+
+### Dual boot & ZMK bluetooth device
+A quick guide on getting an ZMK bluetooth based device to connect to linux and windows when dual booting on a single machine.  
+https://hoelter.prose.sh/kinesis-advantage-360-bluetooth-dualboot

@@ -243,7 +243,7 @@ bindsym --release Shift+Print exec maim | xclip -selection clipboard -t image/pn
 bindsym --release Shift+$mod+Print exec maim -s | xclip -selection clipboard -t image/png && notify-send -u normal -t 5000 'Partial screenshot taken to clipboard'
 
 # Keyboard Swap
-bindsym Ctrl+spachidden_state hidee exec $HOME/.xorg/scripts/keyboard.sh
+bindsym Ctrl+space exec $HOME/.xorg/scripts/keyboard.sh
 
 # hide/unhide i3status bar
 bindsym $mod+m bar mode toggle
