@@ -41,14 +41,14 @@ set_from_resource $term_color14    color14
 set_from_resource $term_color15    color15
 
 # Some colour variables
-set_from_resource $text-color          color15
+set_from_resource $text-color          color7
 set_from_resource $inactive-text-color color15
 set_from_resource $primary-color       color4
 set_from_resource $bg-color            dark-background
 set_from_resource $urgent-bg-color     color3
-set_from_resource $inactive-bg-color   color0
+set_from_resource $dark-bg-color       color0
 set_from_resource $light-bg-color      light-background
-set $selected-bg-color #2b2a33
+set $medium-bg-color #2b2a33
 
 # Disable mouse warping when changing workspace focus
 mouse_warping none
@@ -294,11 +294,11 @@ for_window [urgent="latest"] focus
 gaps inner 8
 gaps outer -1
 
-# Window colours        #border            background         text                 indicator
-client.focused          $selected-bg-color $selected-bg-color $text-color          $selected-bg-color
-client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color $selected-bg-color
-client.focused_inactive $selected-bg-color $selected-bg-color $inactive-text-color $selected-bg-color
-client.urgent           $light-bg-color    $light-bg-color    $text-color          $selected-bg-color
+# Window colours        #border          background       text        indicator
+client.focused          $dark-bg-color   $dark-bg-color   $text-color $medium-bg-color
+client.unfocused        $medium-bg-color $medium-bg-color $text-color $dark-bg-color
+client.focused_inactive $medium-bg-color $medium-bg-color $text-color $dark-bg-color
+client.urgent           $light-bg-color  $light-bg-color  $text-color $medium-bg-color
 
 # Start Applications
 exec_always --no-startup-id $HOME/.config/i3/scripts/startup.sh
