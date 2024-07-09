@@ -1,5 +1,6 @@
 [; git helper
- {1 :tpope/vim-fugitive}
+ {1 :tpope/vim-fugitive
+  :dependencies [:tpope/vim-rhubarb]}
 
  ; commeting code
  {1 :numToStr/Comment.nvim
