@@ -41,7 +41,14 @@ local function _1_()
     return vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>li", ":lua require('telescope.builtin').lsp_implementations()<cr>", {noremap = true})
   end
   on_attach = _3_
-  lsp.clojure_lsp.setup({on_attach = on_attach, handlers = handlers, before_init = before_init, capabilities = capabilities})
+  local function _4_(pattern)
+    local util = require("lspconfig.util")
+    local fallback = vim.loop.cwd()
+    local patterns = {"project.clj", "deps.edn", "build.boot", "shadow-cljs.edn", ".git", "bb.edn"}
+    local root = util.root_pattern(patterns)(pattern)
+    return (root or fallback)
+  end
+  lsp.clojure_lsp.setup({on_attach = on_attach, handlers = handlers, before_init = before_init, capabilities = capabilities, root_dir = _4_})
   lsp.gdscript.setup({on_attach = on_attach, handlers = handlers, before_init = before_init, capabilities = capabilities})
   lsp.csharp_ls.setup({on_attach = on_attach, handlers = handlers, capabilities = capabilities})
   lsp.tsserver.setup({on_attach = on_attach, handlers = handlers, before_init = before_init, capabilities = capabilities})

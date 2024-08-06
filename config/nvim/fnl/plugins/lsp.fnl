@@ -60,8 +60,14 @@
               (lsp.clojure_lsp.setup {:on_attach on_attach
                                       :handlers handlers
                                       :before_init before_init
-                                      :capabilities capabilities})
- 
+                                      :capabilities capabilities
+                                      :root_dir (fn [pattern]
+                                                  (let [util (require :lspconfig.util)
+                                                        fallback (vim.loop.cwd)
+                                                        patterns [:project.clj :deps.edn :build.boot :shadow-cljs.edn :.git :bb.edn]
+                                                        root ((util.root_pattern patterns) pattern)]
+                                                    (or root fallback)))})
+
               ;; Godot
               (lsp.gdscript.setup {:on_attach on_attach
                                       :handlers handlers

@@ -17,5 +17,5 @@
         ;; session (i.e.: vim-users), uncomment the following lines
         ;; :plugins [[cider/cider-nrepl "0.30.0"]
         ;;           [refactor-nrepl "2.5.0-SNAPSHOT"]]
-        :plugins      [[cider/cider-nrepl "0.45.0"]]
+        :plugins      [[cider/cider-nrepl "0.49.2"]]
         :repl-options {:timeout 300000}}}
