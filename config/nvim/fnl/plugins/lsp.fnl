@@ -70,14 +70,20 @@
 
               ;; Godot
               (lsp.gdscript.setup {:on_attach on_attach
-                                      :handlers handlers
-                                      :before_init before_init
-                                      :capabilities capabilities})
+                                   :handlers handlers
+                                   :before_init before_init
+                                   :capabilities capabilities})
 
               ;; Csharp
-              (lsp.csharp_ls.setup {:on_attach on_attach
+              (lsp.omnisharp.setup {:on_attach (fn [client bufnr]
+                                                 (on_attach client bufnr)
+                                                 (vim.api.nvim_buf_set_keymap bufnr :n :gd ":lua require('omnisharp_extended').telescope_lsp_definition()<cr>" {:noremap true})
+                                                 (vim.api.nvim_buf_set_keymap bufnr :n :<leader>lt ":lua require('omnisharp_extended').telescope_lsp_type_definition()<CR>" {:noremap true})
+                                                 (vim.api.nvim_buf_set_keymap bufnr :n :<leader>lr ":lua require('omnisharp_extended').telescope_lsp_references()<cr>" {:noremap true})
+                                                 (vim.api.nvim_buf_set_keymap bufnr :n :<leader>li ":lua require('omnisharp_extended').telescope_lsp_implementation()<cr>" {:noremap true}))
                                     :handlers handlers
-                                    :capabilities capabilities})
+                                    :capabilities capabilities
+                                    :cmd ["omnisharp"]})
 
               ;; JavaScript and TypeScript
               (lsp.tsserver.setup {:on_attach on_attach
@@ -86,7 +92,6 @@
                                    :capabilities capabilities})
 
               ;; html / css / json
-
               (lsp.cssls.setup {:on_attach on_attach
                                 :handlers handlers
                                 :before_init before_init
