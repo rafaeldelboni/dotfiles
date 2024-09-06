@@ -120,10 +120,10 @@ bindsym $mod+v split v;exec notify-send 'tile vertically'
 bindsym $mod+q split toggle
 
 # toggle tiling / floating
-bindsym $mod+Shift+t floating toggle
+bindsym $mod+Shift+g floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+t focus mode_toggle
+bindsym $mod+g focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -276,6 +276,7 @@ bar {
 }
 
 # Open specific applications in floating mode
+for_window [instance="Godot_Engine"] floating enable
 for_window [title="alsamixer"] floating enable border pixel 1
 for_window [title="File Transfer*"] floating enable
 for_window [class="Lxappearance"] floating enable sticky enable border normal
