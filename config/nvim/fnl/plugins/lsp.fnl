@@ -86,10 +86,10 @@
                                     :cmd ["omnisharp"]})
 
               ;; JavaScript and TypeScript
-              (lsp.tsserver.setup {:on_attach on_attach
-                                   :handlers handlers
-                                   :before_init before_init
-                                   :capabilities capabilities})
+              (lsp.ts_ls.setup {:on_attach on_attach
+                                :handlers handlers
+                                :before_init before_init
+                                :capabilities capabilities})
 
               ;; html / css / json
               (lsp.cssls.setup {:on_attach on_attach
