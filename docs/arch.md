@@ -325,6 +325,10 @@ sudo ln -sf ~/.xorg/10-touchpad.conf /usr/share/X11/xorg.conf.d/10-touchpad.conf
 sudo ln -sf ~/.xorg/10-slimblade.conf /usr/share/X11/xorg.conf.d/10-slimblade.conf
 sudo ln -sf ~/.xorg/10-expert-mouse.conf /usr/share/X11/xorg.conf.d/10-expert-mouse.conf
 ```
+To hidecursor while typing on xorg you can use `xhidecursor`
+```bash
+yay -Sy xhidecursor
+```
 
 ## Blutooth
 ```bash

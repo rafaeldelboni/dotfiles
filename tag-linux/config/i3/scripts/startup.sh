@@ -3,7 +3,7 @@
 feh --bg-fill $HOME/.config/i3/galaxy.png
 
 # Kill already running process
-_ps=(nm-applet picom xfce4-notifyd xfce-polkit)
+_ps=(nm-applet picom xfce4-notifyd xfce-polkit xhidecursor)
 
 for _prs in "${_ps[@]}"; do
   if [[ $(pidof ${_prs}) ]]; then
@@ -18,3 +18,5 @@ picom &
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
 
 /usr/lib/xfce-polkit/xfce-polkit &
+
+[ -f /usr/bin/xhidecursor ] && xhidecursor
