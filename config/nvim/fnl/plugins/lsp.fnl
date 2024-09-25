@@ -110,4 +110,10 @@
                                  :capabilities capabilities
                                  :cmd ["vscode-json-language-server" "--stdio"]})
 
+              ;; go
+              (lsp.gopls.setup {:on_attach on_attach
+                                :handlers handlers
+                                :before_init before_init
+                                :capabilities capabilities})
+
               ))}]

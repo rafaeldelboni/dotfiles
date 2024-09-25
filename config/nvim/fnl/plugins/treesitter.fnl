@@ -11,6 +11,7 @@
                                                     :dockerfile
                                                     :fennel
                                                     :gdscript
+                                                    :go
                                                     :html
                                                     :java
                                                     :javascript
