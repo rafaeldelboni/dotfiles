@@ -44,3 +44,5 @@
   rebase = true
 [url "git@github.com:nubank"]
 	insteadOf = https://github.com/nubank
+[diff]
+	tool = nvimdiff
