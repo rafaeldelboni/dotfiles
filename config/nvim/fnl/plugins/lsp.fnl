@@ -85,6 +85,15 @@
                                     :capabilities capabilities
                                     :cmd ["omnisharp"]})
 
+              ;; Fsharp
+              (let [fsharp (require :ionide)]
+                (fsharp.setup {:autostart true
+                               :flags {:debounce_text_changes 150}
+                               :on_attach on_attach
+                               :handlers handlers
+                               :before_init before_init
+                               :capabilities capabilities}))
+
               ;; JavaScript and TypeScript
               (lsp.ts_ls.setup {:on_attach on_attach
                                 :handlers handlers

@@ -58,6 +58,10 @@ local function _1_()
     return vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>li", ":lua require('omnisharp_extended').telescope_lsp_implementation()<cr>", {noremap = true})
   end
   lsp.omnisharp.setup({on_attach = _5_, handlers = handlers, capabilities = capabilities, cmd = {"omnisharp"}})
+  do
+    local fsharp = require("ionide")
+    fsharp.setup({autostart = true, flags = {debounce_text_changes = 150}, on_attach = on_attach, handlers = handlers, before_init = before_init, capabilities = capabilities})
+  end
   lsp.ts_ls.setup({on_attach = on_attach, handlers = handlers, before_init = before_init, capabilities = capabilities})
   lsp.cssls.setup({on_attach = on_attach, handlers = handlers, before_init = before_init, capabilities = capabilities, cmd = {"vscode-css-language-server", "--stdio"}})
   lsp.html.setup({on_attach = on_attach, handlers = handlers, before_init = before_init, capabilities = capabilities, cmd = {"vscode-html-language-server", "--stdio"}})
