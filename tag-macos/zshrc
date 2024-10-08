@@ -59,6 +59,7 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 
 # dotnet home
 DOTNET_CLI_TELEMETRY_OPTOUT=1 # opt-out of telemetry
+export PATH="$PATH:$HOME/.dotnet/tools"
 
 # fnm
 [ -f $(brew --prefix)/bin/fnm ] && eval "$(fnm env)"

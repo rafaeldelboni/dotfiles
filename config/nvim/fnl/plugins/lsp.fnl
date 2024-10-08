@@ -53,6 +53,7 @@
                                 (vim.api.nvim_buf_set_keymap bufnr :n :<leader>lw ":lua require('telescope.builtin').diagnostics()<cr>" {:noremap true})
                                 (vim.api.nvim_buf_set_keymap bufnr :n :<leader>lr ":lua require('telescope.builtin').lsp_references()<cr>" {:noremap true})
                                 (vim.api.nvim_buf_set_keymap bufnr :n :<leader>li ":lua require('telescope.builtin').lsp_implementations()<cr>" {:noremap true})))]
+
               ;; To add support to more language servers check:
               ;; https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 
@@ -61,6 +62,7 @@
                                       :handlers handlers
                                       :before_init before_init
                                       :capabilities capabilities
+                                      ; uses fallback when navigating inside dependency jar
                                       :root_dir (fn [pattern]
                                                   (let [util (require :lspconfig.util)
                                                         fallback (vim.loop.cwd)

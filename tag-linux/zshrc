@@ -57,6 +57,7 @@ export GRAALVM_HOME=/usr/lib/jvm/java-11-graalvm
 
 # dotnet home
 DOTNET_CLI_TELEMETRY_OPTOUT=1 # opt-out of telemetry
+export PATH="$PATH:$HOME/.dotnet/tools"
 
 # arch zsh-autosuggestions
 [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
