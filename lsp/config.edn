@@ -1,2 +1,1 @@
-{:log-path "/tmp/clojure-lsp.out"
- :keep-require-at-start? true}
+{:log-path "/tmp/clojure-lsp.out"}
