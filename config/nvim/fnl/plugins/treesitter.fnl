@@ -10,6 +10,7 @@
                                                     :commonlisp
                                                     :dockerfile
                                                     :fennel
+                                                    :fsharp
                                                     :gdscript
                                                     :go
                                                     :html
