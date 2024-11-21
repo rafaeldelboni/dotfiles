@@ -16,7 +16,7 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 [mode.main.binding]
 # start a terminal
-cmd-enter = 'exec-and-forget open -n /Applications/Alacritty.app' 
+cmd-enter = 'exec-and-forget open -n /Applications/Alacritty.app'
 
 # i3 wraps focus by default
 cmd-h = 'focus --boundaries-action wrap-around-the-workspace left'
@@ -60,8 +60,8 @@ cmd-shift-8 = 'move-node-to-workspace 8'
 cmd-shift-9 = 'move-node-to-workspace 9'
 cmd-shift-0 = 'move-node-to-workspace 10'
 
-cmd-shift-c = 'reload-config'
-cmd-shift-r = 'mode resize'
+cmd-ctrl-c = 'reload-config'
+cmd-ctrl-r = 'mode resize'
 
 [mode.resize.binding]
 h = 'resize width -50'
