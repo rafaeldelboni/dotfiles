@@ -18,6 +18,7 @@ default_border pixel 1
 for_window [class="^.*"] border pixel 1
 hide_edge_borders both
 
+
 # Color palette used for the terminal ( ~/.Xresources file )
 # https://i3wm.org/docs/userguide.html#xresources
 set_from_resource $dpi             Xft.dpi
@@ -48,7 +49,7 @@ set_from_resource $bg-color            dark-background
 set_from_resource $urgent-bg-color     color3
 set_from_resource $dark-bg-color       color0
 set_from_resource $light-bg-color      light-background
-set $medium-bg-color #2b2a33
+set_from_resource $medium-bg-color     medium-background
 
 # Disable mouse warping when changing workspace focus
 mouse_warping none
@@ -296,8 +297,8 @@ gaps inner 8
 gaps outer -1
 
 # Window colours        #border          background       text        indicator
-client.focused          $dark-bg-color   $dark-bg-color   $text-color $medium-bg-color
-client.unfocused        $medium-bg-color $medium-bg-color $text-color $dark-bg-color
+client.focused          $medium-bg-color $medium-bg-color $text-color $dark-bg-color
+client.unfocused        $dark-bg-color   $dark-bg-color   $text-color $medium-bg-color
 client.focused_inactive $medium-bg-color $medium-bg-color $text-color $dark-bg-color
 client.urgent           $light-bg-color  $light-bg-color  $text-color $medium-bg-color
 

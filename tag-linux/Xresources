@@ -16,6 +16,7 @@ XTerm*selectToClipboard: true
 
 *background:                      #1a1b26
 *dark-background:                 #16161e
+*medium-background:               #242635
 *light-background:                #3b4261
 *foreground:                      #c0caf5
 *fading:                          8
