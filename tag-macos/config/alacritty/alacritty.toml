@@ -52,23 +52,23 @@ render_timer = false
 TERM = "tmux-256color"
 
 [font]
-size = 13
+size = 15
 
 [font.normal]
-family = "JetBrainsMono Nerd Font Mono"
+family = "AnonymicePro Nerd Font"
 style = "Regular"
 
 [font.bold]
-family = "JetBrainsMono Nerd Font Mono"
+family = "AnonymicePro Nerd Font"
 style = "Bold"
 
 [font.italic]
-family = "JetBrainsMono Nerd Font Mono"
+family = "AnonymicePro Nerd Font"
 style = "Italic"
 
 [font.offset]
 x = 0
-y = -2
+y = 1
 
 [font.glyph_offset]
 x = 0

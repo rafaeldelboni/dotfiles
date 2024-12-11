@@ -127,4 +127,8 @@
                                 :before_init before_init
                                 :capabilities capabilities})
 
-              ))}]
+              ;; dart
+              (lsp.dartls.setup {:on_attach on_attach
+                                 :handlers handlers
+                                 :before_init before_init
+                                 :capabilities capabilities})))}]

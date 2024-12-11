@@ -42,3 +42,5 @@
   rebase = true
 [diff]
 	tool = nvimdiff
+[url "git@github.com:"]
+	insteadOf = git://github.com/
