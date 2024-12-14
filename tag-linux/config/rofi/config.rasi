@@ -1,6 +1,6 @@
 configuration {
   combi-modi: [window,drun,run];
-  font: "JetBrainsMono Nerd Font Mono Medium 12";
+  font: "AnonymicePro Nerd Font Bold 12";
   timeout {
     action: "kb-cancel";
     delay:  0;

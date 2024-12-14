@@ -270,7 +270,7 @@ makepkg -si
 
 ## Aur Tools
 ```bash
-yay -Sy autojump-rs ttf-jetbrains-mono-nerd xfce-polkit nordic-theme --noconfirm
+yay -Sy autojump-rs ttf-anonymouspro-nerd xfce-polkit nordic-theme --noconfirm
 ```
 
 ## Paro
