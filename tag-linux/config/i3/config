@@ -251,6 +251,7 @@ bindsym $mod+m bar mode toggle
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
+    font pango:$font Bold 10
     i3bar_command i3bar
     status_command i3status
     hidden_state hide

@@ -10,7 +10,7 @@
     background-color:            @background;
     background:                  #1a1b26ff;
     blue:                        #15466bff;
-    border-color:                #16161eff;
+    border-color:                @alternate-normal-background;
     foreground:                  #a9b1d6ff;
     lightbg:                     #3b4261ff;
     lightfg:                     #a9b1d6ff;
