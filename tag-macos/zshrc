@@ -55,7 +55,18 @@ PATH="$HOME/.local/bin:/usr/local/bin":$PATH
 export PATH="/opt/homebrew/bin:$PATH"
 
 # java home
-export JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
+export JAVA_17_HOME=$(/usr/libexec/java_home -v17)
+export JAVA_21_HOME=$(/usr/libexec/java_home -v21)
+export JAVA_23_HOME=$(/usr/libexec/java_home -v23)
+
+alias java11='export JAVA_HOME=$JAVA_11_HOME'
+alias java17='export JAVA_HOME=$JAVA_17_HOME'
+alias java21='export JAVA_HOME=$JAVA_21_HOME'
+alias java23='export JAVA_HOME=$JAVA_23_HOME'
+
+#default java23
+export JAVA_HOME=$JAVA_23_HOME
 
 # dotnet home
 DOTNET_CLI_TELEMETRY_OPTOUT=1 # opt-out of telemetry
