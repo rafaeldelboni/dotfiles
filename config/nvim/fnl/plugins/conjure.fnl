@@ -1,5 +1,5 @@
 [{1 :Olical/conjure
-  :branch "master"
+  :branch "main"
   :init (fn []
           ; Alias for ConjureShadowSelect -> Csc
           (vim.cmd {:cmd "command" :args ["-nargs=1" "Cjc" "ConjureConnect" "<args>"] :bang true})
