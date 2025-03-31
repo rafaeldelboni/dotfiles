@@ -8,7 +8,8 @@
                         ;; Enables strict checks of blocking calls inside core.async `go` context
                         "-Dclojure.core.async.go-checking=true"]
   :plugins             [[com.jakemccrary/lein-test-refresh "0.25.0"]
-                        [lein-ancient "1.0.0-RC3"]]
+                        [lein-ancient "1.0.0-RC3"]
+                        [jonase/eastwood "1.4.3"]]
 
   :dependencies [[cljdev "0.11.8"]]
   :injections   [(require 'nu)]}
