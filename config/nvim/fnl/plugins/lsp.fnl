@@ -1,3 +1,9 @@
+;symbols to show for lsp diagnostics
+(vim.diagnostic.config {:signs {:text {vim.diagnostic.severity.ERROR ""
+                                       vim.diagnostic.severity.WARN ""
+                                       vim.diagnostic.severity.INFO ""
+                                       vim.diagnostic.severity.HINT ""}}})
+
 [{1 :neovim/nvim-lspconfig
   :config (fn []
             (let [lsp (require :lspconfig)
@@ -15,14 +21,7 @@
               (lsp.clojure_lsp.setup {:on_attach on_attach
                                       :handlers handlers
                                       :before_init before_init
-                                      :capabilities capabilities
-                                      ; uses fallback when navigating inside dependency jar
-                                      :root_dir (fn [pattern]
-                                                  (let [util (require :lspconfig.util)
-                                                        fallback (vim.loop.cwd)
-                                                        patterns [:project.clj :deps.edn :build.boot :shadow-cljs.edn :.git :bb.edn]
-                                                        root ((util.root_pattern patterns) pattern)]
-                                                    (or root fallback)))})
+                                      :capabilities capabilities})
 
               ;; Godot
               (lsp.gdscript.setup {:on_attach on_attach
