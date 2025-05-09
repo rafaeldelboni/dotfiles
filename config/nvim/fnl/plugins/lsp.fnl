@@ -7,38 +7,40 @@
 [{1 :neovim/nvim-lspconfig
   :config (fn []
             (let [lsp (require :lspconfig)
-                  cmplsp (require :cmp_nvim_lsp)
                   config-lsp (require :config.lsp)
                   on_attach config-lsp.on_attach
                   handlers config-lsp.handlers
-                  before_init config-lsp.before_init
-                  capabilities (cmplsp.default_capabilities)]
+                  before_init config-lsp.before_init]
 
-              ;; To add support to more language servers check:
-              ;; https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+              ;; For more language servers check:
+              ;; https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
+
+              (vim.lsp.config :* {:on_attach on_attach
+                                  :handlers handlers
+                                  :before_init before_init})
 
               ;; Clojure
-              (lsp.clojure_lsp.setup {:on_attach on_attach
-                                      :handlers handlers
-                                      :before_init before_init
-                                      :capabilities capabilities})
+              (vim.lsp.config :clojure_lsp {:root_dir (fn [bufnr on_dir]
+                                                        (let [pattern (vim.api.nvim_buf_get_name bufnr)
+                                                              util (require :lspconfig.util)
+                                                              fallback (vim.loop.cwd)
+                                                              patterns [:project.clj :deps.edn :build.boot :shadow-cljs.edn :.git :bb.edn]
+                                                              root ((util.root_pattern patterns) pattern)]
+                                                          (on_dir (or root fallback))))})
+              (vim.lsp.enable :clojure_lsp)
 
               ;; Godot
-              (lsp.gdscript.setup {:on_attach on_attach
-                                   :handlers handlers
-                                   :before_init before_init
-                                   :capabilities capabilities})
+              (vim.lsp.enable :gdscript)
 
               ;; Csharp
-              (lsp.omnisharp.setup {:on_attach (fn [client bufnr]
-                                                 (on_attach client bufnr)
-                                                 (vim.api.nvim_buf_set_keymap bufnr :n :gd ":lua require('omnisharp_extended').telescope_lsp_definition()<cr>" {:noremap true})
-                                                 (vim.api.nvim_buf_set_keymap bufnr :n :<leader>lt ":lua require('omnisharp_extended').telescope_lsp_type_definition()<CR>" {:noremap true})
-                                                 (vim.api.nvim_buf_set_keymap bufnr :n :<leader>lr ":lua require('omnisharp_extended').telescope_lsp_references()<cr>" {:noremap true})
-                                                 (vim.api.nvim_buf_set_keymap bufnr :n :<leader>li ":lua require('omnisharp_extended').telescope_lsp_implementation()<cr>" {:noremap true}))
-                                    :handlers handlers
-                                    :capabilities capabilities
-                                    :cmd ["omnisharp"]})
+              (vim.lsp.config :omnisharp {:on_attach (fn [client bufnr]
+                                                       (on_attach client bufnr)
+                                                       (vim.api.nvim_buf_set_keymap bufnr :n :gd ":lua require('omnisharp_extended').telescope_lsp_definition()<cr>" {:noremap true})
+                                                       (vim.api.nvim_buf_set_keymap bufnr :n :<leader>lt ":lua require('omnisharp_extended').telescope_lsp_type_definition()<CR>" {:noremap true})
+                                                       (vim.api.nvim_buf_set_keymap bufnr :n :<leader>lr ":lua require('omnisharp_extended').telescope_lsp_references()<cr>" {:noremap true})
+                                                       (vim.api.nvim_buf_set_keymap bufnr :n :<leader>li ":lua require('omnisharp_extended').telescope_lsp_implementation()<cr>" {:noremap true}))
+                                          :cmd ["omnisharp"]})
+              (vim.lsp.enable :omnisharp)
 
               ;; Fsharp
               (let [fsharp (require :ionide)]
@@ -46,42 +48,23 @@
                                :flags {:debounce_text_changes 150}
                                :on_attach on_attach
                                :handlers handlers
-                               :before_init before_init
-                               :capabilities capabilities}))
+                               :before_init before_init}))
 
               ;; JavaScript and TypeScript
-              (lsp.ts_ls.setup {:on_attach on_attach
-                                :handlers handlers
-                                :before_init before_init
-                                :capabilities capabilities})
+              (vim.lsp.enable :ts_ls)
 
               ;; html / css / json
-              (lsp.cssls.setup {:on_attach on_attach
-                                :handlers handlers
-                                :before_init before_init
-                                :capabilities capabilities
-                                :cmd ["vscode-css-language-server" "--stdio"]})
+              (vim.lsp.config :cssls {:cmd ["vscode-css-language-server" "--stdio"]})
+              (vim.lsp.enable :cssls)
 
-              (lsp.html.setup {:on_attach on_attach
-                               :handlers handlers
-                               :before_init before_init
-                               :capabilities capabilities
-                               :cmd ["vscode-html-language-server" "--stdio"]})
+              (vim.lsp.config :html {:cmd ["vscode-html-language-server" "--stdio"]})
+              (vim.lsp.enable :html)
 
-              (lsp.jsonls.setup {:on_attach on_attach
-                                 :handlers handlers
-                                 :before_init before_init
-                                 :capabilities capabilities
-                                 :cmd ["vscode-json-language-server" "--stdio"]})
+              (vim.lsp.config :jsonls {:cmd ["vscode-json-language-server" "--stdio"]})
+              (vim.lsp.enable :jsonls)
 
               ;; go
-              (lsp.gopls.setup {:on_attach on_attach
-                                :handlers handlers
-                                :before_init before_init
-                                :capabilities capabilities})
+              (vim.lsp.enable :gopls)
 
               ;; dart
-              (lsp.dartls.setup {:on_attach on_attach
-                                 :handlers handlers
-                                 :before_init before_init
-                                 :capabilities capabilities})))}]
+              (vim.lsp.enable :dartls)))}]
