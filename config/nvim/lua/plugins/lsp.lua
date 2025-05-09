@@ -1,7 +1,6 @@
 -- [nfnl] fnl/plugins/lsp.fnl
 vim.diagnostic.config({signs = {text = {[vim.diagnostic.severity.ERROR] = "\239\129\151", [vim.diagnostic.severity.WARN] = "\239\129\177", [vim.diagnostic.severity.INFO] = "\239\129\154", [vim.diagnostic.severity.HINT] = "\239\129\153"}}})
 local function _1_()
-  local lsp = require("lspconfig")
   local config_lsp = require("config.lsp")
   local on_attach = config_lsp.on_attach
   local handlers = config_lsp.handlers

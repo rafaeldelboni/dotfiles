@@ -6,8 +6,7 @@
 
 [{1 :neovim/nvim-lspconfig
   :config (fn []
-            (let [lsp (require :lspconfig)
-                  config-lsp (require :config.lsp)
+            (let [config-lsp (require :config.lsp)
                   on_attach config-lsp.on_attach
                   handlers config-lsp.handlers
                   before_init config-lsp.before_init]
