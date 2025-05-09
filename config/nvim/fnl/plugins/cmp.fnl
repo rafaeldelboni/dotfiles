@@ -2,7 +2,7 @@
   :version "*"
   :lazy true}
 
- {1 :Saghen/blink.cmp
+ {1 :saghen/blink.cmp
   :version "*"
   :lazy false
 
@@ -30,6 +30,8 @@
 
          :sources {:default [:lsp :path :snippets :buffer :conjure :ripgrep]
                    :providers {:conjure {:name :conjure
-                                         :module :blink.compat.source}
+                                         :module :blink.compat.source
+                                         :score_offset -3}
                                :ripgrep {:module :blink-ripgrep
-                                         :name :Ripgrep}}}}}]
+                                         :name :Ripgrep
+                                         :score_offset -3}}}}}]
