@@ -50,6 +50,9 @@
                                :before_init before_init}))
 
               ;; JavaScript and TypeScript
+              (vim.lsp.config :ts_ls {:on_attach on_attach
+                                      :handlers handlers
+                                      :before_init before_init})
               (vim.lsp.enable :ts_ls)
 
               ;; html / css / json
