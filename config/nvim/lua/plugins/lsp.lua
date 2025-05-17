@@ -37,7 +37,6 @@ local function _1_()
   vim.lsp.enable("html")
   vim.lsp.config("jsonls", {cmd = {"vscode-json-language-server", "--stdio"}})
   vim.lsp.enable("jsonls")
-  vim.lsp.enable("gopls")
-  return vim.lsp.enable("dartls")
+  return vim.lsp.enable("gopls")
 end
 return {{"neovim/nvim-lspconfig", config = _1_}}

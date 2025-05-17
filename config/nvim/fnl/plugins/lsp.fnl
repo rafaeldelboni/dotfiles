@@ -63,7 +63,4 @@
               (vim.lsp.enable :jsonls)
 
               ;; go
-              (vim.lsp.enable :gopls)
-
-              ;; dart
-              (vim.lsp.enable :dartls)))}]
+              (vim.lsp.enable :gopls)))}]

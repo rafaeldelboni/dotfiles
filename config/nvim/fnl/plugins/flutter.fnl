@@ -3,11 +3,9 @@
   :ft [:dart :flutter]
   :config (fn []
             (let [flutter-tools (require :flutter-tools)
-                  cmplsp (require :cmp_nvim_lsp)
                   config-lsp (require :config.lsp)]
-              (flutter-tools.setup 
+              (flutter-tools.setup
                 {:lsp {:on_attach config-lsp.on_attach
                        :handlers config-lsp.handlers
-                       :before_init config-lsp.before_init
-                       :capabilities (cmplsp.default_capabilities)}})))
+                       :before_init config-lsp.before_init}})))
   :dependencies [:nvim-lua/plenary.nvim]}]
