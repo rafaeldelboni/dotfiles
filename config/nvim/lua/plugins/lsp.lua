@@ -24,7 +24,7 @@ local function _1_()
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lr", ":lua require('omnisharp_extended').telescope_lsp_references()<cr>", {noremap = true})
     return vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>li", ":lua require('omnisharp_extended').telescope_lsp_implementation()<cr>", {noremap = true})
   end
-  vim.lsp.config("omnisharp", {on_attach = _3_, cmd = {"omnisharp"}})
+  vim.lsp.config("omnisharp", {on_attach = _3_})
   vim.lsp.enable("omnisharp")
   do
     local fsharp = require("ionide")
