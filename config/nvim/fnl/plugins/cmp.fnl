@@ -17,7 +17,7 @@
          :appearance {:use_nvim_cmp_as_default true
                       :nerd_font_variant :mono}
 
-         :completion {:ghost_text {:enabled true}
+         :completion {:ghost_text {:enabled false}
                       :menu {:draw {:columns [[:kind_icon]
                                               {1 :label
                                                2 :label_description

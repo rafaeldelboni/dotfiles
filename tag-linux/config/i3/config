@@ -263,6 +263,7 @@ bar {
     strip_workspace_numbers yes
     separator_symbol " | "
     padding 0 3px
+    tray_output primary
     tray_padding 2
     colors {
         background $bg-color
