@@ -11,8 +11,7 @@
                  :mikavilpas/blink-ripgrep.nvim
                  :L3MON4D3/LuaSnip]
 
-  :opts {:keymap {:preset :enter
-                  :<Tab> [:select_next :fallback]}
+  :opts {:keymap {:preset :default}
 
          :appearance {:use_nvim_cmp_as_default true
                       :nerd_font_variant :mono}
