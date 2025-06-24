@@ -50,7 +50,7 @@ XTerm*selectToClipboard: true
 *color13:                         #bb9af7
 
 !! cyan dark/light
-*color6:                          #7dcfff
+*color6:                          #2d4b5d
 *color14:                         #7dcfff
 
 !! white dark/light
