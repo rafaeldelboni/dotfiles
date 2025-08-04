@@ -67,5 +67,4 @@
               ;; go
               (vim.lsp.enable :gopls)
 
-              ;; kotlin
-              (vim.lsp.enable :kotlin_lsp)))}]
+              ))}]
