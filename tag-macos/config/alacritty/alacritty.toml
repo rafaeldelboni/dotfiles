@@ -640,3 +640,4 @@ y = 1
 
 [general]
 live_config_reload = true
+ipc_socket = false
