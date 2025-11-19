@@ -10,7 +10,7 @@ local function _1_()
     local pattern = vim.api.nvim_buf_get_name(bufnr)
     local util = require("lspconfig.util")
     local fallback = vim.loop.cwd()
-    local patterns = {"project.clj", "deps.edn", "build.boot", "shadow-cljs.edn", ".git", "bb.edn"}
+    local patterns = {"project.clj", "deps.edn", "build.boot", "shadow-cljs.edn", ".git", "bb.edn", "squint.edn"}
     local root = util.root_pattern(patterns)(pattern)
     return on_dir((root or fallback))
   end

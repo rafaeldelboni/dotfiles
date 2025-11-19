@@ -22,7 +22,7 @@
                                                         (let [pattern (vim.api.nvim_buf_get_name bufnr)
                                                               util (require :lspconfig.util)
                                                               fallback (vim.loop.cwd)
-                                                              patterns [:project.clj :deps.edn :build.boot :shadow-cljs.edn :.git :bb.edn]
+                                                              patterns [:project.clj :deps.edn :build.boot :shadow-cljs.edn :.git :bb.edn :squint.edn]
                                                               root ((util.root_pattern patterns) pattern)]
                                                           (on_dir (or root fallback))))})
               (vim.lsp.enable :clojure_lsp)
