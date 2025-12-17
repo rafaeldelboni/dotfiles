@@ -14,10 +14,9 @@
            ;;   - clj -X:test:runner # run the tests!
            ;; - create a sketch project:
            ;;   - clj -X:new :template scratch :name poc/simple-app
-           :new {:extra-deps {cc.delboni/deps-new-wrap
-                              {:git/url "https://github.com/rafaeldelboni/deps-new-wrap"
-                               :git/sha "8cb6bca82028a6316bd821c64afddac9de00d998"}}
-                 :exec-fn cc.delboni.main/new}
+           :new {:extra-deps {io.github.seancorfield/deps-new {:git/tag "v0.10.3"
+                                                               :git/sha "2c012c4"}}
+                 :exec-fn org.corfield.new/create}
 
            ;; project dependency version check
            ;; https://github.com/liquidz/antq
