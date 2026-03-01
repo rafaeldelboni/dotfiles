@@ -19,4 +19,5 @@
                                                     :json
                                                     :lua
                                                     :markdown
-                                                    :yaml]})))}]
+                                                    :yaml
+                                                    :zig]})))}]

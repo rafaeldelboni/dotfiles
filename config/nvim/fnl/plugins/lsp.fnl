@@ -67,4 +67,7 @@
               ;; go
               (vim.lsp.enable :gopls)
 
+              ;; zig
+              (vim.lsp.enable :zls)
+
               ))}]
