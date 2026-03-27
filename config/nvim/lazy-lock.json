@@ -2,7 +2,7 @@
   "Comment.nvim": { "branch": "master", "commit": "e30b7f2008e52442154b66f7c519bfd2f1e32acb" },
   "Ionide-vim": { "branch": "master", "commit": "99fc1f5878631bad3598ea90dab91419623be066" },
   "LuaSnip": { "branch": "master", "commit": "dae4f5aaa3574bd0c2b9dd20fb9542a02c10471c" },
-  "blink-ripgrep.nvim": { "branch": "main", "commit": "6f8837b25f5bd9696180df13669e5eb4b90d2b8d" },
+  "blink-ripgrep.nvim": { "branch": "main", "commit": "fae33748ff07c9ae51baaae41dc8b7741c22f02c" },
   "blink.cmp": { "branch": "main", "commit": "4b18c32adef2898f95cdef6192cbd5796c1a332d" },
   "blink.compat": { "branch": "main", "commit": "2ed6d9a28b07fa6f3bface818470605f8896408c" },
   "cmp-conjure": { "branch": "master", "commit": "8c9a88efedc0e5bf3165baa6af8a407afe29daf6" },

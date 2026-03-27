@@ -1,0 +1,87 @@
+{
+  "permissions": {
+    "additionalDirectories": [
+      "~/dev/nu/"
+    ],
+    "allow": [
+      "Bash(gh pr:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git checkout:*)",
+      "Bash(npx vitest:*)",
+      "Bash(clj:*)",
+      "Bash(clojure:*)",
+      "Bash(lein:*)",
+      "Bash(bb:*)",
+      "mcp__clojure__grep",
+      "mcp__clojure__read_file",
+      "mcp__clojure__clojure_eval",
+      "mcp__clojure__clojure_edit_replace_sexp",
+      "mcp__clojure__clojure_edit_agent",
+      "mcp__clojure__paren_repair",
+      "mcp__clojure__deps_grep",
+      "mcp__clojure__deps_read",
+      "mcp__clojure__deps_list",
+      "mcp__clojure__list_nrepl_ports",
+      "WebSearch",
+      "WebFetch"
+    ]
+  },
+  "model": "opus[1m]",
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "permission_prompt",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "CLAUDE_NOTIFY_MESSAGE='Permission needed' ~/.claude/hooks/notify.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "idle_prompt",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "CLAUDE_NOTIFY_MESSAGE='Ready for your next prompt' ~/.claude/hooks/notify.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "elicitation_dialog",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "CLAUDE_NOTIFY_MESSAGE='Waiting for your answer' ~/.claude/hooks/notify.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "CLAUDE_NOTIFY_MESSAGE='Needs your attention' ~/.claude/hooks/notify.sh"
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {
+    "typescript-lsp@claude-plugins-official": true,
+    "gopls-lsp@claude-plugins-official": true
+  },
+  "spinnerVerbs": {
+    "mode": "append",
+    "verbs": [
+      "Delbonozing",
+      "Lanjonizing",
+      "Abnerazing",
+      "Andrionizing",
+      "Polezanizing",
+      "Murilonizing",
+      "Edwardozing"
+    ]
+  }
+}
