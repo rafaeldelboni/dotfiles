@@ -1,8 +1,5 @@
 {
   "permissions": {
-    "additionalDirectories": [
-      "~/dev/nu/"
-    ],
     "allow": [
       "Bash(gh pr:*)",
       "Bash(git add:*)",
@@ -27,6 +24,9 @@
       "mcp__clojure__list_nrepl_ports",
       "WebSearch",
       "WebFetch"
+    ],
+    "additionalDirectories": [
+      "~/dev/nu/"
     ]
   },
   "model": "opus[1m]",
