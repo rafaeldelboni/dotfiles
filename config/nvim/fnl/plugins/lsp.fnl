@@ -2,7 +2,11 @@
 (vim.diagnostic.config {:signs {:text {vim.diagnostic.severity.ERROR ""
                                        vim.diagnostic.severity.WARN ""
                                        vim.diagnostic.severity.INFO ""
-                                       vim.diagnostic.severity.HINT ""}}})
+                                       vim.diagnostic.severity.HINT ""}}
+                        :severity_sort true
+                        :underline true
+                        :update_in_insert true})
+
 [{1 :neovim/nvim-lspconfig
   :config (fn []
             (let [config-lsp (require :config.lsp)

@@ -1,5 +1,5 @@
 -- [nfnl] fnl/plugins/lsp.fnl
-vim.diagnostic.config({signs = {text = {[vim.diagnostic.severity.ERROR] = "\239\129\151", [vim.diagnostic.severity.WARN] = "\239\129\177", [vim.diagnostic.severity.INFO] = "\239\129\154", [vim.diagnostic.severity.HINT] = "\239\129\153"}}})
+vim.diagnostic.config({signs = {text = {[vim.diagnostic.severity.ERROR] = "\239\129\151", [vim.diagnostic.severity.WARN] = "\239\129\177", [vim.diagnostic.severity.INFO] = "\239\129\154", [vim.diagnostic.severity.HINT] = "\239\129\153"}}, severity_sort = true, underline = true, update_in_insert = true})
 local function _1_()
   local config_lsp = require("config.lsp")
   local on_attach = config_lsp.on_attach

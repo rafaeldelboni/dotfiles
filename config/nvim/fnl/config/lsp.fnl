@@ -1,21 +1,11 @@
 ; shared configuration
-
 (local handlers
-  {"textDocument/publishDiagnostics"
-   (vim.lsp.with
-     vim.lsp.diagnostic.on_publish_diagnostics
-     {:severity_sort true
-      :update_in_insert true
-      :underline true
-      :virtual_text false})
-   "textDocument/hover"
-   (vim.lsp.with
-     vim.lsp.handlers.hover
-     {:border "single"})
+  {"textDocument/hover"
+   (fn [err result ctx config]
+     (vim.lsp.handlers.hover err result ctx (set config.border "single")))
    "textDocument/signatureHelp"
-   (vim.lsp.with
-     vim.lsp.handlers.signature_help
-     {:border "single"})})
+   (fn [err result ctx config]
+     (vim.lsp.handlers.signature_help err result ctx (set config.border "single")))})
 
 (fn before_init [params]
   (set params.workDoneToken :1))

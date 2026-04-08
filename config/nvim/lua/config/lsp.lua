@@ -1,5 +1,14 @@
--- [nfnl] Compiled from fnl/config/lsp.fnl by https://github.com/Olical/nfnl, do not edit.
-local handlers = {["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {severity_sort = true, update_in_insert = true, underline = true, virtual_text = false}), ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {border = "single"}), ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {border = "single"})}
+-- [nfnl] fnl/config/lsp.fnl
+local handlers
+local function _1_(err, result, ctx, config)
+  config.border = "single"
+  return vim.lsp.handlers.hover(err, result, ctx, nil)
+end
+local function _2_(err, result, ctx, config)
+  config.border = "single"
+  return vim.lsp.handlers.signature_help(err, result, ctx, nil)
+end
+handlers = {["textDocument/hover"] = _1_, ["textDocument/signatureHelp"] = _2_}
 local function before_init(params)
   params.workDoneToken = "1"
   return nil
@@ -52,12 +61,12 @@ local function progress_handler(_, msg, info)
 end
 local function setup_progress_handler()
   local original_handler = vim.lsp.handlers["$/progress"]
-  local function _4_(...)
+  local function _6_(...)
     local args = vim.F.pack_len(...)
     progress_handler(vim.F.unpack_len(args))
     return original_handler(...)
   end
-  vim.lsp.handlers["$/progress"] = _4_
+  vim.lsp.handlers["$/progress"] = _6_
   return nil
 end
 setup_progress_handler()
