@@ -235,6 +235,18 @@ pacman -S nvidia nvidia-utils nvidia-settings nvidia-prime
 ```
 You also need to add `acpi_osi=\"Windows 2015\" nvidia-drm.modeset=1` kernel arguments into `/boot/loader/entries/arch.conf` options.
 
+#### USB-C Dock Monitor Not Detected on Boot
+When using a USB-C dock (e.g. Dell Universal Hybrid Video Dock), the NVIDIA driver initializes its DisplayPort outputs before the dock has fully enumerated. The monitor won't appear in xrandr until you physically replug the dock.
+
+Fix by creating a udev rule that triggers a DRM hotplug when the dock is detected:
+```bash
+sudo tee /etc/udev/rules.d/99-dell-dock-hotplug.rules << 'EOF'
+ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="17e9", ATTR{idProduct}=="6013", RUN+="/bin/sh -c \"for c in /sys/class/drm/card0-DP-*; do echo 1 > \$c/status 2>/dev/null; done\""
+EOF
+sudo udevadm control --reload-rules
+```
+Verify the dock's vendor/product IDs with `lsusb` if using a different dock. This is a lightweight one-time probe with no performance impact.
+
 ## Windows Manager (i3)
 ```bash
 pacman -S i3 picom rofi alacritty xdg-utils lxappearance xfce4-notifyd feh maim
