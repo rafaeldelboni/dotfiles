@@ -1,5 +1,6 @@
 [{1 :nvim-treesitter/nvim-treesitter
   :build ":TSUpdate"
+  :branch "master"
   :config (fn []
             (let [treesitter (require :nvim-treesitter.configs)]
               (treesitter.setup {:highlight {:enable true}
