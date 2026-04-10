@@ -13,7 +13,7 @@ local function start_treesitter()
   local lang = vim.treesitter.language.get_lang(vim.bo.filetype)
   local ok = pcall(vim.treesitter.start, buf, lang)
   if (lang and ok) then
-    return treesitter_indent()
+    return treesitter_indent(lang)
   else
     return nil
   end

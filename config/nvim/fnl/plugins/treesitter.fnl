@@ -11,7 +11,7 @@
         lang (vim.treesitter.language.get_lang vim.bo.filetype)
         ok (pcall vim.treesitter.start buf lang)]
     (when (and lang ok)
-      (treesitter-indent))))
+      (treesitter-indent lang))))
 
 ;; treesitter highlighting and indentation
 (vim.api.nvim_create_autocmd
