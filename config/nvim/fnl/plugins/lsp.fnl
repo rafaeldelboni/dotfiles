@@ -44,14 +44,6 @@
                                                          (vim.api.nvim_buf_set_keymap bufnr :n :<leader>li ":lua require('omnisharp_extended').telescope_lsp_implementation()<cr>" {:noremap true})))})
               (vim.lsp.enable :omnisharp)
 
-              ;; Fsharp
-              (let [fsharp (require :ionide)]
-                (fsharp.setup {:autostart true
-                               :flags {:debounce_text_changes 150}
-                               :on_attach on_attach
-                               :handlers handlers
-                               :before_init before_init}))
-
               ;; JavaScript and TypeScript
               (vim.lsp.config :ts_ls {:on_attach on_attach
                                       :handlers handlers

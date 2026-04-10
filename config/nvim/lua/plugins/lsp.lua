@@ -26,10 +26,6 @@ local function _1_()
   end
   vim.lsp.config("omnisharp", {on_attach = _3_})
   vim.lsp.enable("omnisharp")
-  do
-    local fsharp = require("ionide")
-    fsharp.setup({autostart = true, flags = {debounce_text_changes = 150}, on_attach = on_attach, handlers = handlers, before_init = before_init})
-  end
   vim.lsp.config("ts_ls", {on_attach = on_attach, handlers = handlers, before_init = before_init})
   vim.lsp.enable("ts_ls")
   vim.lsp.config("cssls", {cmd = {"vscode-css-language-server", "--stdio"}})

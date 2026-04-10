@@ -1,4 +1,4 @@
--- [nfnl] Compiled from fnl/plugins/paredit.fnl by https://github.com/Olical/nfnl, do not edit.
+-- [nfnl] fnl/plugins/paredit.fnl
 local function _1_()
   local paredit = require("nvim-paredit")
   local function _2_()
@@ -19,4 +19,4 @@ local function _6_()
   local surround = require("nvim-surround")
   return surround.setup()
 end
-return {{"julienvincent/nvim-paredit", lazy = true, ft = {"clojure", "fennel", "scheme", "lisp"}, config = _1_}, {"kylechui/nvim-surround", event = "VeryLazy", config = _6_}, {"windwp/nvim-autopairs", event = "InsertEnter", opts = {}}}
+return {{"julienvincent/nvim-paredit", lazy = true, ft = {"clojure", "fennel", "scheme", "lisp", "janet"}, config = _1_}, {"kylechui/nvim-surround", event = "VeryLazy", config = _6_}, {"windwp/nvim-autopairs", event = "InsertEnter", opts = {}}}
