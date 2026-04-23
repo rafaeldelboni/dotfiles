@@ -29,6 +29,7 @@
       "~/dev/nu/"
     ]
   },
+  "model": "opus[1m]",
   "hooks": {
     "Notification": [
       {
@@ -84,6 +85,5 @@
       "Murilonizing",
       "Edwardozing"
     ]
-  },
-  "model": "opus[1m]"
+  }
 }
