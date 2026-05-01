@@ -235,17 +235,23 @@ pacman -S nvidia nvidia-utils nvidia-settings nvidia-prime
 ```
 You also need to add `acpi_osi=\"Windows 2015\" nvidia-drm.modeset=1` kernel arguments into `/boot/loader/entries/arch.conf` options.
 
-#### USB-C Dock Monitor Not Detected on Boot
-When using a USB-C dock (e.g. Dell Universal Hybrid Video Dock), the NVIDIA driver initializes its DisplayPort outputs before the dock has fully enumerated. The monitor won't appear in xrandr until you physically replug the dock.
+#### USB-C Dock Monitor Not Detected
+When using a DisplayLink-based USB-C dock (e.g. Dell Universal Hybrid Video Dock), the monitor won't appear in xrandr without the `evdi` kernel module.
 
-Fix by creating a udev rule that triggers a DRM hotplug when the dock is detected:
+Install the DisplayLink driver:
 ```bash
-sudo tee /etc/udev/rules.d/99-dell-dock-hotplug.rules << 'EOF'
-ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="17e9", ATTR{idProduct}=="6013", RUN+="/bin/sh -c \"for c in /sys/class/drm/card0-DP-*; do echo 1 > \$c/status 2>/dev/null; done\""
-EOF
-sudo udevadm control --reload-rules
+yay -S displaylink evdi
+sudo pacman -S linux-headers
+sudo dkms install evdi/$(pacman -Q evdi | awk '{print $2}' | cut -d- -f1) -k $(uname -r)
+sudo modprobe evdi
+sudo systemctl enable displaylink.service
+sudo systemctl start displaylink.service
 ```
-Verify the dock's vendor/product IDs with `lsusb` if using a different dock. This is a lightweight one-time probe with no performance impact.
+After replugging the dock, the monitor should appear as `DVI-I-*` in xrandr. Enable it with:
+```bash
+xrandr --output DVI-I-2-1 --auto --left-of eDP-1
+```
+Verify the dock's vendor/product IDs with `lsusb` if using a different dock.
 
 ## Windows Manager (i3)
 ```bash
