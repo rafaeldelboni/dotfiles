@@ -18,3 +18,6 @@
 
 ## Knowledge Base Projects
 - When working in a project that has an `agents.md` file, always read it first and follow its conventions for saving Q&A files (file naming, folder structure, file format).
+
+## Pull Requests
+- Do not include a "Test plan" section in PR descriptions. Keep the body to a summary of what changed and why.
