@@ -3,6 +3,7 @@
     "allow": [
       "Bash(gh pr:*)",
       "Bash(git add:*)",
+      "Bash(git log:*)",
       "Bash(git commit:*)",
       "Bash(git push:*)",
       "Bash(git checkout:*)",
@@ -12,6 +13,9 @@
       "Bash(clojure-lsp:*)",
       "Bash(lein:*)",
       "Bash(bb:*)",
+      "Bash(dart:*)",
+      "Bash(flutter:*)",
+      "Bash(npm:*)",
       "mcp__clojure__grep",
       "mcp__clojure__read_file",
       "mcp__clojure__clojure_eval",
@@ -85,5 +89,6 @@
       "Murilonizing",
       "Edwardozing"
     ]
-  }
+  },
+  "effortLevel": "xhigh"
 }
