@@ -197,10 +197,11 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
-# Set shut down, restart and locking features
+# Set shut down, restart, locking and (un)docking features
 bindsym $mod+0 mode "$mode_system"
-set $mode_system (l)ock, (e)xit, (r)eboot, (s)hutdown
+set $mode_system (d)ock, (l)ock, (e)xit, (r)eboot, (s)hutdown
 mode "$mode_system" {
+    bindsym d exec $HOME/.xorg/scripts/dock.sh, mode "default"
     bindsym l exec --no-startup-id i3lock -i $HOME/.config/i3/galaxy.png --nofork, mode "default"
     bindsym e exec --no-startup-id i3-msg exit logout, mode "default"
     bindsym r exec --no-startup-id shutdown -ar now reboot, mode "default"
