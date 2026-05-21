@@ -1,7 +1,7 @@
 {
   "Comment.nvim": { "branch": "master", "commit": "e30b7f2008e52442154b66f7c519bfd2f1e32acb" },
-  "LuaSnip": { "branch": "master", "commit": "a62e1083a3cfe8b6b206e7d3d33a51091df25357" },
-  "blink-ripgrep.nvim": { "branch": "main", "commit": "330a80257a4968e9db0f18865f47f09c7d0ef8c2" },
+  "LuaSnip": { "branch": "master", "commit": "0abc8f390b278c3b4aabc4c004ac8a088b65cf24" },
+  "blink-ripgrep.nvim": { "branch": "main", "commit": "a4b0f5276ae9ba4f78e995ff23c2af862ea1a13e" },
   "blink.cmp": { "branch": "main", "commit": "78336bc89ee5365633bcf754d93df01678b5c08f" },
   "blink.compat": { "branch": "main", "commit": "2ed6d9a28b07fa6f3bface818470605f8896408c" },
   "cmp-conjure": { "branch": "master", "commit": "8c9a88efedc0e5bf3165baa6af8a407afe29daf6" },
@@ -15,7 +15,7 @@
   "nfnl": { "branch": "main", "commit": "ac0177c5549df7abba7a19554c18a7765386c894" },
   "no-neck-pain.nvim": { "branch": "main", "commit": "4bc52782524fd50c5658685d584df6fa48fe49f9" },
   "nvim-autopairs": { "branch": "master", "commit": "7b9923abad60b903ece7c52940e1321d39eccc79" },
-  "nvim-lspconfig": { "branch": "master", "commit": "3de240997fc3208eb29df5e5c17ba4665961bd84" },
+  "nvim-lspconfig": { "branch": "master", "commit": "dfbada1a311c4bf3369f8d5421369c9b6e8b888f" },
   "nvim-paredit": { "branch": "master", "commit": "b6ba636874a3115d944e35746444724240568aca" },
   "nvim-surround": { "branch": "main", "commit": "2e93e154de9ff326def6480a4358bfc149d5da2c" },
   "nvim-tree.lua": { "branch": "master", "commit": "07f541fcaa4a5ae019598240362449ab7e9812b3" },

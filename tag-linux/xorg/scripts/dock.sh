@@ -3,6 +3,7 @@
 
 # Only the first 128 bytes (256 hex chars) of EDID are hashed —
 # this strips GPU-specific extension blocks for stable matching.
+# To fetch hashes: dock.sh list
 INTERNAL_HASH="8181c458d4b3fc93292725b6ee6b15c4"
 DOCK_HASH="de521635c38ccd5870a769ec8b190bf9"
 
@@ -66,9 +67,26 @@ connected_outputs() {
     xrandr --query | grep ' connected' | awk '{print $1}'
 }
 
+# List all connected displays with their output name and truncated EDID hash.
+list_displays() {
+    local output edid
+    while IFS='|' read -r output edid; do
+        echo "$output -> $(hash_edid "$edid")"
+    done < <(parse_edids)
+}
+
+# Usage: dock.sh        — configure displays (dock primary left of internal, or internal only)
+#        dock.sh list   — list connected outputs with their EDID hashes
+if [ "${1:-}" = "list" ]; then
+    list_displays
+    exit 0
+fi
+
 internal=$(find_by_edid_hash "$INTERNAL_HASH")
 dock=$(find_by_edid_hash "$DOCK_HASH")
 
+# Dock connected: dock is primary, positioned left of internal.
+# No dock:        internal is primary at origin, all other outputs off.
 if [ -n "$dock" ] && [ -n "$internal" ]; then
     xrandr \
         --output "$dock" --auto --primary --left-of "$internal" \
