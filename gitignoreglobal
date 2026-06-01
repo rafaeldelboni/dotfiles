@@ -1,1 +1,3 @@
 /.lsp/*.db
+
+**/.claude/settings.local.json
