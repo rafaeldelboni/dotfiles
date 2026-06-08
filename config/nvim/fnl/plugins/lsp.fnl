@@ -60,6 +60,10 @@
               (vim.lsp.config :jsonls {:cmd ["vscode-json-language-server" "--stdio"]})
               (vim.lsp.enable :jsonls)
 
+              ;; rust
+              (vim.lsp.config :rust_analyzer {:on_attach on_attach})
+              (vim.lsp.enable :rust_analyzer)
+
               ;; go
               (vim.lsp.enable :gopls)
 

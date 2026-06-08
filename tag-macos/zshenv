@@ -1,2 +1,3 @@
 # Force correct TMPDIR for all zsh sessions (including Warp)
 export TMPDIR="$(getconf DARWIN_USER_TEMP_DIR)"
+. "$HOME/.cargo/env"

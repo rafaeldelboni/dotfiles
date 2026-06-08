@@ -2,11 +2,31 @@
   "permissions": {
     "allow": [
       "Bash(gh pr:*)",
+      "Bash(gh api:*)",
+      "Bash(gh search:*)",
+      "Bash(gh run:*)",
       "Bash(git add:*)",
       "Bash(git log:*)",
       "Bash(git commit:*)",
       "Bash(git push:*)",
       "Bash(git checkout:*)",
+      "Bash(git fetch:*)",
+      "Bash(git show:*)",
+      "Bash(git diff:*)",
+      "Bash(git blame:*)",
+      "Bash(git status:*)",
+      "Bash(git ls-tree:*)",
+      "Bash(git rev-parse:*)",
+      "Bash(git symbolic-ref:*)",
+      "Bash(grep:*)",
+      "Bash(rg:*)",
+      "Bash(ls:*)",
+      "Bash(find:*)",
+      "Bash(cat:*)",
+      "Bash(sed:*)",
+      "Bash(awk:*)",
+      "Bash(curl:*)",
+      "Bash(unzip:*)",
       "Bash(npx vitest:*)",
       "Bash(clj:*)",
       "Bash(clojure:*)",
@@ -33,7 +53,6 @@
       "~/dev/nu/"
     ]
   },
-  "model": "opus[1m]",
   "hooks": {
     "Notification": [
       {
@@ -90,5 +109,6 @@
       "Edwardozing"
     ]
   },
-  "effortLevel": "xhigh"
+  "effortLevel": "xhigh",
+  "skipWorkflowUsageWarning": true
 }

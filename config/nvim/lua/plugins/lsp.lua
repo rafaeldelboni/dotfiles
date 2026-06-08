@@ -34,6 +34,8 @@ local function _1_()
   vim.lsp.enable("html")
   vim.lsp.config("jsonls", {cmd = {"vscode-json-language-server", "--stdio"}})
   vim.lsp.enable("jsonls")
+  vim.lsp.config("rust_analyzer", {on_attach = on_attach})
+  vim.lsp.enable("rust_analyzer")
   vim.lsp.enable("gopls")
   return vim.lsp.enable("zls")
 end
