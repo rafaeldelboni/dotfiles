@@ -110,5 +110,6 @@
     ]
   },
   "effortLevel": "xhigh",
-  "skipWorkflowUsageWarning": true
+  "skipWorkflowUsageWarning": true,
+  "model": "claude-fable-5"
 }
