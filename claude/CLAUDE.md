@@ -21,3 +21,4 @@
 
 ## Pull Requests
 - Do not include a "Test plan" section in PR descriptions. Keep the body to a summary of what changed and why.
+- Never add "Co-Authored-By" or "Generated with Claude Code" lines to pr descriptions.

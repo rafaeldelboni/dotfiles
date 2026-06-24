@@ -53,6 +53,7 @@
       "~/dev/nu/"
     ]
   },
+  "model": "opus[1m]",
   "hooks": {
     "Notification": [
       {
@@ -95,7 +96,8 @@
   },
   "enabledPlugins": {
     "typescript-lsp@claude-plugins-official": true,
-    "gopls-lsp@claude-plugins-official": true
+    "gopls-lsp@claude-plugins-official": true,
+    "rust-analyzer-lsp@claude-plugins-official": true
   },
   "spinnerVerbs": {
     "mode": "append",
@@ -111,5 +113,5 @@
   },
   "effortLevel": "xhigh",
   "skipWorkflowUsageWarning": true,
-  "model": "claude-fable-5"
+  "verbose": false
 }
