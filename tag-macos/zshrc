@@ -16,6 +16,7 @@ plugins=(vi-mode git autojump fzf)
 alias v="nvim"
 alias clj='clojure'
 alias vimdiff='nvim -d'
+alias claude='claude --model "claude-opus-5[1m]" --autocompact 1M --effort high'
 
 # Exports
 export EDITOR=nvim          # Set Nvim as default editor

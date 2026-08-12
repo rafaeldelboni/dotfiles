@@ -1,8 +1,4 @@
 {
-  "env": {
-    "ANTHROPIC_CUSTOM_MODEL_OPTION": "claude-fable-5[1m]",
-    "ANTHROPIC_CUSTOM_MODEL_OPTION_NAME": "Fable 5 (1M context)"
-  },
   "permissions": {
     "allow": [
       "Bash(gh pr:*)",
@@ -57,6 +53,7 @@
       "~/dev/nu/"
     ]
   },
+  "model": "opus[1m]",
   "hooks": {
     "Notification": [
       {
@@ -115,6 +112,7 @@
     ]
   },
   "effortLevel": "high",
+  "showThinkingSummaries": true,
   "skipWorkflowUsageWarning": true,
   "theme": "dark",
   "verbose": false
