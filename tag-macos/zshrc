@@ -16,7 +16,6 @@ plugins=(vi-mode git autojump fzf)
 alias v="nvim"
 alias clj='clojure'
 alias vimdiff='nvim -d'
-alias claude='claude --model "claude-opus-5[1m]" --autocompact 1M --effort high'
 
 # Exports
 export EDITOR=nvim          # Set Nvim as default editor
@@ -82,3 +81,20 @@ export PATH="$PATH:$HOME/.dotnet/tools"
 [ -f $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # zprof
+
+# Source nucli environment (managed by Jamf)
+[ -f "${HOME}/.nurc" ] && source "${HOME}/.nurc"
+
+# >>> Nubank SSL Inspection CA — managed by: nu zscaler setup env >>>
+# mode: baseline
+NUBANK_CA_CERT="$HOME/dev/nu/.nu/certificates/zscaler/ca-bundle-with-zscaler.pem"
+
+
+# BASELINE — Essential SSL/TLS trust
+export SSL_CERT_FILE="$NUBANK_CA_CERT"
+export SSL_CERT_DIR="/etc/ssl/certs"
+export REQUESTS_CA_BUNDLE="$NUBANK_CA_CERT"              # Python requests, urllib3
+export CURL_CA_BUNDLE="$NUBANK_CA_CERT"                  # curl, libcurl
+export AWS_CA_BUNDLE="$NUBANK_CA_CERT"                   # AWS CLI, boto3, AWS SDKs
+export NODE_EXTRA_CA_CERTS="$NUBANK_CA_CERT"             # Node.js, Bun, Claude Code, Cursor, VS Code, Copilot
+# <<< Nubank SSL Inspection CA <<<

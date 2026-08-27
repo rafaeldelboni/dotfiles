@@ -201,7 +201,7 @@ in case you want the boot menu to show up.
 
 ## Tools
 ```bash
-pacman -S zsh-autosuggestions curl tmux openssh zip unzip ripgrep fzf xclip jq rustup 
+pacman -S zsh-autosuggestions curl tmux openssh zip unzip ripgrep fzf xclip jq rustup git-delta
 ```
 
 ### Installing Tmux Plugin

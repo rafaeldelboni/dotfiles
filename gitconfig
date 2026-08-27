@@ -30,6 +30,7 @@
 [core]
   editor = nvim
   excludesfile = ~/.gitignoreglobal
+	pager = delta
 [commit]
   template = ~/.gitmessage
   gpgsign = true
@@ -44,3 +45,13 @@
   tool = nvimdiff
 [url "git@github.com:"]
   insteadOf = git://github.com/
+[delta]
+	side-by-side = true
+	line-numbers = true
+	navigate = true
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
