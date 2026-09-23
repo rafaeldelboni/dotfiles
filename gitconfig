@@ -40,7 +40,7 @@
   process = git-lfs filter-process
   required = true
 [pull]
-  rebase = true
+	rebase = false
 [diff]
   tool = nvimdiff
 [url "git@github.com:"]

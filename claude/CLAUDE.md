@@ -14,6 +14,12 @@
 - Do not add comments narrating the change itself (e.g. `;; new`, `;; changed to fix X`, `;; removed foo`). The diff and commit message cover that.
 - Do not restate function signatures, argument lists, or return types in prose when the code or schema already declares them.
 
+## HUE English
+- Write documentation, docstrings, and comments in simple international English that is easy for Brazilian engineers to read.
+- Prefer short, direct sentences and common words.
+- Avoid unnecessary compound terms, idioms, semicolons, and jargon. Keep required technical terms and explain uncommon ones.
+- Preserve technical precision while simplifying the language.
+
 ## Longer Documentation
 - If something genuinely needs more explanation than a line or two, do not inline it as comments. Write it under a `docs/` folder at the repo root.
 - Mirror the source tree inside `docs/`: `src/foo/bar/baz.clj` → `docs/foo/bar/baz.md`. Cross-cutting topics go in `docs/<topic>.md`.
