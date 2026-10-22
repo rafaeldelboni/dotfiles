@@ -30,7 +30,7 @@
 [core]
   editor = nvim
   excludesfile = ~/.gitignoreglobal
-	pager = delta
+  pager = delta
 [commit]
   template = ~/.gitmessage
   gpgsign = true
@@ -40,18 +40,12 @@
   process = git-lfs filter-process
   required = true
 [pull]
-	rebase = false
+  rebase = false
 [diff]
   tool = nvimdiff
 [url "git@github.com:"]
   insteadOf = git://github.com/
 [delta]
-	side-by-side = true
-	line-numbers = true
-	navigate = true
-[credential "https://github.com"]
-	helper = 
-	helper = !/opt/homebrew/bin/gh auth git-credential
-[credential "https://gist.github.com"]
-	helper = 
-	helper = !/opt/homebrew/bin/gh auth git-credential
+  side-by-side = true
+  line-numbers = true
+  navigate = true
