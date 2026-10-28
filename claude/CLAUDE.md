@@ -7,6 +7,10 @@
 - Never use the Clojure MCP edit tools (clojure_edit, file_edit) for simple changes — they often reformat entire files with whitespace changes. Use the standard Edit tool instead for targeted edits.
 - Keep changes minimal and targeted. Do not reformat, reorganize, or touch code outside the specific scope of the request.
 
+## Validation
+- Whenever possible, run the relevant lint checks and tests before committing, pushing, or opening a pull request.
+- Fix failures caused by your changes. If a check cannot run, state which check was skipped and why.
+
 ## Comments and Docstrings
 - Keep comments and docstrings minimal. Match the density and style of the surrounding code — if the existing code has no comments, do not add any.
 - Do not write block comments, banner/section separators, or multi-paragraph docstrings. A short one-line docstring is acceptable only when the surrounding code already uses them.
@@ -27,6 +31,7 @@
 - Only create a doc when the explanation has lasting value. Do not generate `docs/` files for routine changes, and never create summary or report files unless asked.
 
 ## Git Commits
+- Always sign every Git commit. Never create an unsigned commit or bypass signing with `--no-gpg-sign`, `commit.gpgsign=false`, or another workaround. If signing fails, stop and ask the user to fix or unlock signing before creating a commit.
 - Never add "Co-Authored-By" or "Generated with Claude Code" lines to commit messages.
 - Follow [Conventional Commits](https://www.conventionalcommits.org/) format: `<type>[optional scope]: <description>`
 - Types: `feat`, `fix`, `refactor`, `style`, `docs`, `test`, `chore`
@@ -41,3 +46,4 @@
 ## Pull Requests
 - Do not include a "Test plan" section in PR descriptions. Keep the body to a summary of what changed and why.
 - Never add "Co-Authored-By" or "Generated with Claude Code" lines to pr descriptions.
+- Never add `codex`, `agent`, `claude` in the branch name.
